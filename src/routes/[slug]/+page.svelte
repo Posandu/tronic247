@@ -1,0 +1,127 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	export let data;
+
+	let slug = data.post.slug;
+	let tags = data.post.tags;
+	let categories = data.post.categories;
+	let date = data.post.date;
+	let title = data.post.title;
+	let img = data.post.img;
+
+	let commentDiv: HTMLElement;
+
+	let scriptLoading = true;
+
+	function waitForElm(selector: any) {
+		return new Promise((resolve) => {
+			if (document.querySelector(selector)) {
+				return resolve(document.querySelector(selector));
+			}
+
+			const observer = new MutationObserver((mutations) => {
+				if (document.querySelector(selector)) {
+					observer.disconnect();
+					resolve(document.querySelector(selector));
+				}
+			});
+
+			// If you get "parameter 1 is not of type 'Node'" error, see https://stackoverflow.com/a/77855838/492336
+			observer.observe(document.body, {
+				childList: true,
+				subtree: true
+			});
+		});
+	}
+
+	const onScriptLoad = () => {
+		waitForElm('.utterances-frame').then(() => {
+			const el = document.querySelector('.utterances-frame');
+
+			if (el) {
+				el.addEventListener('load', () => {
+					scriptLoading = false;
+				});
+			}
+		});
+	};
+
+	onMount(() => {
+		const script = document.createElement('script');
+		script.src = 'https://utteranc.es/client.js';
+		script.async = true;
+		script.setAttribute('repo', 'tronic247/comments');
+		script.setAttribute('issue-term', 'title');
+		script.setAttribute('theme', 'github-light');
+		script.setAttribute('crossorigin', 'anonymous');
+		script.setAttribute('label', 'comment');
+		script.onload = onScriptLoad;
+		commentDiv.appendChild(script);
+	});
+</script>
+
+<svelte:head>
+	<title>Adding your discord status to a website | Tronic247</title>
+</svelte:head>
+
+<div class="top-0 -z-10 flex h-screen max-h-[400px] items-center justify-center overflow-hidden">
+	<img
+		src="/test.png"
+		alt="Random"
+		class="w-full transform-gpu object-cover will-change-transform"
+	/>
+</div>
+
+<div class="relative z-10 mt-1 text-center sm:mt-12">
+	<div class="mb-4 text-sm font-semibold uppercase text-black/60">
+		<p class="inline" aria-label="Published on">
+			{new Date(date).toLocaleDateString('en-US', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			})}
+		</p>
+
+		<span class="mx-1">•</span>
+
+		<p class="mt-2 inline" aria-label="Categories">
+			{#each categories as category, i}
+				<a
+					class="hover:underline"
+					href="/category/{category.toLowerCase()}"
+					aria-label="{category} category">{category}</a
+				>{i < categories.length - 1 ? ', ' : ''}
+			{/each}
+		</p>
+	</div>
+
+	<h1 class="text-4xl font-bold">{title}</h1>
+</div>
+
+<main class="container prose prose-gray mx-auto mt-8">
+	<div class="mb-4 h-28 w-full bg-black/20"></div>
+
+	<svelte:component this={data.post.content} />
+
+	<div class="mb-4 h-28 w-full bg-black/20"></div>
+
+	<div class="mb-4 space-x-2">
+		{#each tags as tag}
+			<a
+				href="/tags/{tag.toLowerCase()}"
+				class="inline-block rounded-full bg-gray-100 px-4 py-1 uppercase text-gray-900 no-underline transition-all hover:bg-gray-200"
+			>
+				#{tag}
+			</a>
+		{/each}
+	</div>
+
+	<h3 class="text-2xl font-semibold">Comments</h3>
+
+	{#if scriptLoading}
+		<p>Loading comments...</p>
+	{/if}
+
+	<section id="utterances-comments" bind:this={commentDiv}></section>
+</main>

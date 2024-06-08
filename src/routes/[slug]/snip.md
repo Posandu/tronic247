@@ -9,23 +9,3 @@ npm create svelte@latest
 ```
 
 Select the following options when prompted:
-
-```bash
-create-svelte version 5.3.2
-
-┌  Welcome to SvelteKit!
-│
-◇  Where should we create your project?
-│  .
-│
-◇  Which Svelte app template?
-│  Skeleton project
-│
-◇  Add type checking with TypeScript?
-│  Yes, using TypeScript syntax
-│
-◇  Select additional options (use arrow keys/space bar)
-│  none
-│
-└  Your project is ready!
-```

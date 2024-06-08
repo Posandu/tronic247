@@ -17,7 +17,7 @@
 		} else NProgress.done();
 	}
 
-	const BLEED = ['/sponsor', '/about', '/[slug]'];
+	const BLEED = ['/sponsor', '/about'];
 
 	const isInside = (path: string) => BLEED.some((bleed) => path === bleed);
 </script>

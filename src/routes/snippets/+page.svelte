@@ -9,8 +9,8 @@
 	Bite sized information, tips and tricks to help you build faster and better.
 </p>
 
-<div class="lg:-m-8 grid gap-10 rounded-2xl bg-gray-50 lg:p-8 lg:grid-cols-2">
-	{#each new Array(10) as snippet}
-		<Snippet content={data.content} />
+<div class="grid grid-cols-2 gap-6">
+	{#each new Array(10) as snippet, i}
+		<Snippet content={data.content} title={'idk' + i} />
 	{/each}
 </div>

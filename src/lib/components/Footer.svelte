@@ -3,12 +3,12 @@
 		<div class="flex items-center justify-between">
 			<div>
 				<p class="text-sm">
-					© {new Date().getFullYear()} Tronic247. All rights reserved. Created by
+					© {new Date().getFullYear()} Tronic247. All rights reserved. A blog by
 					<a href="https://posandu.com" class="text-sm text-primary">Posandu</a>
 				</p>
 			</div>
 			<div>
-				<a href="/contact" class="text-sm">Contact</a>
+				<a href="https://posandu.com/#contact" class="text-sm">Contact</a>
 			</div>
 		</div>
 	</div>

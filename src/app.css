@@ -12,8 +12,15 @@ body {
 
 pre,
 code,
-textarea {
+textarea,
+.prose,
+.prose-xs,
+.prose-sm {
 	user-select: text;
+}
+
+.prose {
+	line-height: 2;
 }
 
 /* make font rendering better */

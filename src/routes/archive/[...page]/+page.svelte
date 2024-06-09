@@ -18,8 +18,8 @@
 
 <p class="mb-4 mt-4">Here you can find all the posts that have been published on this blog.</p>
 
-<nav class="flex gap-4 mb-8">
-	{#each Array(totalPages) as _, i}
+<nav class="mb-8 flex flex-wrap gap-4">
+	{#each Array.from({ length: totalPages || 0 }) as _, i}
 		{@const page = i + 1}
 
 		<a
@@ -36,7 +36,6 @@
 					
 					"
 			on:click|preventDefault={async () => {
-				await invalidate('welp:me');
 				await goto(`/archive/page/${page}`);
 			}}
 		>
@@ -45,7 +44,7 @@
 	{/each}
 </nav>
 
-<div class="mb-10 grid grid-cols-3 gap-8">
+<div class="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 	{#each posts as { categories, date, title, excerpt, slug, img }}
 		<ArticleView {categories} {date} {title} {excerpt} {slug} {img} class="col-span-1" />
 	{/each}

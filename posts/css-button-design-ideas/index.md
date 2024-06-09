@@ -29,7 +29,7 @@ CSS
 
 The HTML
 
-```
+```html
 <button class="btn-1">Button</button>
 ```
 
@@ -37,27 +37,26 @@ The HTML
 
 CSS
 
-```
+```css
 .btn-2 {
-  background: #ff6000;
-  padding: 11px 24px;
-  font-size: 21px;
-  border: 0px;
-  color: white;
-  box-shadow: 0px 4px 0px #b50f0f;
-  transition: all 0.1s;
-  outline: navajowhite;
+	background: #ff6000;
+	padding: 11px 24px;
+	font-size: 21px;
+	border: 0px;
+	color: white;
+	box-shadow: 0px 4px 0px #b50f0f;
+	transition: all 0.1s;
+	outline: navajowhite;
 }
 .btn-2:active {
-  box-shadow: 0px 2px 0px #b50f0f;
-  transform: translateY(6px);
+	box-shadow: 0px 2px 0px #b50f0f;
+	transform: translateY(6px);
 }
-
 ```
 
 The HTML
 
-```
+```html
 <button class="btn-2">Button 2</button>
 ```
 
@@ -65,37 +64,35 @@ The HTML
 
 CSS
 
-```
+```css
 .btn-3 {
-  padding: 15px 23px;
-  background: #773dca;
-  color: white;
-  font-size: 20px;
-  border: none;
-  outline: none;
-  border-radius: 100px 0px 100px 100px;
-  transition: all 0.3s;
+	padding: 15px 23px;
+	background: #773dca;
+	color: white;
+	font-size: 20px;
+	border: none;
+	outline: none;
+	border-radius: 100px 0px 100px 100px;
+	transition: all 0.3s;
 }
 
 .btn-3 span {
-  opacity: 0;
-  margin-left: -20px;
-  transition: all 0.5s;
-  color: #ffd4d4;
+	opacity: 0;
+	margin-left: -20px;
+	transition: all 0.5s;
+	color: #ffd4d4;
 }
 .btn-3:hover span {
-  opacity: 1;
-  margin-left: 2px;
+	opacity: 1;
+	margin-left: 2px;
 }
 .btn-3:hover {
-  box-shadow: 0px 0px 70px #773dcaab;
+	box-shadow: 0px 0px 70px #773dcaab;
 }
 ```
 
 The HTML
 
-```
-<button class="btn-3">
-Button 2 <span>Go</span>
-</button>
+```html
+<button class="btn-3">Button 2 <span>Go</span></button>
 ```

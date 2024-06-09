@@ -7,6 +7,8 @@ tags: ['cloudflare', 'perfomance', 'tips']
 
 Hello, fellow devs! In this article, I will tell some awesome tips to make your website faster. So, before we start, let's brainstorm why the speed of the website is important.
 
+## Contents
+
 ## So, Why the speed is important?
 
 Imagine you are searching in Google. Normally, it takes about 1-2 seconds. But, what if it takes more than 1 or 2 seconds? You know right? So that's why speed is important. Let's see how to make our websites faster.

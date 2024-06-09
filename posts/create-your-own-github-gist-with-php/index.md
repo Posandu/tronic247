@@ -1,12 +1,15 @@
 ---
-title: "Create your own Github Gist with PHP!"
-date: "2021-11-14"
-categories: ["css", "html-tutorials", "javascript", "mysql", "php"]
-tags: ["css", "mysql"]
+title: 'Create your own Github Gist with PHP!'
+date: '2021-11-14'
+categories: ['css', 'html-tutorials', 'javascript', 'mysql', 'php']
+tags: ['css', 'mysql']
 ---
 
-In this post, We'll create a site like [Github Gist](https://gist.github.com) using PHP, CSS and a 1 line of JavaScript! If you want a preview, you can go to [This link](https://user-images.githubusercontent.com/76736580/139574909-3f9d95dc-1934-4a8a-a0a3-29e216650763.gif) or see below.  
+In this post, We'll create a site like [Github Gist](https://gist.github.com) using PHP, CSS and a 1 line of JavaScript! A preview of what we're creating is below.
+
 ![A preview of what we're creating](https://user-images.githubusercontent.com/76736580/139574909-3f9d95dc-1934-4a8a-a0a3-29e216650763.gif)
+
+## Contents
 
 ## Collecting the stuff we need
 
@@ -21,24 +24,25 @@ Before we begin, you must have these things.
 
 ### Creating the files
 
-Now, let's start. The first thing is to do, create the files. The files are,  
-`index.php` - The index file  
-`config.php` -The configuration file  
-`gist.php` - The gist view/delete file  
-`gists.php` - The file that shows all the gists  
-`styles.css`\- The stylesheet
+Now, let's start. The first thing is to do, create the files. The files are,
+
+- `index.php` - The index file
+- `config.php` -The configuration file
+- `gist.php` - The gist view/delete file
+- `gists.php` - The file that shows all the gists
+- `styles.css`\- The stylesheet
 
 ### Creating the database
 
 We will create a database named `gists` and create a table named `gists`. The table structure will look like this.
 
-| title | content | type | id |
-| --- | --- | --- | --- |
+| title  | content    | type        | id     |
+| ------ | ---------- | ----------- | ------ |
 | unique | mediumtext | varchar(40) | unique |
 
 If you are too lazy to create the table, you can use this SQL code.
 
-```
+```sql
 CREATE TABLE `gists` (
   `title` varchar(99) NOT NULL,
   `content` mediumtext NOT NULL,
@@ -56,7 +60,7 @@ COMMIT;
 
 And It's time for the coding. We'll first define the database connection constants. Put this in your `config.php` file.
 
-```
+```php
 $servername =  "localhost";
 $username =  "root";
 $password =  "";
@@ -86,7 +90,7 @@ We use [PDO](https://www.php.net/manual/en/book.pdo.php) because It's easy & sec
 
 Then, in all the other PHP files (Not `config.php`) put this code.
 
-```
+```php
 <!DOCTYPE  html>
 <html  lang="en">
 <head>
@@ -110,7 +114,7 @@ This is the template we're going to use. And for the CSS, you can style yourself
 
 This is the code for the create new gist page. (`index.php`)
 
-```
+```php
 require "config.php";
 $e=$m="";
 if ( isset($_GET['create']) && isset($_POST['title']) && isset($_POST['content']) && isset($_POST['type'])) {
@@ -165,7 +169,7 @@ Now, I'll explain what this code does. First, it checks if `$_GET["create"]` , `
 
 Now add this inside the `#container` of `index.php`.
 
-```
+```php
 <?php if (defined("ERROR")) {
             die("An error occured");
         } ?>
@@ -213,7 +217,7 @@ Now add this inside the `#container` of `index.php`.
 
 And in the `gist.php` file, add this code
 
-```
+```php
 <?php require "config.php";
 if ( !isset($_GET["id"])) {
     die("Not Found");
@@ -260,7 +264,7 @@ catch (PDOException $e) {
 
 And for the end of the body, add this code.
 
-```
+```php
 <script  src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
 <script>
 hljs.highlightAll();

@@ -3,9 +3,9 @@ export type Post = {
 	content: any;
 	slug: string;
 	date: Date;
-	tags: string[];
-	img: string;
-	categories: string[];
+	tags?: string[];
+	img?: string;
+	categories?: string[];
 	excerpt: string;
 };
 
@@ -23,6 +23,7 @@ class queryManager {
 	}
 
 	exec() {
+		console.log("queryManager.exec() called")
 		return this.posts.filter(this.query);
 	}
 

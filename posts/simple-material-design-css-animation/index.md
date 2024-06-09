@@ -7,6 +7,8 @@ tags: ['animations', 'css']
 
 Do you have heard of material design? It's the most popular design language in the world. In this tutorial, we will learn how to make a simple CSS animation following material design animation guidelines. So, let's get started!
 
+## Contents
+
 ## Preparing the HTML
 
 First, we have to prepare the HTML. Create an HTML file and put/or type the code below in that file.

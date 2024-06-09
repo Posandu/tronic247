@@ -7,6 +7,8 @@ tags: ['windows', 'tricks']
 
 You may have heard of Windows 11. It's so exciting but when installing it your PC might be unsupported sometimes. So, in this tutorial, I'll show you how to get a Windows 11 iso file and install it. (Bypass all the requirements :D )
 
+## Contents
+
 ## Watch the video
 
 https://youtu.be/3SJRVHbao\_A

@@ -7,6 +7,8 @@ tags: ['css', 'design', 'frameworks', 'perfomance']
 
 Hey! So you came here to see another CSS framework? right? So time to worry, I am telling you how to create your CSS framework instead of using one. So let's begin!
 
+## Contents
+
 ## But why?
 
 Glad you asked now, go to a bootstrap site and then go to a vanilla CSS site. Now you see the difference I'm talking about.  
@@ -132,7 +134,7 @@ Now we have the items centred. Now, we need the background colour, How do we fin
 ![](https://user-images.githubusercontent.com/76736580/152643624-c614cd2c-3212-43db-9102-4ba2c049864e.png)
 
 Now I'll add it.  
-![image](https://user-images.githubusercontent.com/76736580/152643665-434ea4ee-bdce-4019-8078-3d7bcf210528.png)
+![](https://user-images.githubusercontent.com/76736580/152643665-434ea4ee-bdce-4019-8078-3d7bcf210528.png)
 
 Nice. The next thing is to style the modal, so for this to I'll do the same stuff.
 

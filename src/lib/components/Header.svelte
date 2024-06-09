@@ -1,6 +1,7 @@
 <script>
 	import Icon from '@iconify/svelte';
 	import { navigating } from '$app/stores';
+	import { fly } from 'svelte/transition';
 
 	const menuItems = [
 		['Home', '/'],
@@ -55,3 +56,34 @@
 		</button>
 	</div>
 </header>
+
+{#if mobileMenuOpen}
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<div
+		class="fixed inset-0 z-50 flex h-full w-full items-center justify-start bg-black/20"
+		transition:fly={{ duration: 200, x: -10 }}
+		on:click={(e) => {
+			if (e.target === e.currentTarget) mobileMenuOpen = false;
+		}}
+	>
+		<div class="relative h-full max-h-svh w-full max-w-xl overflow-auto bg-white p-8 shadow-2xl">
+			<button
+				class="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full hover:bg-black/10"
+				on:click={() => (mobileMenuOpen = false)}
+			>
+				<Icon icon="bx:bx-x" class="size-6" />
+			</button>
+
+			<h2 class="mb-4 text-2xl font-bold">Menu</h2>
+
+			<ul class="space-y-4">
+				{#each menuItems as [label, link]}
+					<li>
+						<a href={link} class="link-menu">{label}</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	</div>
+{/if}

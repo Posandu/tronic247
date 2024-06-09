@@ -7,6 +7,8 @@ tags: ['apps', 'css', 'electron', 'html', 'javascript']
 
 In this post, I will show you how to create a desktop app with HTML, CSS, and JavaScript. We will use the [`electron`](https://electronjs.org/) framework to create the app. Our app will be a simple calculator. It will have a text field where you can enter the numbers, and a button to perform operations.
 
+## Contents
+
 ## What is Electron?
 
 Electron is a framework for building cross-platform desktop applications with web technologies like HTML, CSS, and JavaScript. It is used to create desktop apps for Mac, Windows, and Linux.

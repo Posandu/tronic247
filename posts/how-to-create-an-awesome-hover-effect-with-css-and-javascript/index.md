@@ -9,17 +9,9 @@ In this tutorial, we'll make this awesome hover effect using CSS and JavaScript.
 
 Here's what we'll do:
 
-<figure>
+![Our Result](https://www.tronic247.com/wp-content/uploads/2021/12/ezgif-2-5a4aedd131e0.gif)
 
-![](https://www.tronic247.com/wp-content/uploads/2021/12/ezgif-2-5a4aedd131e0.gif)
-
-<figcaption>
-
-Our result
-
-</figcaption>
-
-</figure>
+## Contents
 
 Nice isn't it? So let's get started!
 
@@ -122,17 +114,7 @@ Okay, now we can start coding. First, we'll style the 6 items in the dock.
 
 We can get this result:
 
-<figure>
-
-![](https://www.tronic247.com/wp-content/uploads/2021/12/image.png)
-
-<figcaption>
-
-The result
-
-</figcaption>
-
-</figure>
+![The Result](https://www.tronic247.com/wp-content/uploads/2021/12/image.png)
 
 Now for the Javascript, let's first define our variables.
 
@@ -184,11 +166,11 @@ Then for each item, we add an event listener to the `mouseover` event. Then the 
 
 Okay, now we can see the items scale up when hovered but, it doesn't scale down when the mouse leaves the item. Let's fix that.
 
-```
-dock.adjsdEventListener("mouseout", function(e) {
-    items.forEach(item => {
-       item.style.transform = scale(1);
-    });
+```js
+dock.addEventListener('mouseout', function (e) {
+	items.forEach((item) => {
+		item.style.transform = scale(1);
+	});
 });
 ```
 

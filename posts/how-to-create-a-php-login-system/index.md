@@ -4,7 +4,9 @@ date: '2021-02-28'
 categories: ['php', 'web-dev']
 ---
 
-Today i will tell you how to create a login system with PHP.
+> Please note that this post is for educational purposes only. As it was created in 2021, the code may be outdated. Please use it as a reference and update it as needed.
+
+Today I will tell you how to create a login system with PHP.
 
 Okay let's get started.
 
@@ -12,17 +14,7 @@ Okay let's get started.
 
 First watch this video to get a idea.
 
-<figure>
-
 https://www.youtube.com/watch?v=76aHMLfEti0
-
-<figcaption>
-
-[Subscribe to trnoic247 YouTube Channel](https://www.youtube.com/tronic247?sub_confirmation=1)
-
-</figcaption>
-
-</figure>
 
 Okay now first create a database named "demo".
 

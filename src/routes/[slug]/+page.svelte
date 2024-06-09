@@ -1,17 +1,15 @@
 <script lang="ts">
 	import SocialMedia from '$lib/components/SocialMedia.svelte';
-	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 
 	export let data;
 
-	let slug = data.post.slug;
-	let tags = data.post.tags;
-	let categories = data.post.categories;
-	let date = data.post.date;
-	let title = data.post.title;
-	let img = data.post.img;
+	let tags = data.meta.tags;
+	let categories = data.meta.categories;
+	let date = data.meta.date;
+	let title = data.meta.title;
+	let img = data.meta.img;
 
 	let commentDiv: HTMLElement;
 
@@ -53,6 +51,10 @@
 	};
 
 	onMount(() => {
+		import('@justinribeiro/lite-youtube');
+
+		return;
+
 		const script = document.createElement('script');
 		script.src = 'https://utteranc.es/client.js';
 		script.async = true;
@@ -73,13 +75,11 @@
 </svelte:head>
 
 <div class="relative z-10 mt-1 text-center sm:mt-12">
-	<div class="container prose mx-auto">
-		<img
-			src="/test.png"
-			alt="Random"
-			class="w-full transform-gpu object-cover will-change-transform"
-		/>
-	</div>
+	{#if img}
+		<div class="container prose mx-auto">
+			<img src={img} alt="Random" class="w-full transform-gpu object-cover will-change-transform" />
+		</div>
+	{/if}
 
 	<div class="mb-4 mt-10 text-sm font-semibold uppercase text-black/60">
 		<p class="inline" aria-label="Published on">
@@ -90,38 +90,40 @@
 			})}
 		</p>
 
-		<span class="mx-1">•</span>
+		{#if categories}
+			<span class="mx-1">•</span>
 
-		<p class="mt-2 inline" aria-label="Categories">
-			{#each categories as category, i}
-				<a
-					class="hover:underline"
-					href="/category/{category.toLowerCase()}"
-					aria-label="{category} category">{category}</a
-				>{i < categories.length - 1 ? ', ' : ''}
-			{/each}
-		</p>
+			<p class="mt-2 inline" aria-label="Categories">
+				{#each categories as category, i}
+					<a
+						class="hover:underline"
+						href="/category/{category.toLowerCase()}"
+						aria-label="{category} category">{category}</a
+					>{i < categories.length - 1 ? ', ' : ''}
+				{/each}
+			</p>
+		{/if}
 	</div>
 
 	<h1 class="text-4xl font-bold">{title}</h1>
 </div>
 
 <main class="container prose prose-gray mx-auto mt-8">
-	<div class="mb-4 h-28 w-full bg-black/20"></div>
-
-	<svelte:component this={data.post.content} />
+	<svelte:component this={data.content} />
 
 	<div class="mb-4 h-28 w-full bg-black/20"></div>
 
 	<div class="mb-4 space-x-2">
-		{#each tags as tag}
-			<a
-				href="/tags/{tag.toLowerCase()}"
-				class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black"
-			>
-				#{tag}
-			</a>
-		{/each}
+		{#if tags}
+			{#each tags as tag}
+				<a
+					href="/tags/{tag.toLowerCase()}"
+					class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black"
+				>
+					#{tag}
+				</a>
+			{/each}
+		{/if}
 	</div>
 
 	<SocialMedia />
@@ -142,7 +144,7 @@
 		(scrolledPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight))}
 />
 
-<div class="fixed bottom-10 left-10">
+<div class="fixed bottom-1 left-1 lg:bottom-10 lg:left-10">
 	{#if scrolledPercentage < 0.9}
 		<svg
 			width="63"

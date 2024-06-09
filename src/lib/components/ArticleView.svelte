@@ -1,10 +1,10 @@
 <script lang="ts">
 	export let slug: string;
 	export let title: string;
-	export let categories: string[];
+	export let categories: string[] = [];
 	export let excerpt: string;
 	export let date: Date;
-	export let img: string;
+	export let img: string | undefined = undefined;
 
 	let classes = '';
 
@@ -16,16 +16,19 @@
 	aria-labelledby="article-{slug}-title"
 	aria-describedby="article-{slug}-desc"
 >
-	<a href="/{slug}" aria-label="Read more about {title}">
-		<img
-			src={img}
-			class="w-full rounded-xl object-cover transition-all"
-			alt="{title} image"
-			loading="lazy"
-		/>
-	</a>
+	{#if img}
+		<a href="/{slug}" aria-label="Read more about {title}">
+			<img
+				src={img}
+				class="w-full rounded-xl object-cover transition-all"
+				alt="{title} image"
+				loading="lazy"
+			/>
+		</a>
+	{/if}
 
-	<div class="mt-6 text-xs font-semibold uppercase text-black/60">
+	<div class="mt-6 text-xs font-semibold uppercase text-black/60 flex flex-wrap" style="  flex: 1 0 auto; 
+">
 		<p class="inline" aria-label="Published on">
 			{new Date(date).toLocaleDateString('en-US', {
 				year: 'numeric',
@@ -36,7 +39,7 @@
 
 		<span class="mx-1">•</span>
 
-		<p class="mt-2 inline" aria-label="Categories">
+		<p class="inline" aria-label="Categories">
 			{#each categories as category, i}
 				<a
 					class="hover:underline"

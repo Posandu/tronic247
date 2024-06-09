@@ -1,16 +1,14 @@
-import { formatPosts, getImportedPosts } from '$lib/posts';
+import { formaRawPostModule, getImportedPosts } from '$lib/posts';
 import { queryManager, type Post } from '$lib/query';
 import { error, redirect } from '@sveltejs/kit';
-import type { EntryGenerator } from './$types';
-
-export const prerender = true;
 
 export async function load(req) {
-	await getImportedPosts();
+	const allPosts = await getImportedPosts();
+	const allPostsFormatted = Object.entries(allPosts).map(([path, post]) =>
+		formaRawPostModule(post, path)
+	);
 
-	let posts = formatPosts();
-
-	const frontPage = new queryManager(posts, () => true);
+	const frontPage = new queryManager(allPostsFormatted, () => true);
 
 	const url = req.url.pathname;
 	/**
@@ -56,17 +54,3 @@ export async function load(req) {
 		page
 	};
 }
-
-export const entries: EntryGenerator = async () => {
-	await getImportedPosts();
-
-	let posts = formatPosts();
-
-	const frontPage = new queryManager(posts, () => true);
-
-	const entries: { page: string }[] = Array(frontPage.getPages() - 1).map((_, i) => ({
-		page: 'page/' + i + 1
-	}));
-
-	return entries;
-};

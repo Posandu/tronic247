@@ -1,7 +1,7 @@
 export const load = async ({ params }) => {
-	const content = await import('../../../src/routes/[slug]/snip.md');
+	const content = await import('../../../posts/3-javascriptvoid-alternatives/index.md');
 
 	return {
-		content: content.default,
+		content: content.default
 	};
 };

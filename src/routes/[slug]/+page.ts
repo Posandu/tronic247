@@ -1,16 +1,19 @@
-import { getImportedPosts, getPostFromSlug } from '$lib/posts';
+import { formaRawPostModule } from '$lib/posts';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }) => {
-	await getImportedPosts();
-
-	const post = getPostFromSlug(params.slug);
+	const slug = params.slug;
+	const post = await import(`../../../posts/${slug}/index.md`);
+	const path = `../../../posts/${slug}/index.md`;
 
 	if (!post) {
 		return error(404, 'Post not found');
 	}
 
+	const meta = formaRawPostModule(post, path);
+
 	return {
-		post
+		content: post.default,
+		meta
 	};
 };

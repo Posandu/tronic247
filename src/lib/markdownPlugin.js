@@ -12,6 +12,8 @@ import rehypeShiki from '@shikijs/rehype';
 import remarkShikiTwoslash from 'remark-shiki-twoslash';
 import theme from './theme.js';
 import * as cheerio from 'cheerio';
+import chalk from 'chalk';
+import fs from 'fs';
 
 /**
  * @param {string} content
@@ -19,71 +21,7 @@ import * as cheerio from 'cheerio';
 function escapeHtml(content) {
 	content = content.replace(/{/g, '&#123;').replace(/}/g, '&#125;');
 
-	const componentRegex = /<[A-Z].*/g;
-	const components = content.match(componentRegex);
-	components?.forEach((component) => {
-		const replaced = component.replace('&#123;', '{').replace('&#125;', '}');
-		content = content.replace(component, replaced);
-	});
-
 	return content;
-}
-
-/**
- * @param {string} content
- */
-async function toHTML(content) {
-	const processor = await unified()
-		.use(toMarkdownAST)
-		.use([
-			remarkGfm,
-			remarkSmartypants,
-			[remarkToc, +{ ordered: true, tight: false }],
-			[
-				// @ts-expect-error weird module
-				remarkShikiTwoslash.default,
-				{
-					theme
-				}
-			]
-		])
-		.use(toHtmlAST, { allowDangerousHtml: true })
-		.use([rehypeSlug, rehypeAutolinkHeadings])
-		// @ts-expect-error idk
-		.use(rehypeShiki, {
-			theme
-		})
-		.use(toHtmlString, { allowDangerousHtml: true })
-		.process(content);
-
-	const html = processor.toString();
-
-	return html;
-}
-
-/**
- * @param {string} content
- * @returns
- */
-function frontmatter(content) {
-	const { content: markdown, data } = matter(content);
-	const meta = `
-			export const metadata = ${JSON.stringify(data)}
-	`;
-	return { markdown, meta };
-}
-
-/**
- * @param {string} html
- * @param {number} pruneLength
- */
-function genExcerpt(html, pruneLength) {
-	const $ = cheerio.load(html);
-	const text = $('html').text();
-
-	const excerpt = text.slice(0, pruneLength).trim();
-
-	return excerpt;
 }
 
 function markdown() {
@@ -94,24 +32,97 @@ function markdown() {
 		 * @param {string} params.content
 		 * @param {string} params.filename
 		 */
-		async markup({ content, filename }) {
-			if (filename.endsWith('.md')) {
-				const { markdown, meta } = frontmatter(content);
-				const html = await toHTML(markdown);
+		async markup({ content: fileContent, filename: pathname }) {
+			if (pathname.endsWith('.md')) {
+				console.log(chalk.gray(`Parsing ${pathname}`));
 
-				return {
-					code: `
-							<script context="module">
-								${meta} 
-					
-								export const excerpt = ${JSON.stringify(genExcerpt(html, 150))}
+				if (fs.existsSync(`./.postscache/_${pathname.split('/')[4]}.svelte`)) {
+					const code = fs.readFileSync(`./.postscache/_${pathname.split('/')[4]}.svelte`, 'utf-8');
+
+					console.log(chalk.green(`Successfully parsed ${pathname} (from cache)`));
+
+					return {
+						code
+					};
+				}
+
+				let { content: markdownParsed, data: meta } = matter(fileContent);
+
+				const embed = /{% embed src=(.*?) title="(.*?)" %}/g;
+				const youtube = /{% youtube id="(.*?)" title="(.*?)" %}/g;
+
+				/**
+				 * Replace regexes
+				 */
+				markdownParsed = markdownParsed
+					.replace(embed, (_, src, title) => {
+						return `
+        					<iframe
+        					  title="${title}"
+        					  src="${src}"
+        					  loading="lazy"
+        					></iframe>
+      					`.trim();
+					})
+					.replace(youtube, (_, id, title) => {
+						return `
+							<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube>
+						`.trim();
+					});
+
+				const processor = await unified()
+					.use(toMarkdownAST)
+					.use([
+						remarkGfm,
+						remarkSmartypants,
+						[remarkToc, { tight: true }],
+						[
+							// @ts-expect-error weird module
+							remarkShikiTwoslash.default,
+							{
+								theme
+							}
+						]
+					])
+					.use(toHtmlAST, { allowDangerousHtml: true })
+					.use([rehypeSlug, rehypeAutolinkHeadings])
+					// @ts-expect-error idk
+					.use(rehypeShiki, {
+						theme
+					})
+					.use(toHtmlString, { allowDangerousHtml: true })
+					.process(markdownParsed);
+
+				const html = processor.toString();
+
+				const IS_DEV = true;
+
+				let excerpt = '';
+
+				if (IS_DEV) {
+					excerpt =
+						'lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
+				} else {
+					const $ = cheerio.load(html);
+					const text = $('html').text();
+
+					excerpt = text.slice(0, 1000).trim();
+				}
+
+				console.log(chalk.green(`Successfully parsed ${pathname}`));
+
+				const code = `<script context="module">
+								export const meta = ${JSON.stringify(meta)};
+								export const excerpt = ${JSON.stringify(excerpt)};
 							</script>
 
-					${escapeHtml(html)}
+							${escapeHtml(html)}
+					`;
 
-					{@html "<!-- ${new Date().toISOString()} -->"}
+				fs.writeFileSync(`./.postscache/_${pathname.split('/')[4]}.svelte`, code);
 
-					`
+				return {
+					code
 				};
 			}
 		}

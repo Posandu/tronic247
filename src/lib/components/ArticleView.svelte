@@ -4,6 +4,7 @@
 	export let categories: string[];
 	export let excerpt: string;
 	export let date: Date;
+	export let img: string;
 
 	let classes = '';
 
@@ -17,9 +18,10 @@
 >
 	<a href="/{slug}" aria-label="Read more about {title}">
 		<img
-			src="/test.png"
+			src={img}
 			class="w-full rounded-xl object-cover transition-all"
 			alt="{title} image"
+			loading="lazy"
 		/>
 	</a>
 

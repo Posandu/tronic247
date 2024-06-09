@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import Particles, { particlesInit } from '@tsparticles/svelte';
 	import { loadSlim } from '@tsparticles/slim'; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 	import Icon from '@iconify/svelte';
@@ -557,4 +557,4 @@
 		margin: 0;
 		z-index: 0; /* if you use -1 you have to set to `"window"` the interactivity.detectsOn property */
 	}
-</style>
+</style> -->

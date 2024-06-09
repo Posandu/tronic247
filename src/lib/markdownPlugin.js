@@ -4,14 +4,13 @@ import toMarkdownAST from 'remark-parse';
 import toHtmlAST from 'remark-rehype';
 import toHtmlString from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
-// @ts-expect-error retarded module
 import remarkSmartypants from 'remark-smartypants';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeShiki from '@shikijs/rehype';
 import remarkShikiTwoslash from 'remark-shiki-twoslash';
-import theme from '../../tokyo-night.json' with { type: 'json' };
+import theme from './theme.js';
 import * as cheerio from 'cheerio';
 
 /**
@@ -80,13 +79,11 @@ function frontmatter(content) {
  */
 function genExcerpt(html, pruneLength) {
 	const $ = cheerio.load(html);
-	const text = $('body').text();
+	const text = $('html').text();
 
-	if (text.length > pruneLength) {
-		return text.slice(0, pruneLength) + '...';
-	}
+	const excerpt = text.slice(0, pruneLength).trim();
 
-	return text;
+	return excerpt;
 }
 
 function markdown() {
@@ -107,7 +104,7 @@ function markdown() {
 							<script context="module">
 								${meta} 
 					
-								export const excerpt = ${JSON.stringify(genExcerpt(html, 200))}
+								export const excerpt = ${JSON.stringify(genExcerpt(html, 150))}
 							</script>
 
 					${escapeHtml(html)}

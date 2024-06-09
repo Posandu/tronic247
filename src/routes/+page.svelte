@@ -3,11 +3,11 @@
 
 	export let data;
 
-	const testData = data.posts;
+	const { posts } = data;
 </script>
 
 <div class="grid grid-cols-3 gap-8">
-	{#each testData as a}
-		<ArticleView {...a} class="col-span-1" />
+	{#each posts as { categories, date, title, excerpt, slug, img }}
+		<ArticleView {categories} {date} {title} {excerpt} {slug} {img} class="col-span-1" />
 	{/each}
 </div>

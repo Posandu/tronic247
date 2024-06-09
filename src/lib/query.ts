@@ -4,9 +4,9 @@ export type Post = {
 	slug: string;
 	date: Date;
 	tags: string[];
-    img: string;
+	img: string;
 	categories: string[];
-    excerpt: string;
+	excerpt: string;
 };
 
 type QueryFn = (post: Post) => boolean;
@@ -19,11 +19,7 @@ class queryManager {
 
 	constructor(posts: Post[], query: QueryFn) {
 		this.query = query;
-		this.posts = posts;
-	}
-
-	static create(posts: Post[], query: QueryFn) {
-		return new queryManager(posts, query);
+		this.posts = posts.sort((a, b) => b.date.getTime() - a.date.getTime());
 	}
 
 	exec() {
@@ -35,7 +31,9 @@ class queryManager {
 	}
 
 	getPostsPerPage(page: number) {
-		return this.exec().slice((page - 1) * PER_PAGE, page * PER_PAGE);
+		const posts = this.exec().slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
+		return posts;
 	}
 
 	getPages() {

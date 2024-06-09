@@ -3,6 +3,8 @@ import { queryManager, type Post } from '$lib/query';
 import { error, redirect } from '@sveltejs/kit';
 import type { EntryGenerator } from './$types';
 
+export const prerender = true;
+
 export async function load(req) {
 	await getImportedPosts();
 

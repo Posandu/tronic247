@@ -6,3 +6,5 @@ export const load = async () => {
 		categories: getCategories()
 	};
 };
+
+export const prerender = true;

@@ -13,3 +13,5 @@ export async function load() {
 		posts: frontPage.getPostsPerPage(1)
 	};
 }
+
+export const prerender = true;

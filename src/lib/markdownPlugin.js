@@ -37,13 +37,21 @@ function markdown() {
 				console.log(chalk.gray(`Parsing ${pathname}`));
 
 				if (fs.existsSync(`./.postscache/_${pathname.split('/')[4]}.svelte`)) {
-					const code = fs.readFileSync(`./.postscache/_${pathname.split('/')[4]}.svelte`, 'utf-8');
+					try {
+						const code = fs.readFileSync(
+							`./.postscache/_${pathname.split('/')[4]}.svelte`,
+							'utf-8'
+						);
 
-					console.log(chalk.green(`Successfully parsed ${pathname} (from cache)`));
+						console.log(chalk.green(`Successfully parsed ${pathname} (from cache)`));
 
-					return {
-						code
-					};
+						return {
+							code
+						};
+						// eslint-disable-next-line @typescript-eslint/no-unused-vars
+					} catch (_) {
+						/* empty */
+					}
 				}
 
 				let { content: markdownParsed, data: meta } = matter(fileContent);

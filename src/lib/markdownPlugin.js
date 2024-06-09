@@ -6,7 +6,7 @@ import toHtmlString from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 // @ts-expect-error retarded module
 import remarkSmartypants from 'remark-smartypants';
-import remarkTableofContents from 'remark-toc';
+import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeShiki from '@shikijs/rehype';
@@ -39,14 +39,14 @@ async function toHTML(content) {
 		.use([
 			remarkGfm,
 			remarkSmartypants,
+			[remarkToc, +{ ordered: true, tight: false }],
 			[
 				// @ts-expect-error weird module
 				remarkShikiTwoslash.default,
 				{
 					theme
 				}
-			],
-			[remarkTableofContents, { tight: true }]
+			]
 		])
 		.use(toHtmlAST, { allowDangerousHtml: true })
 		.use([rehypeSlug, rehypeAutolinkHeadings])

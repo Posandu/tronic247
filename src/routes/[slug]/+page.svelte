@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SocialMedia from '$lib/components/SocialMedia.svelte';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
@@ -116,12 +117,14 @@
 		{#each tags as tag}
 			<a
 				href="/tags/{tag.toLowerCase()}"
-				class="inline-block rounded-full bg-gray-100 px-4 py-1 uppercase text-gray-900 no-underline transition-all hover:bg-gray-200"
+				class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black"
 			>
 				#{tag}
 			</a>
 		{/each}
 	</div>
+
+	<SocialMedia />
 
 	<h3 class="text-2xl font-semibold">Comments</h3>
 

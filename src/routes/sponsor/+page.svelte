@@ -31,15 +31,6 @@
 					mode: [],
 					type: 'circle'
 				},
-				onHover: {
-					enable: true,
-					mode: 'grab',
-					parallax: {
-						enable: true,
-						force: 600,
-						smooth: 100
-					}
-				},
 				resize: {
 					delay: 0.5,
 					enable: true
@@ -498,15 +489,15 @@
 	} as any;
 </script>
 
-<div class="relative w-full overflow-hidden bg-pink-600 py-20">
+<div class="relative -mt-4 w-full overflow-hidden bg-pink-600 py-20">
 	<Particles
 		id="tsparticles"
 		class="pointer-events-none absolute h-full w-full overflow-hidden"
 		options={particlesConfig}
 	/>
 
-	<h1 class="text-center text-8xl text-white">Sponsor</h1>
-	<p class="mt-16 text-center text-2xl text-white">Help the development of Tronic247 :)</p>
+	<h1 class="text-center text-4xl font-black text-white">Sponsor</h1>
+	<p class="mt-4 text-center text-2xl text-white">Support the development of Tronic247</p>
 </div>
 
 <div class="container mx-auto my-8 grid gap-8 lg:grid-cols-2">
@@ -517,63 +508,45 @@
 			Sponsorship is a way to support the development of Tronic247. As it run by a student, it is
 			hard to maintain the server and domain costs.
 		</p>
-	</div>
 
-	<div class="col-span-1">
-		<h1 class="mb-4 text-lg font-semibold">What to expect?</h1>
+		<h1 class="mb-4 mt-8 text-lg font-semibold">What to expect?</h1>
 
 		<p class="text-lg">
 			By sponsoring, you will get a chance to advertise your product or service on Tronic247 and its
 			other products, have a special article about your product or service, and more benefits.
 		</p>
 	</div>
-</div>
 
-<div class="container mx-auto my-8 bg-pink-600 py-4">
-	<h1 class="text-center text-2xl font-semibold text-white">How to Sponsor?</h1>
-</div>
+	<div class="col-span-1 flex flex-col gap-10 rounded-lg bg-pink-100 p-8">
+		<div>
+			<h1 class="mb-4 text-lg font-semibold text-pink-600">Via Crypto</h1>
 
-<div class="container mx-auto my-8 grid gap-8 lg:grid-cols-3">
-	<div class="col-span-1 py-6 bg-pink-600/10 text-center transition-all p-4 rounded-xl">
-		<h1 class="mb-4 text-lg font-semibold text-pink-600">Via Crypto</h1>
+			<p class="text-lg">The easiest way to sponsor is via crypto. You can sponsor via:</p>
 
-		<p class="text-lg">The easiest way to sponsor is via crypto. You can sponsor via:</p>
+			<ul class="mt-4 w-max space-y-4">
+				<li class="flex items-center justify-start text-lg">
+					<Icon icon="ri:eth-fill" class="mr-2 size-6" /> ETH
+					<ClickToCopy val="0x9486DD60CE06C694aeb36208FD8b8a33225614Af" class="ml-4" />
+				</li>
 
-		<ul class="mt-4 space-y-4 mx-auto w-max">
-			<li class="flex items-center justify-start text-lg">
-				<Icon icon="ri:eth-fill" class="mr-2 size-6" /> ETH
-				<ClickToCopy val="0x9486DD60CE06C694aeb36208FD8b8a33225614Af" class="ml-4" />
-			</li>
+				<li class="flex items-center justify-start text-lg">
+					<Icon icon="formkit:solana" class="mr-2 size-6" /> SOL
+					<ClickToCopy val="HWFvo1CCgeVwae3E7NvWfpH89mmzReRboKMfqzBWawpa" class="ml-4" />
+				</li>
+			</ul>
+		</div>
 
-			<li class="flex items-center justify-start text-lg">
-				<Icon icon="formkit:solana" class="mr-2 size-6" /> SOL
-				<ClickToCopy val="HWFvo1CCgeVwae3E7NvWfpH89mmzReRboKMfqzBWawpa" class="ml-4" />
-			</li>
-		</ul>
-	</div>
+		<div>
+			<h1 class="mb-4 text-lg font-semibold text-pink-600">Via GitHub Sponsors</h1>
 
-	<div class="col-span-1 py-6 bg-pink-600/10 text-center transition-all p-4 rounded-xl">
-		<h1 class="mb-4 text-lg font-semibold text-pink-600">Via GitHub Sponsors</h1>
+			<p class="text-lg">Sponsor via GitHub Sponsors by clicking the button below:</p>
 
-		<p class="text-lg">Sponsor via GitHub Sponsors by clicking the button below:</p>
-
-		<a href="https://github.com/sponsors/Posandu/" target="_blank" class="btn mt-4 inline-block"
-			>Sponsor on GitHub</a
-		>
-	</div>
-
-	<div class="col-span-1 py-6 bg-pink-600/10 text-center transition-all p-4 rounded-xl">
-		<h1 class="mb-4 text-lg font-semibold text-pink-600">Other methods</h1>
-
-		<p class="text-lg">
-			You can sponsor via other methods by <a href="/contact" class="text-primary hover:bg-primary hover:text-white">contacting us</a>.
-		</p>
+			<a href="https://github.com/sponsors/Posandu/" target="_blank" class="btn mt-4 inline-block">
+				Sponsor on GitHub
+			</a>
+		</div>
 	</div>
 </div>
-
-<p class="container mx-auto my-8 text-center text-lg">
-    Thank you for your support! 🎉
-</p>
 
 <style>
 	:global(#tsparticles) {

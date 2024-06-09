@@ -24,6 +24,19 @@ function escapeHtml(content) {
 	return content;
 }
 
+let folderExists = false;
+const pathForCache = process.cwd() + '/.postscache/';
+
+const checkFolder = () => {
+	if (!folderExists) {
+		if (!fs.existsSync(pathForCache)) {
+			fs.mkdirSync(pathForCache);
+		}
+
+		folderExists = true;
+	}
+};
+
 function markdown() {
 	return {
 		name: 'markdown',
@@ -34,24 +47,20 @@ function markdown() {
 		 */
 		async markup({ content: fileContent, filename: pathname }) {
 			if (pathname.endsWith('.md')) {
+				checkFolder();
+
 				console.log(chalk.gray(`Parsing ${pathname}`));
 
-				if (fs.existsSync(`./.postscache/_${pathname.split('/')[4]}.svelte`)) {
-					try {
-						const code = fs.readFileSync(
-							`./.postscache/_${pathname.split('/')[4]}.svelte`,
-							'utf-8'
-						);
+				const fileLoc = pathForCache + pathname.split('/')[4] + '.cache';
 
-						console.log(chalk.green(`Successfully parsed ${pathname} (from cache)`));
+				if (fs.existsSync(fileLoc)) {
+					const code = fs.readFileSync(fileLoc, 'utf-8');
 
-						return {
-							code
-						};
-						// eslint-disable-next-line @typescript-eslint/no-unused-vars
-					} catch (_) {
-						/* empty */
-					}
+					console.log(chalk.green(`Successfully parsed ${pathname} (from cache)`));
+
+					return {
+						code
+					};
 				}
 
 				let { content: markdownParsed, data: meta } = matter(fileContent);
@@ -127,7 +136,7 @@ function markdown() {
 							${escapeHtml(html)}
 					`;
 
-				fs.writeFileSync(`./.postscache/_${pathname.split('/')[4]}.svelte`, code);
+				fs.writeFileSync(fileLoc, code);
 
 				return {
 					code

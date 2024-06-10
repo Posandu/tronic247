@@ -98,6 +98,9 @@ dependencies:
   svelte-headlessui:
     specifier: ^0.0.35
     version: 0.0.35(svelte@4.2.17)
+  svelte-seo:
+    specifier: ^1.6.1
+    version: 1.6.1(typescript@5.4.5)
   svelte-transition:
     specifier: ^0.0.16
     version: 0.0.16(svelte@4.2.17)
@@ -4299,6 +4302,14 @@ packages:
       rimraf: 2.7.1
     dev: true
 
+  /schema-dts@1.1.2(typescript@5.4.5):
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 5.4.5
+    dev: false
+
   /section-matter@1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
     engines: {node: '>=4'}
@@ -4680,6 +4691,14 @@ packages:
       svelte: 4.2.17
       typescript: 5.4.5
     dev: true
+
+  /svelte-seo@1.6.1(typescript@5.4.5):
+    resolution: {integrity: sha512-vTKvOA0rl3HVhgbyoMhwz0P1s+18ldOT+lHlTlrQn7Mn0SBx7Ia7MB+llF4O/mYoiV5idmNu8i3xWsam8COsbw==}
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.4.5)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
 
   /svelte-transition@0.0.16(svelte@4.2.17):
     resolution: {integrity: sha512-rhzWvA9KNTiKd3pW7Z4jvX9vjtRtmgyG5KhPKqDUkvNQ4bfK0RFToKYIlOiHCu+fDmXbiGetlKc4qd+f9WGD7w==}

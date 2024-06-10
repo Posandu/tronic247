@@ -12,7 +12,7 @@
 </script>
 
 <article
-	class="{classes} article-box -m-4 rounded-lg p-4 transition-all hover:bg-black/20"
+	class="{classes} article-box rounded-lg py-4 px-5 transition-all hover:bg-black/20 dark:bg-black/30 bg-black/5"
 	aria-labelledby="article-{slug}-title"
 	aria-describedby="article-{slug}-desc"
 >
@@ -20,7 +20,7 @@
 		<a href="/{slug}" aria-label="Read more about {title}">
 			<img
 				src={img}
-				class="w-full rounded-xl object-cover transition-all"
+				class="w-full rounded-xl mb-6 object-cover transition-all"
 				alt="{title} image"
 				loading="lazy"
 			/>
@@ -28,7 +28,7 @@
 	{/if}
 
 	<div
-		class="mt-6 flex flex-wrap gap-2 text-xs font-semibold uppercase text-black/60 dark:text-muted-dark"
+		class="flex flex-wrap gap-2 text-xs font-semibold uppercase text-black/60 dark:text-muted-dark"
 		style="flex: 1 0 auto; 
 "
 	>

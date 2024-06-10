@@ -1,7 +1,6 @@
 <script lang="ts">
 	import SocialMedia from '$lib/components/SocialMedia.svelte';
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
 
 	export let data;
 

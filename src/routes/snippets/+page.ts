@@ -1,5 +1,5 @@
 export const load = async ({ params }) => {
-	const content = await import('../../../posts/3-javascriptvoid-alternatives/index.md');
+	const content = await import('../../../snippets/test.md');
 
 	return {
 		content: content.default

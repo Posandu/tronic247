@@ -6,6 +6,9 @@
 	import NProgress from 'nprogress';
 	import { navigating, page } from '$app/stores';
 	import { ModeWatcher } from 'mode-watcher';
+	import { onNavigate } from '$app/navigation';
+	import { fly, scale } from 'svelte/transition';
+	import { quadInOut } from 'svelte/easing';
 
 	NProgress.configure({
 		// Full list:
@@ -30,9 +33,18 @@
 <Header />
 
 <div class="blob hidden dark:block"></div>
-<div class="mx-auto grow {isInside($page.route?.id?.toString() || '') ? '' : 'container'} w-full">
-	<slot></slot>
-</div>
+
+{#key data.url}
+	<div
+		in:scale={{ start: 1, opacity: 0.2, duration: 150, delay: 150, easing: quadInOut }}
+		out:scale={{ start: 1, opacity: 0.2, duration: 150, easing: quadInOut }}
+		class="mx-auto grow transform-gpu {isInside($page.route?.id?.toString() || '')
+			? ''
+			: 'container'} w-full"
+	>
+		<slot></slot>
+	</div>
+{/key}
 
 <Footer categories={data.stats.categories} tags={data.stats.tags} />
 

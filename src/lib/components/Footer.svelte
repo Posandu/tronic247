@@ -24,7 +24,7 @@
 				<ul class="space-y-2">
 					{#each Array.from(tags) as tag}
 						<li class="inline-block">
-							<a href={`/tag/${tag}`} class="mr-2 inline text-sm underline">{tag}</a>
+							<a href={`/tag/${tag}`} class="mr-2 inline text-sm underline">#{tag}</a>
 						</li>
 					{/each}
 				</ul>

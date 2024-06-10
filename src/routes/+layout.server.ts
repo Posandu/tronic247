@@ -1,6 +1,6 @@
 import { formaRawPostModule, getImportedPosts, getStats } from '$lib/posts';
 
-export const load = async () => {
+export const load = async ({ url }) => {
 	const allPosts = await getImportedPosts();
 	const allPostsFormatted = Object.entries(allPosts).map(([path, post]) =>
 		formaRawPostModule(post, path)
@@ -13,6 +13,7 @@ export const load = async () => {
 			...post,
 			content: undefined
 		})),
-		stats
+		stats,
+		url: url.pathname
 	};
 };

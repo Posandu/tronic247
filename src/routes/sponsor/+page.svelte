@@ -25,7 +25,7 @@
 		</p>
 	</div>
 
-	<div class="col-span-1 flex flex-col gap-10 rounded-lg bg-pink-100 p-8">
+	<div class="col-span-1 flex flex-col gap-10 rounded-lg bg-pink-100 dark:bg-pink-600/10 p-8">
 		<div>
 			<h1 class="mb-4 text-lg font-semibold text-pink-600">Via Crypto</h1>
 

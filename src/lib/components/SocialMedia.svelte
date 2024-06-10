@@ -34,7 +34,7 @@
 		@apply inline-flex size-10 items-center justify-center rounded-full text-lg transition-all;
 	}
 	.social-media-btn:hover {
-		@apply bg-gray-100;
+		@apply bg-gray-100 dark:bg-muted-dark/10;
 	}
 
 	.social-media-btn:active {

@@ -12,7 +12,7 @@
 </script>
 
 <article
-	class="{classes} article-box"
+	class="{classes} article-box -m-4 rounded-lg p-4 transition-all hover:bg-black/20"
 	aria-labelledby="article-{slug}-title"
 	aria-describedby="article-{slug}-desc"
 >
@@ -28,7 +28,7 @@
 	{/if}
 
 	<div
-		class="mt-6 flex gap-2 flex-wrap text-xs font-semibold uppercase text-black/60 dark:text-white/60"
+		class="mt-6 flex flex-wrap gap-2 text-xs font-semibold uppercase text-black/60 dark:text-muted-dark"
 		style="flex: 1 0 auto; 
 "
 	>
@@ -58,13 +58,10 @@
 	</div>
 
 	<a href="/{slug}" aria-labelledby="article-{slug}-title article-{slug}-desc">
-		<h2
-			id="article-{slug}-title"
-			class="mt-4 text-2xl font-semibold transition-all hover:opacity-60"
-		>
+		<h2 id="article-{slug}-title" class="mt-4 text-2xl font-semibold dark:opacity-90">
 			{title}
 		</h2>
 
-		<p id="article-{slug}-desc" class="mt-4 text-black/60 dark:text-white/60">{excerpt}</p>
+		<p id="article-{slug}-desc" class="mt-4 text-black/60 dark:text-muted-dark">{excerpt}</p>
 	</a>
 </article>

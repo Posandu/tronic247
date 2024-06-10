@@ -77,7 +77,7 @@
 		/>
 	{/if}
 
-	<div class="mb-4 text-sm font-semibold uppercase text-black/60">
+	<div class="mb-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark">
 		<p class="inline" aria-label="Published on">
 			{new Date(date).toLocaleDateString('en-US', {
 				year: 'numeric',

@@ -5,11 +5,9 @@ const MAIN_FONT =
 const MONO_FONT = 'monospace';
 
 export default {
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-	],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 
-	darkMode: "class",
+	darkMode: 'class',
 
 	theme: {
 		extend: {
@@ -19,7 +17,8 @@ export default {
 			},
 			colors: {
 				primary: '#e51b23',
-				'primary-dark': '#b4000d'
+				'primary-dark': '#b4000d',
+				'muted-dark': '#9b9bb1'
 			},
 			typography: {
 				DEFAULT: {

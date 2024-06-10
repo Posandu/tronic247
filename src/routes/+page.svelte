@@ -13,7 +13,7 @@
 		}).format(num);
 </script>
 
-<div class="-mt-4 bg-black pb-20 pt-20 text-center text-white">
+<div class="-mt-4 bg-black dark:bg-black/20 pb-20 pt-20 text-center text-white">
 	<div class="container mx-auto">
 		<h1 class="mb-6 text-3xl font-semibold">Blog about Software dev</h1>
 

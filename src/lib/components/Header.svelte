@@ -21,7 +21,7 @@
 </script>
 
 <header
-	class="container z-50 mx-auto mb-4 flex select-none justify-between rounded-b-none bg-black py-3 text-white transition-all sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none"
+	class="container dark:bg-black/20 z-50 mx-auto mb-4 flex select-none justify-between rounded-b-none bg-black py-3 text-white transition-all sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none"
 >
 	<div class="flex min-h-16 flex-1 items-center justify-start">
 		<a href="/">

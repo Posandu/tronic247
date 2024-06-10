@@ -20,6 +20,8 @@
 	const BLEED = ['/', '/sponsor', '/about'];
 
 	const isInside = (path: string) => BLEED.some((bleed) => path === bleed);
+
+	export let data;
 </script>
 
 <Header />
@@ -28,4 +30,4 @@
 	<slot></slot>
 </div>
 
-<Footer />
+<Footer categories={data.stats.categories} tags={data.stats.tags} />

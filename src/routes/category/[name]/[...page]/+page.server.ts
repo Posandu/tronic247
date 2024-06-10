@@ -3,13 +3,8 @@ import { queryManager, type Post } from '$lib/query';
 import { error, redirect } from '@sveltejs/kit';
 
 export async function load(req) {
-	const allPosts = await getImportedPosts();
-	const allPostsFormatted = Object.entries(allPosts).map(([path, post]) =>
-		formaRawPostModule(post, path)
-	);
-
 	const frontPage = new queryManager(
-		allPostsFormatted,
+		(await req.parent()).allPostsFormatted,
 		(post) => post.categories?.includes(req.params.name) || false
 	);
 

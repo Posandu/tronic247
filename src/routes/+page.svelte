@@ -15,15 +15,14 @@
 
 <div class="-mt-4 bg-black pb-20 pt-20 text-center text-white">
 	<div class="container mx-auto">
-		<h1 class="mb-6 text-3xl font-semibold">Blog about Software Development</h1>
+		<h1 class="mb-6 text-3xl font-semibold">Blog about Software dev</h1>
 
 		<p class="mx-auto max-w-2xl">
-			Tronic247 is a place where you can find articles for making stuff with code. It may contain
-			stuff which I find interesting and worth sharing, or just random thoughts about software
-			development.
+			Tronic247 is where I write about software development, programming, and related topics. You
+			can find interesting articles, tutorials, and guides here.
 		</p>
 
-		<p class="mt-10">
+		<p class="mt-10 text-white/60">
 			The blog contains {numToWord(stats.charCount)} characters written in {stats.postCount} posts.
 		</p>
 	</div>

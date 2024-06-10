@@ -30,9 +30,9 @@
 				
 				py-2 text-sm font-semibold
 
-				text-gray-800
+				text-gray-800 hover:bg-gray-100	
 
-				{currentPage === page ? 'bg-primary text-white' : ''}
+				{currentPage === page ? 'bg-primary hover:bg-primary-dark text-white' : ''}
 					
 					"
 			on:click|preventDefault={async () => {
@@ -49,5 +49,3 @@
 		<ArticleView {categories} {date} {title} {excerpt} {slug} {img} class="col-span-1" />
 	{/each}
 </div>
-
-{currentPage}

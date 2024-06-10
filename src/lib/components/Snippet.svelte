@@ -25,7 +25,7 @@
 
 <svelte:window on:hashchange={handleHashChange} on:load={handleHashChange} />
 
-<div class="pop col-span-1 rounded-lg border px-4 py-3 transition-all">
+<div class="pop col-span-1 rounded-lg border px-4 py-3 transition-all" {id}>
 	<a href="#{id}">
 		<h1 class="items-cente mb-4 flex gap-2 text-xl font-semibold">{title}</h1>
 	</a>

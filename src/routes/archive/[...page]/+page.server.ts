@@ -54,3 +54,5 @@ export async function load(req) {
 		page
 	};
 }
+
+export const prerender = true;

@@ -31,11 +31,11 @@ After selecting the location, press the "Download" button and wait until it fini
 
 ## Making a bootable USB
 
-After the download is complete, open Rufus (You installed it right ? [NO](#downloadrufusa)).
+After the download is complete, open Rufus.
 
 The UI should be like this.
 
-![](https://user-images.githubusercontent.com/76736580/133393277-50998de9-f3e4-498f-b057-bb0a95a29540.png)
+![The UI](https://user-images.githubusercontent.com/76736580/133393277-50998de9-f3e4-498f-b057-bb0a95a29540.png)
 
 Now plug in a USB and click the "select" button and choose the downloaded iso file. Now from the Device dropdown menu, select the USB that you want to boot.
 

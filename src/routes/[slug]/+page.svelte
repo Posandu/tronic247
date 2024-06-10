@@ -53,8 +53,6 @@
 	onMount(() => {
 		import('@justinribeiro/lite-youtube');
 
-		return;
-
 		const script = document.createElement('script');
 		script.src = 'https://utteranc.es/client.js';
 		script.async = true;
@@ -71,7 +69,6 @@
 </script>
 
 <svelte:head>
-	<title>Adding your discord status to a website | Tronic247</title>
 </svelte:head>
 
 <div class="relative z-10 mt-1 text-center sm:mt-12">
@@ -139,13 +136,13 @@
 
 <svelte:window
 	on:scroll={() =>
-		(scrolledPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight))}
+		(scrolledPercentage = window.scrollY / ((document.body.scrollHeight - window.innerHeight) - 100))}
 	on:load={() =>
-		(scrolledPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight))}
+		(scrolledPercentage = window.scrollY / ((document.body.scrollHeight - window.innerHeight) - 100))}
 />
 
 <div class="fixed bottom-1 left-1 lg:bottom-10 lg:left-10">
-	{#if scrolledPercentage < 0.9}
+	{#if scrolledPercentage < 0.98}
 		<svg
 			width="63"
 			height="63"

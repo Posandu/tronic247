@@ -14,6 +14,7 @@ import theme from './theme.js';
 import * as cheerio from 'cheerio';
 import chalk from 'chalk';
 import fs from 'fs';
+import highwayhash from 'highwayhash';
 
 /**
  * @param {string} content
@@ -38,6 +39,8 @@ const checkFolder = () => {
 };
 
 function markdown() {
+	const IS_DEV = process.env.NODE_ENV === 'development';
+
 	return {
 		name: 'markdown',
 		/**
@@ -51,7 +54,15 @@ function markdown() {
 
 				console.log(chalk.gray(`Parsing ${pathname}`));
 
-				const fileLoc = pathForCache + pathname.split('/')[4] + '.cache';
+				/**
+				 * Overengineered caching system
+				 */
+				const fileHashed = highwayhash.asString(
+					Buffer.from('_'.repeat(32)),
+					Buffer.from(fileContent)
+				);
+
+				const fileLoc = pathForCache + fileHashed;
 
 				if (fs.existsSync(fileLoc)) {
 					const code = fs.readFileSync(fileLoc, 'utf-8');
@@ -112,8 +123,6 @@ function markdown() {
 
 				const html = processor.toString();
 
-				const IS_DEV = true;
-
 				let excerpt = '';
 
 				if (IS_DEV) {
@@ -123,7 +132,7 @@ function markdown() {
 					const $ = cheerio.load(html);
 					const text = $('html').text();
 
-					excerpt = text.slice(0, 1000).trim();
+					excerpt = text.slice(0, 100).trim();
 				}
 
 				console.log(chalk.green(`Successfully parsed ${pathname}`));
@@ -133,7 +142,7 @@ function markdown() {
 								export const excerpt = ${JSON.stringify(excerpt)};
 							</script>
 
-							${escapeHtml(html)}
+							${IS_DEV ? `{@html \`${escapeHtml(html).replaceAll('`', '\\`')}\`}` : escapeHtml(html)}
 					`;
 
 				fs.writeFileSync(fileLoc, code);

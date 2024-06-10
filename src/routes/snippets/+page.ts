@@ -5,3 +5,5 @@ export const load = async ({ params }) => {
 		content: content.default
 	};
 };
+
+export const prerender = true;

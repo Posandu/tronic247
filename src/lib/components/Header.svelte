@@ -1,6 +1,6 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import { navigating } from '$app/stores';
+	import { navigating, page } from '$app/stores';
 	import { fly } from 'svelte/transition';
 
 	const menuItems = [
@@ -32,7 +32,13 @@
 		<ul class="flex items-center space-x-6 xl:space-x-8">
 			{#each menuItems as [label, link]}
 				<li class="relative">
-					<a href={link} class="link-menu">{label}</a>
+					<a
+						href={link}
+						class="link-menu
+					
+					{$page.url.pathname === link ? 'text-primary' : 'text-white hover:text-primary'}
+					">{label}</a
+					>
 				</li>
 			{/each}
 		</ul>

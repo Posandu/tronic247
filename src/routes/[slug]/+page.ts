@@ -17,3 +17,5 @@ export const load = async ({ params }) => {
 		meta
 	};
 };
+
+export const prerender = true;

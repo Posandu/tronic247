@@ -7,7 +7,7 @@ const getImportedPosts = async () => {
 };
 
 const formaRawPostModule = (post: any, path: string): Post => {
-	const { meta } = post;
+	const { meta, length } = post;
 
 	meta.tags = meta.tags || [];
 	meta.categories = meta.categories || [];
@@ -23,10 +23,28 @@ const formaRawPostModule = (post: any, path: string): Post => {
 		categories: meta.categories,
 		content: post.default,
 		img: meta.img,
-		excerpt: post.excerpt
+		excerpt: post.excerpt,
+		length
 	} satisfies Post;
 
 	return mdata;
 };
 
-export { getImportedPosts, formaRawPostModule };
+const getStats = (posts: Post[]) => {
+	const tags = new Set<string>();
+	const categories = new Set<string>();
+	let charCount = 0;
+	const postCount = posts.length;
+
+	posts.forEach((post) => {
+		if (post.tags) post.tags.forEach((tag) => tags.add(tag.toLowerCase()));
+		if (post.categories)
+			post.categories.forEach((category) => categories.add(category.toLowerCase()));
+
+		charCount += post.length || 0;
+	});
+
+	return { tags, categories, charCount, postCount };
+};
+
+export { getImportedPosts, formaRawPostModule, getStats };

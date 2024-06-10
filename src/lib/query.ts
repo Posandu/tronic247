@@ -7,6 +7,7 @@ export type Post = {
 	img?: string;
 	categories?: string[];
 	excerpt: string;
+	length?: number;
 };
 
 type QueryFn = (post: Post) => boolean;

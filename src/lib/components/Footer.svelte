@@ -8,10 +8,11 @@
 		<div class="grid grid-cols-2">
 			<div class="col-span-1">
 				<h3 class="mb-2 text-lg font-semibold">Categories</h3>
-				<ul>
+
+				<ul class="space-y-2">
 					{#each Array.from(categories) as category}
-						<li class="mb-2">
-							<a href={`/category/${category}`} class="text-sm underline">{category}</a>
+						<li class="inline-block">
+							<a href={`/category/${category}`} class="mr-2 inline text-sm underline">{category}</a>
 						</li>
 					{/each}
 				</ul>

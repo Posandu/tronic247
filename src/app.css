@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-	user-select: none;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;

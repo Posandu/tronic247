@@ -2,6 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import { navigating, page } from '$app/stores';
 	import { fly } from 'svelte/transition';
+	import { toggleMode } from 'mode-watcher';
 
 	const menuItems = [
 		['Home', '/'],
@@ -20,7 +21,7 @@
 </script>
 
 <header
-	class="container z-50 mx-auto mb-4 flex justify-between rounded-b-none bg-black py-3 text-white transition-all sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none"
+	class="container z-50 mx-auto mb-4 flex select-none justify-between rounded-b-none bg-black py-3 text-white transition-all sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none"
 >
 	<div class="flex min-h-16 flex-1 items-center justify-start">
 		<a href="/">
@@ -47,7 +48,7 @@
 			<Icon icon="material-symbols:search" class="size-6" />
 		</a>
 
-		<button class="ml-2 transition-all active:rotate-180">
+		<button class="ml-2 transition-all active:rotate-180" on:click={toggleMode}>
 			<Icon icon="lets-icons:color-mode" class="size-6" />
 		</button>
 	</nav>
@@ -56,6 +57,10 @@
 		<a class="mr-4" href="/search">
 			<Icon icon="material-symbols:search" class="size-6" />
 		</a>
+
+		<button class="mr-4 transition-all active:rotate-180" on:click={toggleMode}>
+			<Icon icon="lets-icons:color-mode" class="size-6" />
+		</button>
 
 		<button class="menu-btn" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
 			<Icon icon="bx:bx-menu" class="size-6" />

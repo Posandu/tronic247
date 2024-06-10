@@ -5,6 +5,7 @@
 	import 'nprogress/nprogress.css';
 	import NProgress from 'nprogress';
 	import { navigating, page } from '$app/stores';
+	import { ModeWatcher } from 'mode-watcher';
 
 	NProgress.configure({
 		// Full list:
@@ -24,6 +25,8 @@
 	export let data;
 </script>
 
+<ModeWatcher />
+
 <Header />
 
 <div class="mx-auto grow {isInside($page.route?.id?.toString() || '') ? '' : 'container'} w-full">
@@ -31,3 +34,9 @@
 </div>
 
 <Footer categories={data.stats.categories} tags={data.stats.tags} />
+
+<style>
+	:global(.dark){
+		background: #131313;
+	}
+</style>

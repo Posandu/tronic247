@@ -28,7 +28,7 @@
 	{/if}
 
 	<div
-		class="mt-6 flex gap-2 flex-wrap text-xs font-semibold uppercase text-black/60"
+		class="mt-6 flex gap-2 flex-wrap text-xs font-semibold uppercase text-black/60 dark:text-white/60"
 		style="flex: 1 0 auto; 
 "
 	>
@@ -65,6 +65,6 @@
 			{title}
 		</h2>
 
-		<p id="article-{slug}-desc" class="mt-4 text-black/60">{excerpt}</p>
+		<p id="article-{slug}-desc" class="mt-4 text-black/60 dark:text-white/60">{excerpt}</p>
 	</a>
 </article>

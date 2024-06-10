@@ -132,7 +132,7 @@ function markdown() {
 
 				const code = `<script context="module">
 								export const meta = ${JSON.stringify(meta)};
-								export const excerpt = ${JSON.stringify(excerpt)};
+								export const excerpt = ${JSON.stringify(excerpt)}+" [...]";
 								export const length = ${text.length};
 							</script>
 

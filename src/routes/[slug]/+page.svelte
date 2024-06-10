@@ -64,21 +64,20 @@
 		script.onload = onScriptLoad;
 		commentDiv.appendChild(script);
 	});
-
-	let scrolledPercentage = 0;
 </script>
 
-<svelte:head>
-</svelte:head>
+<svelte:head></svelte:head>
 
-<div class="relative z-10 mt-1 text-center sm:mt-12">
+<main class="prose prose-gray mx-auto mt-8 dark:prose-invert">
 	{#if img}
-		<div class="container prose mx-auto">
-			<img src={img} alt="Random" class="w-full transform-gpu object-cover will-change-transform" />
-		</div>
+		<img
+			src={img}
+			alt="Random"
+			class="mb-10 w-full transform-gpu object-cover will-change-transform"
+		/>
 	{/if}
 
-	<div class="mb-4 mt-10 text-sm font-semibold uppercase text-black/60">
+	<div class="mb-4 text-sm font-semibold uppercase text-black/60">
 		<p class="inline" aria-label="Published on">
 			{new Date(date).toLocaleDateString('en-US', {
 				year: 'numeric',
@@ -102,10 +101,8 @@
 		{/if}
 	</div>
 
-	<h1 class="text-4xl font-bold">{title}</h1>
-</div>
+	<h1 class="mb-10 text-4xl font-bold">{title}</h1>
 
-<main class="container prose prose-gray mx-auto mt-8">
 	<svelte:component this={data.content} />
 
 	<div class="mb-4 h-28 w-full bg-black/20"></div>
@@ -133,48 +130,3 @@
 
 	<section id="utterances-comments" bind:this={commentDiv}></section>
 </main>
-
-<svelte:window
-	on:scroll={() =>
-		(scrolledPercentage = window.scrollY / ((document.body.scrollHeight - window.innerHeight) - 100))}
-	on:load={() =>
-		(scrolledPercentage = window.scrollY / ((document.body.scrollHeight - window.innerHeight) - 100))}
-/>
-
-<div class="fixed bottom-1 left-1 lg:bottom-10 lg:left-10">
-	{#if scrolledPercentage < 0.98}
-		<svg
-			width="63"
-			height="63"
-			viewBox="-7.875 -7.875 78.75 78.75"
-			version="1.1"
-			xmlns="http://www.w3.org/2000/svg"
-			style="transform:rotate(-90deg)"
-			class="relative overflow-hidden"
-			transition:fly={{ y: -10, duration: 200 }}
-		>
-			<circle
-				r="21.5"
-				cx="31.5"
-				cy="31.5"
-				fill="transparent"
-				stroke="#e0e0e0"
-				stroke-width="7"
-				stroke-dasharray="135.02px"
-				stroke-dashoffset="0"
-			></circle>
-
-			<circle
-				r="21.5"
-				cx="31.5"
-				cy="31.5"
-				stroke="#000"
-				stroke-width="7"
-				stroke-linecap="round"
-				stroke-dashoffset={135.02 - scrolledPercentage * 135.02}
-				fill="transparent"
-				stroke-dasharray="135.02px"
-			></circle>
-		</svg>
-	{/if}
-</div>

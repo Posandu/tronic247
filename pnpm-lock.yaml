@@ -62,6 +62,9 @@ dependencies:
   highwayhash:
     specifier: ^3.1.1
     version: 3.1.1
+  mode-watcher:
+    specifier: ^0.3.0
+    version: 0.3.0(svelte@4.2.17)
   nprogress:
     specifier: ^0.2.0
     version: 0.2.0
@@ -3521,6 +3524,14 @@ packages:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
     hasBin: true
+    dev: false
+
+  /mode-watcher@0.3.0(svelte@4.2.17):
+    resolution: {integrity: sha512-k8jjuTx94HaaRKWO6JDf8wL761hFatrTIHJKl+E+3JWcnv+GnMBH062zcLsy0lbCI3n7RZxxHaWi66auFnUO4g==}
+    peerDependencies:
+      svelte: ^4.0.0
+    dependencies:
+      svelte: 4.2.17
     dev: false
 
   /mri@1.2.0:

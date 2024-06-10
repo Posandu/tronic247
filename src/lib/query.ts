@@ -23,7 +23,6 @@ class queryManager {
 	}
 
 	exec() {
-		console.log("queryManager.exec() called")
 		return this.posts.filter(this.query);
 	}
 

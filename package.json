@@ -52,6 +52,7 @@
 		"chalk": "^5.3.0",
 		"cheerio": "1.0.0-rc.12",
 		"excerpt-html": "^1.2.2",
+		"fuse.js": "^7.0.0",
 		"gray-matter": "^4.0.3",
 		"highwayhash": "^3.1.1",
 		"nprogress": "^0.2.0",

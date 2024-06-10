@@ -123,17 +123,10 @@ function markdown() {
 
 				const html = processor.toString();
 
-				let excerpt = '';
+				const $ = cheerio.load(html);
+				const text = $('html').text();
 
-				if (IS_DEV) {
-					excerpt =
-						'lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
-				} else {
-					const $ = cheerio.load(html);
-					const text = $('html').text();
-
-					excerpt = text.slice(0, 100).trim();
-				}
+				const excerpt = text.slice(0, 100).trim();
 
 				console.log(chalk.green(`Successfully parsed ${pathname}`));
 

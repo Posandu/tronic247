@@ -114,7 +114,7 @@
 		{#if tags}
 			{#each tags as tag}
 				<a
-					href="/tags/{tag.toLowerCase()}"
+					href="/tag/{tag.toLowerCase()}"
 					class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black"
 				>
 					#{tag}

@@ -9,7 +9,7 @@ In this tutorial, I'll show you how to create a login form with pure CSS. First,
 
 ## Video
 
-https://youtu.be/9X6kUu20OjE
+{% youtube id="9X6kUu20OjE" title="Login form with CSS" %}
 
 ## The HTML
 
@@ -117,4 +117,4 @@ body {
 }
 ```
 
-<iframe src="https://www.tronic247.com/trycode/?name=login_frm&amp;embed=true" height="500" title="Loginf form"></iframe>
+{% embed src="https://codepen.io/posandu/embed/preview/vYwemeX?default-tab=result&editable=true" title="Codepen" %}

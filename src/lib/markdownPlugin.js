@@ -76,7 +76,7 @@ function markdown() {
 
 				let { content: markdownParsed, data: meta } = matter(fileContent);
 
-				const embed = /{% embed src=(.*?) title="(.*?)" %}/g;
+				const embed = /{% embed src="(.*?)" title="(.*?)" %}/g;
 				const youtube = /{% youtube id="(.*?)" title="(.*?)" %}/g;
 
 				/**
@@ -89,6 +89,7 @@ function markdown() {
         					  title="${title}"
         					  src="${src}"
         					  loading="lazy"
+							  height="455"
         					></iframe>
       					`.trim();
 					})
@@ -132,7 +133,7 @@ function markdown() {
 
 				const code = `<script context="module">
 								export const meta = ${JSON.stringify(meta)};
-								export const excerpt = ${JSON.stringify(excerpt)}+" [...]";
+								export const excerpt = ${JSON.stringify(excerpt)} ${excerpt.length > 0 ? '+" [...]";' : ''}
 								export const length = ${text.length};
 							</script>
 

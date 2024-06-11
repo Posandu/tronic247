@@ -27,7 +27,7 @@
 <svelte:window on:hashchange={handleHashChange} on:load={handleHashChange} />
 
 <div
-	class="pop col-span-1 rounded-lg border bg-muted-dark/20 px-4 py-3 transition-all dark:border-muted-dark/20"
+	class="pop col-span-1 rounded-lg border dark:bg-muted-dark/20 border-gray-200 bg-gray-50 px-6 py-8 transition-all dark:border-muted-dark/20 shadow-lg"
 	{id}
 >
 	<a href="#{id}">
@@ -44,14 +44,14 @@
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
-			class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 dark:bg-black/80"
+			class="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
 			on:click={(e) => {
 				if (e.target === e.currentTarget) closeDialog();
 			}}
 			transition:fade={{ duration: 200 }}
 		>
 			<div
-				class="max-h-[80vh] w-full max-w-xl overflow-y-auto rounded-lg bg-white px-8 py-6 backdrop-blur-lg dark:bg-white/5"
+				class="max-h-[80vh] w-full max-w-xl overflow-y-auto rounded-lg bg-white px-8 py-8 backdrop-blur-lg dark:bg-white/5"
 			>
 				<h1 class="mb-4 text-xl font-semibold">
 					{title}

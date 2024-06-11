@@ -28,6 +28,11 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+iframe {
+	border: none;
+	width: 100%;
+}
+
 /*
 	Buttons
 */

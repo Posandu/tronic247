@@ -12,7 +12,7 @@ export type Post = {
 
 type QueryFn = (post: Post) => boolean;
 
-const PER_PAGE = 5;
+const PER_PAGE = 9;
 
 class queryManager {
 	query: QueryFn;

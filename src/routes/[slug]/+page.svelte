@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { formattedTitle } from '$lib';
 	import SocialMedia from '$lib/components/SocialMedia.svelte';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
+	import SvelteSeo from 'svelte-seo';
+	import { mode } from 'mode-watcher';
 
 	export let data;
 
@@ -9,6 +12,7 @@
 	let date = data.meta.date;
 	let title = data.meta.title;
 	let img = data.meta.img;
+	let Ad: any;
 
 	let commentDiv: HTMLElement;
 
@@ -49,23 +53,85 @@
 		});
 	};
 
-	onMount(() => {
-		import('@justinribeiro/lite-youtube');
-
+	const updateUtterances = () => {
 		const script = document.createElement('script');
 		script.src = 'https://utteranc.es/client.js';
 		script.async = true;
 		script.setAttribute('repo', 'tronic247/comments');
 		script.setAttribute('issue-term', 'title');
-		script.setAttribute('theme', 'github-light');
+		script.setAttribute('theme', $mode === 'light' ? 'github-light' : 'dark-blue');
 		script.setAttribute('crossorigin', 'anonymous');
 		script.setAttribute('label', 'comment');
 		script.onload = onScriptLoad;
+		commentDiv.innerHTML = '';
 		commentDiv.appendChild(script);
+	};
+
+	let subscription: any;
+
+	onMount(() => {
+		import('@justinribeiro/lite-youtube');
+
+		updateUtterances();
+
+		subscription = mode.subscribe((value) => {
+			updateUtterances();
+		});
+
+		import('$lib/components/Advertisement.svelte').then((module) => {
+			Ad = module.default;
+		});
+	});
+
+	onDestroy(() => {
+		typeof subscription === 'function' && subscription();
 	});
 </script>
 
-<svelte:head></svelte:head>
+<SvelteSeo
+	title={formattedTitle(title)}
+	description="Learn about primal movement exercises and how they can benefit your fitness."
+	canonical="https://www.primal-movement.com/"
+	keywords="primal movement, natural movement, squatting, lunging, crawling, jumping, fitness"
+	openGraph={{
+		title: title,
+		description: 'Learn about primal movement exercises and how they can benefit your fitness.',
+		url: 'https://www.primal-movement.com/',
+		type: 'website',
+		images: [
+			{
+				url: 'https://www.primal-movement.com/images/squatting.jpg',
+				width: 800,
+				height: 600,
+				alt: 'Squatting'
+			},
+			{
+				url: 'https://www.primal-movement.com/images/lunging.jpg',
+				width: 900,
+				height: 800,
+				alt: 'Crawling'
+			},
+			{
+				url: 'https://www.primal-movement.com/images/crawling.jpg',
+				alt: 'Jumping'
+			},
+			{
+				url: 'https://www.primal-movement.com/images/jumping.jpg'
+			}
+		],
+		site_name: 'Primal Movement'
+	}}
+	twitter={{
+		card: 'summary_large_image',
+		site: '@primalmovement',
+		title: 'Primal Movement | Natural Movement for Better Health',
+		description: 'Learn about primal movement exercises and how they can benefit your fitness.',
+		image: 'https://www.primal-movement.com/images/squatting.jpg'
+	}}
+	facebook={{
+		appId: '1234567890'
+	}}
+/>
 
 <main class="prose prose-gray mx-auto mt-8 dark:prose-invert">
 	{#if img}
@@ -104,7 +170,9 @@
 
 	<svelte:component this={data.content} />
 
-	<div class="mb-4 h-28 w-full bg-black/20"></div>
+	{#if Ad}
+		<Ad />
+	{/if}
 
 	<div class="mb-4 space-x-2">
 		{#if tags}

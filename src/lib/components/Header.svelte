@@ -12,7 +12,7 @@
 		['Sponsor 💖', '/sponsor']
 	];
 
-	let mobileMenuOpen = false;
+	let mobileMenuOpen = !false;
 
 	$: {
 		if ($navigating) {
@@ -98,7 +98,7 @@
 			if (e.target === e.currentTarget) mobileMenuOpen = false;
 		}}
 	>
-		<div class="relative h-full max-h-svh w-full max-w-xl overflow-auto bg-white p-8 shadow-2xl">
+		<div class="relative h-full max-h-svh w-full max-w-xl overflow-auto bg-white dark:bg-black/20 backdrop-blur-md p-8 shadow-2xl">
 			<button
 				class="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full hover:bg-black/10"
 				on:click={() => (mobileMenuOpen = false)}

@@ -1,8 +1,11 @@
+import { formaRawPostModule } from '$lib/posts';
+
 export const load = async ({ params }) => {
-	const content = await import('../../../snippets/test.md');
+	const snippets = import.meta.glob('../../../snippets/*.md', { eager: true });
+	const formatted = Object.entries(snippets).map(([path, post]) => formaRawPostModule(post, path));
 
 	return {
-		content: content.default
+		snippets: formatted
 	};
 };
 

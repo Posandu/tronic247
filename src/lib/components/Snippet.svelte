@@ -27,14 +27,14 @@
 <svelte:window on:hashchange={handleHashChange} on:load={handleHashChange} />
 
 <div
-	class="pop col-span-1 rounded-lg border dark:bg-muted-dark/20 border-gray-200 bg-gray-50 px-6 py-8 transition-all dark:border-muted-dark/20 shadow-lg"
+	class="pop col-span-1 rounded-lg border border-gray-200 bg-gray-50 px-6 py-8 shadow-lg transition-all dark:border-muted-dark/20 dark:bg-muted-dark/20"
 	{id}
 >
 	<a href="#{id}">
 		<h1 class="items-cente mb-4 flex gap-2 text-xl font-semibold">{title}</h1>
 	</a>
 
-	<div class="prose-sm">
+	<div class="prose overflow-hidden text-wrap break-words dark:prose-invert">
 		<svelte:component this={content} />
 	</div>
 </div>
@@ -51,20 +51,22 @@
 			transition:fade={{ duration: 200 }}
 		>
 			<div
-				class="max-h-[80vh] w-full max-w-xl overflow-y-auto rounded-lg bg-white px-8 py-8 backdrop-blur-lg dark:bg-white/5"
+				class="flex h-screen max-h-[600px] w-full max-w-xl flex-col overflow-y-auto rounded-lg bg-white px-8 py-8 backdrop-blur-lg dark:bg-white/5"
 			>
-				<h1 class="mb-4 text-xl font-semibold">
-					{title}
-				</h1>
+				<div class="max-h-[600px] flex-1 overflow-auto">
+					<h1 class="mb-4 text-xl font-semibold">
+						{title}
+					</h1>
 
-				<div class="prose-sm dark:prose-invert">
-					<svelte:component this={content} />
+					<div class="prose overflow-hidden text-wrap break-words dark:prose-invert">
+						<svelte:component this={content} />
+					</div>
 				</div>
 
 				<p class="mt-4 text-xs text-gray-500 dark:text-muted-dark">
 					Copy the URL from the address bar to share this snippet with others.
 				</p>
-
+				
 				<button class="btn mt-4 block w-full" on:click={closeDialog}> Close </button>
 			</div>
 		</div>

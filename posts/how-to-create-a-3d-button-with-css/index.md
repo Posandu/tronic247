@@ -1,5 +1,5 @@
 ---
-title: 'How to create a 3d button with CSS'
+title: 'Create a 3d button with CSS'
 date: '2021-03-30'
 categories: ['css', 'html-tutorials']
 ---

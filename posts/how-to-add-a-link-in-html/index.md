@@ -1,5 +1,5 @@
 ---
-title: "How to add a link in HTML"
+title: "Add a link in HTML"
 date: "2020-05-30"
 categories: ["html-tutorials"]
 ---

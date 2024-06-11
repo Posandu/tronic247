@@ -1,5 +1,5 @@
 ---
-title: 'How to create an expanding search form with CSS'
+title: 'Expanding search form with CSS'
 date: '2021-04-25'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 ---

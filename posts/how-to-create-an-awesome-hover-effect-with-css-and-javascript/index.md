@@ -1,5 +1,5 @@
 ---
-title: 'How to Create an awesome hover effect with CSS and JavaScript'
+title: 'MacOS dock hover effect with CSS and JavaScript'
 date: '2021-12-05'
 categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
 tags: ['css', 'hover-effects', 'javascript', 'ui']

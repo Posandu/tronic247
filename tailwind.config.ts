@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const MAIN_FONT =
-	'-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
+	'"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
 const MONO_FONT = 'monospace';
 
 export default {
@@ -23,7 +23,8 @@ export default {
 			typography: {
 				DEFAULT: {
 					css: {
-						maxWidth: '90ch' // add required value here
+						maxWidth: '75ch',
+						lineHeight: '1.75',
 					}
 				}
 			}

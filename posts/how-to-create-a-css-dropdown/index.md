@@ -1,5 +1,5 @@
 ---
-title: 'How to create a CSS dropdown'
+title: 'Create a CSS dropdown'
 date: '2021-02-16'
 categories: ['css']
 ---

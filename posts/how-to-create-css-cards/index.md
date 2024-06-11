@@ -1,5 +1,5 @@
 ---
-title: 'How to create CSS cards'
+title: 'Creating a card with HTML and CSS'
 date: '2021-02-19'
 categories: ['css', 'html-tutorials']
 ---

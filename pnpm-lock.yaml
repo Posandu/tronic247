@@ -98,6 +98,9 @@ dependencies:
   svelte-headlessui:
     specifier: ^0.0.35
     version: 0.0.35(svelte@4.2.17)
+  svelte-portal:
+    specifier: ^2.2.1
+    version: 2.2.1
   svelte-seo:
     specifier: ^1.6.1
     version: 1.6.1(typescript@5.4.5)
@@ -4643,6 +4646,10 @@ packages:
       svelte: ^3.19.0 || ^4.0.0
     dependencies:
       svelte: 4.2.17
+
+  /svelte-portal@2.2.1:
+    resolution: {integrity: sha512-uF7is5sM4aq5iN7QF/67XLnTUvQCf2iiG/B1BHTqLwYVY1dsVmTeXZ/LeEyU6dLjApOQdbEG9lkqHzxiQtOLEQ==}
+    dev: false
 
   /svelte-preprocess@5.1.4(postcss@8.4.38)(svelte@4.2.17)(typescript@5.4.5):
     resolution: {integrity: sha512-IvnbQ6D6Ao3Gg6ftiM5tdbR6aAETwjhHV+UKGf5bHGYR69RQvF1ho0JKPcbUON4vy4R7zom13jPjgdOWCQ5hDA==}

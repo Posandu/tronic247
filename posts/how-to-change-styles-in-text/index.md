@@ -1,5 +1,5 @@
 ---
-title: "How to change styles in text"
+title: "Change styles in text with CSS"
 date: "2020-07-05"
 categories: ["html-tutorials"]
 ---

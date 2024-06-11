@@ -67,6 +67,7 @@
 		"remark-smartypants": "^3.0.1",
 		"remark-toc": "^9.0.0",
 		"svelte-headlessui": "^0.0.35",
+		"svelte-portal": "^2.2.1",
 		"svelte-seo": "^1.6.1",
 		"svelte-transition": "^0.0.16",
 		"unified": "^11.0.4"

@@ -1,5 +1,5 @@
 ---
-title: 'Pure CSS Material design loader'
+title: 'Create a material design loader with pure CSS'
 date: '2021-07-28'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['css', 'loaders', 'material-design']

@@ -1,5 +1,5 @@
 ---
-title: 'Simple Windows tricks'
+title: 'Windows tricks'
 date: '2020-11-05'
 ---
 

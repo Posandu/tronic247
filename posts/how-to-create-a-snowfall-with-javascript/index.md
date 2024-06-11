@@ -1,5 +1,5 @@
 ---
-title: 'How to create a snowfall with Javascript'
+title: 'Snowfall with Javascript'
 date: '2021-12-13'
 categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
 tags: ['animations', 'christmas', 'css', 'javascript']

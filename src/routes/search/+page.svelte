@@ -32,13 +32,16 @@
 		name="search"
 		bind:value={query}
 		placeholder="Search..."
-		class="w-full border border-gray-300 rounded-full px-4 py-2"
+		class="w-full rounded-full border border-gray-300 px-4 py-2 dark:border-muted-dark/20 dark:bg-muted-dark/20 dark:text-white dark:placeholder:text-white"
 	/>
 </form>
 
 {#if results.length > 0}
 	{#each results as post}
-		<a href="/{post.slug}" class="mt-4 block rounded-lg border border-gray-300 hover:bg-gray-100 p-4">
+		<a
+			href="/{post.slug}"
+			class="mt-4 block rounded-lg border border-gray-300 p-4 hover:bg-gray-100 dark:border-muted-dark/20 dark:bg-muted-dark/20"
+		>
 			<h2>
 				{post.title}
 			</h2>

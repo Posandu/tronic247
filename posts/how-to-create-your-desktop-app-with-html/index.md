@@ -1,5 +1,5 @@
 ---
-title: 'How to create your desktop app with HTML'
+title: 'Creating desktop apps with web technologies'
 date: '2021-11-28'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['apps', 'css', 'electron', 'html', 'javascript']

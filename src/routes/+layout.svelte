@@ -7,7 +7,7 @@
 	import { navigating, page } from '$app/stores';
 	import { ModeWatcher } from 'mode-watcher';
 	import { onNavigate } from '$app/navigation';
-	import { fly, scale } from 'svelte/transition';
+	import { fade, fly, scale } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
 
 	NProgress.configure({
@@ -36,8 +36,8 @@
 
 {#key data.url}
 	<div
-		in:scale={{ start: 1, opacity: 0.2, duration: 150, delay: 150, easing: quadInOut }}
-		out:scale={{ start: 1, opacity: 0.2, duration: 150, easing: quadInOut }}
+		in:fade={{ duration: 100, delay: 100, easing: quadInOut }}
+		out:fade={{ duration: 100, easing: quadInOut }}
 		class="mx-auto grow transform-gpu {isInside($page.route?.id?.toString() || '')
 			? ''
 			: 'container'} w-full"

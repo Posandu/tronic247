@@ -1,5 +1,5 @@
 ---
-title: 'Simple Material design CSS animation'
+title: 'Simple material design CSS animation'
 date: '2021-09-01'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['animations', 'css']

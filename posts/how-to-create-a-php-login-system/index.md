@@ -1,5 +1,5 @@
 ---
-title: 'How to create a PHP login system'
+title: 'PHP Login System'
 date: '2021-02-28'
 categories: ['php', 'web-dev']
 ---

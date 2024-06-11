@@ -1,5 +1,5 @@
 ---
-title: 'CSS + frontend Resources you must take a look at'
+title: 'CSS/Frontend resources you must take a look at'
 date: '2021-10-29'
 categories: ['css', 'tricks-and-tips']
 tags: ['css', 'frontend']

@@ -1,5 +1,5 @@
 ---
-title: 'How to create a drawing app with React'
+title: 'Create a drawing app with React'
 date: '2022-03-03'
 categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
 tags: ['javascript', 'tips']

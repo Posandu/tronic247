@@ -1,5 +1,5 @@
 ---
-title: 'How to install Windows 11 on an unsupported PC'
+title: 'Install Windows 11 on an unsupported PC'
 date: '2021-09-17'
 categories: ['tricks-and-tips']
 tags: ['windows', 'tricks']

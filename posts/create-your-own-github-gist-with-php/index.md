@@ -1,5 +1,5 @@
 ---
-title: 'Create your own Github Gist with PHP!'
+title: 'Creating a Github Gist Clone with PHP'
 date: '2021-11-14'
 categories: ['css', 'html-tutorials', 'javascript', 'mysql', 'php']
 tags: ['css', 'mysql']

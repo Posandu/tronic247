@@ -21,11 +21,11 @@
 </script>
 
 <header
-	class="container dark:bg-black/20 z-50 mx-auto mb-4 flex select-none justify-between rounded-b-none bg-black py-3 text-white transition-all sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none"
+	class="container dark:bg-black/20 z-50 mx-auto mb-4 flex select-none justify-between rounded-b-none bg-white shadow-xl shadow-muted-dark/5 sticky top-0 py-3 dark:text-white text-black transition-all sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none dark:backdrop-blur-sm"
 >
 	<div class="flex min-h-16 flex-1 items-center justify-start">
 		<a href="/">
-			<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 invert" />
+			<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 dark:invert" />
 		</a>
 	</div>
 
@@ -37,7 +37,7 @@
 						href={link}
 						class="link-menu
 					
-					{$page.url.pathname === link ? 'text-primary' : 'text-white hover:text-primary'}
+					{$page.url.pathname === link ? 'text-primary' : 'hover:text-primary'}
 					">{label}</a
 					>
 				</li>

@@ -1,5 +1,5 @@
 ---
-title: 'How to make your website faster'
+title: 'Methods to make your website faster'
 date: '2021-10-12'
 categories: ['web-dev', 'tricks-and-tips']
 tags: ['cloudflare', 'perfomance', 'tips']

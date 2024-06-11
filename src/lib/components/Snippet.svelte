@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import Portal from 'svelte-portal';
 
 	export let title: string;
 	export let id = title.toLowerCase().replace(/\s/g, '-');
@@ -25,7 +26,10 @@
 
 <svelte:window on:hashchange={handleHashChange} on:load={handleHashChange} />
 
-<div class="pop col-span-1 rounded-lg border dark:border-muted-dark/20 bg-muted-dark/20 px-4 py-3 transition-all" {id}>
+<div
+	class="pop col-span-1 rounded-lg border bg-muted-dark/20 px-4 py-3 transition-all dark:border-muted-dark/20"
+	{id}
+>
 	<a href="#{id}">
 		<h1 class="items-cente mb-4 flex gap-2 text-xl font-semibold">{title}</h1>
 	</a>
@@ -35,30 +39,34 @@
 	</div>
 </div>
 
-{#if dialogOpen}
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div
-		class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 dark:bg-black/80"
-		on:click={(e) => {
-			if (e.target === e.currentTarget) closeDialog();
-		}}
-		transition:fade={{ duration: 200 }}
-	>
-		<div class="max-h-[80vh] max-w-xl w-full overflow-y-auto rounded-lg bg-white dark:bg-white/5 backdrop-blur-lg px-8 py-6">
-			<h1 class="mb-4 text-xl font-semibold">
-				{title}
-			</h1>
+<Portal target="body">
+	{#if dialogOpen}
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<div
+			class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 dark:bg-black/80"
+			on:click={(e) => {
+				if (e.target === e.currentTarget) closeDialog();
+			}}
+			transition:fade={{ duration: 200 }}
+		>
+			<div
+				class="max-h-[80vh] w-full max-w-xl overflow-y-auto rounded-lg bg-white px-8 py-6 backdrop-blur-lg dark:bg-white/5"
+			>
+				<h1 class="mb-4 text-xl font-semibold">
+					{title}
+				</h1>
 
-			<div class="prose-sm dark:prose-invert">
-				<svelte:component this={content} />
+				<div class="prose-sm dark:prose-invert">
+					<svelte:component this={content} />
+				</div>
+
+				<p class="mt-4 text-xs text-gray-500 dark:text-muted-dark">
+					Copy the URL from the address bar to share this snippet with others.
+				</p>
+
+				<button class="btn mt-4 block w-full" on:click={closeDialog}> Close </button>
 			</div>
-
-			<p class="mt-4 text-xs text-gray-500 dark:text-muted-dark">
-				Copy the URL from the address bar to share this snippet with others.
-			</p>
-
-			<button class="btn mt-4 block w-full" on:click={closeDialog}> Close </button>
 		</div>
-	</div>
-{/if}
+	{/if}
+</Portal>

@@ -1,5 +1,5 @@
 ---
-title: 'How to edit code online'
+title: 'Edit code online'
 date: '2021-03-02'
 categories: ['web-dev', 'tools']
 ---

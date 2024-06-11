@@ -1,5 +1,5 @@
 ---
-title: 'How to not use CSS frameworks - A guide to pure CSS'
+title: 'Pure CSS Framework'
 date: '2022-02-05'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['css', 'design', 'frameworks', 'perfomance']

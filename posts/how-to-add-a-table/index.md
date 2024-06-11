@@ -1,5 +1,5 @@
 ---
-title: "How to add a table"
+title: "Add a table in HTML"
 date: "2020-07-05"
 categories: ["html-tutorials"]
 ---

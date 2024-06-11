@@ -1,5 +1,5 @@
 ---
-title: 'How to create a modal with CSS'
+title: 'Modal with pure CSS'
 date: '2021-07-25'
 categories: ['css', 'html-tutorials', 'posts', 'tricks-and-tips']
 tags: ['css', 'modals']

@@ -1,5 +1,5 @@
 ---
-title: "Landing Page for Elementor free"
+title: "Landing page for Elementor Free"
 date: "2020-08-02"
 categories: ['wordpress', 'elementor']
 ---

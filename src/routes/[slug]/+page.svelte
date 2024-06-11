@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { formattedTitle } from '$lib';
+	import { SITE_URL, formattedTitle } from '$lib';
 	import SocialMedia from '$lib/components/SocialMedia.svelte';
-	import { onDestroy, onMount } from 'svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { mode } from 'mode-watcher';
+	import Comments from '$lib/components/Comments.svelte';
+	import { onMount } from 'svelte';
 
 	export let data;
 
@@ -12,124 +13,39 @@
 	let date = data.meta.date;
 	let title = data.meta.title;
 	let img = data.meta.img;
+	let excerpt = data.meta.excerpt.trim() || title;
+	let slug = data.meta.slug;
+
 	let Ad: any;
-
-	let commentDiv: HTMLElement;
-
-	let scriptLoading = true;
-
-	function waitForElm(selector: any) {
-		return new Promise((resolve) => {
-			if (document.querySelector(selector)) {
-				return resolve(document.querySelector(selector));
-			}
-
-			const observer = new MutationObserver((mutations) => {
-				if (document.querySelector(selector)) {
-					observer.disconnect();
-					resolve(document.querySelector(selector));
-				}
-			});
-
-			// If you get "parameter 1 is not of type 'Node'" error, see https://stackoverflow.com/a/77855838/492336
-			observer.observe(document.body, {
-				childList: true,
-				subtree: true
-			});
-		});
-	}
-
-	const onScriptLoad = () => {
-		waitForElm('.utterances-frame').then(() => {
-			const el = document.querySelector('.utterances-frame');
-
-			if (el) {
-				el.addEventListener('load', () => {
-					setTimeout(() => {
-						scriptLoading = false;
-					}, 100);
-				});
-			}
-		});
-	};
-
-	const updateUtterances = () => {
-		const script = document.createElement('script');
-		script.src = 'https://utteranc.es/client.js';
-		script.async = true;
-		script.setAttribute('repo', 'tronic247/comments');
-		script.setAttribute('issue-term', 'title');
-		script.setAttribute('theme', $mode === 'light' ? 'github-light' : 'dark-blue');
-		script.setAttribute('crossorigin', 'anonymous');
-		script.setAttribute('label', 'comment');
-		script.onload = onScriptLoad;
-		commentDiv.innerHTML = '';
-		commentDiv.appendChild(script);
-	};
-
-	let subscription: any;
 
 	onMount(() => {
 		import('@justinribeiro/lite-youtube');
-
-		updateUtterances();
-
-		subscription = mode.subscribe((value) => {
-			updateUtterances();
-		});
 
 		import('$lib/components/Advertisement.svelte').then((module) => {
 			Ad = module.default;
 		});
 	});
-
-	onDestroy(() => {
-		typeof subscription === 'function' && subscription();
-	});
 </script>
 
 <SvelteSeo
 	title={formattedTitle(title)}
-	description="Learn about primal movement exercises and how they can benefit your fitness."
-	canonical="https://www.primal-movement.com/"
-	keywords="primal movement, natural movement, squatting, lunging, crawling, jumping, fitness"
+	description={excerpt}
+	canonical={SITE_URL + slug}
 	openGraph={{
-		title: title,
-		description: 'Learn about primal movement exercises and how they can benefit your fitness.',
-		url: 'https://www.primal-movement.com/',
-		type: 'website',
-		images: [
-			{
-				url: 'https://www.primal-movement.com/images/squatting.jpg',
-				width: 800,
-				height: 600,
-				alt: 'Squatting'
-			},
-			{
-				url: 'https://www.primal-movement.com/images/lunging.jpg',
-				width: 900,
-				height: 800,
-				alt: 'Crawling'
-			},
-			{
-				url: 'https://www.primal-movement.com/images/crawling.jpg',
-				alt: 'Jumping'
-			},
-			{
-				url: 'https://www.primal-movement.com/images/jumping.jpg'
-			}
-		],
-		site_name: 'Primal Movement'
+		title: formattedTitle(title),
+		description: excerpt,
+		url: SITE_URL + slug,
+		type: 'article',
+		images: img ? [{ url: img }] : [],
+		locale: 'en_US',
+		site_name: 'Tronic247'
 	}}
 	twitter={{
 		card: 'summary_large_image',
-		site: '@primalmovement',
-		title: 'Primal Movement | Natural Movement for Better Health',
-		description: 'Learn about primal movement exercises and how they can benefit your fitness.',
-		image: 'https://www.primal-movement.com/images/squatting.jpg'
-	}}
-	facebook={{
-		appId: '1234567890'
+		site: '@posandu',
+		title: formattedTitle(title),
+		description: excerpt,
+		image: img
 	}}
 />
 
@@ -179,7 +95,7 @@
 			{#each tags as tag}
 				<a
 					href="/tag/{tag.toLowerCase()}"
-					class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black"
+					class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black dark:text-muted-dark dark:hover:text-white"
 				>
 					#{tag}
 				</a>
@@ -191,9 +107,7 @@
 
 	<h3 class="text-2xl font-semibold">Comments</h3>
 
-	{#if scriptLoading}
-		<p>Loading comments...</p>
-	{/if}
-
-	<section id="utterances-comments" bind:this={commentDiv}></section>
+	{#key $mode}
+		<Comments />
+	{/key}
 </main>

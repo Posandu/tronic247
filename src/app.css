@@ -26,11 +26,19 @@ textarea,
 html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
 }
 
 iframe {
 	border: none;
 	width: 100%;
+}
+
+/*
+scroll margin
+*/
+[id] {
+	scroll-margin-top: 120px;
 }
 
 /*

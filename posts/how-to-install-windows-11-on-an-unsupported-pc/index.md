@@ -3,6 +3,7 @@ title: 'Install Windows 11 on an unsupported PC'
 date: '2021-09-17'
 categories: ['tricks-and-tips']
 tags: ['windows', 'tricks']
+img: /wp-content/uploads/2021/09/win11.jpg
 ---
 
 You may have heard of Windows 11. It's so exciting but when installing it your PC might be unsupported sometimes. So, in this tutorial, I'll show you how to get a Windows 11 iso file and install it. (Bypass all the requirements :D )

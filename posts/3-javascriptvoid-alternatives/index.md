@@ -2,6 +2,7 @@
 title: '3 javascript:void alternatives'
 date: '2022-01-09'
 categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
+img: /wp-content/uploads/2022/01/3-javascriptvoid-alternatives.png
 ---
 
 In this article, you will learn some `javaScript: void` alternatives. Before we begin, I will do a brief introduction about `javascript: void`.

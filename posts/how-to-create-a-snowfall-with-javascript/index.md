@@ -3,6 +3,7 @@ title: 'Snowfall with Javascript'
 date: '2021-12-13'
 categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
 tags: ['animations', 'christmas', 'css', 'javascript']
+img: /wp-content/uploads/2021/12/How-to-create-a-snowfall-with-Javascript.png
 ---
 
 Hello people! It’s Christmas time! So let’s create a snowfall effect with JavaScript. It’s only pure JavaScript. No jQuery or other libraries. Just plain JavaScript. So let’s create snowfall with Javascript.

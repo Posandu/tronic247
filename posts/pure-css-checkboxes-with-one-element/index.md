@@ -3,6 +3,7 @@ title: 'Pure CSS checkboxes with one element'
 date: '2021-07-27'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['css', 'checkboxes']
+img: /wp-content/uploads/2021/07/pure_css_checkbox.png
 ---
 
 Here is a Pure CSS checkbox with only one element. It's also accessibility friendly.

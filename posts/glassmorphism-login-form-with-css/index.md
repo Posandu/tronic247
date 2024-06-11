@@ -3,6 +3,7 @@ title: 'Glassmorphism login form with CSS'
 date: '2021-09-22'
 categories: ['css']
 tags: ['css', 'glassmorphism', 'glass', 'login']
+img: /wp-content/uploads/2021/09/gls_loginfrm.png
 ---
 
 In this article, you will learn how to create a Glassmorphism login form with CSS. Look below to see how it looks like.

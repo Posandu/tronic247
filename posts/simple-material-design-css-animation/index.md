@@ -3,6 +3,7 @@ title: 'Simple material design CSS animation'
 date: '2021-09-01'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['animations', 'css']
+img: /wp-content/uploads/2021/09/animating.png
 ---
 
 Do you have heard of material design? It's the most popular design language in the world. In this tutorial, we will learn how to make a simple CSS animation following material design animation guidelines. So, let's get started!

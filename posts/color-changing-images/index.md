@@ -4,4 +4,4 @@ date: '2020-12-28'
 categories: ['css']
 ---
 
-https://www.youtube.com/watch?v=PjF8zGVt5nY&t=5s
+{% youtube id="PjF8zGVt5nY" title="Color changing images" %}

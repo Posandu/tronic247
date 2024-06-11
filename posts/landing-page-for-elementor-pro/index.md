@@ -4,4 +4,4 @@ date: '2020-08-02'
 categories: ['wordpress', 'elementor']
 ---
 
-https://www.youtube.com/watch?v=H9pWFlQjdrk
+{% youtube id="H9pWFlQjdrk" title="Landing page for Elementor Pro" %}

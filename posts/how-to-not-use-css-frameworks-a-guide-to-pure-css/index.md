@@ -3,6 +3,7 @@ title: 'Pure CSS Framework'
 date: '2022-02-05'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['css', 'design', 'frameworks', 'perfomance']
+img: /wp-content/uploads/2022/02/How-to-not-use-CSS-frameworks_.png
 ---
 
 Hey! So you came here to see another CSS framework? right? So time to worry, I am telling you how to create your CSS framework instead of using one. So let's begin!

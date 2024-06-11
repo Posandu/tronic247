@@ -3,6 +3,7 @@ title: 'Modal with pure CSS'
 date: '2021-07-25'
 categories: ['css', 'html-tutorials', 'posts', 'tricks-and-tips']
 tags: ['css', 'modals']
+img: /wp-content/uploads/2021/07/How-to_create_modal_css-min.png
 ---
 
 Today, In this tutorial I will tell you how to create a modal with pure CSS!

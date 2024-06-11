@@ -3,6 +3,7 @@ title: 'Create a material design loader with pure CSS'
 date: '2021-07-28'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['css', 'loaders', 'material-design']
+img: /wp-content/uploads/2021/07/pure_css_mat_loader.png
 ---
 
 Do you love material design ? Here is a material design loader component created using pure CSS with one element.

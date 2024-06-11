@@ -2,6 +2,7 @@
 title: 'Create a 3d button with CSS'
 date: '2021-03-30'
 categories: ['css', 'html-tutorials']
+img: /wp-content/uploads/2021/03/3d_btn.png
 ---
 
 ### Do you need a realistic 3d button for your website ?

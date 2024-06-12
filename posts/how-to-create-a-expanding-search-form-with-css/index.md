@@ -11,4 +11,4 @@ Today I will show how to create a expanding search form with CSS.
 
 See this video to learn more.
 
-https://www.youtube.com/embed/4ixOpG4Rz0c
+{% youtube id="4ixOpG4Rz0c" title="Expanding search form with CSS" %}

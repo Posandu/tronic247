@@ -85,18 +85,18 @@ function markdown() {
 				markdownParsed = markdownParsed
 					.replace(embed, (_, src, title) => {
 						return `
-        					<iframe
-        					  title="${title}"
-        					  src="${src}"
-        					  loading="lazy"
-							  height="455"
-        					></iframe>
-      					`.trim();
+								<iframe
+								  title="${title}"
+								  src="${src}"
+								  loading="lazy"
+								  height="455"
+								></iframe>
+							  `.trim();
 					})
 					.replace(youtube, (_, id, title) => {
 						return `
-							<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube>
-						`.trim();
+								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube>
+							`.trim();
 					});
 
 				const processor = await unified()
@@ -127,18 +127,18 @@ function markdown() {
 				const $ = cheerio.load(html);
 				const text = $('html').text();
 
-				const excerpt = text.slice(0, 100).trim();
+				const excerpt = text.split(' ').slice(0, 25).join(' '); /*first 55 words*/
 
 				console.log(chalk.green(`Successfully parsed ${pathname}`));
 
 				const code = `<script context="module">
-								export const meta = ${JSON.stringify(meta)};
-								export const excerpt = ${JSON.stringify(excerpt)} ${excerpt.length > 0 ? '+" [...]";' : ''}
-								export const length = ${text.length};
-							</script>
-
-							${IS_DEV ? `{@html \`${escapeHtml(html).replaceAll('`', '\\`')}\`}` : escapeHtml(html)}
-					`;
+									export const meta = ${JSON.stringify(meta)};
+									export const excerpt = ${JSON.stringify(excerpt)} ${excerpt.length > 0 ? '+" [...]";' : ''}
+									export const length = ${text.length};
+								</script>
+	
+								${IS_DEV ? `{@html \`${escapeHtml(html).replaceAll('`', '\\`')}\`}` : escapeHtml(html)}
+						`;
 
 				fs.writeFileSync(fileLoc, code);
 

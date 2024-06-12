@@ -16,6 +16,12 @@ const ADS: {
 		title: 'Like the above content?',
 		description: 'Click here to sponsor Tronic247 and see your ad here',
 		cta: 'Sponsor'
+	},
+	{
+		url: 'https://github.com/tronic247/web',
+		title: 'Spotted a bug or typo?',
+		description: 'File an issue or PR on GitHub',
+		cta: 'GitHub'
 	}
 ];
 

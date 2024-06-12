@@ -15,7 +15,7 @@ Okay let's get started.
 
 First watch this video to get a idea.
 
-https://www.youtube.com/watch?v=76aHMLfEti0
+{% youtube id="76aHMLfEti0" title="PHP Login System" %}
 
 Okay now first create a database named "demo".
 

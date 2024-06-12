@@ -43,6 +43,6 @@
 			{title}
 		</h2>
 
-		<p id="article-{slug}-desc" class="mt-4 text-sm text-black/60 dark:text-muted-dark">{excerpt}</p>
+		<p id="article-{slug}-desc" class="mt-4 text-sm text-black/60 dark:text-muted-dark text-wrap overflow-hidden break-words">{excerpt}</p>
 	</a>
 </article>

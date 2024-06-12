@@ -27,12 +27,6 @@
 		<img src={ad.img} alt={ad.title} class="h-20" />
 	{/if}
 
-	<span
-		class="absolute right-1 top-1 text-xs font-semibold uppercase text-black/60 dark:text-muted-dark"
-	>
-		Sponsored
-	</span>
-
 	<div class="flex-1 text-left">
 		<span class="block text-lg font-semibold text-black/60 dark:text-muted-dark">
 			{ad.title}

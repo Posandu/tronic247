@@ -8,6 +8,8 @@
 	export let content: any;
 	export let dialogOpen = false;
 
+	let rand = '';
+
 	const handleHashChange = () => {
 		if (typeof window === 'undefined') return;
 
@@ -28,9 +30,21 @@
 
 <div
 	class="pop col-span-1 rounded-lg border border-gray-200 bg-gray-50 px-6 py-8 shadow-lg transition-all dark:border-muted-dark/20 dark:bg-muted-dark/20"
-	{id}
+	id={id + rand}
 >
-	<a href="#{id}">
+	<a
+		href="#{id}"
+		on:click|preventDefault={() => {
+			rand = Math.random().toString(36).substring(7);
+			setTimeout(() => {
+				window.location.hash = `#${id}`;
+
+				setTimeout(() => {
+					rand = ""
+				}, 100);
+			}, 100);
+		}}
+	>
 		<h1 class="items-cente mb-4 flex gap-2 text-xl font-semibold">{title}</h1>
 	</a>
 
@@ -66,7 +80,7 @@
 				<p class="mt-4 text-xs text-gray-500 dark:text-muted-dark">
 					Copy the URL from the address bar to share this snippet with others.
 				</p>
-				
+
 				<button class="btn mt-4 block w-full" on:click={closeDialog}> Close </button>
 			</div>
 		</div>

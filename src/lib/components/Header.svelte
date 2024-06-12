@@ -12,7 +12,7 @@
 		['Sponsor 💖', '/sponsor']
 	];
 
-	let mobileMenuOpen = !false;
+	let mobileMenuOpen = false;
 
 	$: {
 		if ($navigating) {

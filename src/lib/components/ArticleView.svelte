@@ -1,7 +1,6 @@
 <script lang="ts">
 	export let slug: string;
 	export let title: string;
-	export let categories: string[] = [];
 	export let excerpt: string;
 	export let date: Date;
 	export let img: string | undefined = undefined;
@@ -12,7 +11,7 @@
 </script>
 
 <article
-	class="{classes} article-box rounded-lg bg-gray-50 px-5 py-4 transition-all hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40 hover:scale-105"
+	class="{classes} article-box rounded-lg bg-gray-50 px-5 py-4 transition-all hover:scale-105 hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40"
 	aria-labelledby="article-{slug}-title"
 	aria-describedby="article-{slug}-desc"
 >
@@ -43,6 +42,11 @@
 			{title}
 		</h2>
 
-		<p id="article-{slug}-desc" class="mt-4 text-sm text-black/60 dark:text-muted-dark text-wrap overflow-hidden break-words">{excerpt}</p>
+		<p
+			id="article-{slug}-desc"
+			class="mt-4 overflow-hidden text-wrap break-words text-sm text-black/60 dark:text-muted-dark"
+		>
+			{excerpt}
+		</p>
 	</a>
 </article>

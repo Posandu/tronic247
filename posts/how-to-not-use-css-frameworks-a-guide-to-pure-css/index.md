@@ -6,6 +6,8 @@ tags: ['css', 'design', 'frameworks', 'perfomance']
 img: /wp-content/uploads/2022/02/How-to-not-use-CSS-frameworks_.png
 ---
 
+{% component OldNotice/oldnotice.svelte %}
+
 Hey! So you came here to see another CSS framework? right? So time to worry, I am telling you how to create your CSS framework instead of using one. So let's begin!
 
 ## Contents

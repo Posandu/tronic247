@@ -34,13 +34,7 @@
 		<div class="mt-20">
 			<div class="flex items-center justify-between">
 				<div>
-					<p>
-						© {new Date().getFullYear()} Tronic247.
-						<a href="https://creativecommons.org/licenses/by-nc/2.5/">
-							Licensed under CC BY-NC 2.5
-						</a>. A blog by
-						<a href="https://posandu.com" class="text-primary" target="_blank">Posandu</a>
-					</p>
+					{@html `<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">©<span property="dct:title">Tronic247</span> ${new Date().getFullYear()} by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://posandu.com">Posandu</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-flex;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""></a></p>`}
 				</div>
 
 				<div>

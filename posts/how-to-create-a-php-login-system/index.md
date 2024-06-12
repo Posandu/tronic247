@@ -5,7 +5,7 @@ categories: ['php', 'web-dev']
 img: /wp-content/uploads/2021/02/hqdefault.jpg
 ---
 
-> Please note that this post is for educational purposes only. As it was created in 2021, the code may be outdated. Please use it as a reference and update it as needed.
+{% component OldNotice/oldnotice.svelte %}
 
 Today I will tell you how to create a login system with PHP.
 

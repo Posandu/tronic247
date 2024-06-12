@@ -64,7 +64,9 @@ function markdown() {
 
 				const slug = pathname.split('/').at(-2);
 
-				const fileLoc = pathForCache + (IS_DEV ? slug + '.svelte' : fileHashed + '.cache');
+				const fileLoc =
+					pathForCache +
+					(IS_DEV ? slug + '_' + fileHashed.toString() + '.svelte' : fileHashed + '.cache');
 
 				if (fs.existsSync(fileLoc)) {
 					const code = fs.readFileSync(fileLoc, 'utf-8');

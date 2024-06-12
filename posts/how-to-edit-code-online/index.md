@@ -4,6 +4,8 @@ date: '2021-03-02'
 categories: ['web-dev', 'tools']
 ---
 
+{% component OldNotice/oldnotice.svelte %}
+
 Do you need to edit code online here is the solution.
 
 ## How to edit

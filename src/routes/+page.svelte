@@ -73,8 +73,8 @@
 	<h2 class="mb-8 mt-16 text-2xl font-semibold">Recent Posts</h2>
 
 	<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-		{#each posts as { categories, date, title, excerpt, slug, img }}
-			<ArticleView {categories} {date} {title} {excerpt} {slug} {img} />
+		{#each posts as { date, title, excerpt, slug, img }}
+			<ArticleView {date} {title} {excerpt} {slug} {img} />
 		{/each}
 	</div>
 

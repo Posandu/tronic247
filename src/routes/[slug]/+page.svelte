@@ -5,7 +5,7 @@
 	import { mode } from 'mode-watcher';
 	import Comments from '$lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
-
+	
 	export let data;
 
 	let tags = data.meta.tags;
@@ -36,7 +36,7 @@
 		description: excerpt,
 		url: SITE_URL + slug,
 		type: 'article',
-		images: img ? [{ url: img }] : [],
+		images: img ? [{ url: img, width: 800, height: 600, alt: 'Article Image' }] : [],
 		locale: 'en_US',
 		site_name: 'Tronic247'
 	}}
@@ -45,6 +45,15 @@
 		site: '@posandu',
 		title: formattedTitle(title),
 		description: excerpt,
+		image: img,
+		imageAlt: 'Article Image'
+	}}
+	jsonLd={{
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		name: title,
+		description: excerpt,
+		url: SITE_URL + slug,
 		image: img
 	}}
 />
@@ -87,7 +96,7 @@
 	<svelte:component this={data.content} />
 
 	{#if Ad}
-		<Ad />
+		<svelte:component this={Ad} />
 	{/if}
 
 	<div class="mb-4 space-x-2">

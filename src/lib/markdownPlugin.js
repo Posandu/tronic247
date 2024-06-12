@@ -62,7 +62,9 @@ function markdown() {
 					Buffer.from(fileContent)
 				);
 
-				const fileLoc = pathForCache + fileHashed;
+				const slug = pathname.split('/').at(-2);
+
+				const fileLoc = pathForCache + (IS_DEV ? slug + '.svelte' : fileHashed + '.cache');
 
 				if (fs.existsSync(fileLoc)) {
 					const code = fs.readFileSync(fileLoc, 'utf-8');
@@ -78,6 +80,12 @@ function markdown() {
 
 				const embed = /{% embed src="(.*?)" title="(.*?)" %}/g;
 				const youtube = /{% youtube id="(.*?)" title="(.*?)" %}/g;
+				const component = /{% component ([a-zA-Z0-9]*)\/(.*) %}/g;
+
+				/**
+				 * @type {{name:string,path:string}[]}
+				 */
+				let imports = [];
 
 				/**
 				 * Replace regexes
@@ -91,12 +99,21 @@ function markdown() {
 								  loading="lazy"
 								  height="455"
 								></iframe>
-							  `.trim();
+						`.trim();
 					})
 					.replace(youtube, (_, id, title) => {
 						return `
 								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube>
-							`.trim();
+						`.trim();
+					})
+					.replace(component, (_, name, path) => {
+						console.log(chalk.yellow(`Found component ${name}`));
+
+						imports.push({ name, path });
+
+						return `
+								<${name} />
+						`.trim();
 					});
 
 				const processor = await unified()
@@ -136,8 +153,26 @@ function markdown() {
 									export const excerpt = ${JSON.stringify(excerpt)} ${excerpt.length > 0 ? '+" [...]";' : ''}
 									export const length = ${text.length};
 								</script>
+
+								<script>
+									${imports.map(({ name, path }) =>
+										`
+											
+												import ${name} from '$lib/components/md/${path}';
+												
+											`.trim()
+									)}
+								</script>
 	
-								${IS_DEV ? `{@html \`${escapeHtml(html).replaceAll('`', '\\`')}\`}` : escapeHtml(html)}
+								${
+									IS_DEV && !(imports.length > 0)
+										? `
+
+										{@html \` ${escapeHtml(html).replaceAll('`', '\\`')}  \`}
+
+									`.trim()
+										: escapeHtml(html)
+								}
 						`;
 
 				fs.writeFileSync(fileLoc, code);

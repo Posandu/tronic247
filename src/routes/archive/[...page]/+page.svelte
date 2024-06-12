@@ -3,6 +3,8 @@
 	import ArticleView from '$lib/components/ArticleView.svelte';
 	import { page } from '$app/stores';
 	import Pagination from '$lib/components/Pagination.svelte';
+	import SvelteSeo from 'svelte-seo';
+	import { SITE_URL, formattedTitle } from '$lib';
 
 	export let data;
 
@@ -14,6 +16,43 @@
 		currentPage = data.page;
 	}
 </script>
+
+<SvelteSeo
+	title={formattedTitle('Archive | Page ' + currentPage)}
+	description={'Archive of all posts on Tronic247. Page ' + currentPage}
+	canonical={SITE_URL + '/archive/page/' + currentPage}
+	openGraph={{
+		title: formattedTitle('Archive | Page ' + currentPage),
+		description: 'Archive of all posts on Tronic247. Page ' + currentPage,
+		url: SITE_URL + '/archive/page/' + currentPage,
+		type: 'article',
+		images: [
+			{
+				url: SITE_URL + '/og-image.png',
+				width: 800,
+				height: 600,
+				alt: 'OG Image'
+			}
+		],
+		locale: 'en_US',
+		site_name: 'Tronic247'
+	}}
+	twitter={{
+		card: 'summary_large_image',
+		site: '@posandu',
+		title: formattedTitle('Archive | Page ' + currentPage),
+		description: 'Archive of all posts on Tronic247. Page ' + currentPage,
+		image: SITE_URL + '/og-image.png',
+		imageAlt: 'OG Image'
+	}}
+	jsonLd={{
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		name: 'Archive | Page ' + currentPage,
+		description: 'Archive of all posts on Tronic247. Page ' + currentPage,
+		url: SITE_URL + '/archive/page/' + currentPage
+	}}
+/>
 
 <h1 class="mt-8 text-2xl font-semibold">Archive</h1>
 

@@ -33,60 +33,59 @@
 
 <svelte:window on:scroll={updateScroll} />
 
-<header
-	class="container sticky top-0 z-50 mx-auto mb-4 flex select-none justify-between rounded-b-none dark:text-white   py-3 text-black 
+<div class="sticky top-0 z-50 mx-auto flex h-[108px] items-start w-full justify-center">
+	<header
+		class="container mb-4 flex select-none justify-between rounded-b-none py-3 text-black dark:text-white
 	
-	{scrolled >
-	30
-		? 'shadow-xl dark:bg-black/20 dark:backdrop-blur-sm bg-white'
-		: ''}
+	{scrolled > 30 ? 'bg-white py-0 shadow-xl dark:bg-black/20 dark:backdrop-blur-sm' : ''}
 		
 		shadow-muted-dark/5 transition-all sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none"
->
-	<div class="flex min-h-16 flex-1 items-center justify-start">
-		<a href="/">
-			<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 dark:invert" />
-		</a>
-	</div>
+	>
+		<div class="flex min-h-16 flex-1 items-center justify-start">
+			<a href="/">
+				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 dark:invert" />
+			</a>
+		</div>
 
-	<nav class="hidden items-center lg:flex">
-		<ul class="flex items-center space-x-6 xl:space-x-8">
-			{#each menuItems as [label, link]}
-				<li class="relative">
-					<a
-						href={link}
-						class="link-menu
+		<nav class="hidden items-center lg:flex">
+			<ul class="flex items-center space-x-6 xl:space-x-8">
+				{#each menuItems as [label, link]}
+					<li class="relative">
+						<a
+							href={link}
+							class="link-menu
 					
 					{$page.url.pathname === link ? 'text-primary' : 'hover:text-primary'}
 					">{label}</a
-					>
-				</li>
-			{/each}
-		</ul>
+						>
+					</li>
+				{/each}
+			</ul>
 
-		<a class="ml-8" href="/search">
-			<Icon icon="material-symbols:search" class="size-6" />
-		</a>
+			<a class="ml-8" href="/search">
+				<Icon icon="material-symbols:search" class="size-6" />
+			</a>
 
-		<button class="ml-2 transition-all active:rotate-180" on:click={toggleMode}>
-			<Icon icon="lets-icons:color-mode" class="size-6" />
-		</button>
-	</nav>
+			<button class="ml-2 transition-all active:rotate-180" on:click={toggleMode}>
+				<Icon icon="lets-icons:color-mode" class="size-6" />
+			</button>
+		</nav>
 
-	<div class="flex items-center lg:hidden">
-		<a class="mr-4" href="/search">
-			<Icon icon="material-symbols:search" class="size-6" />
-		</a>
+		<div class="flex items-center lg:hidden">
+			<a class="mr-4" href="/search">
+				<Icon icon="material-symbols:search" class="size-6" />
+			</a>
 
-		<button class="mr-4 transition-all active:rotate-180" on:click={toggleMode}>
-			<Icon icon="lets-icons:color-mode" class="size-6" />
-		</button>
+			<button class="mr-4 transition-all active:rotate-180" on:click={toggleMode}>
+				<Icon icon="lets-icons:color-mode" class="size-6" />
+			</button>
 
-		<button class="menu-btn" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
-			<Icon icon="bx:bx-menu" class="size-6" />
-		</button>
-	</div>
-</header>
+			<button class="menu-btn" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
+				<Icon icon="bx:bx-menu" class="size-6" />
+			</button>
+		</div>
+	</header>
+</div>
 
 {#if mobileMenuOpen}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -98,7 +97,9 @@
 			if (e.target === e.currentTarget) mobileMenuOpen = false;
 		}}
 	>
-		<div class="relative h-full max-h-svh w-full max-w-xl overflow-auto bg-white dark:bg-black/20 backdrop-blur-md p-8 shadow-2xl">
+		<div
+			class="relative h-full max-h-svh w-full max-w-xl overflow-auto bg-white p-8 shadow-2xl backdrop-blur-md dark:bg-black/20"
+		>
 			<button
 				class="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full hover:bg-black/10"
 				on:click={() => (mobileMenuOpen = false)}

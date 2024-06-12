@@ -1,10 +1,52 @@
 <script lang="ts">
+	import { SITE_URL, formattedTitle } from '$lib';
 	import ArticleView from '$lib/components/ArticleView.svelte';
+	import SvelteSeo from 'svelte-seo';
 
 	export let data;
 
 	let posts = data.posts;
 </script>
+
+<SvelteSeo
+	title={"Tronic247 - @posandu's Blog"}
+	description={'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.'}
+	canonical={SITE_URL}
+	openGraph={{
+		title: "Tronic247 - @posandu's Blog",
+		description:
+			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
+		url: SITE_URL,
+		type: 'article',
+		images: [
+			{
+				url: SITE_URL + '/main.png',
+				width: 800,
+				height: 600,
+				alt: 'Main Image'
+			}
+		],
+		locale: 'en_US',
+		site_name: 'Tronic247'
+	}}
+	twitter={{
+		card: 'summary_large_image',
+		site: '@posandu',
+		title: "Tronic247 - @posandu's Blog",
+		description:
+			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
+		image: SITE_URL + '/main.png',
+		imageAlt: 'Main Image'
+	}}
+	jsonLd={{
+		'@context': 'https://schema.org',
+		'@type': 'Blog',
+		name: "Tronic247 - @posandu's Blog",
+		description:
+			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
+		url: SITE_URL
+	}}
+/>
 
 <div
 	class="relative -mt-4 overflow-hidden bg-black/90 pb-20 pt-20 text-center text-white dark:bg-black/20"

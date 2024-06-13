@@ -3,7 +3,10 @@ import { queryManager, type Post } from '$lib/query';
 import { error, redirect } from '@sveltejs/kit';
 
 export async function load(req) {
-	const frontPage = new queryManager((await req.parent()).allPostsFormatted, () => true);
+	const allPostsFormatted = (await req.parent()).allPostsFormatted;
+	if (!allPostsFormatted) return error(500, 'Error loading posts');
+	
+	const frontPage = new queryManager(allPostsFormatted, () => true);
 
 	const url = req.url.pathname;
 	/**

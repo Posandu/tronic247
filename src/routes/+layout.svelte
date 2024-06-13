@@ -21,18 +21,22 @@
 		} else NProgress.done();
 	}
 
-	const BLEED = ['/', '/sponsor', '/about'];
+	const BLEED = ['/', '/sponsor', '/about', '/trycode'];
+	const BLANK = ['/trycode'];
 
 	const isInside = (path: string) => BLEED.some((bleed) => path === bleed);
+	const isBlank = (path: string) => BLANK.some((blank) => path === blank);
 
 	export let data;
 </script>
 
 <ModeWatcher />
 
-<Header />
+{#if !isBlank($page.route?.id?.toString() || '')}
+	<Header />
 
-<div class="blob hidden dark:block"></div>
+	<div class="blob hidden dark:block"></div>
+{/if}
 
 {#key data.url}
 	<div
@@ -46,7 +50,9 @@
 	</div>
 {/key}
 
-<Footer categories={data.stats.categories} tags={data.stats.tags} />
+{#if !isBlank($page.route?.id?.toString() || '')}
+	<Footer categories={data.stats.categories} tags={data.stats.tags} />
+{/if}
 
 <style>
 	:global(.dark) {

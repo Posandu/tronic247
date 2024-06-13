@@ -7,12 +7,19 @@ export const load = async ({ url }) => {
 	);
 
 	const stats = getStats(allPostsFormatted);
+	const isArchivePage =
+		url.pathname.includes('/archive') ||
+		url.pathname === '/' ||
+		url.pathname.includes('/category/') ||
+		url.pathname.includes('/tag/');
 
 	return {
-		allPostsFormatted: allPostsFormatted.map((post) => ({
-			...post,
-			content: undefined
-		})),
+		allPostsFormatted: isArchivePage
+			? allPostsFormatted.map((post) => ({
+					...post,
+					content: undefined
+				}))
+			: null,
 		stats,
 		url: url.pathname
 	};

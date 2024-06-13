@@ -39,6 +39,8 @@
 	"type": "module",
 	"dependencies": {
 		"@bitmachina/highlighter": "1.0.0-alpha.7",
+		"@codesandbox/sandpack-react": "2.12.1",
+		"@codesandbox/sandpack-themes": "^2.0.21",
 		"@iconify/svelte": "^4.0.2",
 		"@justinribeiro/lite-youtube": "^1.5.0",
 		"@melt-ui/pp": "^0.3.2",
@@ -51,6 +53,8 @@
 		"@tsparticles/svelte": "^3.1.1",
 		"@types/node": "^20.14.2",
 		"@types/nprogress": "^0.2.3",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
 		"@zerodevx/svelte-img": "^2.1.0",
 		"chalk": "^5.3.0",
 		"cheerio": "1.0.0-rc.12",
@@ -60,6 +64,8 @@
 		"highwayhash": "^3.1.1",
 		"mode-watcher": "^0.3.0",
 		"nprogress": "^0.2.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-slug": "^6.0.0",
 		"rehype-stringify": "^10.0.0",
@@ -69,10 +75,14 @@
 		"remark-shiki-twoslash": "^3.1.3",
 		"remark-smartypants": "^3.0.1",
 		"remark-toc": "^9.0.0",
+		"sandpack-lit": "^0.1.10",
 		"svelte-headlessui": "^0.0.35",
 		"svelte-portal": "^2.2.1",
 		"svelte-seo": "^1.6.1",
 		"svelte-transition": "^0.0.16",
 		"unified": "^11.0.4"
+	},
+	"resolutions": {
+		"@codesandbox/sandpack-client": "2.10.0"
 	}
 }

@@ -9,6 +9,7 @@
 	import { onNavigate } from '$app/navigation';
 	import { fade, fly, scale } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
+	import { setImgs } from '$lib/img';
 
 	NProgress.configure({
 		// Full list:
@@ -28,6 +29,8 @@
 	const isBlank = (path: string) => BLANK.some((blank) => path === blank);
 
 	export let data;
+
+	setImgs(data.allImgs);
 </script>
 
 <ModeWatcher />

@@ -152,8 +152,8 @@ devDependencies:
     specifier: ^3.0.0
     version: 3.2.1(@sveltejs/kit@2.5.10)
   '@sveltejs/enhanced-img':
-    specifier: ^0.2.1
-    version: 0.2.1(svelte@4.2.17)
+    specifier: ^0.1.9
+    version: 0.1.9(svelte@4.2.17)
   '@sveltejs/kit':
     specifier: ^2.0.0
     version: 2.5.10(@sveltejs/vite-plugin-svelte@3.1.1)(svelte@4.2.17)(vite@5.2.12)
@@ -1284,12 +1284,12 @@ packages:
       '@sveltejs/kit': 2.5.10(@sveltejs/vite-plugin-svelte@3.1.1)(svelte@4.2.17)(vite@5.2.12)
     dev: false
 
-  /@sveltejs/enhanced-img@0.2.1(svelte@4.2.17):
-    resolution: {integrity: sha512-tEJCtDDSY4Od7YosS2OAHFjGwM09AOHaL97YuqDAnnKLnTpSYJvpLl3r6bLmWDht2ZqoAXfaPsbFJaG9zbQMjw==}
+  /@sveltejs/enhanced-img@0.1.9(svelte@4.2.17):
+    resolution: {integrity: sha512-gUgaiG88P6moWcxZx4YrzMhAlw1TgggKRp7n9gdfCREDeXHysCd1l9GpQR3sh109SM3rNlkiaAzt+iPLT0aG1w==}
     dependencies:
       magic-string: 0.30.10
       svelte-parse-markup: 0.1.5(svelte@4.2.17)
-      vite-imagetools: 7.0.2
+      vite-imagetools: 6.2.9
     transitivePeerDependencies:
       - rollup
       - svelte
@@ -3447,9 +3447,9 @@ packages:
       sharp: 0.32.6
     dev: false
 
-  /imagetools-core@7.0.0:
-    resolution: {integrity: sha512-6fYbD7u4VIOt6fqKrOlbF77JXgUVyUmEJIPlfYVTuR/S2Ig9cX3gukGiLEU0aSetcfE7CYnhLTPtTEu4mLwhCw==}
-    engines: {node: '>=18.0.0'}
+  /imagetools-core@6.0.4:
+    resolution: {integrity: sha512-N1qs5qn7u9nR3kboISkYuvJm8MohiphCfBa+wx1UOropVaFis9/mh6wuDPLHJNhl6/64C7q2Pch5NASVKAaSrg==}
+    engines: {node: '>=12.0.0'}
     dependencies:
       sharp: 0.33.4
     dev: true
@@ -6157,12 +6157,12 @@ packages:
       - rollup
     dev: false
 
-  /vite-imagetools@7.0.2:
-    resolution: {integrity: sha512-sA98fIhfIqPdt5qKAMMrQtBzdqK44dlmv4jEUlJMmn4GzR8CdXjKGiyU/GKUFxjReuPi0fK/dd0JhiZixZt06A==}
-    engines: {node: '>=18.0.0'}
+  /vite-imagetools@6.2.9:
+    resolution: {integrity: sha512-C4ZYhgj2vAj43/TpZ06XlDNP0p/7LIeYbgUYr+xG44nM++4HGX6YZBKAYpiBNgiCFUTJ6eXkRppWBrfPMevgmg==}
+    engines: {node: '>=12.0.0'}
     dependencies:
       '@rollup/pluginutils': 5.1.0
-      imagetools-core: 7.0.0
+      imagetools-core: 6.0.4
     transitivePeerDependencies:
       - rollup
     dev: true

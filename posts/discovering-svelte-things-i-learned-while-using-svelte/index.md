@@ -188,7 +188,7 @@ to update the list when an item is deleted, but how do you do that?
 
 With Svelte's `createEventDispatcher` function, you can send a message from the child component to the parent component.
 
-<img style="max-width:400px;min-width:300px;width:100%" src="https://github.com/Posandu/posandu.github.io/assets/76736580/2cb629bf-40a5-4613-a692-137d2da85e91">
+<img style="max-width:400px;min-width:300px;width:100%" src="https://github.com/Posandu/posandu.github.io/assets/76736580/2cb629bf-40a5-4613-a692-137d2da85e91" alt="example">
 
 In the child component, create a dispatcher and dispatch a message when the button is clicked:
 

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { imgs } from '$lib/img';
+
 	export let slug: string;
 	export let title: string;
 	export let excerpt: string;
@@ -17,8 +19,8 @@
 >
 	{#if img}
 		<a href="/{slug}" aria-label="Read more about {title}">
-			<img
-				src={img}
+			<enhanced:img
+				src={imgs[img]}
 				class="mb-6 w-full rounded-xl object-cover transition-all"
 				alt="{title} image"
 				loading="lazy"

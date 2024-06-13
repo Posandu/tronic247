@@ -91,14 +91,14 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="fixed inset-0 z-50 flex h-full w-full items-center justify-start bg-black/20"
+		class="fixed inset-0 z-50 flex h-full w-full items-center justify-start bg-black/60 backdrop-blur-lg"
 		transition:fly={{ duration: 200, x: -10 }}
 		on:click={(e) => {
 			if (e.target === e.currentTarget) mobileMenuOpen = false;
 		}}
 	>
 		<div
-			class="relative h-full max-h-svh w-full max-w-xl overflow-auto bg-white p-8 shadow-2xl backdrop-blur-md dark:bg-black/20"
+			class="relative h-full max-h-svh w-full max-w-xl overflow-auto bg-white p-8 shadow-2xl dark:bg-black/20"
 		>
 			<button
 				class="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full hover:bg-black/10"

@@ -12,6 +12,8 @@ const formaRawPostModule = (post: any, path: string): Post => {
 	meta.tags = meta.tags || [];
 	meta.categories = meta.categories || [];
 
+	if (meta.updated) meta.lastModified = new Date(meta.updated);
+
 	meta.tags = meta.tags.map((tag: string) => tag.trim().toLowerCase());
 	meta.categories = meta.categories.map((category: string) => category.trim().toLowerCase());
 

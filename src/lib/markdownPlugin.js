@@ -106,6 +106,10 @@ function markdown() {
 					.replace(youtube, (_, id, title) => {
 						return `
 								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube>
+
+								<noscript>
+									<p>Videos are disabled. <a href="https://www.youtube.com/watch?v=${id}">Click here to watch</a></p>
+								</noscript>
 						`.trim();
 					})
 					.replace(component, (_, name, path) => {

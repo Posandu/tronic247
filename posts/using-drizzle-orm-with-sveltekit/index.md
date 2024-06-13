@@ -211,7 +211,7 @@ Add this to the `<head>` of `app.html` so that we don't need to write CSS.
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
 ```
 
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/76736580/285513855-dc7b9958-1710-43a1-8d13-b7337ff3d62c.png)
+![](https://github-production-user-asset-6210df.s3.amazonaws.com/76736580/285513855-dc7b9958-1710-43a1-8d13-b7337ff3d62c.png)
 
 Now, let's add some functionality to our app. We'll use Svelte server actions to handle our form submission. Create a `src/routes/+page.server.ts` file and add the following code:
 

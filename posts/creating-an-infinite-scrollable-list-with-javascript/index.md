@@ -91,7 +91,7 @@ Now, we add a container and a list item to the page.
 
 We get this result:
 
-![image](https://user-images.githubusercontent.com/76736580/185913214-853f5462-8d90-4e7b-8884-3ffbb20d009c.png)
+![](https://user-images.githubusercontent.com/76736580/185913214-853f5462-8d90-4e7b-8884-3ffbb20d009c.png)
 
 Add some styles to make it look nice.
 
@@ -125,7 +125,7 @@ Add some styles to make it look nice.
 }
 ```
 
-![image](https://user-images.githubusercontent.com/76736580/185913830-2a5d1921-1bc5-479d-8e09-89b5c1557162.png)
+![](https://user-images.githubusercontent.com/76736580/185913830-2a5d1921-1bc5-479d-8e09-89b5c1557162.png)
 
 Now, will add some space and status text.
 

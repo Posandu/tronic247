@@ -412,7 +412,7 @@ fn main() {
 
 Now, we can run the app using `cargo run`. You should see something like this:
 
-![image](https://user-images.githubusercontent.com/76736580/189867561-446dc806-c8b2-46bd-b2db-07ddca4625c9.png)
+![](https://user-images.githubusercontent.com/76736580/189867561-446dc806-c8b2-46bd-b2db-07ddca4625c9.png)
 
 ## Conclusion
 

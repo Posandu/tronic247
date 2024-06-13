@@ -39,7 +39,7 @@ Make sure to replace `YOUR_TOKEN_HERE` with your bot token.
 
 Also, scroll bottom and toggle all the permissions to true.
 
-![image](https://user-images.githubusercontent.com/76736580/197371747-b59d9ba2-f0ff-47e2-a307-0c5865dc261b.png)
+![](https://user-images.githubusercontent.com/76736580/197371747-b59d9ba2-f0ff-47e2-a307-0c5865dc261b.png)
 
 Lastly, we should add the bot to a Discord server, to do this, we go to the Developer portal again and go to the Oauth2->Url Generator. Then, check on the `bot` checkbox and check `Administrator` on the bottom checkboxes list.
 

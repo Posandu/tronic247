@@ -48,6 +48,7 @@
 		"@remark-embedder/transformer-oembed": "^5.0.0",
 		"@shikijs/rehype": "^1.6.2",
 		"@sveltejs/adapter-static": "^3.0.1",
+		"@sveltejs/adapter-vercel": "^5.3.1",
 		"@tailwindcss/forms": "^0.5.7",
 		"@tsparticles/slim": "^3.4.0",
 		"@tsparticles/svelte": "^3.1.1",

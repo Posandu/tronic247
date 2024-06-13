@@ -76,11 +76,14 @@
 		"remark-smartypants": "^3.0.1",
 		"remark-toc": "^9.0.0",
 		"sandpack-lit": "^0.1.10",
+		"sharp": "^0.33.4",
 		"svelte-headlessui": "^0.0.35",
 		"svelte-portal": "^2.2.1",
 		"svelte-seo": "^1.6.1",
 		"svelte-transition": "^0.0.16",
-		"unified": "^11.0.4"
+		"svgo": "^3.3.2",
+		"unified": "^11.0.4",
+		"vite-plugin-image-optimizer": "^1.1.8"
 	},
 	"resolutions": {
 		"@codesandbox/sandpack-client": "2.10.0"

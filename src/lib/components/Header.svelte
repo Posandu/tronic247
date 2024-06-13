@@ -35,9 +35,9 @@
 
 <div class="sticky top-0 z-50 mx-auto flex h-[108px] items-start w-full justify-center">
 	<header
-		class="container mb-4 flex select-none justify-between rounded-b-none py-3 text-black dark:text-white
+		class="container mb-4 flex select-none justify-between rounded-b-none  text-black dark:text-white
 	
-	{scrolled > 30 ? 'bg-white py-0 shadow-xl dark:bg-black/20 dark:backdrop-blur-sm' : ''}
+	{scrolled > 30 ? 'bg-white py-0 shadow-xl dark:bg-black/20 dark:backdrop-blur-xl' : 'py-3'}
 		
 		shadow-muted-dark/5 transition-all sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none"
 	>

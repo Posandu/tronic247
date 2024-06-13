@@ -5,7 +5,7 @@
 	import { mode } from 'mode-watcher';
 	import Comments from '$lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
-	
+
 	export let data;
 
 	let tags = data.meta.tags;
@@ -58,7 +58,7 @@
 	}}
 />
 
-<main class="prose prose-gray mx-auto mt-8 dark:prose-invert">
+<div class="mx-auto max-w-[75ch]">
 	{#if img}
 		<img
 			src={img}
@@ -92,7 +92,9 @@
 	</div>
 
 	<h1 class="mb-10 text-4xl font-bold">{title}</h1>
+</div>
 
+<main class="prose prose-gray mx-auto mt-8 dark:prose-invert">
 	<svelte:component this={data.content} />
 
 	{#if Ad}

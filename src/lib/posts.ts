@@ -24,7 +24,8 @@ const formaRawPostModule = (post: any, path: string): Post => {
 		content: post.default,
 		img: meta.img,
 		excerpt: post.excerpt,
-		length
+		length,
+		lastModified: meta.lastModified
 	} satisfies Post;
 
 	return mdata;

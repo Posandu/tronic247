@@ -4,6 +4,7 @@ date: '2023-01-03'
 categories: ['css', 'html-tutorials', 'javascript', 'mysql']
 tags: ['database', 'mysql', 'prisma', 'rewards', 'system', 'javascript', 'nextjs']
 img: /wp-content/uploads/2023/01/Create-a-daily-badge-rewards-system.png
+updated: '2024-06-13'
 ---
 
 Losing users is a common problem for many apps. One way to keep users engaged is to reward them for their daily activities. A lot of apps do this by giving users a daily login bonus such as XP, coins, or a free award/badge. Some sites like coinmarketcap.com even give users a daily badge for visiting their site.

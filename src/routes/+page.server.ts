@@ -6,6 +6,7 @@ import { error, redirect } from '@sveltejs/kit';
 
 export async function load(req) {
 	const parentData = await req.parent();
+	if (!parentData.allPostsFormatted) return error(500, 'Error loading posts');
 
 	const frontPage = new queryManager(parentData.allPostsFormatted, () => true);
 

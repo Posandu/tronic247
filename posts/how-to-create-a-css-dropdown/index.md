@@ -2,6 +2,7 @@
 title: 'Create a CSS dropdown'
 date: '2021-02-16'
 categories: ['css']
+updated: '2024-06-13'
 ---
 
 Dropdowns are elements that we use to describe a primary action. Here's how to create a simple CSS one.

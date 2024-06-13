@@ -38,7 +38,7 @@
 	</p>
 
 	<a href="/{slug}" aria-labelledby="article-{slug}-title article-{slug}-desc">
-		<h2 id="article-{slug}-title" class="mt-4 text-2xl font-semibold">
+		<h2 id="article-{slug}-title" class="mt-4 text-xl font-semibold">
 			{title}
 		</h2>
 

@@ -4,6 +4,7 @@ date: '2022-06-17'
 categories: ['javascript', 'tricks-and-tips']
 tags: ['tips', 'javascript', 'games']
 img: /wp-content/uploads/2022/06/code-golf-in-js.png
+updated: '2024-06-13'
 ---
 
 In this article, we'll golf some JavaScript code. But first, we'll need to know what the heck is code-golf?

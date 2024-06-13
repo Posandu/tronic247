@@ -146,7 +146,7 @@ function markdown() {
 				const $ = cheerio.load(html);
 				const text = $('html').text();
 
-				const excerpt = text.split(' ').slice(0, 25).join(' '); /*first 55 words*/
+				let excerpt = text.slice(0, 100);
 
 				console.log(chalk.green(`Successfully parsed ${pathname}`));
 

@@ -4,6 +4,7 @@ date: '2022-03-03'
 categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
 tags: ['javascript', 'tips']
 img: /wp-content/uploads/2022/03/Create-a-drawing-app-with-React.png
+updated: '2024-06-13'
 ---
 
 Today, we will be making this drawing app with React.

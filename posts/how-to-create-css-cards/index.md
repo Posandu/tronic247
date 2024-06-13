@@ -2,6 +2,7 @@
 title: 'Creating a card with HTML and CSS'
 date: '2021-02-19'
 categories: ['css', 'html-tutorials']
+updated: '2024-06-13'
 ---
 
 Here's a simple way to create a card using HTML and CSS.

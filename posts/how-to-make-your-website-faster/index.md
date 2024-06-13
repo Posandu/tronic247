@@ -4,6 +4,7 @@ date: '2021-10-12'
 categories: ['web-dev', 'tricks-and-tips']
 tags: ['cloudflare', 'perfomance', 'tips']
 img: /wp-content/uploads/2021/10/How-to-increase-your-websites-speed.png
+updated: '2024-06-13'
 ---
 
 Hello, fellow devs! In this article, I will tell some awesome tips to make your website faster. So, before we start, let's brainstorm why the speed of the website is important.

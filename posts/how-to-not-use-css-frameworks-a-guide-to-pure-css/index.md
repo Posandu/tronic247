@@ -4,6 +4,7 @@ date: '2022-02-05'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['css', 'design', 'frameworks', 'perfomance']
 img: /wp-content/uploads/2022/02/How-to-not-use-CSS-frameworks_.png
+updated: '2024-06-13'
 ---
 
 {% component OldNotice/oldnotice.svelte %}

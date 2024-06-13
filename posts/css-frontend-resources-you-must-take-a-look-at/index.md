@@ -4,6 +4,7 @@ date: '2021-10-29'
 categories: ['css', 'tricks-and-tips']
 tags: ['css', 'frontend']
 img: /wp-content/uploads/2021/10/CSS-frontend-Resources-you-must-take-a-look-at.png
+updated: '2024-06-13'
 ---
 
 In this article, I will tell you some resources you should bookmark as a CSS or Frontend developer. So, let's start!

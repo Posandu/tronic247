@@ -2,6 +2,7 @@
 title: 'Edit code online'
 date: '2021-03-02'
 categories: ['web-dev', 'tools']
+updated: '2024-06-13'
 ---
 
 {% component OldNotice/oldnotice.svelte %}

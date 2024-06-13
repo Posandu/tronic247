@@ -9,11 +9,11 @@
 </script>
 
 <SvelteSeo
-	title={"Tronic247 - @posandu's Blog"}
+	title={"Tronic247 - Posandu's Blog"}
 	description={'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.'}
 	canonical={SITE_URL}
 	openGraph={{
-		title: "Tronic247 - @posandu's Blog",
+		title: "Tronic247 - Posandu's Blog",
 		description:
 			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
 		url: SITE_URL,
@@ -32,7 +32,7 @@
 	twitter={{
 		card: 'summary_large_image',
 		site: '@posandu',
-		title: "Tronic247 - @posandu's Blog",
+		title: "Tronic247 - Posandu's Blog",
 		description:
 			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
 		image: SITE_URL + '/main.png',
@@ -41,7 +41,7 @@
 	jsonLd={{
 		'@context': 'https://schema.org',
 		'@type': 'Blog',
-		name: "Tronic247 - @posandu's Blog",
+		name: "Tronic247 - Posandu's Blog",
 		description:
 			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
 		url: SITE_URL

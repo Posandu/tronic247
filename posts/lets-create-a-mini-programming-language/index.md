@@ -4,6 +4,7 @@ date: '2022-07-01'
 categories: ['javascript']
 tags: ['javascript', 'programming']
 img: /wp-content/uploads/2022/07/Create-a-mini-programming-language.png
+updated: '2024-06-13'
 ---
 
 In this tutorial, we will create a mini programming language that compiles:

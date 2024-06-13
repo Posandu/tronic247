@@ -3,6 +3,7 @@ title: 'Expanding search form with CSS'
 date: '2021-04-25'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 img: /wp-content/uploads/2021/04/maxresdefault.jpg
+updated: '2024-06-13'
 ---
 
 Today I will show how to create a expanding search form with CSS.

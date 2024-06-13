@@ -4,6 +4,7 @@ date: '2022-10-09'
 categories: ['html-tutorials', 'javascript', 'nextjs', 'mysql']
 tags: ['apps', 'css', 'frontend', 'javascript', 'mysql', 'react', 'nextjs']
 img: /wp-content/uploads/2022/10/Create-a-poll-app.png
+updated: '2024-06-13'
 ---
 
 ## Intro

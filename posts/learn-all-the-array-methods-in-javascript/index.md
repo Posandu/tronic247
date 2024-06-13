@@ -4,6 +4,7 @@ date: '2022-05-26'
 categories: ['javascript', 'tricks-and-tips']
 tags: ['tips', 'javascript']
 img: /wp-content/uploads/2022/05/all-js-arr-methods.png
+updated: '2024-06-13'
 ---
 
 In this article, we'll learn about the array methods in JavaScript with some examples. Before we start, let's look at some methods of the `Array` class.

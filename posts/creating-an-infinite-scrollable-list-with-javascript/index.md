@@ -4,6 +4,7 @@ date: '2022-08-22'
 categories: ['javascript', 'css', 'html-tutorials']
 tags: ['javascript', 'css']
 img: /wp-content/uploads/2022/08/Create-an-infinite-scrolling-list.png
+updated: '2024-06-13'
 ---
 
 Infinite scroll is a modern web development technique that allows you to create an infinitely scrollable list.

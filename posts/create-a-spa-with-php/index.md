@@ -4,6 +4,7 @@ date: '2022-04-07'
 categories: ['css', 'html-tutorials', 'tricks-and-tips', 'php']
 tags: ['php', 'spa', 'javascript']
 img: /wp-content/uploads/2022/05/Create-a-SPA-with-PHP.png
+updated: '2024-06-13'
 ---
 
 Today, we will create an SPA with PHP. Our output will look like this. (Ignore the speed of the GIF, compressing it made it look slower than it is somehow)

@@ -4,6 +4,7 @@ date: '2023-07-22'
 categories: ['svelte', 'tricks-and-tips']
 tags: ['svelte', 'tricks-and-tips']
 img: /wp-content/uploads/2023/07/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.png
+updated: '2024-06-13'
 ---
 
 So, I've been playing around with Svelte, this unique JavaScript compiler, for a while now, and let me tell you, it's awesome! As someone who's experienced with React, using Svelte feels like a refreshing change of pace. I'm not here to pit React against Svelte - plenty of articles already do that. Instead, I want to share some cool stuff I've learned while using Svelte.

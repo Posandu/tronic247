@@ -4,6 +4,7 @@ date: '2023-01-27'
 categories: ['html-tutorials', 'javascript']
 tags: ['github', 'javascript']
 img: /wp-content/uploads/2023/01/Get-Github-Commits-of-a-file.png
+updated: '2024-06-13'
 ---
 
 While browsing the Ant Design documentation, I noticed that they show the GitHub contributors of a file at the bottom of the page. I thought it was a nice feature and wanted to blog about it.

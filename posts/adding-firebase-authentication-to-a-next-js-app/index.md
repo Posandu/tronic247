@@ -4,6 +4,7 @@ date: '2022-11-15'
 categories: ['html-tutorials', 'javascript', 'nextjs']
 tags: ['frontend', 'javascript', 'nextjs']
 img: /wp-content/uploads/2022/11/Adding-Firebase-auth-to-a-Next.js-project.png
+updated: '2024-06-13'
 ---
 
 ## Introduction

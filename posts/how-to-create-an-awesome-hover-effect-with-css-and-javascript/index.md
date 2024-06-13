@@ -4,6 +4,7 @@ date: '2021-12-05'
 categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
 tags: ['css', 'hover-effects', 'javascript', 'ui']
 img: /wp-content/uploads/2021/12/Create-an-awesome-hover-effect-With-JavaScript-CSS.png
+updated: '2024-06-13'
 ---
 
 In this tutorial, we'll make this awesome hover effect using CSS and JavaScript. You can see this effect in MacOs big Sur taskbar/bottom dock.

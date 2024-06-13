@@ -4,6 +4,7 @@ date: '2022-11-21'
 categories: ['html-tutorials', 'javascript']
 tags: ['discord', 'status', 'website', 'html', 'javascript']
 img: /wp-content/uploads/2022/11/discord-status.png
+updated: '2024-06-13'
 ---
 
 Using a status message is a great way to show info about you. Discord, the most popular chat app for devs has some advanced status features. They include:

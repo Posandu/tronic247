@@ -4,6 +4,7 @@ date: '2021-09-20'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['clone', 'css']
 img: /wp-content/uploads/2021/09/google_drive_sidebar_clone.png
+updated: '2024-06-13'
 ---
 
 In this post, you will learn how to create the sidebar in Google drive with CSS and HTML.

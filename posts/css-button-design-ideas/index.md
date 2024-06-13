@@ -2,6 +2,7 @@
 title: 'CSS button design ideas'
 date: '2021-02-13'
 categories: ['css']
+updated: '2024-06-13'
 ---
 
 Do you need some cool CSS buttons. Look no further, see this code I have posted below.

@@ -4,6 +4,7 @@ date: '2021-07-27'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['css', 'checkboxes']
 img: /wp-content/uploads/2021/07/pure_css_checkbox.png
+updated: '2024-06-13'
 ---
 
 Here is a Pure CSS checkbox with only one element. It's also accessibility friendly.

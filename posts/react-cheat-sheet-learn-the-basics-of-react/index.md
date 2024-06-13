@@ -4,6 +4,7 @@ date: '2022-09-22'
 categories: ['html-tutorials', 'javascript']
 tags: ['javascript', 'react', 'tips']
 img: /wp-content/uploads/2022/09/React-Cheat-Sheet-Learn-the-basics-of-React.png
+updated: '2024-06-13'
 ---
 
 React is a JavaScript library for building interactive user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. So, in this article, you can find a React cheat sheet that will help you to learn React quickly.

@@ -8,6 +8,7 @@ export type Post = {
 	categories?: string[];
 	excerpt: string;
 	length?: number;
+	lastModified?: string;
 };
 
 type QueryFn = (post: Post) => boolean;

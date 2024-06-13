@@ -24,7 +24,7 @@ export default {
 				DEFAULT: {
 					css: {
 						maxWidth: '75ch',
-						lineHeight: '1.75',
+						lineHeight: '1.75'
 					}
 				}
 			}
@@ -41,4 +41,4 @@ export default {
 	},
 
 	plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')]
-} as Config;
+} satisfies Config;

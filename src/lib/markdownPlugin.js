@@ -148,11 +148,10 @@ function markdown() {
 				const html = processor.toString();
 
 				const $ = cheerio.load(html);
+				$('noscript').remove();
 				const text = $('html').text();
 
 				let excerpt = text.slice(0, 100);
-
-				console.log(chalk.green(`Successfully parsed ${pathname}`));
 
 				const code = `<script context="module">
 									export const meta = ${JSON.stringify(meta)};

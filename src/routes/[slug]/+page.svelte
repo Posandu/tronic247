@@ -5,7 +5,6 @@
 	import { mode } from 'mode-watcher';
 	import Comments from '$lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
-	import { imgs } from '$lib/img.js';
 
 	export let data;
 
@@ -61,8 +60,8 @@
 
 <div class="mx-auto max-w-[75ch]">
 	{#if img}
-		<enhanced:img
-			src={imgs[img]}
+		<img
+			src={img}
 			alt="Random"
 			class="mb-10 w-full transform-gpu object-cover will-change-transform"
 		/>

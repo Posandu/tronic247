@@ -65,7 +65,7 @@
 <Pagination {totalPages} {currentPage} urlFn={(page) => `/category/${category}/page/${page}`} />
 
 <div class="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-	{#each posts as { categories, date, title, excerpt, slug, img }}
-		<ArticleView {categories} {date} {title} {excerpt} {slug} {img} class="col-span-1" />
+	{#each posts as { date, title, excerpt, slug, img }}
+		<ArticleView {date} {title} {excerpt} {slug} {img} class="col-span-1" />
 	{/each}
 </div>

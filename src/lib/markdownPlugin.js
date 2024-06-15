@@ -107,9 +107,7 @@ function markdown() {
 						return `
 								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube>
 
-								<noscript>
-									<p>Videos are disabled. <a href="https://www.youtube.com/watch?v=${id}">Click here to watch</a></p>
-								</noscript>
+<noscript><p>Videos are disabled. <a href="https://www.youtube.com/watch?v=${id}">Click here to watch</a></p></noscript>
 						`.trim();
 					})
 					.replace(component, (_, name, path) => {
@@ -151,7 +149,7 @@ function markdown() {
 				$('noscript').remove();
 				const text = $('html').text();
 
-				let excerpt = text.slice(0, 100);
+				let excerpt = text.slice(0, 100).trim();
 
 				const code = `<script context="module">
 									export const meta = ${JSON.stringify(meta)};

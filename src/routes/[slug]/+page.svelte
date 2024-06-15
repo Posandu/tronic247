@@ -76,7 +76,7 @@
 			})}
 		</p>
 
-		{#if categories}
+		{#if categories && categories?.length > 0}
 			<span class="mx-1">•</span>
 
 			<p class="mt-2 inline" aria-label="Categories">

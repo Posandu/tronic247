@@ -21,7 +21,7 @@ class SiteMap {
 								return `
                 <url>
                     <loc>${page.loc}</loc>
-                    <lastmod>${page.lastmod}</lastmod>
+                    <lastmod>${new Date(page.lastmod).toLocaleDateString('en-CA')}</lastmod>
                     ${page.changefreq ? `<changefreq>${page.changefreq}</changefreq>` : ''}
                     ${page.priority ? `<priority>${page.priority}</priority>` : ''}
                 </url>

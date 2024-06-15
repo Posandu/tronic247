@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Sitemap: https://www.tronic247.com/sitemap_index.xml
+Disallow: /cdn-cgi/

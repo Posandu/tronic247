@@ -12,6 +12,8 @@ This made me rethink my blog's performance. I had been using WordPress for a whi
 
 This big decision required a lot of planning and preparation, which I procrastinated on for a while.
 
+## Contents
+
 ## Why Migrate?
 
 The main reason is performance. WordPress is a great platform, but it's not the fastest. Even with Cloudflare, my blog's performance was lacking.
@@ -135,6 +137,20 @@ I wrote a sitemap generator in SvelteKit to generate a sitemap.xml file. It's a 
 The `sitemap.xml` file isn't actually a file but a route in SvelteKit. It's generated at build time and served as an XML file.
 
 And... that's it! I successfully migrated my blog from WordPress to SvelteKit. The blog is now faster, more customizable, and more enjoyable to work on.
+
+## TryCode
+
+One of the features I wanted to add to my blog was a "TryCode" feature. This feature is just like CodePen, but for blog posts. It allows readers to try out code snippets without leaving the page.
+
+{% component TryCodeMigration/TryCodeMigration.svelte %}
+
+This is powered by [SandPack](https://sandpack.codesandbox.io/), which is made by the same team behind CodeSandbox. It's a great tool for embedding code snippets in blog posts.
+
+Unfortunately, the SandPack component is made with React, so I had to use **React** in my SvelteKit project. It's not ideal, but it works. Since everything is lazy-loaded and cached by the browser, the performance impact is minimal.
+
+## Comments
+
+The comments section is powered by [Utterances](https://utteranc.es/), a GitHub issue-based commenting system. It's simple, fast, and doesn't require a database.
 
 ## Conclusion
 

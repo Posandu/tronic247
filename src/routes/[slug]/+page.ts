@@ -12,6 +12,7 @@ export const load = async ({ params }) => {
 
 	const meta = formaRawPostModule(post, path);
 
+	console.log(meta)
 	return {
 		content: post.default,
 		meta

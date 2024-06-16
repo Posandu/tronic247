@@ -17,10 +17,12 @@ const formaRawPostModule = (post: any, path: string): Post => {
 	meta.tags = meta.tags.map((tag: string) => tag.trim().toLowerCase());
 	meta.categories = meta.categories.map((category: string) => category.trim().toLowerCase());
 
+	const slug = /posts\/(.*?)\/index\.md/g.exec(path);
+
 	const mdata = {
 		title: meta.title,
 		date: new Date(meta.date),
-		slug: path.split('/')[3],
+		slug: slug ? slug[1] : '',
 		tags: meta.tags,
 		categories: meta.categories,
 		content: post.default,

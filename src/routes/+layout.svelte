@@ -9,7 +9,15 @@
 	import { onNavigate } from '$app/navigation';
 	import { fade, fly, scale } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
+	import { beforeNavigate } from '$app/navigation';
+	import { updated } from '$app/stores';
 
+	beforeNavigate(({ willUnload, to }) => {
+		if ($updated && !willUnload && to?.url) {
+			location.href = to.url.href;
+		}
+	});
+	
 	NProgress.configure({
 		// Full list:
 		minimum: 0.16

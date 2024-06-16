@@ -2,6 +2,7 @@ import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import markdown from './src/lib/markdownPlugin.js';
 import { sequence } from '@melt-ui/pp';
+import * as child_process from 'node:child_process';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -15,6 +16,9 @@ const config = {
 		prerender: {
 			handleEntryGeneratorMismatch: 'warn',
 			concurrency: 1
+		},
+		version: {
+			name: child_process.execSync('git rev-parse HEAD').toString().trim()
 		}
 	},
 	vitePlugin: {

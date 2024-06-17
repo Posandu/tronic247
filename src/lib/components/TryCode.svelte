@@ -24,7 +24,7 @@
 		}
 	});
 
-	import('./CodeEditor').then((mod) => {
+	import(/* @vite-ignore */ './CodeEditor').then((mod) => {
 		codeEditorModule = mod;
 	});
 

@@ -16,6 +16,8 @@
 	let excerpt = data.meta.excerpt.trim() || title;
 	let slug = data.meta.slug;
 
+	let randPosts = data.randPosts;
+
 	let Ad: any;
 
 	onMount(() => {
@@ -121,4 +123,24 @@
 	{#key $mode}
 		<Comments />
 	{/key}
+
+	<h3 class="text-2xl font-semibold">Related Posts</h3>
+
+	<div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+		{#each randPosts as post}
+			<a href={post.slug} class="group no-underline col-span-1">
+				{#if post.img}
+					<div class="relative overflow-hidden w-full">
+						<img
+							src={post.img}
+							alt={post.title}
+							class="transform-gpu object-cover transition-transform will-change-transform group-hover:scale-105 w-full"
+						/>
+					</div>
+				{/if}
+
+				<h4 class="mt-2 text-lg font-semibold">{post.title}</h4>
+			</a>
+		{/each}
+	</div>
 </main>

@@ -163,7 +163,7 @@ function markdown() {
 					$$(el).attr('rel', 'noopener noreferrer');
 				});
 
-				html = $$.html();
+				html = $$('body').html() || '';
 
 				const code = `<script context="module">
 									export const meta = ${JSON.stringify(meta)};

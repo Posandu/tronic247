@@ -4,7 +4,7 @@ date: '2023-11-24'
 categories: ['javascript', 'svelte', 'tricks-and-tips', 'mysql']
 tags: ['databases', 'drizzle', 'mysql', 'svelte', 'sveltekit']
 img: /wp-content/uploads/2023/11/Using-Drizzle-ORM-with-SvelteKit.png
-updated: '2024-06-13'
+updated: '2024-06-17'
 ---
 
 Drizzle ORM is a lightweight, fast, and easy-to-use ORM for Node.js, written in TypeScript. It supports all major databases, including MySQL, PostgreSQL, SQLite, and MongoDB. It's also a good alternative to Prisma. In this article, we'll learn how to use Drizzle ORM with SvelteKit.
@@ -19,7 +19,7 @@ First, we'll need to create a new SvelteKit project.
 npm create svelte@latest
 ```
 
-Select the following options when prompted:
+Select the appropriate options and make sure to enable TypeScript.
 
 ```bash
 create-svelte version 5.3.2
@@ -41,7 +41,15 @@ create-svelte version 5.3.2
 └  Your project is ready!
 ```
 
-We can now install Drizzle ORM and its dependencies. We'll use a [https://planetscale.com/](https://planetscale.com/) database for this tutorial, but you can use any database you want. Just make sure to install the appropriate driver.
+We can now install Drizzle ORM and its dependencies. 
+
+We'll use a [https://planetscale.com/](https://planetscale.com/) database for this tutorial, but you can use any database you want. Just make sure to install the appropriate driver.
+
+Here's what you need to install based on your database:
+
+- Postgres: https://orm.drizzle.team/docs/get-started-postgresql
+- MySQL (We're using this): https://orm.drizzle.team/docs/get-started-mysql
+- SqlLite: https://orm.drizzle.team/docs/get-started-sqlite
 
 ```bash
 npm i drizzle-orm @planetscale/database
@@ -53,6 +61,7 @@ We first need to set up our database credentials. Create a `.env` file in the ro
 DATABASE_HOST= # your database host
 DATABASE_USERNAME= # your database username
 DATABASE_PASSWORD= # your database password
+DATABASE_NAME= # your database name
 ```
 
 Next, we'll need to create 2 files in our project: `src/lib/server/db.ts` and `src/lib/server/schema.ts`. The first file will contain our database connection, and the second will contain our database schema.
@@ -95,8 +104,6 @@ export const todos = mysqlTable('todos', {
 });
 ```
 
-We're using the `boolean`, `timestamp`, `int`, and `varchar` functions from `drizzle-orm/mysql-core` to create our table columns. We then use the `mysqlTable` function to create our table. This function takes 2 arguments: the table name and an object containing the table columns. We're also using the `autoincrement`, `primaryKey`, `notNull`, and `default` functions to set the appropriate constraints on our columns.
-
 Did you also notice that this schema is written in TypeScript? That's another cool feature of Drizzle ORM! We can write our schema in TypeScript, and Drizzle ORM will automatically generate the SQL for us. This is a huge improvement over Prisma, which requires us to write our schema in a custom DSL. Here's the SQL that Drizzle ORM generates for us:
 
 ```sql
@@ -109,7 +116,9 @@ CREATE TABLE `todos` (
 );
 ```
 
-Now, that we're done with our database schema, we need to push it to our database. We can do this with the tool provided by Drizzle called `drizzle-kit`. Install it by running the following command:
+Now, that we're done with our database schema, we need to push it to our database. We can do this with the tool provided by Drizzle called `drizzle-kit`. 
+
+Install it by running the following command:
 
 ```bash
 npm i drizzle-kit dotenv mysql2
@@ -132,19 +141,38 @@ export default {
 } satisfies Config;
 ```
 
-You also need to update the `.env` file with the following
-
-```bash
-DATABASE_NAME= # your database name
-```
-
 Now update the `package.json` file with the following scripts:
 
-```json
+```json {10,11}
 {
+	"name": "svelte-drizzle",
+	"version": "0.0.1",
+	"private": true,
 	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"db:push": "drizzle-kit push:mysql",
 		"db:studio": "drizzle-kit studio"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.27.4",
+		"svelte": "^4.2.7",
+		"svelte-check": "^3.6.0",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.4.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"@planetscale/database": "^1.11.0",
+		"dotenv": "^16.3.1",
+		"drizzle-kit": "^0.20.4",
+		"drizzle-orm": "^0.29.0",
+		"mysql2": "^3.6.5"
 	}
 }
 ```

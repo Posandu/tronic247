@@ -14,7 +14,7 @@ const ADS: {
 	{
 		url: '/sponsor',
 		title: 'Like the above content?',
-		description: 'Click here to sponsor Tronic247 and see your ad here',
+		description: 'Consider sponsoring Tronic247',
 		cta: 'Sponsor'
 	},
 	{

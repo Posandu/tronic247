@@ -143,13 +143,27 @@ function markdown() {
 					.use(toHtmlString, { allowDangerousHtml: true })
 					.process(markdownParsed);
 
-				const html = processor.toString();
+				let html = processor.toString();
 
 				const $ = cheerio.load(html);
 				$('noscript').remove();
 				const text = $('html').text();
 
 				let excerpt = text.slice(0, 100).trim();
+
+				const $$ = cheerio.load(html);
+				//make all images lazy
+				$$('img').each((_, el) => {
+					$$(el).attr('loading', 'lazy');
+				});
+
+				//make all links open in new tab
+				$$('a').each((_, el) => {
+					$$(el).attr('target', '_blank');
+					$$(el).attr('rel', 'noopener noreferrer');
+				});
+
+				html = $$.html();
 
 				const code = `<script context="module">
 									export const meta = ${JSON.stringify(meta)};

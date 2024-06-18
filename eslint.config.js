@@ -12,6 +12,11 @@ export default [
 	prettier,
 	...svelte.configs['flat/prettier'],
 	{
+		rules: {
+			'@typescript-eslint/no-explicit-any': 'off'
+		}
+	},
+	{
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -28,6 +33,6 @@ export default [
 		}
 	},
 	{
-		ignores: ['build/', '.svelte-kit/', 'dist/']
+		ignores: ['build/', '.vscode/', '.svelte-kit/', 'dist/', '.postcache/', 'static/', 'posts/'],
 	}
 ];

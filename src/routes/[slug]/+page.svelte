@@ -15,6 +15,7 @@
 	let img = data.meta.img;
 	let excerpt = data.meta.excerpt.trim() || title;
 	let slug = data.meta.slug;
+	let lastUpdated = data.meta.lastModified;
 
 	let randPosts = data.randPosts;
 
@@ -78,6 +79,18 @@
 			})}
 		</p>
 
+		{#if lastUpdated}
+			<span class="mx-1">•</span>
+
+			<p class="inline" aria-label="Last Updated on">
+				Updated on {new Date(lastUpdated).toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric'
+				})}
+			</p>
+		{/if}
+
 		{#if categories && categories?.length > 0}
 			<span class="mx-1">•</span>
 
@@ -128,13 +141,13 @@
 
 	<div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 		{#each randPosts as post}
-			<a href={post.slug} class="group no-underline col-span-1">
+			<a href={post.slug} class="group col-span-1 no-underline">
 				{#if post.img}
-					<div class="relative overflow-hidden w-full">
+					<div class="relative w-full overflow-hidden">
 						<img
 							src={post.img}
 							alt={post.title}
-							class="transform-gpu object-cover transition-transform will-change-transform group-hover:scale-105 w-full"
+							class="w-full transform-gpu object-cover transition-transform will-change-transform group-hover:scale-105"
 						/>
 					</div>
 				{/if}

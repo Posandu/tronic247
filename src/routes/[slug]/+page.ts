@@ -13,7 +13,7 @@ export const load = async ({ params }) => {
 		}))
 		.filter((post) => post.img && post.slug !== slug);
 
-	let randPosts = allPostsFormatted.sort(() => 0.5 - Math.random()).slice(0, 3);
+	const randPosts = allPostsFormatted.sort(() => 0.5 - Math.random()).slice(0, 3);
 
 	if (!post) {
 		return error(404, 'Post not found');

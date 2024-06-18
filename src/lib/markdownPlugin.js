@@ -82,7 +82,8 @@ function markdown() {
 
 				const embed = /{% embed src="(.*?)" title="(.*?)" %}/g;
 				const youtube = /{% youtube id="(.*?)" title="(.*?)" %}/g;
-				const component = /{% component ([a-zA-Z0-9]*)\/(.*) %}/g;
+				const component = /{% component (.*)\/(.*) %}/g;
+				const componentName = /<?([a-zA-Z]+)/g;
 
 				/**
 				 * @type {{name:string,path:string}[]}
@@ -105,18 +106,18 @@ function markdown() {
 					})
 					.replace(youtube, (_, id, title) => {
 						return `
-								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube>
-
-<noscript><p>Videos are disabled. <a href="https://www.youtube.com/watch?v=${id}">Click here to watch</a></p></noscript>
+								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube><noscript><p>Videos are disabled. <a href="https://www.youtube.com/watch?v=${id}">Click here to watch</a></p></noscript>
 						`.trim();
 					})
-					.replace(component, (_, name, path) => {
+					.replace(component, (_, _name, path) => {
+						const name = _name.match(componentName)[0];
+
 						console.log(chalk.yellow(`Found component ${name}`));
 
 						imports.push({ name, path });
 
 						return `
-								<${name} />
+								${_name.startsWith('<') ? `${name}` : `<${name} />`}
 						`.trim();
 					});
 
@@ -149,7 +150,7 @@ function markdown() {
 				$('noscript').remove();
 				const text = $('html').text();
 
-				let excerpt = text.slice(0, 100).trim();			
+				let excerpt = text.slice(0, 100).trim();
 
 				const code = `<script context="module">
 									export const meta = ${JSON.stringify(meta)};

@@ -2,19 +2,11 @@
  * Forgive me for writing React in a *Svelte* project.
  */
 import React from 'react';
-import {
-	Sandpack,
-	SandpackCodeEditor,
-	SandpackFileExplorer,
-	SandpackLayout,
-	SandpackPreview,
-	SandpackProvider,
-	type SandpackFiles
-} from '@codesandbox/sandpack-react';
+import { Sandpack, type SandpackFiles } from '@codesandbox/sandpack-react';
 import { createRoot } from 'react-dom/client';
 import { nightOwl } from '@codesandbox/sandpack-themes';
 
-const App = ({ files = {}, template = 'static' }: { files: SandpackFiles; template: any }) => {
+const App = ({ files = {}, template = undefined }: { files: SandpackFiles; template: any }) => {
 	return (
 		<Sandpack
 			options={{
@@ -25,6 +17,7 @@ const App = ({ files = {}, template = 'static' }: { files: SandpackFiles; templa
 			}}
 			theme={nightOwl}
 			files={files}
+			template={template}
 		/>
 	);
 };

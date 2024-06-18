@@ -33,6 +33,6 @@ export default [
 		}
 	},
 	{
-		ignores: ['build/', '.vscode/', '.svelte-kit/', 'dist/', '.postcache/', 'static/', 'posts/'],
+		ignores: ['build/', '.vscode/', '.svelte-kit/', 'dist/', '.postscache/', 'static/', 'posts/']
 	}
 ];

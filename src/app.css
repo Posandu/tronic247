@@ -47,14 +47,14 @@ scroll margin
 	Buttons
 */
 .btn {
-	@apply bg-primary hover:bg-primary-dark active:bg-primary-dark relative select-none overflow-hidden rounded-full px-5 py-2 font-semibold text-white transition-all active:scale-95;
+	@apply relative select-none overflow-hidden rounded-full bg-primary px-5 py-2 font-semibold text-white transition-all hover:bg-primary-dark active:scale-95 active:bg-primary-dark;
 }
 
 /*
 	Header
 */
 .link-menu {
-	@apply hover:text-primary text-sm font-semibold transition-all;
+	@apply text-sm font-semibold transition-all hover:text-primary;
 }
 #nprogress .bar {
 	--tw-bg-opacity: 1;

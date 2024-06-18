@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-
 	export let totalPages: number;
 	export let currentPage: number;
 	export let urlFn: (page: number) => string;

@@ -19,7 +19,7 @@
 			const res = await import(`/codes/${name}.js`);
 
 			code = res.default;
-		} catch (error) {
+		} catch (_) {
 			alert('Error loading code');
 		}
 	});

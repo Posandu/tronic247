@@ -4,7 +4,7 @@
 
 	let ad = getAd();
 
-	let interval: NodeJS.Timeout;
+	let interval: ReturnType<typeof setInterval>;
 
 	onMount(() => {
 		interval = setInterval(() => {
@@ -21,7 +21,7 @@
 	href={ad.url}
 	target="_blank"
 	rel="noopener noreferrer"
-	class="relative mb-4 mt-8 flex w-full items-center gap-4 rounded-lg border px-4 no-underline transition-all hover:bg-muted-dark/5 h-32 active:bg-muted-dark/10 dark:border-muted-dark/20"
+	class="relative mb-4 mt-8 flex h-32 w-full items-center gap-4 rounded-lg border px-4 no-underline transition-all hover:bg-muted-dark/5 active:bg-muted-dark/10 dark:border-muted-dark/20"
 >
 	{#if ad.img}
 		<img src={ad.img} alt={ad.title} class="h-20" />

@@ -149,6 +149,7 @@ Now, we add these two functions to `utils.php`.
 Now we add some pages so we can test our SPA.
 
 ### `index.php`
+
 ```php
 <?php
 require_once 'utils.php';
@@ -179,6 +180,7 @@ echo footer();
 ```
 
 ### `about.php`
+
 ```php
 <?php
 require_once 'utils.php';

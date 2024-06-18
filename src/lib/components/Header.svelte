@@ -49,7 +49,7 @@
 <svelte:window on:scroll={updateScroll} />
 
 <header
-	class="container mx-auto fixed top-0 left-1/2 -translate-x-1/2 z-50 mb-4 flex select-none justify-between rounded-b-none text-black
+	class="container fixed left-1/2 top-0 z-50 mx-auto mb-4 flex -translate-x-1/2 select-none justify-between rounded-b-none text-black
 	
 		shadow-muted-dark/5
 

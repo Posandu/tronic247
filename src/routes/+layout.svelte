@@ -17,7 +17,7 @@
 			location.href = to.url.href;
 		}
 	});
-	
+
 	NProgress.configure({
 		// Full list:
 		minimum: 0.16

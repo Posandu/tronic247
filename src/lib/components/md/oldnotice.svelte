@@ -1,11 +1,8 @@
 <div
-	class="prose-base rounded-lg border border-yellow-400 bg-yellow-50 px-4 py-4 text-yellow-800 dark:border-yellow-600/20 dark:bg-yellow-100/10 dark:text-yellow-50"
+	class="rounded-lg border px-5 py-4 dark:border-yellow-100/20 dark:bg-yellow-50/10"
 	role="alert"
 >
-	<p class="font-bold">Notice</p>
+	<p class="mt-0 font-bold">⚠️ This is an old article</p>
 
-	<p>
-		This is an old article. The below information might be outdated. The content is preserved for
-		archival purposes only.
-	</p>
+	<p class="mb-0">The below article is outdated and is kept for archival purposes.</p>
 </div>

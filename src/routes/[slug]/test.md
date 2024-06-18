@@ -49,19 +49,15 @@ Next, we'll need to create 2 files in our project: `src/lib/server/db.ts` and `s
 Let's start with `src/lib/server/db.ts`. Add the following code to the file:
 
 ```ts
-import { drizzle } from "drizzle-orm/planetscale-serverless";
-import { connect } from "@planetscale/database";
-import {
-    DATABASE_HOST,
-    DATABASE_PASSWORD,
-    DATABASE_USERNAME,
-} from "$env/static/private";
+import { drizzle } from 'drizzle-orm/planetscale-serverless';
+import { connect } from '@planetscale/database';
+import { DATABASE_HOST, DATABASE_PASSWORD, DATABASE_USERNAME } from '$env/static/private';
 
 // create the connection
 const connection = connect({
-    host: DATABASE_HOST,
-    username: DATABASE_USERNAME,
-    password: DATABASE_PASSWORD,
+	host: DATABASE_HOST,
+	username: DATABASE_USERNAME,
+	password: DATABASE_PASSWORD
 });
 
 const db = drizzle(connection);
@@ -78,19 +74,13 @@ Next, let's create our database schema. We'll make a simple todo app because tha
 Create a `src/lib/server/schema.ts` file and add the following code:
 
 ```ts
-import {
-    boolean,
-    timestamp,
-    int,
-    mysqlTable,
-    varchar,
-} from "drizzle-orm/mysql-core";
+import { boolean, timestamp, int, mysqlTable, varchar } from 'drizzle-orm/mysql-core';
 
-export const todos = mysqlTable("todos", {
-    id: int("id").autoincrement().primaryKey(),
-    content: varchar("title", { length: 600 }).notNull(),
-    completed: boolean("completed").notNull().default(false),
-    createdAt: timestamp("created_at").defaultNow(),
+export const todos = mysqlTable('todos', {
+	id: int('id').autoincrement().primaryKey(),
+	content: varchar('title', { length: 600 }).notNull(),
+	completed: boolean('completed').notNull().default(false),
+	createdAt: timestamp('created_at').defaultNow()
 });
 ```
 
@@ -117,17 +107,17 @@ npm i drizzle-kit dotenv mysql2
 Next, we need to create a `drizzle.config.ts` file at the root of our project. Add the following code to the file:
 
 ```ts
-import type { Config } from "drizzle-kit";
-import * as dotenv from "dotenv";
+import type { Config } from 'drizzle-kit';
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 export default {
-    schema: "./src/lib/server/schema.ts",
-    out: "./drizzle",
-    driver: "mysql2",
-    dbCredentials: {
-        uri: `mysql://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}/${process.env.DATABASE_NAME}?ssl={"rejectUnauthorized":true}`,
-    },
+	schema: './src/lib/server/schema.ts',
+	out: './drizzle',
+	driver: 'mysql2',
+	dbCredentials: {
+		uri: `mysql://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}/${process.env.DATABASE_NAME}?ssl={"rejectUnauthorized":true}`
+	}
 } satisfies Config;
 ```
 
@@ -141,10 +131,10 @@ Now update the `package.json` file with the following scripts:
 
 ```json
 {
-    "scripts": {
-        "db:push": "drizzle-kit push:mysql",
-        "db:studio": "drizzle-kit studio"
-    }
+	"scripts": {
+		"db:push": "drizzle-kit push:mysql",
+		"db:studio": "drizzle-kit studio"
+	}
 }
 ```
 
@@ -196,23 +186,18 @@ npm run dev
 We'll create a simple to-do app with only 1 page. Create a `src/routes/+page.svelte` file and add the following code:
 
 ```svelte
-<h1>
-    Todo app
-</h1>
+<h1>Todo app</h1>
 
 <form action="?/add" method="post">
-    <input type="text" name="content" placeholder="Content" />
-    <input type="submit" value="Add" />
+	<input type="text" name="content" placeholder="Content" />
+	<input type="submit" value="Add" />
 </form>
 ```
 
 Add this to the `<head>` of `app.html` so that we don't need to write CSS.
 
 ```html
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
 ```
 
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/76736580/285513855-dc7b9958-1710-43a1-8d13-b7337ff3d62c.png)
@@ -220,35 +205,35 @@ Add this to the `<head>` of `app.html` so that we don't need to write CSS.
 Now, let's add some functionality to our app. We'll use Svelte server actions to handle our form submission. Create a `src/routes/+page.server.ts` file and add the following code:
 
 ```ts
-import db from "$lib/server/db";
-import { todos } from "$lib/server/schema";
-import { fail } from "@sveltejs/kit";
+import db from '$lib/server/db';
+import { todos } from '$lib/server/schema';
+import { fail } from '@sveltejs/kit';
 
 export const actions = {
-    add: async ({ request }) => {
-        /**
-         * Get the form data from the request
-         */
-        const formData = await request.formData();
+	add: async ({ request }) => {
+		/**
+		 * Get the form data from the request
+		 */
+		const formData = await request.formData();
 
-        /**
-         * Get the title from the form data
-         */
-        const content = formData.get("content");
+		/**
+		 * Get the title from the form data
+		 */
+		const content = formData.get('content');
 
-        if (!content) {
-            return fail(400, { message: "Title is required" });
-        }
+		if (!content) {
+			return fail(400, { message: 'Title is required' });
+		}
 
-        /**
-         * Finally, add the page to the database
-         */
-        await db.insert(todos).values({
-            content,
-        });
+		/**
+		 * Finally, add the page to the database
+		 */
+		await db.insert(todos).values({
+			content
+		});
 
-        return { message: "Todo added successfully" };
-    },
+		return { message: 'Todo added successfully' };
+	}
 };
 ```
 
@@ -256,18 +241,18 @@ We'll then update our frontend to show the `message` returned by the server acti
 
 ```svelte
 <script lang="ts">
-    export let form;
+	export let form;
 </script>
 
 <h1>Todo app</h1>
 
 {#if form?.message}
-    <p>{form.message}</p>
+	<p>{form.message}</p>
 {/if}
 
 <form action="/?/add" method="post">
-    <input type="text" name="content" placeholder="Content" />
-    <input type="submit" value="Add" />
+	<input type="text" name="content" placeholder="Content" />
+	<input type="submit" value="Add" />
 </form>
 ```
 
@@ -278,14 +263,14 @@ Now, try adding a todo and check Drizzle Studio. You should see that the todo ha
 We then can add a `load` function to load all the todos from the database. Add the following code to `src/routes/+page.server.ts`:
 
 ```ts
-import { desc } from "drizzle-orm";
+import { desc } from 'drizzle-orm';
 
 //... other code
 
 export const load = async () => {
-    return {
-        todos: await db.select().from(todos).orderBy(desc(todos.createdAt)),
-    };
+	return {
+		todos: await db.select().from(todos).orderBy(desc(todos.createdAt))
+	};
 };
 ```
 
@@ -293,51 +278,51 @@ And update the `src/routes/+page.svelte` file with the following code:
 
 ```svelte
 <script lang="ts">
-    export let form;
-    export let data; // data returned by the load function
+	export let form;
+	export let data; // data returned by the load function
 </script>
 
 <h1>Todo app</h1>
 
 {#if form?.message}
-    <p>{form.message}</p>
+	<p>{form.message}</p>
 {/if}
 
 <form action="/?/add" method="post" class="flex">
-    <input type="text" name="content" placeholder="Content" />
-    <input type="submit" value="Add" />
+	<input type="text" name="content" placeholder="Content" />
+	<input type="submit" value="Add" />
 </form>
 
-<br>
+<br />
 
 {#if data?.todos}
-    {#each data.todos as todo}
-        <div class="flex">
-            <form action="/?/update" method="post">
-                <input type="hidden" name="id" value={todo.id} />
-                <input type="text" name="content" value={todo.content} />
-                <input type="checkbox" name="completed" checked={todo.completed} />
-                <input type="submit" value="Update" />
-            </form>
+	{#each data.todos as todo}
+		<div class="flex">
+			<form action="/?/update" method="post">
+				<input type="hidden" name="id" value={todo.id} />
+				<input type="text" name="content" value={todo.content} />
+				<input type="checkbox" name="completed" checked={todo.completed} />
+				<input type="submit" value="Update" />
+			</form>
 
-            <form action="/?/delete" method="post">
-                <input type="hidden" name="id" value={todo.id} />
-                <input type="submit" value="Delete" />
-            </form>
+			<form action="/?/delete" method="post">
+				<input type="hidden" name="id" value={todo.id} />
+				<input type="submit" value="Delete" />
+			</form>
 
-            <p>
-                {todo.createdAt?.toLocaleString()}
-            </p>
-        </div>
-    {/each}
+			<p>
+				{todo.createdAt?.toLocaleString()}
+			</p>
+		</div>
+	{/each}
 {/if}
 
 <style>
-    .flex *,
-    .flex {
-        display: flex;
-        align-items: center;
-    }
+	.flex *,
+	.flex {
+		display: flex;
+		align-items: center;
+	}
 </style>
 ```
 

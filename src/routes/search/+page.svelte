@@ -20,7 +20,7 @@
 	$: if (query) search();
 </script>
 
-<div class="max-w-prose mx-auto">
+<div class="mx-auto max-w-prose">
 	<section class="text-center">
 		<h1 class="mt-8 text-2xl font-semibold">Search</h1>
 

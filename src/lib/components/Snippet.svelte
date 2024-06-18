@@ -40,7 +40,7 @@
 				window.location.hash = `#${id}`;
 
 				setTimeout(() => {
-					rand = ""
+					rand = '';
 				}, 100);
 			}, 100);
 		}}

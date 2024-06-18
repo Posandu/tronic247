@@ -14,7 +14,7 @@
 <button
 	class="social-media-btn"
 	on:click={() => {
-        window.open('https://www.reddit.com/submit?url=' + window.location.href);
+		window.open('https://www.reddit.com/submit?url=' + window.location.href);
 	}}
 >
 	<Icon icon="akar-icons:reddit-fill" />

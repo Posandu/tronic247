@@ -1,10 +1,10 @@
 <script>
 	export let val = '';
-    let classN = '';
+	let classN = '';
 
-    export {classN as class};
+	export { classN as class };
 
-    let msg = 'Click to copy';
+	let msg = 'Click to copy';
 
 	const copy = () => {
 		if (navigator.clipboard) {
@@ -20,10 +20,10 @@
 
 		msg = 'Copied!';
 
-        setTimeout(() => {
-            msg = 'Click to copy';
-        }, 2000);
+		setTimeout(() => {
+			msg = 'Click to copy';
+		}, 2000);
 	};
 </script>
 
-<button class="text-xs btn {classN}" on:click={copy}>{msg}</button>
+<button class="btn text-xs {classN}" on:click={copy}>{msg}</button>

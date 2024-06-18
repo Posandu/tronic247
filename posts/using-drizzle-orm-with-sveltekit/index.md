@@ -41,7 +41,7 @@ create-svelte version 5.3.2
 └  Your project is ready!
 ```
 
-We can now install Drizzle ORM and its dependencies. 
+We can now install Drizzle ORM and its dependencies.
 
 We'll use a [https://planetscale.com/](https://planetscale.com/) database for this tutorial, but you can use any database you want. Just make sure to install the appropriate driver.
 
@@ -116,7 +116,7 @@ CREATE TABLE `todos` (
 );
 ```
 
-Now, that we're done with our database schema, we need to push it to our database. We can do this with the tool provided by Drizzle called `drizzle-kit`. 
+Now, that we're done with our database schema, we need to push it to our database. We can do this with the tool provided by Drizzle called `drizzle-kit`.
 
 Install it by running the following command:
 

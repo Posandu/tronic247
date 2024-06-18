@@ -11,7 +11,7 @@
 </script>
 
 <article
-	class="{classes} article-box rounded-lg bg-gray-50 px-5 py-4 transition-all hover:scale-105 hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40"
+	class="{classes} article-box rounded-lg bg-gray-50 group px-5 py-4 transition-all hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40"
 	aria-labelledby="article-{slug}-title"
 	aria-describedby="article-{slug}-desc"
 >
@@ -19,7 +19,7 @@
 		<a href="/{slug}" aria-label="Read more about {title}">
 			<img
 				src={img}
-				class="mb-6 w-full rounded-xl object-cover transition-all"
+				class="mb-6 w-full group-hover:opacity-95 rounded-xl object-cover transition-all"
 				alt="{title} image"
 				loading="lazy"
 			/>

@@ -1,5 +1,4 @@
-import { formaRawPostModule, getImportedPosts } from '$lib/posts';
-import { queryManager, type Post } from '$lib/query';
+import { queryManager } from '$lib/query';
 import { error, redirect } from '@sveltejs/kit';
 
 export async function load(req) {
@@ -54,3 +53,4 @@ export async function load(req) {
 }
 
 export const prerender = true;
+export const csr = false;

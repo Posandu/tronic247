@@ -1,7 +1,11 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import ClickToCopy from '$lib/components/ClickToCopy.svelte';
+	import { formattedTitle } from '$lib';
+	import SvelteSeo from 'svelte-seo';
 </script>
+
+<SvelteSeo title={formattedTitle('Sponsor')} description={'Support the development of Tronic247'} />
 
 <div class="relative -mt-4 w-full overflow-hidden bg-pink-600 py-20">
 	<h1 class="text-center text-4xl font-black text-white">Sponsor</h1>
@@ -47,11 +51,14 @@
 		<div>
 			<h1 class="mb-4 text-lg font-semibold text-pink-600">Via GitHub Sponsors</h1>
 
-			<p class="text-lg">Sponsor via GitHub Sponsors by clicking the button below:</p>
-
-			<a href="https://github.com/sponsors/Posandu/" target="_blank" class="btn mt-4 inline-block">
-				Sponsor on GitHub
-			</a>
+			<iframe
+				src="https://github.com/sponsors/Posandu/card"
+				title="Sponsor Posandu"
+				height="225"
+				width="600"
+				style="border: 0;"
+				class="mt-4 rounded-lg"
+			></iframe>
 		</div>
 	</div>
 </div>

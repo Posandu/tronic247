@@ -3,12 +3,10 @@
 	import { navigating, page } from '$app/stores';
 	import { fly } from 'svelte/transition';
 	import { toggleMode } from 'mode-watcher';
-	import { onMount } from 'svelte';
 
 	const menuItems = [
 		['Home', '/'],
 		['All Articles', '/archive'],
-		['Snippets', '/snippets'],
 		['Sponsor 💖', '/sponsor']
 	];
 
@@ -19,49 +17,10 @@
 			mobileMenuOpen = false;
 		}
 	}
-
-	let lastScrollPosition = 0;
-	let currentAppBarOffsetTop = 0;
-
-	const topAppBarHeight = 90;
-
-	let headerTop = 0;
-
-	const updateScroll = () => {
-		const currentScrollPosition = Math.max(window.scrollY, 0);
-		const diff = currentScrollPosition - lastScrollPosition;
-		lastScrollPosition = currentScrollPosition;
-
-		currentAppBarOffsetTop -= diff;
-
-		if (currentAppBarOffsetTop > 0) {
-			currentAppBarOffsetTop = 0;
-		} else if (Math.abs(currentAppBarOffsetTop) > topAppBarHeight) {
-			currentAppBarOffsetTop = -topAppBarHeight;
-		}
-
-		headerTop = currentAppBarOffsetTop;
-	};
-
-	onMount(updateScroll);
 </script>
 
-<svelte:window on:scroll={updateScroll} />
-
 <header
-	class="container fixed left-1/2 top-0 z-50 mx-auto mb-4 flex -translate-x-1/2 select-none justify-between rounded-b-none text-black
-	
-		shadow-muted-dark/5
-
-		{lastScrollPosition > 30
-		? 'h-[90px] bg-white py-0 shadow-xl shadow-muted-dark/5 dark:bg-black/20 dark:backdrop-blur-md'
-		: 'h-[108px] '}
-		 dark:text-white sm:rounded-b-xl md:rounded-b-xl lg:rounded-b-none"
-	style="
-				top: {headerTop}px;
-
-				transition: background-color 0.2s, box-shadow 0.2s, padding 0.2s, height 0.2s;
-		"
+	class="container fixed left-1/2 top-0 z-50 mx-auto mb-4 flex -translate-x-1/2 select-none justify-between rounded-b-none bg-white py-2 text-black dark:bg-black/20 dark:text-white dark:backdrop-blur-md"
 >
 	<div class="flex min-h-16 flex-1 items-center justify-start">
 		<a href="/">
@@ -108,7 +67,7 @@
 	</div>
 </header>
 
-<div class="h-[128px]"></div>
+<div class="h-[96px]"></div>
 
 {#if mobileMenuOpen}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->

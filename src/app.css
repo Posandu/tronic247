@@ -18,17 +18,11 @@ textarea,
 	user-select: text;
 }
 
-.prose {
-	line-height: 2.2;
-	font-family: 'Inter', sans-serif;
-	font-weight: 400;
-}
 
 /* make font rendering better */
 html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	scroll-behavior: smooth;
 }
 
 iframe {

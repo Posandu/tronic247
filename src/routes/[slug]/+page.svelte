@@ -61,13 +61,11 @@
 	}}
 />
 
-<div class="mx-auto max-w-[75ch]">
+<div class="prose prose-lg mb-8 text-center dark:prose-invert md:prose-xl md:mx-auto">
 	{#if img}
-		<img
-			src={img}
-			alt="Random"
-			class="mb-10 w-full transform-gpu object-cover will-change-transform"
-		/>
+		<div class="relative w-full overflow-hidden">
+			<img src={img} alt={title} class="w-full rounded-xl" />
+		</div>
 	{/if}
 
 	<div class="mb-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark">
@@ -106,15 +104,11 @@
 		{/if}
 	</div>
 
-	<h1 class="mb-10 text-4xl font-bold">{title}</h1>
+	<h1 class="mb-10 !text-4xl font-bold leading-normal">{title}</h1>
 </div>
 
-<main class="prose prose-gray mx-auto mt-8 dark:prose-invert">
+<main class="prose prose-lg mx-4 dark:prose-invert md:prose-xl md:mx-auto">
 	<svelte:component this={data.content} />
-
-	{#if Ad}
-		<svelte:component this={Ad} />
-	{/if}
 
 	<div class="mb-4 space-x-2">
 		{#if tags}
@@ -129,31 +123,27 @@
 		{/if}
 	</div>
 
-	<SocialMedia />
-
-	<h3 class="text-2xl font-semibold">Comments</h3>
-
 	{#key $mode}
 		<Comments />
 	{/key}
-
-	<h3 class="text-2xl font-semibold">Related Posts</h3>
-
-	<div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-		{#each randPosts as post}
-			<a href={post.slug} class="group col-span-1 no-underline">
-				{#if post.img}
-					<div class="relative w-full overflow-hidden">
-						<img
-							src={post.img}
-							alt={post.title}
-							class="w-full transform-gpu object-cover transition-transform will-change-transform group-hover:scale-105"
-						/>
-					</div>
-				{/if}
-
-				<h4 class="mt-2 text-lg font-semibold">{post.title}</h4>
-			</a>
-		{/each}
-	</div>
 </main>
+
+<h3 class="text-2xl mt-10 font-semibold">Related Posts</h3>
+
+<div class="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+	{#each randPosts as post}
+		<a href={post.slug} class="group col-span-1 no-underline">
+			{#if post.img}
+				<div class="relative w-full overflow-hidden">
+					<img
+						src={post.img}
+						alt={post.title}
+						class="w-full rounded-xl"
+					/>
+				</div>
+			{/if}
+
+			<h4 class="text-xl font-semibold mt-4">{post.title}</h4>
+		</a>
+	{/each}
+</div>

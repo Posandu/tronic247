@@ -12,8 +12,6 @@ This made me rethink my blog's performance. I had been using WordPress for a whi
 
 This big decision required a lot of planning and preparation, which I procrastinated on for a while.
 
-## Contents
-
 ## Why Migrate?
 
 The main reason is performance. WordPress is a great platform, but it's not the fastest. Even with Cloudflare, my blog's performance was lacking.
@@ -47,29 +45,10 @@ src/
 ┃ ┣ tag/
 ┃ ┣ trycode/
 ┃ ┣ [slug]/
-┃ ┣ +error.svelte
-┃ ┣ +layout.server.ts
-┃ ┣ +layout.svelte
-┃ ┣ +page.server.ts
-┃ ┣ +page.svelte
 ┣ app.css
 ┣ app.d.ts
 ┗ app.html
 static/
-.env
-.gitignore
-.npmrc
-.prettierignore
-.prettierrc
-eslint.config.js
-package.json
-pnpm-lock.yaml
-postcss.config.js
-README.md
-svelte.config.js
-tailwind.config.ts
-tsconfig.json
-vite.config.ts
 ```
 
 I kept it simple and avoided using monorepos or other complex setups, as they were unnecessary for a simple blog.

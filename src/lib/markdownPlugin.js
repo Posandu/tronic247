@@ -28,6 +28,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
+const VERSION = 'y'; // replace w/ something else to force recompile
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
@@ -68,7 +69,8 @@ function markdown() {
 
 				const fileLoc =
 					pathForCache +
-					(IS_DEV ? slug + '_' + fileHashed.toString() + '.svelte' : fileHashed + '.cache');
+					(IS_DEV ? slug + '_' + fileHashed.toString() + '.svelte' : fileHashed + '.cache') +
+					VERSION;
 
 				if (fs.existsSync(fileLoc)) {
 					const code = fs.readFileSync(fileLoc, 'utf-8');
@@ -84,11 +86,12 @@ function markdown() {
 
 				const embed = /{% embed src="(.*?)" title="(.*?)" %}/g;
 				const youtube = /{% youtube id="(.*?)" title="(.*?)" %}/g;
+				const stackBlitz = /{% stackblitz id="(.*?)" open="(.*?)" %}/g;
 				const component = /{% component (.*)\/(.*) %}/g;
 				const componentName = /<?([a-zA-Z]+)/g;
 
 				/**
-				 * @type {{name:string,path:string}[]}
+				 * @type {({name:string,path:string}|undefined)[]}
 				 */
 				let imports = [];
 
@@ -109,6 +112,13 @@ function markdown() {
 					.replace(youtube, (_, id, title) => {
 						return `
 								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube><noscript><p>Videos are disabled. <a href="https://www.youtube.com/watch?v=${id}">Click here to watch</a></p></noscript>
+						`.trim();
+					})
+					.replace(stackBlitz, (_, id, open) => {
+						imports.push(undefined);
+
+						return `
+								<StackBlitz id="${id}" openFile="${open}"></StackBlitz>
 						`.trim();
 					})
 					.replace(component, (_, _name, path) => {
@@ -159,19 +169,24 @@ function markdown() {
 				let excerpt = text.slice(0, 100).trim();
 
 				const code = `<script context="module">
+									import StackBlitz from '$lib/components/StackBlitz.svelte';
+
 									export const meta = ${JSON.stringify(meta)};
 									export const excerpt = ${JSON.stringify(excerpt)} ${excerpt.length > 0 ? '+" [...]";' : ''}
 									export const length = ${text.length};
 								</script>
 
 								<script>
-									${imports.map(({ name, path }) =>
-										`
+									${imports
+										.filter((i) => typeof i !== 'undefined')
+										// @ts-expect-error already checked
+										.map(({ name, path }) =>
+											`
 											
 												import ${name} from '$lib/components/md/${path}';
 												
 											`.trim()
-									)}
+										)}
 								</script>
 	
 								${

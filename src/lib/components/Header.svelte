@@ -20,50 +20,52 @@
 </script>
 
 <header
-	class="container fixed left-1/2 top-0 z-50 mx-auto mb-4 flex -translate-x-1/2 select-none justify-between rounded-b-none bg-white py-2 text-black dark:bg-black/20 dark:text-white dark:backdrop-blur-md"
+	class="fixed left-1/2 top-0 z-50 mx-auto mb-4 flex w-full -translate-x-1/2 select-none justify-between rounded-b-none bg-white py-2 text-black dark:bg-black/20 dark:text-white dark:backdrop-blur-md"
 >
-	<div class="flex min-h-16 flex-1 items-center justify-start">
-		<a href="/">
-			<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 dark:invert" />
-		</a>
-	</div>
+	<div class="container flex mx-auto">
+		<div class="flex min-h-16 flex-1 items-center justify-start">
+			<a href="/">
+				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 dark:invert" />
+			</a>
+		</div>
 
-	<nav class="hidden items-center lg:flex">
-		<ul class="flex items-center space-x-6 xl:space-x-8">
-			{#each menuItems as [label, link]}
-				<li class="relative">
-					<a
-						href={link}
-						class="link-menu
-					
-					{$page.url.pathname === link ? 'text-primary' : 'hover:text-primary'}
-					">{label}</a
-					>
-				</li>
-			{/each}
-		</ul>
+		<nav class="hidden items-center lg:flex">
+			<ul class="flex items-center space-x-6 xl:space-x-8">
+				{#each menuItems as [label, link]}
+					<li class="relative">
+						<a
+							href={link}
+							class="link-menu
+						
+						{$page.url.pathname === link ? 'text-primary' : 'hover:text-primary'}
+						">{label}</a
+						>
+					</li>
+				{/each}
+			</ul>
 
-		<a class="ml-8" href="/search">
-			<Icon icon="material-symbols:search" class="size-6" />
-		</a>
+			<a class="ml-8" href="/search">
+				<Icon icon="material-symbols:search" class="size-6" />
+			</a>
 
-		<button class="ml-2 transition-all active:rotate-180" on:click={toggleMode}>
-			<Icon icon="lets-icons:color-mode" class="size-6" />
-		</button>
-	</nav>
+			<button class="ml-2 transition-all active:rotate-180" on:click={toggleMode}>
+				<Icon icon="lets-icons:color-mode" class="size-6" />
+			</button>
+		</nav>
 
-	<div class="flex items-center lg:hidden">
-		<a class="mr-4" href="/search">
-			<Icon icon="material-symbols:search" class="size-6" />
-		</a>
+		<div class="flex items-center lg:hidden">
+			<a class="mr-4" href="/search">
+				<Icon icon="material-symbols:search" class="size-6" />
+			</a>
 
-		<button class="mr-4 transition-all active:rotate-180" on:click={toggleMode}>
-			<Icon icon="lets-icons:color-mode" class="size-6" />
-		</button>
+			<button class="mr-4 transition-all active:rotate-180" on:click={toggleMode}>
+				<Icon icon="lets-icons:color-mode" class="size-6" />
+			</button>
 
-		<button class="menu-btn" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
-			<Icon icon="bx:bx-menu" class="size-6" />
-		</button>
+			<button class="menu-btn" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
+				<Icon icon="bx:bx-menu" class="size-6" />
+			</button>
+		</div>
 	</div>
 </header>
 

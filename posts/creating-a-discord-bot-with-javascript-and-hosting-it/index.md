@@ -4,7 +4,7 @@ date: '2022-10-22'
 categories: ['javascript']
 tags: ['discord', 'javascript']
 img: /wp-content/uploads/2022/10/create-a-discord-bot.png
-updated: '2024-06-13'
+updated: '2024-06-19'
 ---
 
 Discord bots are a great way to automate tasks and make your server more fun. This guide will show you how to make a discord bot with JavaScript and host it for free. You will need some basic knowledge of JavaScript and Node.js to follow along with this guide.
@@ -179,7 +179,7 @@ So, if you want to add more commands, you can add them to the `commands` object.
 
 ## Hosting the bot
 
-Now that we have created the bot, we need to host it. You can use [Railway](https://go.tronic247.com/2zz5) to host the bot. Create an account and open the dashboard. Click on the `New Project`.
+Now that we have created the bot, we need to host it. You can use [Railway](https://bit.ly/3VSb1Vi) to host the bot. Create an account and open the dashboard. Click on the `New Project`.
 
 ![](https://user-images.githubusercontent.com/76736580/197373091-36034d88-1efb-4a48-b453-086b8954a680.png)
 

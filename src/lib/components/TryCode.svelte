@@ -16,7 +16,8 @@
 
 	onMount(async () => {
 		try {
-			const res = await import(`/codes/${name}.js`);
+			/* @vite-ignore */
+			const res = await import(/* @vite-ignore */ `/codes/${name}.js`);
 
 			code = res.default;
 		} catch (_) {
@@ -24,7 +25,6 @@
 		}
 	});
 
-	/* @vite-ignore */
 	import('./CodeEditor').then((mod) => {
 		codeEditorModule = mod;
 	});

@@ -26,7 +26,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const pathForCache = process.cwd() + '/.postscache/';
+const pathForCache = process.cwd() + '/node_modules/.cache/md';
 
 const checkFolder = () => {
 	if (!folderExists) {
@@ -52,7 +52,7 @@ function markdown() {
 			if (pathname.endsWith('.md')) {
 				checkFolder();
 
-				console.log(chalk.gray(`Parsing ${pathname}`));
+				console.log(chalk.gray(`Compiling ${pathname}`));
 
 				/**
 				 * Overengineered caching system
@@ -71,7 +71,7 @@ function markdown() {
 				if (fs.existsSync(fileLoc)) {
 					const code = fs.readFileSync(fileLoc, 'utf-8');
 
-					console.log(chalk.green(`Successfully parsed ${pathname} (from cache)`));
+					console.log(chalk.green(`Successfully compiled from cache`));
 
 					return {
 						code
@@ -111,8 +111,6 @@ function markdown() {
 					})
 					.replace(component, (_, _name, path) => {
 						const name = _name.match(componentName)[0];
-
-						console.log(chalk.yellow(`Found component ${name}`));
 
 						imports.push({ name, path });
 
@@ -180,6 +178,8 @@ function markdown() {
 						`;
 
 				fs.writeFileSync(fileLoc, code);
+
+				console.log(chalk.green(`Successfully compiled`));
 
 				return {
 					code

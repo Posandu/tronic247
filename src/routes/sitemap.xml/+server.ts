@@ -5,7 +5,7 @@ import { SiteMap } from '$lib/sitemap';
 
 export const prerender = true;
 
-export const GET = async ({}) => {
+export const GET = async () => {
 	const sitemap = new SiteMap();
 
 	/**

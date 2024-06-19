@@ -3,7 +3,7 @@
 	export let tags: Set<string>;
 </script>
 
-<footer class="mt-10 w-full bg-gray-900 px-4 py-10 text-white dark:bg-black/50">
+<footer class="mt-10 w-full bg-gray-900 py-10 text-white dark:bg-black/50">
 	<div class="container">
 		<div class="grid gap-10 lg:grid-cols-2">
 			<div class="col-span-1">

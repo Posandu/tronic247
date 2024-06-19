@@ -68,7 +68,11 @@
 		</div>
 	{/if}
 
-	<div class="mb-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark">
+	<div
+		class="mb-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark {img
+			? ''
+			: '!mt-10'}"
+	>
 		<p class="inline" aria-label="Published on">
 			{new Date(date).toLocaleDateString('en-US', {
 				year: 'numeric',
@@ -128,22 +132,18 @@
 	{/key}
 </main>
 
-<h3 class="text-2xl mt-10 font-semibold">Related Posts</h3>
+<h3 class="mt-10 text-2xl font-semibold">Related Posts</h3>
 
 <div class="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 	{#each randPosts as post}
 		<a href={post.slug} class="group col-span-1 no-underline">
 			{#if post.img}
 				<div class="relative w-full overflow-hidden">
-					<img
-						src={post.img}
-						alt={post.title}
-						class="w-full rounded-xl"
-					/>
+					<img src={post.img} alt={post.title} class="w-full rounded-xl" />
 				</div>
 			{/if}
 
-			<h4 class="text-xl font-semibold mt-4">{post.title}</h4>
+			<h4 class="mt-4 text-xl font-semibold">{post.title}</h4>
 		</a>
 	{/each}
 </div>

@@ -2,7 +2,6 @@
 title: 'PHP Login System'
 date: '2021-02-28'
 categories: ['php', 'web-dev']
-img: /wp-content/uploads/2021/02/hqdefault.jpg
 updated: '2024-06-13'
 ---
 

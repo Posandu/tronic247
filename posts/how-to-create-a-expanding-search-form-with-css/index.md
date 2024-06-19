@@ -2,7 +2,7 @@
 title: 'Expanding search form with CSS'
 date: '2021-04-25'
 categories: ['css', 'html-tutorials', 'tricks-and-tips']
-img: /wp-content/uploads/2021/04/maxresdefault.jpg
+img: /wp-content/uploads/2021/04/maxresdefault.png
 updated: '2024-06-13'
 ---
 

@@ -26,7 +26,7 @@ export const load = async ({ params }) => {
 		.sort(() => 0.5 - Math.random())
 		.slice(0, 3);
 
-	const allImgs = import.meta.glob('../../../static/**/*.{jpg,jpeg,png,webp}', {
+	const allImgs = import.meta.glob('../../../static/**/*.png', {
 		query: {
 			enhanced: true
 		},

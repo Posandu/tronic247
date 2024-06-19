@@ -97,7 +97,7 @@ title: Migrating Tronic247 from WordPress to SvelteKit
 date: '2024-06-15'
 categories: ['migration']
 tags: ['sveltekit', 'wordpress']
-img: 'https://example.com/image.jpg'
+img: 'https://example.com/image.png'
 ---
 
 The content of the post goes here.

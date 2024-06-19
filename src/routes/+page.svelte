@@ -3,7 +3,7 @@
 	import ArticleView from '$lib/components/ArticleView.svelte';
 	import SvelteSeo from 'svelte-seo';
 	//@ts-ignore
-	import Cover from '../cover.jpg?enhanced=true';
+	import Cover from '../cover.png?enhanced=true';
 
 	export let data;
 

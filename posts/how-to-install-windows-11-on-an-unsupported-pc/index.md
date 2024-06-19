@@ -3,7 +3,7 @@ title: 'Install Windows 11 on an unsupported PC'
 date: '2021-09-17'
 categories: ['tricks-and-tips']
 tags: ['windows', 'tricks']
-img: /wp-content/uploads/2021/09/win11.jpg
+img: /wp-content/uploads/2021/09/win11.png
 updated: '2024-06-13'
 ---
 

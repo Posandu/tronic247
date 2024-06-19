@@ -3,11 +3,12 @@ import type { Post } from '$lib/query';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	const allImgs = import.meta.glob('../static/**/*.{jpg,jpeg,png}', {
+	const allImgs = import.meta.glob('../static/**/*.png', {
 		query: {
 			enhanced: true
 		},
-		eager: true
+		eager: true,
+		exhaustive: true
 	});
 
 	const newImgs: any = {};

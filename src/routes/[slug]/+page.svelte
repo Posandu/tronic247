@@ -62,9 +62,9 @@
 />
 
 <div class="prose prose-lg mb-8 text-center dark:prose-invert md:prose-xl md:mx-auto">
-	{#if img}
+	{#if data.postImg}
 		<div class="relative w-full overflow-hidden">
-			<img src={img} alt={title} class="w-full rounded-xl" />
+			<enhanced:img src={data.postImg} alt={title} class="w-full rounded-xl" />
 		</div>
 	{/if}
 
@@ -139,7 +139,7 @@
 		<a href={post.slug} class="group col-span-1 no-underline">
 			{#if post.img}
 				<div class="relative w-full overflow-hidden">
-					<img src={post.img} alt={post.title} class="w-full rounded-xl" />
+					<enhanced:img src={post.img} alt={post.title} class="w-full rounded-xl" />
 				</div>
 			{/if}
 

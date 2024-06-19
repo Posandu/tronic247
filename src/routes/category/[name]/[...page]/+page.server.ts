@@ -1,24 +1,21 @@
 import { queryManager } from '$lib/query';
 import { error, redirect } from '@sveltejs/kit';
 
-export async function load(req) {
-	const allPostsFormatted = (await req.parent()).allPostsFormatted;
-	if (!allPostsFormatted) return error(500, 'Error loading posts');
-
+export async function load({ locals, params: { name }, url: reqUrl }) {
 	const frontPage = new queryManager(
-		allPostsFormatted,
-		(post) => post.categories?.includes(req.params.name) || false
+		locals.posts,
+		(post) => post.categories?.includes(name) || false
 	);
 
 	const pages = frontPage.getPages();
 
 	if (pages === 0) return error(404);
 
-	const url = req.url.pathname;
+	const url = reqUrl.pathname;
 	/**
 	 * Check if there's stuff after /archive
 	 */
-	const mainPath = `/category/${req.params.name}/`;
+	const mainPath = `/category/${name}/`;
 	const indexMainPath = url.indexOf(mainPath);
 
 	if (indexMainPath !== -1) {
@@ -48,17 +45,23 @@ export async function load(req) {
 		return error(404);
 	}
 
+	const posts = frontPage.getPostsPerPage(page).map((i) => ({
+		...i,
+		content: undefined
+	}));
+	const images = locals.getImgObjects(posts);
+
 	return {
-		posts: frontPage.getPostsPerPage(page).map((i) => ({
-			...i,
-			content: undefined
+		posts: posts.map((post) => ({
+			...post,
+			content: undefined,
+			img: post.img ? images[post.img] : undefined
 		})),
 		count: frontPage.getCount(),
 		totalPages: pages,
 		page,
-		category: req.params.name
+		category: name
 	};
 }
 
 export const prerender = true;
-export const csr = false;

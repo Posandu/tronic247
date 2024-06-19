@@ -6,11 +6,11 @@
 	import NProgress from 'nprogress';
 	import { navigating, page } from '$app/stores';
 	import { ModeWatcher } from 'mode-watcher';
-	import { onNavigate } from '$app/navigation';
-	import { fade, fly, scale } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
 	import { beforeNavigate } from '$app/navigation';
 	import { updated } from '$app/stores';
+	import { setImgs } from '$lib/img';
 
 	beforeNavigate(({ willUnload, to }) => {
 		if ($updated && !willUnload && to?.url) {
@@ -36,6 +36,8 @@
 	const isBlank = (path: string) => BLANK.some((blank) => path === blank);
 
 	export let data;
+
+	setImgs(data.allImgs);
 </script>
 
 <ModeWatcher />

@@ -1,13 +1,10 @@
 import { queryManager } from '$lib/query';
 import { error, redirect } from '@sveltejs/kit';
 
-export async function load(req) {
-	const allPostsFormatted = (await req.parent()).allPostsFormatted;
-	if (!allPostsFormatted) return error(500, 'Error loading posts');
+export async function load({ locals, url: reqUrl }) {
+	const frontPage = new queryManager(locals.posts, () => true);
 
-	const frontPage = new queryManager(allPostsFormatted, () => true);
-
-	const url = req.url.pathname;
+	const url = reqUrl.pathname;
 	/**
 	 * Check if there's stuff after /archive
 	 */
@@ -41,10 +38,17 @@ export async function load(req) {
 		return error(404);
 	}
 
+	const posts = frontPage.getPostsPerPage(page).map((i) => ({
+		...i,
+		content: undefined
+	}));
+	const images = locals.getImgObjects(posts);
+
 	return {
-		posts: frontPage.getPostsPerPage(page).map((i) => ({
-			...i,
-			content: undefined
+		posts: posts.map((post) => ({
+			...post,
+			content: undefined,
+			img: post.img ? images[post.img] : undefined
 		})),
 		count: frontPage.getCount(),
 		totalPages: frontPage.getPages(),
@@ -53,4 +57,3 @@ export async function load(req) {
 }
 
 export const prerender = true;
-export const csr = false;

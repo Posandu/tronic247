@@ -15,6 +15,8 @@ import * as cheerio from 'cheerio';
 import chalk from 'chalk';
 import fs from 'fs';
 import highwayhash from 'highwayhash';
+import lazyLoadPlugin from 'rehype-plugin-image-native-lazy-loading';
+import rehypeExternalLinks from 'rehype-external-links';
 
 /**
  * @param {string} content
@@ -26,7 +28,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const pathForCache = process.cwd() + '/node_modules/.cache/md';
+const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
 	if (!folderExists) {
@@ -133,11 +135,17 @@ function markdown() {
 							}
 						]
 					])
+					.use()
 					.use(toHtmlAST, { allowDangerousHtml: true })
-					.use([rehypeSlug, rehypeAutolinkHeadings])
+					//@ts-expect-error weird module
+					.use([rehypeSlug, rehypeAutolinkHeadings, lazyLoadPlugin])
 					// @ts-expect-error idk
 					.use(rehypeShiki, {
 						theme
+					})
+					.use(rehypeExternalLinks, {
+						target: '_blank',
+						rel: ['noopener', 'noreferrer']
 					})
 					.use(toHtmlString, { allowDangerousHtml: true })
 					.process(markdownParsed);

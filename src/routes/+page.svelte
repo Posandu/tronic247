@@ -2,6 +2,8 @@
 	import { SITE_URL, formattedTitle } from '$lib';
 	import ArticleView from '$lib/components/ArticleView.svelte';
 	import SvelteSeo from 'svelte-seo';
+	//@ts-ignore
+	import Cover from '../cover.jpg?enhanced=true';
 
 	export let data;
 
@@ -51,9 +53,11 @@
 <div
 	class="relative -mt-4 overflow-hidden bg-black/90 pb-20 pt-20 text-center text-white dark:bg-black/20"
 >
-	<img
-		src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+	<enhanced:img
+		src={Cover}
 		alt="Hero"
+		fetchpriority="high"
+		loading="eager"
 		class="absolute inset-0 h-full w-full object-cover"
 	/>
 

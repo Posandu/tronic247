@@ -31,7 +31,7 @@ const pathForCache = process.cwd() + '/node_modules/.cache/md';
 const checkFolder = () => {
 	if (!folderExists) {
 		if (!fs.existsSync(pathForCache)) {
-			fs.mkdirSync(pathForCache);
+			fs.mkdirSync(pathForCache, { recursive: true });
 		}
 
 		folderExists = true;

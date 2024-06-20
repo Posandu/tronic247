@@ -1,43 +1,24 @@
 <script lang="ts">
-	import { getAd } from '$lib/ads';
-	import { onDestroy, onMount } from 'svelte';
-
-	let ad = getAd();
-
-	let interval: ReturnType<typeof setInterval>;
+	import { onMount } from 'svelte';
 
 	onMount(() => {
-		interval = setInterval(() => {
-			ad = getAd();
-		}, 10000);
-	});
+		const scriptElement = document.createElement('script');
+		scriptElement.src =
+			'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8836219589547174';
+		scriptElement.crossOrigin = 'anonymous';
+		document.head.appendChild(scriptElement);
 
-	onDestroy(() => {
-		clearInterval(interval);
+		//@ts-expect-error
+		(window.adsbygoogle = window.adsbygoogle || []).push({});
 	});
 </script>
 
-<a
-	href={ad.url}
-	target="_blank"
-	rel="noopener noreferrer"
-	class="relative mb-4 mt-8 flex h-32 w-full items-center gap-4 rounded-lg border px-4 no-underline transition-all hover:bg-muted-dark/5 active:bg-muted-dark/10 dark:border-muted-dark/20"
->
-	{#if ad.img}
-		<img src={ad.img} alt={ad.title} class="h-20" />
-	{/if}
-
-	<div class="flex-1 text-left">
-		<span class="block text-lg font-semibold text-black/60 dark:text-muted-dark">
-			{ad.title}
-		</span>
-
-		<span class="text-xs font-semibold text-black/60 dark:text-muted-dark">
-			{ad.description}
-		</span>
-
-		<span class=" mt-2 block w-max text-xs font-semibold">
-			{ad.cta}
-		</span>
-	</div>
-</a>
+<!-- Ad svelte -->
+<ins
+	class="adsbygoogle my-4"
+	style="display:block"
+	data-ad-client="ca-pub-8836219589547174"
+	data-ad-slot="3319419635"
+	data-ad-format="auto"
+	data-full-width-responsive="true"
+></ins>

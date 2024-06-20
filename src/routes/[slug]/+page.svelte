@@ -5,6 +5,7 @@
 	import { mode } from 'mode-watcher';
 	import Comments from '$lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
+	import Advertisement from '$lib/components/Advertisement.svelte';
 
 	export let data;
 
@@ -112,7 +113,11 @@
 </div>
 
 <main class="prose prose-lg mx-4 dark:prose-invert md:prose-xl md:mx-auto">
+	<Advertisement />
+
 	<svelte:component this={data.content} />
+
+	<Advertisement />
 
 	<div class="mb-4 space-x-2">
 		{#if tags}

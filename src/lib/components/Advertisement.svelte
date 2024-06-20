@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -13,7 +13,6 @@
 	});
 </script>
 
-<!-- Ad svelte -->
 <ins
 	class="adsbygoogle my-4"
 	style="display:block"
@@ -21,4 +20,4 @@
 	data-ad-slot="3319419635"
 	data-ad-format="auto"
 	data-full-width-responsive="true"
-></ins>
+></ins> -->

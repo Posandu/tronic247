@@ -44,7 +44,3 @@ button:active {
 		inset -1px -1px 5px #000;
 }
 ```
-
-## How It Will Look Like
-
-<iframe src="https://www.tronic247.com/trycode/?name=3d-button&amp;embed=true" height="400" title="3d button">Loading</iframe>

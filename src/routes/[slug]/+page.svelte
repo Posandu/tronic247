@@ -127,6 +127,14 @@
 		{/if}
 	</div>
 
+	<p class="my-4 text-sm">
+		Found a spelling error or something wrong with this article? <a
+			href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
+			class="underline"
+			target="_blank">Edit this page on GitHub</a
+		> and make a PR!
+	</p>
+
 	{#key $mode}
 		<Comments />
 	{/key}

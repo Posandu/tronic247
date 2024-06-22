@@ -4,6 +4,7 @@ date: '2021-11-14'
 categories: ['css', 'html-tutorials', 'javascript', 'mysql', 'php']
 tags: ['css', 'mysql']
 updated: '2024-06-13'
+excerpt: In this post, we'll create a site like Github Gist using PHP, CSS, and a line of JavaScript!
 ---
 
 In this post, We'll create a site like [Github Gist](https://gist.github.com) using PHP, CSS and a 1 line of JavaScript! A preview of what we're creating is below.

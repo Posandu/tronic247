@@ -11,13 +11,17 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeShiki from '@shikijs/rehype';
 import remarkShikiTwoslash from 'remark-shiki-twoslash';
 import theme from './theme.js';
-import * as cheerio from 'cheerio';
 import chalk from 'chalk';
 import fs from 'fs';
 import highwayhash from 'highwayhash';
 import lazyLoadPlugin from 'rehype-plugin-image-native-lazy-loading';
 import rehypeExternalLinks from 'rehype-external-links';
-
+import {
+	transformerNotationDiff,
+	transformerNotationHighlight,
+	transformerNotationFocus,
+	transformerMetaHighlight
+} from '@shikijs/transformers';
 /**
  * @param {string} content
  */
@@ -28,7 +32,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const VERSION = 'y'; // replace w/ something else to force recompile
+const VERSION = "v1"
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
@@ -151,7 +155,13 @@ function markdown() {
 					.use([rehypeSlug, rehypeAutolinkHeadings, lazyLoadPlugin])
 					// @ts-expect-error idk
 					.use(rehypeShiki, {
-						theme
+						theme,
+						transformers: [
+							transformerNotationDiff(),
+							transformerNotationHighlight(),
+							transformerNotationFocus(),
+							transformerMetaHighlight()
+						]
 					})
 					.use(rehypeExternalLinks, {
 						target: '_blank',
@@ -162,18 +172,14 @@ function markdown() {
 
 				let html = processor.toString();
 
-				const $ = cheerio.load(html);
-				$('noscript').remove();
-				const text = $('html').text();
-
-				let excerpt = text.slice(0, 100).trim();
+				const excerpt = meta?.excerpt?.trim() || '';
 
 				const code = `<script context="module">
 									import StackBlitz from '$lib/components/StackBlitz.svelte';
 
 									export const meta = ${JSON.stringify(meta)};
-									export const excerpt = ${JSON.stringify(excerpt)} ${excerpt.length > 0 ? '+" [...]";' : ''}
-									export const length = ${text.length};
+									export const excerpt = ${JSON.stringify(excerpt)};
+									export const length = ${html.length};
 								</script>
 
 								<script>

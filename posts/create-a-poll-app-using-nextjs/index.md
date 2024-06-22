@@ -5,6 +5,7 @@ categories: ['html-tutorials', 'javascript', 'nextjs', 'mysql']
 tags: ['apps', 'css', 'frontend', 'javascript', 'mysql', 'react', 'nextjs']
 img: /wp-content/uploads/2022/10/Create-a-poll-app.png
 updated: '2024-06-13'
+excerpt: In this tutorial, we will create a poll app using Next.js, Prisma, and MySQL.
 ---
 
 ## Intro

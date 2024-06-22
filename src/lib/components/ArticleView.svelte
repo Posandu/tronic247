@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Img from '@zerodevx/svelte-img';
+	import { spring } from 'svelte/motion';
 
 	export let slug: string;
 	export let title: string;
@@ -10,12 +11,17 @@
 	let classes = '';
 
 	export { classes as class };
+
+	let scale = spring(1, { stiffness: 1, damping: 5 });
 </script>
 
 <article
-	class="{classes} article-box group rounded-lg bg-gray-50 px-5 py-4 transition-all hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40"
+	class="{classes} article-box group rounded-[2rem] bg-gray-50 p-5 transition-all hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40"
 	aria-labelledby="article-{slug}-title"
 	aria-describedby="article-{slug}-desc"
+	style="transform: scale({$scale})"
+	on:mouseenter={() => scale.set(1.02)}
+	on:mouseleave={() => scale.set(1)}
 >
 	{#if img}
 		<a href="/{slug}" aria-label="Read more about {title}">

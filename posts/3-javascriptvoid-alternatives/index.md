@@ -4,6 +4,7 @@ date: '2022-01-09'
 categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
 img: /wp-content/uploads/2022/01/3-javascriptvoid-alternatives.png
 updated: '2024-06-13'
+excerpt: 'In this article, you will learn some javascript: void alternatives. Before we begin, I will do a brief introduction about javascript: void.'
 ---
 
 In this article, you will learn some `javaScript: void` alternatives. Before we begin, I will do a brief introduction about `javascript: void`.

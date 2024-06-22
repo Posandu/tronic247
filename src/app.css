@@ -389,3 +389,34 @@ pre .logger.log-log svg {
 	margin-left: 6px;
 	margin-right: 9px;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	position: relative;
+}
+
+:where(h1, h2, h3, h4, h5, h6) a {
+	position: absolute;
+	top: 50%;
+	height: 20px;
+	width: 20px;
+	left: -25px;
+	transform: translate(0%, -50%);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none !important;
+}
+
+:where(h1, h2, h3, h4, h5, h6) a:after {
+	content: '#';
+	font-size: 22px;
+	opacity: 0;
+}
+:where(h1, h2, h3, h4, h5, h6):hover a:after {
+	opacity: 1;
+}

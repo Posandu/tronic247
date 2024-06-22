@@ -4,6 +4,7 @@ date: '2024-06-15'
 categories: ['migration']
 tags: ['sveltekit', 'wordpress']
 img: '/thumbnails/migrating-from-wp-to-sveltekit.png'
+excerpt: How I migrated my blog from WordPress to SvelteKit and improved its performance and developer experience.
 ---
 
 I was with my friends in a rural area, discussing websites and how they are made. When I showed them my blog on my phone, it took about 30 seconds to load, and some images were still loading. Initially, I blamed the slow internet connection, but back home with a fast connection, my site was still sluggish.

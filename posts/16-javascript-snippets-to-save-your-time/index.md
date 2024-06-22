@@ -5,6 +5,7 @@ categories: ['javascript', 'tricks-and-tips', 'html-tutorials']
 tags: ['javascript', 'snippets']
 img: /wp-content/uploads/2022/08/16-JavaScript-snippets-to-save-your-time.png
 updated: '2024-06-13'
+excerpt: A collection of JavaScript snippets to save you some time.
 ---
 
 I made some [JavaScript](/tag/javascript/) snippets to save you some time. See them below and let me know your thoughts!

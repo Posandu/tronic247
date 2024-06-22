@@ -5,6 +5,7 @@ categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['resources', 'tips']
 img: /wp-content/uploads/2022/04/my-bookmarks.png
 updated: '2024-06-13'
+excerpt: A list of my favorite bookmarks that I use to save time and make my life easier.
 ---
 
 I have a lot of bookmarks. They save my time. Now I will post them so you can read them and save your time too!

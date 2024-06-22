@@ -7,9 +7,7 @@ img: /wp-content/uploads/2021/09/animating.png
 updated: '2024-06-13'
 ---
 
-Do you have heard of material design? It's the most popular design language in the world. In this tutorial, we will learn how to make a simple CSS animation following material design animation guidelines. So, let's get started!
-
-## Contents
+Material design is one of the most popular design languages in the world. In this tutorial, we will learn how to make a simple CSS animation following material design animation guidelines. So, let's get started!
 
 ## Preparing the HTML
 

@@ -5,9 +5,8 @@ categories: ['html-tutorials', 'javascript', 'nextjs']
 tags: ['frontend', 'javascript', 'nextjs']
 img: /wp-content/uploads/2022/11/Adding-Firebase-auth-to-a-Next.js-project.png
 updated: '2024-06-13'
+excerpt: A tutorial on how to add Firebase authentication to a Next.js app.
 ---
-
-## Introduction
 
 In this tutorial, we'll learn how to add Firebase authentication to a Next.js app. We'll use Firebase's authentication service to create a login page with Google authentication.
 

@@ -46,6 +46,7 @@
 		"@remark-embedder/core": "^3.0.3",
 		"@remark-embedder/transformer-oembed": "^5.0.0",
 		"@shikijs/rehype": "^1.6.2",
+		"@shikijs/transformers": "^1.9.0",
 		"@stackblitz/sdk": "^1.10.0",
 		"@sveltejs/adapter-vercel": "^5.3.1",
 		"@sveltejs/enhanced-img": "^0.3.0",

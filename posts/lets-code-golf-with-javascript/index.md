@@ -5,6 +5,7 @@ categories: ['javascript', 'tricks-and-tips']
 tags: ['tips', 'javascript', 'games']
 img: /wp-content/uploads/2022/06/code-golf-in-js.png
 updated: '2024-06-13'
+excerpt: Code golfing is trying to make the shortest possible code for a given task. It's mainly a game and very useful for improving your programming skills. In this article, we'll golf some JavaScript code.
 ---
 
 In this article, we'll golf some JavaScript code. But first, we'll need to know what the heck is code-golf?

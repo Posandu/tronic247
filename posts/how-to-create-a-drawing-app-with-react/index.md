@@ -5,6 +5,7 @@ categories: ['css', 'html-tutorials', 'javascript', 'tricks-and-tips']
 tags: ['javascript', 'tips']
 img: /wp-content/uploads/2022/03/Create-a-drawing-app-with-React.png
 updated: '2024-06-13'
+excerpt: A tutorial on how to create a drawing app with React using the canvas element.
 ---
 
 Today, we will be making this drawing app with React.

@@ -5,6 +5,7 @@ categories: ['css', 'html-tutorials', 'posts', 'tricks-and-tips']
 tags: ['css', 'modals']
 img: /wp-content/uploads/2021/07/How-to_create_modal_css-min.png
 updated: '2024-06-13'
+excerpt: Creating a modal/pop-up with pure CSS without any JavaScript.
 ---
 
 Today, In this tutorial I will tell you how to create a modal with pure CSS!

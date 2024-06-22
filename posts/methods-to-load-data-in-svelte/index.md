@@ -4,6 +4,7 @@ date: '2024-06-19'
 categories: ['svelte']
 tags: ['svelte', 'fetch', 'sveltekit']
 img: /thumbnails/methods-to-load-data-in-svelte.png
+excerpt: 'Learn different methods to load data in Svelte and SvelteKit, including using the Fetch API, Svelte stores, and server-side data loading.'
 ---
 
 Svelte and SvelteKit are great tools for building web applications. They both have built-in ways to load data from APIs or other sources. In this article, we'll explore different methods to load data in Svelte and SvelteKit.

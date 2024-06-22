@@ -5,6 +5,7 @@ categories: ['rust']
 tags: ['cli', 'rust']
 img: /wp-content/uploads/2022/09/Create-a-Todo-CLI-with-Rust.png
 updated: '2024-06-13'
+excerpt: A small tutorial on how to create a todo CLI application with Rust, using local JSON files to store the data.
 ---
 
 In this article, we'll build a to-do CLI application with Rust. Local JSON files are used to store the data. Here's a preview of the app:

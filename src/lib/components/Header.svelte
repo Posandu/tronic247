@@ -45,25 +45,25 @@
 			</ul>
 
 			<a class="ml-8" href="/search">
-				<Icon icon="material-symbols:search" class="size-6" />
+				<Icon icon="material-symbols:search" class="size-6 text-black dark:text-white" />
 			</a>
 
 			<button class="ml-2 transition-all active:rotate-180" on:click={toggleMode}>
-				<Icon icon="lets-icons:color-mode" class="size-6" />
+				<Icon icon="lets-icons:color-mode" class="size-6 text-black dark:text-white" />
 			</button>
 		</nav>
 
 		<div class="flex items-center lg:hidden">
 			<a class="mr-4" href="/search">
-				<Icon icon="material-symbols:search" class="size-6" />
+				<Icon icon="material-symbols:search" class="size-6 text-black dark:text-white" />
 			</a>
 
 			<button class="mr-4 transition-all active:rotate-180" on:click={toggleMode}>
-				<Icon icon="lets-icons:color-mode" class="size-6" />
+				<Icon icon="lets-icons:color-mode" class="size-6 text-black dark:text-white" />
 			</button>
 
 			<button class="menu-btn" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
-				<Icon icon="bx:bx-menu" class="size-6" />
+				<Icon icon="bx:bx-menu" class="size-6 text-black dark:text-white" />
 			</button>
 		</div>
 	</div>

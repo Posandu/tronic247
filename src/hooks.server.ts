@@ -5,7 +5,7 @@ import type { Handle } from '@sveltejs/kit';
 export const handle: Handle = async ({ event, resolve }) => {
 	const allImgs = import.meta.glob('../static/**/*.png', {
 		query: {
-			enhanced: true
+			as: "run"
 		},
 		eager: true,
 		exhaustive: true

@@ -28,7 +28,7 @@ export const load = async ({ params }) => {
 
 	const allImgs = import.meta.glob(/* @vite-ignore */ '../../../static/**/*.png', {
 		query: {
-			enhanced: true
+			as: "run"
 		},
 		eager: true
 	});

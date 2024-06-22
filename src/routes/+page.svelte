@@ -3,7 +3,8 @@
 	import ArticleView from '$lib/components/ArticleView.svelte';
 	import SvelteSeo from 'svelte-seo';
 	//@ts-ignore
-	import Cover from '../cover.png?enhanced=true';
+	import Cover from '../cover.png?as=run';
+	import Img from '@zerodevx/svelte-img';
 
 	export let data;
 
@@ -53,7 +54,7 @@
 <div
 	class="relative -mt-4 overflow-hidden bg-black/90 pb-20 pt-20 text-center text-white dark:bg-black/20"
 >
-	<enhanced:img
+	<Img
 		src={Cover}
 		alt="Hero"
 		fetchpriority="high"

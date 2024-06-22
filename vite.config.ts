@@ -1,12 +1,16 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import { enhancedImages } from '@sveltejs/enhanced-img';
+import { imagetools } from '@zerodevx/svelte-img/vite';
 
 export default defineConfig({
-	plugins: [enhancedImages(), sveltekit()],
+	plugins: [sveltekit(), imagetools()],
 	server: {
 		fs: {
 			allow: ['..']
+		},
+		headers: {
+			'Cross-Origin-Embedder-Policy': 'require-corp',
+			'Cross-Origin-Opener-Policy': 'same-origin'
 		}
 	}
 });

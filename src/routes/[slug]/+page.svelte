@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { SITE_URL, formattedTitle } from '$lib';
-	import SocialMedia from '$lib/components/SocialMedia.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { mode } from 'mode-watcher';
 	import Comments from '$lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
-	import Advertisement from '$lib/components/Advertisement.svelte';
+	import Img from '@zerodevx/svelte-img';
 
 	export let data;
 
@@ -20,14 +19,8 @@
 
 	let randPosts = data.randPosts;
 
-	let Ad: any;
-
 	onMount(() => {
 		import('@justinribeiro/lite-youtube');
-
-		import('$lib/components/Advertisement.svelte').then((module) => {
-			Ad = module.default;
-		});
 	});
 </script>
 
@@ -65,7 +58,7 @@
 <div class="prose prose-lg mb-8 text-center dark:prose-invert md:prose-xl md:mx-auto">
 	{#if data.postImg}
 		<div class="relative w-full overflow-hidden">
-			<enhanced:img src={data.postImg} alt={title} class="w-full rounded-xl" />
+			<Img src={data.postImg} alt={title} class="w-full rounded-xl" />
 		</div>
 	{/if}
 
@@ -113,11 +106,7 @@
 </div>
 
 <main class="prose prose-lg mx-4 dark:prose-invert md:prose-xl md:mx-auto">
-	<Advertisement />
-
 	<svelte:component this={data.content} />
-
-	<Advertisement />
 
 	<div class="mb-4 space-x-2">
 		{#if tags}
@@ -152,7 +141,7 @@
 		<a href={post.slug} class="group col-span-1 no-underline">
 			{#if post.img}
 				<div class="relative w-full overflow-hidden">
-					<enhanced:img src={post.img} alt={post.title} class="w-full rounded-xl" />
+					<Img src={post.img} alt={post.title} class="w-full rounded-xl" />
 				</div>
 			{/if}
 

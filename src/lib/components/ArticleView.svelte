@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Img from '@zerodevx/svelte-img';
+
 	export let slug: string;
 	export let title: string;
 	export let excerpt: string;
@@ -17,7 +19,7 @@
 >
 	{#if img}
 		<a href="/{slug}" aria-label="Read more about {title}">
-			<enhanced:img
+			<Img
 				src={img}
 				class="mb-6 w-full rounded-xl object-cover transition-all group-hover:opacity-95"
 				alt="{title} image"

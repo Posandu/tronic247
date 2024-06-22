@@ -12,11 +12,11 @@
 
 	export { classes as class };
 
-	let scale = spring(1, { stiffness: 1, damping: 5 });
+	let scale = spring(1, { stiffness: .1, damping: .5 });
 </script>
 
 <article
-	class="{classes} article-box group rounded-[2rem] bg-gray-50 p-5 transition-all hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40"
+	class="{classes} article-box group rounded-[2rem] bg-gray-50 p-5 hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40"
 	aria-labelledby="article-{slug}-title"
 	aria-describedby="article-{slug}-desc"
 	style="transform: scale({$scale})"

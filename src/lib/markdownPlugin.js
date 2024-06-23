@@ -22,6 +22,9 @@ import {
 	transformerNotationFocus,
 	transformerMetaHighlight
 } from '@shikijs/transformers';
+
+const VERBOSE = false;
+
 /**
  * @param {string} content
  */
@@ -32,7 +35,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const VERSION = "v1"
+const VERSION = 'v1';
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
@@ -59,7 +62,7 @@ function markdown() {
 			if (pathname.endsWith('.md')) {
 				checkFolder();
 
-				console.log(chalk.gray(`Compiling ${pathname}`));
+				if (VERBOSE) console.log(chalk.gray(`Compiling ${pathname}`));
 
 				/**
 				 * Overengineered caching system
@@ -79,7 +82,7 @@ function markdown() {
 				if (fs.existsSync(fileLoc)) {
 					const code = fs.readFileSync(fileLoc, 'utf-8');
 
-					console.log(chalk.green(`Successfully compiled from cache`));
+					if (VERBOSE) console.log(chalk.green(`Successfully compiled from cache`));
 
 					return {
 						code
@@ -208,7 +211,7 @@ function markdown() {
 
 				fs.writeFileSync(fileLoc, code);
 
-				console.log(chalk.green(`Successfully compiled`));
+				if (VERBOSE) console.log(chalk.green(`Successfully compiled`));
 
 				return {
 					code

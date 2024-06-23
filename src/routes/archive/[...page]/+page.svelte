@@ -1,10 +1,7 @@
 <script>
-	import { goto, invalidate, invalidateAll } from '$app/navigation';
-	import ArticleView from '$lib/components/ArticleView.svelte';
-	import { page } from '$app/stores';
-	import Pagination from '$lib/components/Pagination.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { SITE_URL, formattedTitle } from '$lib';
+	import QueryPage from '$lib/components/QueryPage.svelte';
 
 	export let data;
 
@@ -56,12 +53,6 @@
 
 <h1 class="mt-8 text-2xl font-semibold">Archive</h1>
 
-<p class="mb-4 mt-4">Here you can find all the posts that have been published on this blog.</p>
+<p class="mb-8 mt-4">A chronological list of all posts on Tronic247.</p>
 
-<Pagination {totalPages} {currentPage} urlFn={(page) => `/archive/page/${page}`} />
-
-<div class="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-	{#each posts as { date, title, excerpt, slug, img }}
-		<ArticleView {date} {title} {excerpt} {slug} {img} class="col-span-1" />
-	{/each}
-</div>
+<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/archive/page/${page}`} />

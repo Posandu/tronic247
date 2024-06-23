@@ -55,97 +55,89 @@
 	}}
 />
 
-<div class="prose prose-lg mb-8 text-center dark:prose-invert md:prose-xl md:mx-auto">
-	{#if data.postImg}
-		<div class="relative w-full overflow-hidden">
-			<Img src={data.postImg} alt={title} class="w-full rounded-xl" />
-		</div>
-	{/if}
-
-	<div
-		class="mb-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark {img
-			? ''
-			: '!mt-10'}"
-	>
-		<p class="inline" aria-label="Published on">
-			{new Date(date).toLocaleDateString('en-US', {
-				year: 'numeric',
-				month: 'long',
-				day: 'numeric'
-			})}
-		</p>
-
-		{#if lastUpdated}
-			<span class="mx-1">•</span>
-
-			<p class="inline" aria-label="Last Updated on">
-				Updated on {new Date(lastUpdated).toLocaleDateString('en-US', {
+<div class="mt-8 md:grid grid-cols-8 gap-8">
+	<div class="col-span-6">
+		<div class="mb-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark">
+			<p class="inline" aria-label="Published on">
+				{new Date(date).toLocaleDateString('en-US', {
 					year: 'numeric',
 					month: 'long',
 					day: 'numeric'
 				})}
 			</p>
-		{/if}
 
-		{#if categories && categories?.length > 0}
-			<span class="mx-1">•</span>
+			{#if lastUpdated}
+				<span class="mx-1">•</span>
 
-			<p class="mt-2 inline" aria-label="Categories">
-				{#each categories as category, i}
-					<a
-						class="hover:underline"
-						href="/category/{category.toLowerCase()}"
-						aria-label="{category} category">{category}</a
-					>{i < categories.length - 1 ? ', ' : ''}
-				{/each}
-			</p>
-		{/if}
-	</div>
-
-	<h1 class="mb-10 !text-4xl font-bold leading-normal">{title}</h1>
-</div>
-
-<main class="prose prose-lg mx-4 dark:prose-invert md:prose-xl md:mx-auto">
-	<svelte:component this={data.content} />
-
-	<div class="mb-4 space-x-2">
-		{#if tags}
-			{#each tags as tag}
-				<a
-					href="/tag/{tag.toLowerCase()}"
-					class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black dark:text-muted-dark dark:hover:text-white"
-				>
-					#{tag}
-				</a>
-			{/each}
-		{/if}
-	</div>
-
-	<p class="my-4 text-sm">
-		Found a spelling error or something wrong with this article? <a
-			href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
-			class="underline"
-			target="_blank">Edit this page on GitHub</a
-		> and make a PR!
-	</p>
-
-	{#key $mode}
-		<Comments />
-	{/key}
-</main>
-
-<h3 class="mt-10 text-2xl font-semibold">Related Posts</h3>
-
-<div class="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-	{#each randPosts as post}
-		<a href={post.slug} class="group col-span-1 no-underline">
-			{#if post.img}
-				<div class="relative w-full overflow-hidden">
-					<Img src={post.img} alt={post.title} class="w-full rounded-xl" />
-				</div>
+				<p class="inline" aria-label="Last Updated on">
+					Updated on {new Date(lastUpdated).toLocaleDateString('en-US', {
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric'
+					})}
+				</p>
 			{/if}
 
-			<h4 class="mt-4 text-xl font-semibold">{post.title}</h4>
-		</a>
-	{/each}
+			{#if categories && categories?.length > 0}
+				<span class="mx-1">•</span>
+
+				<p class="mt-2 inline" aria-label="Categories">
+					{#each categories as category, i}
+						<a
+							class="hover:underline"
+							href="/category/{category.toLowerCase()}"
+							aria-label="{category} category">{category}</a
+						>{i < categories.length - 1 ? ', ' : ''}
+					{/each}
+				</p>
+			{/if}
+		</div>
+
+		<h1 class="mb-10 text-4xl font-semibold">{title}</h1>
+
+		<main class="prose dark:prose-invert">
+			<svelte:component this={data.content} />
+
+			<div class="mb-4 space-x-2">
+				{#if tags}
+					{#each tags as tag}
+						<a
+							href="/tag/{tag.toLowerCase()}"
+							class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black dark:text-muted-dark dark:hover:text-white"
+						>
+							#{tag}
+						</a>
+					{/each}
+				{/if}
+			</div>
+
+			<p class="my-4 text-muted-dark">
+				Found a spelling error or something wrong with this article? <a
+					href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
+					class="underline"
+					target="_blank">Edit this page on GitHub</a
+				> and make a PR!
+			</p>
+
+			{#key $mode}
+				<Comments />
+			{/key}
+		</main>
+	</div>
+
+	<div class="col-span-2">
+		{#if img}
+			<Img src={data.postImg} alt={title} class="ml-auto w-full rounded-lg hidden md:block" />
+		{/if}
+
+		<h3 class="mt-10 text-2xl font-semibold">Related</h3>
+
+		<div class="mt-4 space-y-4">
+			{#each randPosts as post}
+				<a href={post.slug} class="block hover:underline">
+					{post.title}
+				</a>
+			{/each}
+		</div>
+	</div>
 </div>

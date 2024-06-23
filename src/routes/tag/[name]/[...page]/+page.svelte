@@ -5,6 +5,7 @@
 	import Pagination from '$lib/components/Pagination.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { SITE_URL, formattedTitle } from '$lib';
+	import QueryPage from '$lib/components/QueryPage.svelte';
 
 	export let data;
 
@@ -58,14 +59,8 @@
 	Posts tagged with <span class="text-primary">#{tagName}</span>
 </h1>
 
-<p class="mb-4 mt-4">
-	All posts tagged with <span class="text-primary">#{tagName}</span> are listed below.
+<p class="mb-8 mt-4">
+	A list of all posts tagged with <span class="text-primary">#{tagName}</span>.
 </p>
 
-<Pagination {totalPages} {currentPage} urlFn={(page) => `/tag/${tagName}/page/${page}`} />
-
-<div class="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-	{#each posts as { date, title, excerpt, slug, img }}
-		<ArticleView {date} {title} {excerpt} {slug} {img} class="col-span-1" />
-	{/each}
-</div>
+<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/tag/${tagName}/page/${page}`} />

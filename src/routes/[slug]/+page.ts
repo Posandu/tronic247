@@ -1,5 +1,4 @@
 import { formaRawPostModule, getImportedPosts } from '$lib/posts';
-import type { Post } from '$lib/query.js';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }) => {
@@ -23,12 +22,12 @@ export const load = async ({ params }) => {
 
 	const randPosts = allPostsFormatted
 		.filter((post) => post.title !== meta.title)
-		.sort(() => 0.5 - Math.random())
-		.slice(0, 3);
+		.sort(() => Math.random() - 0.5)
+		.slice(0, 6);
 
 	const allImgs = import.meta.glob(/* @vite-ignore */ '../../../static/**/*.png', {
 		query: {
-			as: "run"
+			as: 'run'
 		},
 		eager: true
 	});
@@ -40,28 +39,13 @@ export const load = async ({ params }) => {
 		newImgs[key.replace('../../../static', '')] = img.default;
 	}
 
-	const getImgObjects = (posts: Post[]) => {
-		const imgObjects: any = {};
-
-		for (const post of posts) {
-			if (post.img) {
-				imgObjects[post.img] = newImgs[post.img];
-			}
-		}
-
-		return imgObjects;
-	};
-
-	const randPostsObj = getImgObjects(randPosts);
-
 	return {
 		content: post.default,
 		postImg: meta.img && newImgs[meta.img],
 		meta,
 		randPosts: randPosts.map((post) => ({
 			title: post.title,
-			slug: post.slug,
-			img: post.img && randPostsObj[post.img]
+			slug: post.slug
 		}))
 	};
 };

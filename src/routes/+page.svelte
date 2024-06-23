@@ -65,11 +65,10 @@
 	<div class="absolute inset-0 bg-black/40"></div>
 
 	<div class="container relative z-10 mx-auto">
-		<h1 class="mb-10 text-5xl font-semibold">Blog about Software dev</h1>
+		<h1 class="mb-10 text-5xl font-semibold">For Seekers of Innovation</h1>
 
 		<p class="mx-auto max-w-2xl text-xl leading-10">
-			Tronic247 is where I write about software development, programming, and related topics. You
-			can find interesting articles, tutorials, and guides here.
+			Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here. Enjoy your stay!
 		</p>
 	</div>
 </div>

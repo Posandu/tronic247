@@ -399,7 +399,7 @@ h6 {
 	position: relative;
 }
 
-:where(h1, h2, h3, h4, h5, h6) a {
+:where(h1, h2, h3, h4, h5, h6) a[aria-hidden] {
 	position: absolute;
 	top: 50%;
 	height: 20px;
@@ -412,11 +412,11 @@ h6 {
 	text-decoration: none !important;
 }
 
-:where(h1, h2, h3, h4, h5, h6) a:after {
+:where(h1, h2, h3, h4, h5, h6) a[aria-hidden]:after {
 	content: '#';
 	font-size: 22px;
 	opacity: 0;
 }
-:where(h1, h2, h3, h4, h5, h6):hover a:after {
+:where(h1, h2, h3, h4, h5, h6):hover a[aria-hidden]:after {
 	opacity: 1;
 }

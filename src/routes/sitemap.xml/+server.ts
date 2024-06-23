@@ -112,35 +112,7 @@ export const GET = async () => {
 			});
 		});
 	});
-
-	/**
-	 * Sponsor page
-	 */
-	sitemap.addPage({
-		loc: `${SITE_URL}sponsor`,
-		lastmod: new Date().toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'numeric',
-			day: 'numeric'
-		}),
-		changefreq: 'monthly',
-		priority: '0.8'
-	});
-
-	/**
-	 * Snippets page
-	 */
-	sitemap.addPage({
-		loc: `${SITE_URL}snippets`,
-		lastmod: new Date().toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'numeric',
-			day: 'numeric'
-		}),
-		changefreq: 'monthly',
-		priority: '0.8'
-	});
-
+	
 	return new Response(sitemap.generate(), {
 		headers: {
 			'Content-Type': 'application/xml'

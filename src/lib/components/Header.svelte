@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { navigating, page } from '$app/stores';
 	import { fly } from 'svelte/transition';
@@ -6,11 +6,30 @@
 
 	const menuItems = [
 		['Home', '/'],
-		['Archive', '/archive'],
-		['Sponsor 💖', '/sponsor']
+		['Archive', '/archive']
 	];
 
 	let mobileMenuOpen = false;
+	let header: HTMLElement;
+
+	let lastScrollPosition = 0;
+	let headerOffset = 0;
+
+	const onScroll = () => {
+		const topAppBarHeight = header.offsetHeight;
+		const currentScrollPosition = Math.max(window.scrollY, 0);
+		const diff = currentScrollPosition - lastScrollPosition;
+
+		lastScrollPosition = currentScrollPosition;
+
+		headerOffset -= diff;
+
+		if (headerOffset > 0) {
+			headerOffset = 0;
+		} else if (Math.abs(headerOffset) > topAppBarHeight) {
+			headerOffset = -topAppBarHeight;
+		}
+	};
 
 	$: {
 		if ($navigating) {
@@ -19,10 +38,14 @@
 	}
 </script>
 
+<svelte:window on:scroll={onScroll} />
+
 <header
 	class="fixed left-1/2 top-0 z-50 mx-auto mb-4 flex w-full -translate-x-1/2 select-none justify-between rounded-b-none bg-white py-2 text-black dark:bg-black/20 dark:text-white dark:backdrop-blur-md"
+	style="top: {headerOffset}px;"
+	bind:this={header}
 >
-	<div class="container flex mx-auto">
+	<div class="container mx-auto flex">
 		<div class="flex min-h-16 flex-1 items-center justify-start">
 			<a href="/">
 				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 dark:invert" />
@@ -103,3 +126,16 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	header {
+		mask-image: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0),
+			rgba(0, 0, 0, 0.5) 10%,
+			rgba(0, 0, 0, 0.8) 20%,
+			rgba(0, 0, 0, 1) 30%,
+			rgb(0, 0, 0)
+		);
+	}
+</style>

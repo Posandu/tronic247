@@ -5,6 +5,7 @@
 	import Pagination from '$lib/components/Pagination.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { SITE_URL, formattedTitle } from '$lib';
+	import QueryPage from '$lib/components/QueryPage.svelte';
 
 	export let data;
 
@@ -55,17 +56,16 @@
 />
 
 <h1 class="mt-8 text-2xl font-semibold">
-	Posts in the category <span class="text-primary">{category}</span>
+	Category - {category}
 </h1>
 
-<p class="mb-4 mt-4">
-	All posts in the category <span class="text-primary">{category}</span> are listed below.
+<p class="mb-8 mt-4">
+	A list of all posts in the category <span class="text-primary">{category}</span>.
 </p>
 
-<Pagination {totalPages} {currentPage} urlFn={(page) => `/category/${category}/page/${page}`} />
-
-<div class="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-	{#each posts as { date, title, excerpt, slug, img }}
-		<ArticleView {date} {title} {excerpt} {slug} {img} class="col-span-1" />
-	{/each}
-</div>
+<QueryPage
+	{currentPage}
+	{posts}
+	{totalPages}
+	urlFn={(page) => `/category/${category}/page/${page}`}
+/>

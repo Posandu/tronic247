@@ -92,7 +92,7 @@ For example, if the user collected the badge for Monday, the `lastBadgeId` will 
 
 Oh, and we also need to add the `DATABASE_URL` environment variable to our `.env` file. Use the below format in your `.env` file.
 
-```s
+```
 DATABASE_URL='mysql://username:password@host:port/database'
 ```
 

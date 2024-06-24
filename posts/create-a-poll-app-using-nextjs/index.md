@@ -79,7 +79,7 @@ That is, we have a `Poll` model and a Vote model. The `Poll` model contains the 
 
 Now set your data credentials in the .env file.
 
-```s
+```
 DATABASE_URL="myqsl://USER:PASSWORD@HOST:PORT/DATABASE?schema=public"
 ```
 

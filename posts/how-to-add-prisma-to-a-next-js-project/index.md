@@ -81,7 +81,7 @@ In the modal, select the `Prisma` option and copy the connection URL.
 
 Now, open the `.env` file and paste the connection URL in the `.env` file.
 
-```env
+```s
 DATABASE_URL='mysql://************:**********************@us-east.connect.psdb.cloud/mini-shop?sslaccept=strict'
 ```
 

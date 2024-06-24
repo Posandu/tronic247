@@ -62,7 +62,7 @@ export default function App() {
 
 First, we will create the canvas.
 
-```htm
+```html
 <canvas></canvas>
 ```
 

@@ -92,7 +92,7 @@ However, I still had to fix frontmatter, images, and links manually. I also conv
 
 Here's what a typical post looks like:
 
-```markdown
+```markdown:post.md
 ---
 title: Migrating Tronic247 from WordPress to SvelteKit
 date: '2024-06-15'

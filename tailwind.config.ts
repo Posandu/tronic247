@@ -24,7 +24,11 @@ export default {
 				DEFAULT: {
 					css: {
 						maxWidth: '90ch',
-						lineHeight: '1.75'
+						lineHeight: '1.75',
+						pre: {
+							backgroundColor: '#1a1b26',
+							color: '#b2bbe3'
+						}
 					}
 				}
 			}

@@ -9,7 +9,6 @@ import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeShiki from '@shikijs/rehype';
-import remarkShikiTwoslash from 'remark-shiki-twoslash';
 import theme from './theme.js';
 import chalk from 'chalk';
 import fs from 'fs';
@@ -22,6 +21,7 @@ import {
 	transformerNotationFocus,
 	transformerMetaHighlight
 } from '@shikijs/transformers';
+import rehypeCodeTitles from 'rehype-code-titles';
 
 const VERBOSE = false;
 
@@ -35,7 +35,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const VERSION = 'v1';
+const VERSION = 'v3';
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
@@ -140,25 +140,14 @@ function markdown() {
 
 				const processor = await unified()
 					.use(toMarkdownAST)
-					.use([
-						remarkGfm,
-						remarkSmartypants,
-						[remarkToc, { tight: true }],
-						[
-							// @ts-expect-error weird module
-							remarkShikiTwoslash.default,
-							{
-								theme
-							}
-						]
-					])
-					.use()
+					.use([remarkGfm, remarkSmartypants, [remarkToc, { tight: true }]])
 					.use(toHtmlAST, { allowDangerousHtml: true })
-					//@ts-expect-error weird module
-					.use([rehypeSlug, rehypeAutolinkHeadings, lazyLoadPlugin])
-					// @ts-expect-error idk
+					.use([rehypeSlug, rehypeAutolinkHeadings])
+					//@ts-expect-error some weird error, but it works
+					.use(lazyLoadPlugin)
+					.use(rehypeCodeTitles)
 					.use(rehypeShiki, {
-						theme,
+						theme: theme,
 						transformers: [
 							transformerNotationDiff(),
 							transformerNotationHighlight(),

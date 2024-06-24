@@ -1,3 +1,6 @@
+/**
+ * @type {any}
+ */
 const theme = {
 	name: 'Tokyo Night',
 	semanticTokenColors: {

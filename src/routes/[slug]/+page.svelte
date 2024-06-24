@@ -8,7 +8,6 @@
 
 	export let data;
 
-	let tags = data.meta.tags;
 	let categories = data.meta.categories;
 	let date = data.meta.date;
 	let title = data.meta.title;
@@ -55,7 +54,7 @@
 	}}
 />
 
-<div class="mt-8 md:grid grid-cols-8 gap-8">
+<div class="mt-8 grid-cols-8 gap-8 md:grid">
 	<div class="col-span-6">
 		<div class="mb-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark">
 			<p class="inline" aria-label="Published on">
@@ -95,21 +94,8 @@
 
 		<h1 class="mb-10 text-4xl font-semibold">{title}</h1>
 
-		<main class="prose dark:prose-invert">
+		<main class="prose prose-lg dark:prose-invert">
 			<svelte:component this={data.content} />
-
-			<div class="mb-4 space-x-2">
-				{#if tags}
-					{#each tags as tag}
-						<a
-							href="/tag/{tag.toLowerCase()}"
-							class="inline-block rounded-full text-sm uppercase text-gray-900 no-underline transition-all hover:text-black dark:text-muted-dark dark:hover:text-white"
-						>
-							#{tag}
-						</a>
-					{/each}
-				{/if}
-			</div>
 
 			<p class="my-4 text-muted-dark">
 				Found a spelling error or something wrong with this article? <a
@@ -127,7 +113,7 @@
 
 	<div class="col-span-2">
 		{#if img}
-			<Img src={data.postImg} alt={title} class="ml-auto w-full rounded-lg hidden md:block" />
+			<Img src={data.postImg} alt={title} class="ml-auto hidden w-full rounded-lg md:block" />
 		{/if}
 
 		<h3 class="mt-10 text-2xl font-semibold">Related</h3>
@@ -138,6 +124,34 @@
 					{post.title}
 				</a>
 			{/each}
+		</div>
+
+		<div class="sticky top-20 h-max">
+			<h4 class="mt-10 text-2xl font-semibold">Support</h4>
+
+			<div class="mt-4 space-y-4">
+				<a
+					href="https://www.buymeacoffee.com/posandu"
+					target="_blank"
+					class="block hover:underline"
+				>
+					Buy me a coffee
+				</a>
+				<a
+					href="https://github.com/sponsors/Posandu/"
+					target="_blank"
+					class="block hover:underline"
+				>
+					Sponsor me on GitHub
+				</a>
+				<a
+					href="https://www.tronic247.com/pastebox.html#O=MIewDgngBAZFAKBDAzgFwKZVQC04gJvgE7rLKkBQFAyiADaIB2iUAgoSWVALRQASAdQBiANxABGYMADm6AGoB3ROgDMAUQDsAORECAZmD4AOAJwBbMwC8ASumsAjEAGkAsnoCOlgEIDECsIgUagAqfGwcpMhQABQgRFBM0GpyLlAAxtiIAJaMAJQ8UAAMAB4mACxGAGwAItWVhcBqhZXAleXK9iqVAEyFRkLVRvZGiCoq3d0ArJXiZax6VMEQAIRAA"
+					target="_blank"
+					class="block hover:underline"
+				>
+					Donate via crypto
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

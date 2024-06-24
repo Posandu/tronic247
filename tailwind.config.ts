@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from 'tailwindcss';
 
-const MAIN_FONT =
-	'-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
-const MONO_FONT = 'monospace';
+const MAIN_FONT = '"Source Sans 3", sans-serif';
+const MONO_FONT = '"Roboto Mono", monospace';
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],

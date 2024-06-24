@@ -13,7 +13,7 @@
 </script>
 
 <article
-	class="{classes} article-box group rounded-[2rem] bg-gray-50 p-5 transition-all will-change-transform hover:scale-[1.02] hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/40"
+	class="{classes} article-box group rounded-[2rem] bg-gray-100/60 p-5 transition-all will-change-transform hover:scale-[1.02] hover:bg-gray-200/60 dark:bg-black/30 dark:hover:bg-black/40"
 	aria-labelledby="article-{slug}-title"
 	aria-describedby="article-{slug}-desc"
 >
@@ -40,13 +40,13 @@
 	</p>
 
 	<a href="/{slug}" aria-labelledby="article-{slug}-title article-{slug}-desc">
-		<h2 id="article-{slug}-title" class="mt-4 text-xl font-semibold">
+		<h2 id="article-{slug}-title" class="mt-4 text-2xl font-semibold">
 			{title}
 		</h2>
 
 		<p
 			id="article-{slug}-desc"
-			class="mt-4 overflow-hidden text-wrap break-words text-sm text-black/60 dark:text-muted-dark"
+			class="mt-4 overflow-hidden text-wrap break-words text-black/60 dark:text-muted-dark"
 		>
 			{excerpt}
 		</p>

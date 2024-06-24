@@ -10,7 +10,6 @@
 	import { quadInOut } from 'svelte/easing';
 	import { beforeNavigate } from '$app/navigation';
 	import { updated } from '$app/stores';
-	import { setImgs } from '$lib/img';
 
 	beforeNavigate(({ willUnload, to }) => {
 		if ($updated && !willUnload && to?.url) {
@@ -36,9 +35,16 @@
 	const isBlank = (path: string) => BLANK.some((blank) => path === blank);
 
 	export let data;
-
-	setImgs(data.allImgs);
 </script>
+
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+		rel="stylesheet"
+	/>
+</svelte:head>
 
 <ModeWatcher />
 
@@ -61,7 +67,7 @@
 {/key}
 
 {#if !isBlank($page.route?.id?.toString() || '')}
-	<Footer categories={data.stats.categories} tags={data.stats.tags} />
+	<Footer categories={data.stats.categories} />
 {/if}
 
 <style>

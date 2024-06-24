@@ -1,10 +1,7 @@
 <script lang="ts">
-	import { SITE_URL, formattedTitle } from '$lib';
+	import { SITE_URL } from '$lib';
 	import ArticleView from '$lib/components/ArticleView.svelte';
 	import SvelteSeo from 'svelte-seo';
-	//@ts-ignore
-	import Cover from '../cover.png?as=run';
-	import Img from '@zerodevx/svelte-img';
 
 	export let data;
 
@@ -54,21 +51,14 @@
 <div
 	class="relative -mt-4 overflow-hidden bg-black/90 pb-20 pt-20 text-center text-white dark:bg-black/20"
 >
-	<Img
-		src={Cover}
-		alt="Hero"
-		fetchpriority="high"
-		loading="eager"
-		class="absolute inset-0 h-full w-full object-cover"
-	/>
-
 	<div class="absolute inset-0 bg-black/40"></div>
 
 	<div class="container relative z-10 mx-auto">
 		<h1 class="mb-10 text-5xl font-semibold">For Seekers of Innovation</h1>
 
 		<p class="mx-auto max-w-2xl text-xl leading-10">
-			Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here. Enjoy your stay!
+			Tronic247 is where I write about software development, programming, and related topics. You
+			can find interesting articles, tutorials, and guides here. Enjoy your stay!
 		</p>
 	</div>
 </div>

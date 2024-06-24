@@ -128,7 +128,7 @@
 {/if}
 
 <style>
-	header {
+	:global(.dark header) {
 		mask-image: linear-gradient(
 			0deg,
 			rgba(0, 0, 0, 0),

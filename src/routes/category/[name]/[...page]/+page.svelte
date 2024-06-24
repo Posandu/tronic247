@@ -1,8 +1,4 @@
 <script>
-	import { goto, invalidate, invalidateAll } from '$app/navigation';
-	import ArticleView from '$lib/components/ArticleView.svelte';
-	import { page } from '$app/stores';
-	import Pagination from '$lib/components/Pagination.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { SITE_URL, formattedTitle } from '$lib';
 	import QueryPage from '$lib/components/QueryPage.svelte';

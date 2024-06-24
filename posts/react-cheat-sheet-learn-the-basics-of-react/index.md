@@ -56,7 +56,7 @@ You can also use ES6 classes to create React components:
 
 **Not recommended because functional components are easier to read and test.**
 
-```jsx
+```jsx:lib/mdx.ts
 class App extends React.Component {
 	render() {
 		return <h1>Hello World</h1>;

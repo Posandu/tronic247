@@ -21,36 +21,49 @@
 	onMount(() => {
 		import('@justinribeiro/lite-youtube');
 	});
+
+	const SEO = {
+		title: formattedTitle(title),
+		description: excerpt.length > 0 ? excerpt : 'No description provided',
+		datePublished: date.toISOString(),
+		dateModified: lastUpdated ? new Date(lastUpdated).toISOString() : date.toISOString(),
+		url: SITE_URL + slug,
+		image: img
+	};
 </script>
 
 <SvelteSeo
-	title={formattedTitle(title)}
-	description={excerpt}
-	canonical={SITE_URL + slug}
+	title={SEO.title}
+	description={SEO.description}
+	canonical={SEO.url}
 	openGraph={{
-		title: formattedTitle(title),
-		description: excerpt,
-		url: SITE_URL + slug,
+		title: SEO.title,
+		description: SEO.description,
+		url: SEO.url,
 		type: 'article',
-		images: img ? [{ url: img, width: 800, height: 600, alt: 'Article Image' }] : [],
-		locale: 'en_US',
-		site_name: 'Tronic247'
+		article: {
+			published_time: SEO.datePublished,
+			modified_time: SEO.dateModified
+		}
 	}}
 	twitter={{
 		card: 'summary_large_image',
 		site: '@posandu',
-		title: formattedTitle(title),
-		description: excerpt,
-		image: img,
-		imageAlt: 'Article Image'
+		title: SEO.title,
+		description: SEO.description,
+		image: SEO.image
 	}}
 	jsonLd={{
 		'@context': 'https://schema.org',
 		'@type': 'Article',
-		name: title,
-		description: excerpt,
-		url: SITE_URL + slug,
-		image: img
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': SEO.url
+		},
+		headline: SEO.title,
+		image: SEO.image,
+		datePublished: SEO.datePublished,
+		dateModified: SEO.dateModified
 	}}
 />
 

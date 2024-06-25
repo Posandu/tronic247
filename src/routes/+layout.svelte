@@ -10,6 +10,8 @@
 	import { quadInOut } from 'svelte/easing';
 	import { beforeNavigate } from '$app/navigation';
 	import { updated } from '$app/stores';
+	import SvelteSeo from 'svelte-seo';
+	import { SITE_URL } from '$lib';
 
 	beforeNavigate(({ willUnload, to }) => {
 		if ($updated && !willUnload && to?.url) {
@@ -35,6 +37,12 @@
 	const isBlank = (path: string) => BLANK.some((blank) => path === blank);
 
 	export let data;
+
+	const SEO = {
+		title: 'Tronic247 - For Seekers of Innovation',
+		description: 'Blog about software development, programming, and related topics.',
+		canonical: SITE_URL
+	};
 </script>
 
 <svelte:head>
@@ -45,6 +53,17 @@
 		rel="stylesheet"
 	/>
 </svelte:head>
+
+<SvelteSeo base={SITE_URL} themeColor="#e51b23" applicationName="Tronic247" />
+<SvelteSeo
+	jsonLd={{
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		url: SITE_URL,
+		name: SEO.title,
+		description: SEO.description
+	}}
+/>
 
 <ModeWatcher />
 
@@ -67,7 +86,7 @@
 {/key}
 
 {#if !isBlank($page.route?.id?.toString() || '')}
-	<Footer categories={data.stats.categories} />
+	<Footer categories={data.stats.categories} tags={data.stats.tags} />
 {/if}
 
 <style>

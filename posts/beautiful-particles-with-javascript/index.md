@@ -5,6 +5,8 @@ categories: ['css']
 updated: '2024-06-13'
 ---
 
-{% component OldNotice/oldnotice.svelte %}
+:::warn{title="Outdated information"}
+This post was written a long time ago and may contain outdated information. Use it at your own risk.
+:::
 
 {% youtube id="ie3UEeY0Q-0" title="Particles" %}

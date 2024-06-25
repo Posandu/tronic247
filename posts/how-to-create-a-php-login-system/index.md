@@ -5,7 +5,9 @@ categories: ['php', 'web-dev']
 updated: '2024-06-13'
 ---
 
-{% component OldNotice/oldnotice.svelte %}
+:::warn{title="Outdated information"}
+This post was written a long time ago and may contain outdated information. Use it at your own risk.
+:::
 
 Today I will tell you how to create a login system with PHP.
 

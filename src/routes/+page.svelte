@@ -6,45 +6,31 @@
 	export let data;
 
 	let posts = data.posts;
+
+	const SEO = {
+		title: 'Tronic247 - For Seekers of Innovation',
+		description: 'Blog about software development, programming, and related topics.',
+		canonical: SITE_URL,
+		image: SITE_URL + '/main.png'
+	};
 </script>
 
 <SvelteSeo
-	title={"Tronic247 - Posandu's Blog"}
-	description={'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.'}
-	canonical={SITE_URL}
+	title={SEO.title}
+	description={SEO.description}
+	canonical={SEO.canonical}
 	openGraph={{
-		title: "Tronic247 - Posandu's Blog",
-		description:
-			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
-		url: SITE_URL,
-		type: 'article',
-		images: [
-			{
-				url: SITE_URL + '/main.png',
-				width: 800,
-				height: 600,
-				alt: 'Main Image'
-			}
-		],
-		locale: 'en_US',
-		site_name: 'Tronic247'
+		title: SEO.title,
+		description: SEO.description,
+		url: SEO.canonical,
+		images: [{ url: SEO.image }]
 	}}
 	twitter={{
 		card: 'summary_large_image',
-		site: '@posandu',
-		title: "Tronic247 - Posandu's Blog",
-		description:
-			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
-		image: SITE_URL + '/main.png',
-		imageAlt: 'Main Image'
-	}}
-	jsonLd={{
-		'@context': 'https://schema.org',
-		'@type': 'Blog',
-		name: "Tronic247 - Posandu's Blog",
-		description:
-			'Tronic247 is where I write about software development, programming, and related topics. You can find interesting articles, tutorials, and guides here.',
-		url: SITE_URL
+		site: '@tronic247',
+		title: SEO.title,
+		description: SEO.description,
+		image: SEO.image
 	}}
 />
 

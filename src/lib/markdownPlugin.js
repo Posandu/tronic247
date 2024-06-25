@@ -22,6 +22,9 @@ import {
 	transformerMetaHighlight
 } from '@shikijs/transformers';
 import rehypeCodeTitles from 'rehype-code-titles';
+import remarkDirective from 'remark-directive';
+//@ts-expect-error no types
+import remarkCalloutDirectives from '@microflash/remark-callout-directives';
 
 const VERBOSE = false;
 
@@ -35,7 +38,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const VERSION = 'v3';
+const VERSION = 'v4';
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
@@ -140,7 +143,13 @@ function markdown() {
 
 				const processor = await unified()
 					.use(toMarkdownAST)
-					.use([remarkGfm, remarkSmartypants, [remarkToc, { tight: true }]])
+					.use([
+						remarkDirective,
+						remarkCalloutDirectives,
+						remarkGfm,
+						remarkSmartypants,
+						[remarkToc, { tight: true }]
+					])
 					.use(toHtmlAST, { allowDangerousHtml: true })
 					.use([rehypeSlug, rehypeAutolinkHeadings])
 					//@ts-expect-error some weird error, but it works

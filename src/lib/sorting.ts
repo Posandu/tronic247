@@ -1,5 +1,3 @@
-const EXCLUDED_CATEGORIES = ['posts', 'wordpress', 'elementor', 'tools', 'migration', 'mysql'];
-
 const CATEGORY_NAMES: Record<string, string> = {
 	javascript: 'JavaScript',
 	'tricks-and-tips': 'Tricks & Tips',
@@ -13,4 +11,4 @@ const CATEGORY_NAMES: Record<string, string> = {
 	php: 'PHP'
 };
 
-export { EXCLUDED_CATEGORIES, CATEGORY_NAMES };
+export { CATEGORY_NAMES };

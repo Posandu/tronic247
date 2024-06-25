@@ -1,3 +1,10 @@
+<script lang="ts">
+	import { formattedTitle } from '$lib';
+	import SvelteSeo from 'svelte-seo';
+</script>
+
+<SvelteSeo title={formattedTitle('About')} />
+
 <div class="container prose mx-auto mt-8 w-full dark:prose-invert">
 	<h1>About Tronic247</h1>
 
@@ -29,7 +36,3 @@
 
 	<p>As we continue to evolve and grow, we're excited to see where this journey takes us.</p>
 </div>
-
-<svelte:head>
-	<title>About Tronic247</title>
-</svelte:head>

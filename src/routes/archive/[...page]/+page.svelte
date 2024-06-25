@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 	import SvelteSeo from 'svelte-seo';
-	import { SITE_URL, formattedTitle } from '$lib';
+	import { formattedTitle, SITE_URL } from '$lib';
 	import QueryPage from '$lib/components/QueryPage.svelte';
+	import type { BlogPosting, ItemList } from 'schema-dts';
 
 	export let data;
 
@@ -12,20 +13,51 @@
 		totalPages = data.totalPages;
 		currentPage = data.page;
 	}
+
+	$: SEO = {
+		title: formattedTitle(currentPage > 1 ? `Archive - Page ${currentPage}` : 'Archive'),
+		description: 'A chronological list of all posts on Tronic247.',
+		canonical: `${SITE_URL}archive${currentPage > 1 ? `/page/${currentPage}` : ''}`,
+		items: posts.map((post, index) => ({
+			'@type': 'ListItem',
+			position: index + '',
+			item: {
+				'@type': 'BlogPosting',
+				headline: post.title,
+				url: `${SITE_URL}${post.slug}`,
+				datePublished: post.date.toISOString(),
+				image: post.img?.img?.src ? post.img.img.src : undefined
+			} satisfies BlogPosting
+		})) satisfies ItemList['itemListElement'],
+		image: `${SITE_URL}og-image.png`
+	};
 </script>
 
 <SvelteSeo
-	title={formattedTitle('Archive | Page ' + currentPage)}
-	description={'Archive of all posts on Tronic247. Page ' + currentPage}
-	canonical={SITE_URL + '/archive/page/' + currentPage}
+	title={SEO.title}
+	description={SEO.description}
+	canonical={SEO.canonical}
+	jsonLd={{
+		'@context': 'https://schema.org',
+		'@type': 'ItemList',
+		itemListElement: SEO.items
+	}}
+	twitter={{
+		card: 'summary_large_image',
+		site: '@posandu',
+		title: SEO.title,
+		description: SEO.description,
+		image: SEO.image,
+		imageAlt: 'OG Image'
+	}}
 	openGraph={{
-		title: formattedTitle('Archive | Page ' + currentPage),
-		description: 'Archive of all posts on Tronic247. Page ' + currentPage,
-		url: SITE_URL + '/archive/page/' + currentPage,
+		title: SEO.title,
+		description: SEO.description,
+		url: SEO.canonical,
 		type: 'article',
 		images: [
 			{
-				url: SITE_URL + '/og-image.png',
+				url: SEO.image,
 				width: 800,
 				height: 600,
 				alt: 'OG Image'
@@ -33,21 +65,6 @@
 		],
 		locale: 'en_US',
 		site_name: 'Tronic247'
-	}}
-	twitter={{
-		card: 'summary_large_image',
-		site: '@posandu',
-		title: formattedTitle('Archive | Page ' + currentPage),
-		description: 'Archive of all posts on Tronic247. Page ' + currentPage,
-		image: SITE_URL + '/og-image.png',
-		imageAlt: 'OG Image'
-	}}
-	jsonLd={{
-		'@context': 'https://schema.org',
-		'@type': 'Article',
-		name: 'Archive | Page ' + currentPage,
-		description: 'Archive of all posts on Tronic247. Page ' + currentPage,
-		url: SITE_URL + '/archive/page/' + currentPage
 	}}
 />
 

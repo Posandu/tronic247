@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
 	import SvelteSeo from 'svelte-seo';
 	import { SITE_URL, formattedTitle } from '$lib';
 	import QueryPage from '$lib/components/QueryPage.svelte';
+	import type { BlogPosting } from 'schema-dts';
+	import type { ItemList } from 'schema-dts';
 
 	export let data;
 
@@ -12,47 +14,61 @@
 		totalPages = data.totalPages;
 		currentPage = data.page;
 	}
+
+	$: SEO = {
+		title: formattedTitle('#' + tagName),
+		description: `A list of all posts tagged with ${tagName}. ${currentPage > 1 ? `Page ${currentPage}` : ''}`,
+		canonical: `${SITE_URL}tag/${tagName}/${currentPage > 1 ? `/page/${currentPage}` : ''}`,
+		items: posts.map((post, index) => ({
+			'@type': 'ListItem',
+			position: index + '',
+			item: {
+				'@type': 'BlogPosting',
+				headline: post.title,
+				url: `${SITE_URL}${post.slug}`,
+				datePublished: post.date.toISOString(),
+				image: post.img?.img?.src ? post.img.img.src : undefined
+			} satisfies BlogPosting
+		})) satisfies ItemList['itemListElement'],
+		image: `${SITE_URL}og-image.png`
+	};
 </script>
 
 <SvelteSeo
-	title={formattedTitle('Tag - ' + tagName + ' | Page ' + currentPage)}
-	description={'Posts tagged with ' + tagName + '. Page ' + currentPage}
-	canonical={SITE_URL + '/tag/' + tagName + '/page/' + currentPage}
+	title={SEO.title}
+	description={SEO.description}
+	canonical={SEO.canonical}
+	jsonLd={{
+		'@context': 'https://schema.org',
+		'@type': 'ItemList',
+		itemListElement: SEO.items
+	}}
+	twitter={{
+		card: 'summary_large_image',
+		site: '@posandu',
+		title: SEO.title,
+		description: SEO.description,
+		image: SEO.image,
+		imageAlt: 'OG Image'
+	}}
 	openGraph={{
-		title: formattedTitle('Tag - ' + tagName + ' | Page ' + currentPage),
-		description: 'Posts tagged with ' + tagName + '. Page ' + currentPage,
-		url: SITE_URL + '/tag/' + tagName + '/page/' + currentPage,
+		title: SEO.title,
+		description: SEO.description,
+		url: SEO.canonical,
 		type: 'article',
 		images: [
 			{
-				url: SITE_URL + '/og-image.png',
-				width: 800,
-				height: 600,
+				url: SEO.image,
 				alt: 'OG Image'
 			}
 		],
 		locale: 'en_US',
 		site_name: 'Tronic247'
 	}}
-	twitter={{
-		card: 'summary_large_image',
-		site: '@posandu',
-		title: formattedTitle('Tag - ' + tagName + ' | Page ' + currentPage),
-		description: 'Posts tagged with ' + tagName + '. Page ' + currentPage,
-		image: SITE_URL + '/og-image.png',
-		imageAlt: 'OG Image'
-	}}
-	jsonLd={{
-		'@context': 'https://schema.org',
-		'@type': 'Article',
-		name: 'Tag - ' + tagName + ' | Page ' + currentPage,
-		description: 'Posts tagged with ' + tagName + '. Page ' + currentPage,
-		url: SITE_URL + '/tag/' + tagName + '/page/' + currentPage
-	}}
 />
 
 <h1 class="mt-8 text-2xl font-semibold">
-	Posts tagged with <span class="text-primary">#{tagName}</span>
+	<span class="text-primary">#{tagName}</span>
 </h1>
 
 <p class="mb-8 mt-4">

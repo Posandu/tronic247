@@ -54,7 +54,7 @@
 	/>
 </svelte:head>
 
-<SvelteSeo base={SITE_URL} themeColor="#e51b23" applicationName="Tronic247" />
+<SvelteSeo themeColor="#e51b23" applicationName="Tronic247" />
 <SvelteSeo
 	jsonLd={{
 		'@context': 'https://schema.org',

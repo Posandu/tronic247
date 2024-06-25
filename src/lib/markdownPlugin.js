@@ -26,7 +26,7 @@ import remarkDirective from 'remark-directive';
 //@ts-expect-error no types
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
 
-const VERBOSE = false;
+const VERBOSE = true;
 
 /**
  * @param {string} content

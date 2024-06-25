@@ -457,9 +457,9 @@ And I almost forgot! we must import the [Roboto](https://fonts.google.com/specim
 
 If you are confused about what the code does, It imports the fonts and preloads them so the page load is faster.
 
-## Finally
+## Conclusion
 
-Phew ! We're finished :D here's what we got
+Here's the final result.
 
 ![Our result](https://user-images.githubusercontent.com/76736580/133990237-ea791b2b-8bf8-40ed-ab27-43d7d18a776b.png)
 

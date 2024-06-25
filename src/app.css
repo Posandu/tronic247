@@ -48,7 +48,7 @@ scroll margin
 	Header
 */
 .link-menu {
-	@apply text-sm font-semibold transition-all hover:text-primary;
+	@apply font-semibold transition-all hover:text-primary;
 }
 #nprogress .bar {
 	--tw-bg-opacity: 1;

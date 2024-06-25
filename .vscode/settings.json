@@ -6,6 +6,9 @@
 		"**/CVS": true,
 		"**/.DS_Store": true,
 		"**/Thumbs.db": true,
-		"**/node_modules": true
+		"**/node_modules": false
+	},
+	"svelte.plugin.svelte.compilerWarnings": {
+		"a11y-no-noninteractive-tabindex": "ignore"
 	}
 }

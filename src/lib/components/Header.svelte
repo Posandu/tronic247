@@ -6,7 +6,9 @@
 
 	const menuItems = [
 		['Home', '/'],
-		['Archive', '/archive']
+		['Archive', '/archive'],
+		['About', '/about'],
+		['Sponsor', '/sponsor']
 	];
 
 	let mobileMenuOpen = false;

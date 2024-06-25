@@ -22,6 +22,12 @@ const config = {
 			showToggleButton: 'always',
 			toggleButtonPos: 'bottom-right'
 		}
+	},
+	onwarn: (warning, handler) => {
+		if (warning.code.startsWith('a11y-no-noninteractive-tabindex')) {
+			return;
+		}
+		handler(warning);
 	}
 };
 

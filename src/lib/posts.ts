@@ -40,6 +40,7 @@ const getStats = (posts: Post[]) => {
 	const postCount = posts.length;
 
 	posts.forEach((post) => {
+		if (post.tags) post.tags.forEach((tag) => categories.add(tag.toLowerCase()));
 		if (post.categories)
 			post.categories.forEach((category) => categories.add(category.toLowerCase()));
 	});

@@ -12,6 +12,17 @@
 	import { updated } from '$app/stores';
 	import SvelteSeo from 'svelte-seo';
 	import { SITE_URL } from '$lib';
+	import { onMount } from 'svelte';
+
+	$: {
+		//@ts-ignore
+		if (typeof sa_pageview !== 'undefined') {
+			console.log('tracked pageview');
+
+			//@ts-ignore
+			sa_pageview($page.url.pathname);
+		}
+	}
 
 	beforeNavigate(({ willUnload, to }) => {
 		if ($updated && !willUnload && to?.url) {

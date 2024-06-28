@@ -93,9 +93,13 @@ pre.shiki div.highlight {
 	margin: 0;
 	padding: 0;
 }
-pre.shiki div.highlight {
-	opacity: 1;
+pre.shiki .line.highlighted {
 	background-color: #f1f8ff0f;
+	margin: 0 -24px;
+	padding: 0 24px;
+	width: calc(100% + 48px);
+	display: inline-block;
+	padding-top: 3px;
 }
 pre.shiki div.line {
 	min-height: 1rem;

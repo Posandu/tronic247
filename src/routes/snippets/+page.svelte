@@ -50,8 +50,6 @@
 	Bite sized information, tips and tricks to help you build faster and better.
 </p>
 
-<div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
-	{#each snippets as snippet}
-		<Snippet content={snippet.content} title={snippet.title} />
-	{/each}
-</div>
+{#each snippets as snippet}
+	<Snippet title={snippet.title} />
+{/each}

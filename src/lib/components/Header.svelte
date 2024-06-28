@@ -7,6 +7,7 @@
 	const menuItems = [
 		['Home', '/'],
 		['Archive', '/archive'],
+		['Snippets', '/snippets'],
 		['About', '/about'],
 		['Sponsor', '/sponsor']
 	];

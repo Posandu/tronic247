@@ -124,4 +124,27 @@ categories.forEach((category) => {
 	});
 });
 
+/**
+ * Snippets
+ */
+const snippets = import.meta.glob('../../snippets/*.md', { eager: true });
+const formattedSnippets = Object.entries(snippets).map(([path, post]) =>
+	formaRawPostModule(post, path)
+);
+
+formattedSnippets.forEach((post) => {
+	sitemap.addPage({
+		loc: SITE_URL + 'snippets/' + post.title.toLowerCase().replace(/\s/g, '-'),
+		lastmod: new Date().toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'numeric',
+			day: 'numeric'
+		}),
+		changefreq: 'monthly',
+		priority: '0.8',
+		excerpt: post.title,
+		title: post.title
+	});
+});
+
 export { sitemap };

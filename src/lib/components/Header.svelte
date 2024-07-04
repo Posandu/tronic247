@@ -44,7 +44,10 @@
 <svelte:window on:scroll={onScroll} />
 
 <header
-	class="fixed left-1/2 top-0 z-50 mx-auto mb-4 flex w-full -translate-x-1/2 select-none justify-between rounded-b-none bg-white py-2 text-black dark:bg-black/20 dark:text-white dark:backdrop-blur-md"
+	class="fixed left-1/2 top-0 z-50 mx-auto mb-4 flex w-full -translate-x-1/2 select-none justify-between rounded-b-none bg-white py-2 text-black dark:bg-black/20 dark:text-white dark:backdrop-blur-md
+	
+	{$page.route.id === '/' ? 'no-effect dark:!bg-black/40' : ''}
+	"
 	style="top: {headerOffset}px;"
 	bind:this={header}
 >
@@ -131,7 +134,7 @@
 {/if}
 
 <style>
-	:global(.dark header) {
+	:global(.dark header:not(.no-effect)) {
 		mask-image: linear-gradient(
 			0deg,
 			rgba(0, 0, 0, 0),

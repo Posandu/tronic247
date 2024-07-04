@@ -41,7 +41,11 @@ scroll margin
 	Buttons
 */
 .btn {
-	@apply relative select-none overflow-hidden rounded-full bg-primary px-5 py-2 font-semibold text-white transition-all hover:bg-primary-dark active:scale-95 active:bg-primary-dark;
+	@apply inline-block rounded-full bg-white px-5 py-2 text-sm text-black transition-colors hover:bg-gray-200 sm:text-base;
+}
+
+html:not(.dark) .btn.inverted {
+	@apply bg-black text-white hover:brightness-100;
 }
 
 /*
@@ -267,6 +271,9 @@ h6 {
 
 .callout p {
 	margin-block-end: 8px;
+	line-height: 25px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .callout-indicator {

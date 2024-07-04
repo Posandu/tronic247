@@ -9,6 +9,7 @@
 	export let data;
 
 	let categories = data.meta.categories;
+	let tags = data.meta.tags;
 	let date = data.meta.date;
 	let title = data.meta.title;
 	let img = data.meta.img;
@@ -43,7 +44,9 @@
 		type: 'article',
 		article: {
 			published_time: SEO.datePublished,
-			modified_time: SEO.dateModified
+			modified_time: SEO.dateModified,
+			author: ['Posandu Mapa'],
+			tag: [...new Set([...(categories || []), ...(tags || [])])]
 		}
 	}}
 	twitter={{
@@ -100,6 +103,18 @@
 							href="/category/{category.toLowerCase()}"
 							aria-label="{category} category">{category}</a
 						>{i < categories.length - 1 ? ', ' : ''}
+					{/each}
+				</p>
+			{/if}
+
+			{#if tags && tags?.length > 0}
+				<span class="mx-1">•</span>
+
+				<p class="mt-2 inline" aria-label="Tags">
+					{#each tags as tag, i}
+						<a class="hover:underline" href="/tag/{tag.toLowerCase()}" aria-label="{tag} tag"
+							>#{tag}</a
+						>{i < tags.length - 1 ? ', ' : ''}
 					{/each}
 				</p>
 			{/if}

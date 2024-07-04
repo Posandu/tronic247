@@ -54,7 +54,7 @@
 			<iframe
 				src="https://github.com/sponsors/Posandu/card"
 				title="Sponsor Posandu"
-				height="225"
+				height="400"
 				width="600"
 				style="border: 0;"
 				class="mt-4 rounded-lg"

@@ -7,12 +7,12 @@
 
 <SvelteSeo title={formattedTitle('Sponsor')} description={'Support the development of Tronic247'} />
 
-<div class="relative -mt-4 w-full overflow-hidden bg-pink-600 py-20">
+<div class="relative -mt-5 w-full overflow-hidden bg-pink-600 py-20">
 	<h1 class="text-center text-4xl font-black text-white">Sponsor</h1>
 	<p class="mt-4 text-center text-2xl text-white">Support the development of Tronic247</p>
 </div>
 
-<div class="container mx-auto my-8 grid gap-8 lg:grid-cols-2">
+<div class="max-w-4xl px-4 mx-auto my-8 grid gap-8 lg:grid-cols-2">
 	<div class="col-span-1">
 		<h1 class="mb-4 text-lg font-semibold">Why Sponsor?</h1>
 

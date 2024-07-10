@@ -21,6 +21,6 @@
 	});
 </script>
 
-<h3 class="text-3xl font-semibold">Comments</h3>
+<h2>Comments</h2>
 
 <section id="utterances-comments" bind:this={commentDiv}></section>

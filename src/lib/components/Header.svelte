@@ -13,26 +13,6 @@
 	];
 
 	let mobileMenuOpen = false;
-	let header: HTMLElement;
-
-	let lastScrollPosition = 0;
-	let headerOffset = 0;
-
-	const onScroll = () => {
-		const topAppBarHeight = header.offsetHeight;
-		const currentScrollPosition = Math.max(window.scrollY, 0);
-		const diff = currentScrollPosition - lastScrollPosition;
-
-		lastScrollPosition = currentScrollPosition;
-
-		headerOffset -= diff;
-
-		if (headerOffset > 0) {
-			headerOffset = 0;
-		} else if (Math.abs(headerOffset) > topAppBarHeight) {
-			headerOffset = -topAppBarHeight;
-		}
-	};
 
 	$: {
 		if ($navigating) {
@@ -41,17 +21,29 @@
 	}
 </script>
 
-<svelte:window on:scroll={onScroll} />
-
 <header
-	class="fixed left-1/2 top-0 z-50 mx-auto mb-4 flex w-full -translate-x-1/2 select-none justify-between rounded-b-none bg-white py-2 text-black dark:bg-black/20 dark:text-white dark:backdrop-blur-md
-	
+	class="
+	fixed
+	left-0
+	top-0
+	z-50
+	mb-4
+	w-full
+	select-none
+	justify-between
+	rounded-b-none
+	border-b
+	bg-white
+	text-black
+	dark:bg-black/20
+	dark:text-white
+	dark:backdrop-blur-md
+	dark:border-b-black/20
+
 	{$page.route.id === '/' ? 'no-effect dark:!bg-black/40' : ''}
 	"
-	style="top: {headerOffset}px;"
-	bind:this={header}
 >
-	<div class="container mx-auto flex">
+	<div class="max-w-4xl px-4 mx-auto flex w-full align-middle justify-center">
 		<div class="flex min-h-16 flex-1 items-center justify-start">
 			<a href="/">
 				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 dark:invert" />
@@ -64,9 +56,9 @@
 					<li class="relative">
 						<a
 							href={link}
-							class="link-menu
-						
-						{$page.url.pathname === link ? 'text-primary' : 'hover:text-primary'}
+							class="
+								text-sm font-semibold
+								{$page.url.pathname === link ? 'text-primary' : 'text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:font-normal'}
 						">{label}</a
 						>
 					</li>
@@ -74,25 +66,25 @@
 			</ul>
 
 			<a class="ml-8" href="/search">
-				<Icon icon="material-symbols:search" class="size-6 text-black dark:text-white" />
+				<Icon icon="material-symbols:search" class="size-4 text-black dark:text-white" />
 			</a>
 
 			<button class="ml-2 transition-all active:rotate-180" on:click={toggleMode}>
-				<Icon icon="lets-icons:color-mode" class="size-6 text-black dark:text-white" />
+				<Icon icon="lets-icons:color-mode" class="size-4 text-black dark:text-white" />
 			</button>
 		</nav>
 
 		<div class="flex items-center lg:hidden">
 			<a class="mr-4" href="/search">
-				<Icon icon="material-symbols:search" class="size-6 text-black dark:text-white" />
+				<Icon icon="material-symbols:search" class="size-4 text-black dark:text-white" />
 			</a>
 
 			<button class="mr-4 transition-all active:rotate-180" on:click={toggleMode}>
-				<Icon icon="lets-icons:color-mode" class="size-6 text-black dark:text-white" />
+				<Icon icon="lets-icons:color-mode" class="size-4 text-black dark:text-white" />
 			</button>
 
 			<button class="menu-btn" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
-				<Icon icon="bx:bx-menu" class="size-6 text-black dark:text-white" />
+				<Icon icon="bx:bx-menu" class="size-4 text-black dark:text-white" />
 			</button>
 		</div>
 	</div>

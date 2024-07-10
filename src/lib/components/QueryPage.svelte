@@ -11,7 +11,7 @@
 	export let posts: Post[];
 </script>
 
-<div class="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+<div class="space-y-4">
 	{#each posts as { date, title, excerpt, slug, img }}
 		<ArticleView {date} {title} {excerpt} {slug} {img} class="col-span-1" />
 	{/each}

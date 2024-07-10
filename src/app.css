@@ -48,12 +48,6 @@ html:not(.dark) .btn.inverted {
 	@apply bg-black text-white hover:brightness-100;
 }
 
-/*
-	Header
-*/
-.link-menu {
-	@apply font-semibold transition-all hover:text-primary;
-}
 #nprogress .bar {
 	--tw-bg-opacity: 1;
 	background-color: rgb(229 27 35 / var(--tw-bg-opacity)) !important;
@@ -316,4 +310,9 @@ h6 {
 }
 .callout-assert {
 	--callout-bg-color: var(--callout-bg-important);
+}
+
+.prose img {
+	max-width: 100%;
+	@apply mx-auto rounded-lg;
 }

@@ -67,12 +67,16 @@
 	}}
 />
 
-<h1 class="mt-8 text-2xl font-semibold">
-	<span class="text-primary">#{tagName}</span>
-</h1>
+<div class="mx-auto max-w-4xl px-4">
+	<h1 class="mt-8 text-2xl font-semibold">
+		<span class="text-primary">#{tagName}</span>
+	</h1>
 
-<p class="mb-8 mt-4">
-	A list of all posts tagged with <span class="text-primary">#{tagName}</span>.
-</p>
+	<p class="mb-8 mt-4">
+		All posts tagged with <span class="text-primary">#{tagName}</span>.
+	</p>
+</div>
 
-<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/tag/${tagName}/page/${page}`} />
+<div class="mx-auto max-w-4xl">
+	<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/tag/${tagName}/page/${page}`} />
+</div>

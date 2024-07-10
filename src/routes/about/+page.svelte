@@ -5,7 +5,7 @@
 
 <SvelteSeo title={formattedTitle('About')} />
 
-<div class="container prose mx-auto mt-8 w-full dark:prose-invert">
+<div class="max-w-4xl px-4 prose prose-sm mx-auto mt-4 w-full dark:prose-invert">
 	<h1>About Tronic247</h1>
 
 	<p>

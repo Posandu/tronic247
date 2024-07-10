@@ -5,6 +5,7 @@
 	import Comments from '$lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
 	import Img from '@zerodevx/svelte-img';
+	import Icon from '@iconify/svelte';
 
 	export let data;
 
@@ -70,116 +71,79 @@
 	}}
 />
 
-<div class="mt-8 grid-cols-8 gap-8 md:grid">
-	<div class="col-span-6">
-		<div class="mb-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark">
-			<p class="inline" aria-label="Published on">
-				{new Date(date).toLocaleDateString('en-US', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric'
-				})}
-			</p>
+<div class="mx-auto mt-8 max-w-3xl px-4">
+	<p
+		class="mb-2 text-xs font-semibold uppercase text-black/60 dark:text-muted-dark"
+		aria-label="Published on"
+	>
+		Published on {new Date(date).toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		})}
 
-			{#if lastUpdated}
-				<span class="mx-1">•</span>
+		{#if lastUpdated}
+			<span class="mx-1">•</span>
 
-				<p class="inline" aria-label="Last Updated on">
-					Updated on {new Date(lastUpdated).toLocaleDateString('en-US', {
-						year: 'numeric',
-						month: 'long',
-						day: 'numeric'
-					})}
-				</p>
-			{/if}
+			Updated on {new Date(lastUpdated).toLocaleDateString('en-US', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			})}
+		{/if}
+	</p>
 
-			{#if categories && categories?.length > 0}
-				<span class="mx-1">•</span>
+	<h1 class="mb-4 text-4xl font-black">{title}</h1>
 
-				<p class="mt-2 inline" aria-label="Categories">
+	<main class="prose dark:prose-invert">
+		<svelte:component this={data.content} />
+	</main>
+
+	<div class="my-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark">
+		{#if categories && categories?.length > 0}
+			<div class="flex items-center justify-start gap-1">
+				<Icon icon="mdi:category" />
+
+				<p class="inline" aria-label="Categories">
 					{#each categories as category, i}
 						<a
-							class="hover:underline"
+							class="text-xs hover:underline"
 							href="/category/{category.toLowerCase()}"
 							aria-label="{category} category">{category}</a
 						>{i < categories.length - 1 ? ', ' : ''}
 					{/each}
 				</p>
-			{/if}
+			</div>
+		{/if}
 
-			{#if tags && tags?.length > 0}
-				<span class="mx-1">•</span>
+		{#if tags && tags?.length > 0}
+			<div class="flex items-center justify-start gap-1">
+				<Icon icon="mdi:tag" />
 
-				<p class="mt-2 inline" aria-label="Tags">
+				<p class="inline" aria-label="Tags">
 					{#each tags as tag, i}
-						<a class="hover:underline" href="/tag/{tag.toLowerCase()}" aria-label="{tag} tag"
-							>#{tag}</a
+						<a
+							class="text-xs hover:underline"
+							href="/tag/{tag.toLowerCase()}"
+							aria-label="{tag} tag">{tag}</a
 						>{i < tags.length - 1 ? ', ' : ''}
 					{/each}
 				</p>
-			{/if}
-		</div>
-
-		<h1 class="mb-10 text-4xl font-semibold">{title}</h1>
-
-		<main class="prose prose-lg dark:prose-invert">
-			<svelte:component this={data.content} />
-
-			<p class="my-4 text-muted-dark">
-				Found a spelling error or something wrong with this article? <a
-					href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
-					class="underline"
-					target="_blank">Edit this page on GitHub</a
-				> and make a PR!
-			</p>
-
-			{#key $mode}
-				<Comments />
-			{/key}
-		</main>
-	</div>
-
-	<div class="col-span-2">
-		{#if img}
-			<Img src={data.postImg} alt={title} class="ml-auto hidden w-full rounded-lg md:block" />
-		{/if}
-
-		<h3 class="mt-10 text-2xl font-semibold">Related</h3>
-
-		<div class="mt-4 space-y-4">
-			{#each randPosts as post}
-				<a href={post.slug} class="block hover:underline">
-					{post.title}
-				</a>
-			{/each}
-		</div>
-
-		<div class="sticky top-20 h-max">
-			<h4 class="mt-10 text-2xl font-semibold">Support</h4>
-
-			<div class="mt-4 space-y-4">
-				<a
-					href="https://www.buymeacoffee.com/posandu"
-					target="_blank"
-					class="block hover:underline"
-				>
-					Buy me a coffee
-				</a>
-				<a
-					href="https://github.com/sponsors/Posandu/"
-					target="_blank"
-					class="block hover:underline"
-				>
-					Sponsor me on GitHub
-				</a>
-				<a
-					href="https://www.tronic247.com/pastebox.html#O=MIewDgngBAZFAKBDAzgFwKZVQC04gJvgE7rLKkBQFAyiADaIB2iUAgoSWVALRQASAdQBiANxABGYMADm6AGoB3ROgDMAUQDsAORECAZmD4AOAJwBbMwC8ASumsAjEAGkAsnoCOlgEIDECsIgUagAqfGwcpMhQABQgRFBM0GpyLlAAxtiIAJaMAJQ8UAAMAB4mACxGAGwAItWVhcBqhZXAleXK9iqVAEyFRkLVRvZGiCoq3d0ArJXiZax6VMEQAIRAA"
-					target="_blank"
-					class="block hover:underline"
-				>
-					Donate via crypto
-				</a>
 			</div>
-		</div>
+		{/if}
 	</div>
+
+	<main class="prose dark:prose-invert">
+		<p class="my-4 text-gray-500">
+			Something wrong or just found a typo? <a
+				href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
+				class="underline"
+				target="_blank">Edit this page on GitHub</a
+			> and make a PR!
+		</p>
+
+		{#key $mode}
+			<Comments />
+		{/key}
+	</main>
 </div>

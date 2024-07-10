@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from 'tailwindcss';
 
-const MAIN_FONT = '"Source Sans 3", sans-serif';
+const MAIN_FONT = '"Inter Variable", sans-serif';
 const MONO_FONT = '"Roboto Mono", monospace';
 
 export default {
@@ -20,6 +20,14 @@ export default {
 				'primary-dark': '#b4000d',
 				'muted-dark': '#9b9bb1'
 			},
+			spacing: {
+				'1': '8px',
+				'2': '12px',
+				'3': '16px',
+				'4': '24px',
+				'5': '32px',
+				'6': '48px'
+			},
 			typography: {
 				DEFAULT: {
 					css: {
@@ -31,15 +39,6 @@ export default {
 						}
 					}
 				}
-			}
-		},
-		container: {
-			padding: {
-				DEFAULT: '1rem',
-				sm: '2rem',
-				lg: '4rem',
-				xl: '5rem',
-				'2xl': '6rem'
 			}
 		}
 	},

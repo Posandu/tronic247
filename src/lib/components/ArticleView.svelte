@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { formatDate } from '$lib';
 	import Img from '@zerodevx/svelte-img';
 
 	export let slug: string;
@@ -13,42 +14,42 @@
 </script>
 
 <article
-	class="{classes} article-box group rounded-[2rem] bg-gray-100/60 p-5 transition-all will-change-transform hover:scale-[1.02] hover:bg-gray-200/60 dark:bg-black/30 dark:hover:bg-black/40"
-	aria-labelledby="article-{slug}-title"
-	aria-describedby="article-{slug}-desc"
+	class="{classes} rounded-lg article-box group py-4 px-4 flex overflow-hidden hover:bg-gray-100 dark:hover:bg-black/20"
 >
-	{#if img}
-		<a href="/{slug}" aria-label="Read more about {title}">
-			<Img
-				src={img}
-				class="mb-6 w-full rounded-xl object-cover transition-all group-hover:opacity-95"
-				alt="{title} image"
-				loading="lazy"
-			/>
-		</a>
-	{/if}
+	<div class="w-[110px] max-w-[110px] items-start pt-1 hidden md:flex">
+		<p class="inline min-w-max flex-1 text-xs font-semibold uppercase text-gray-500">
+			{formatDate(date)}
+		</p>
+	</div>
 
-	<p
-		class="inline min-w-max flex-1 text-sm font-semibold uppercase dark:text-muted-dark"
-		aria-label="Published on"
-	>
-		{new Date(date).toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		})}
-	</p>
+	<a href="/{slug}" class="flex-1">
+		<p class="md:hidden block min-w-max mb-2 flex-1 text-xs font-semibold uppercase text-gray-500">
+			{formatDate(date)}
+		</p>
 
-	<a href="/{slug}" aria-labelledby="article-{slug}-title article-{slug}-desc">
-		<h2 id="article-{slug}-title" class="mt-4 text-2xl font-semibold">
+		<h2 class="text-xl font-semibold">
 			{title}
 		</h2>
 
 		<p
-			id="article-{slug}-desc"
-			class="mt-4 overflow-hidden text-wrap break-words text-black/60 dark:text-muted-dark"
+			class="mt-2 overflow-hidden text-wrap break-words text-sm text-black/60 dark:text-muted-dark"
 		>
 			{excerpt}
 		</p>
+
+		<p class="mt-4 text-sm font-semibold text-primary">
+			Read more
+		</p>
 	</a>
+
+
+	{#if img}
+		<div class="flex-shrink-0 w-[110px] h-[110px] ml-4">
+			<Img
+				src={img}
+				loading="lazy"
+				class="rounded-lg"
+			/>
+		</div>
+	{/if}
 </article>

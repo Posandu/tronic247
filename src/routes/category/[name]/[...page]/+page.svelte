@@ -67,17 +67,21 @@
 	}}
 />
 
-<h1 class="mt-8 text-2xl font-semibold">
-	{CATEGORY_NAMES[category] || category}
-</h1>
+<div class="mx-auto max-w-4xl px-4">
+	<h1 class="mt-8 text-2xl font-semibold">
+		{CATEGORY_NAMES[category] || category}
+	</h1>
 
-<p class="mb-8 mt-4">
-	A list of all posts in the category <span class="text-primary">{category}</span>.
-</p>
+	<p class="mb-8 mt-4">
+		All posts in the category <span class="text-primary">{category}</span>.
+	</p>
+</div>
 
-<QueryPage
-	{currentPage}
-	{posts}
-	{totalPages}
-	urlFn={(page) => `/category/${category}/page/${page}`}
-/>
+<div class="mx-auto max-w-4xl">
+	<QueryPage
+		{currentPage}
+		{posts}
+		{totalPages}
+		urlFn={(page) => `/category/${category}/page/${page}`}
+	/>
+</div>

@@ -68,8 +68,12 @@
 	}}
 />
 
-<h1 class="mt-8 text-2xl font-semibold">Archive</h1>
+<div class="mx-auto max-w-4xl px-4">
+	<h1 class="mt-8 text-2xl font-semibold">Archive</h1>
 
-<p class="mb-8 mt-4">A chronological list of all posts on Tronic247.</p>
+	<p class="mb-8 mt-4">A chronological list of all posts on Tronic247.</p>
+</div>
 
-<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/archive/page/${page}`} />
+<div class="mx-auto max-w-4xl">
+	<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/archive/page/${page}`} />
+</div>

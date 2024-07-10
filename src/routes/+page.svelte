@@ -34,25 +34,8 @@
 	}}
 />
 
-<div
-	class="relative -mt-5 overflow-hidden bg-gray-100 pb-16 pt-16 text-center text-white dark:bg-muted-dark/10"
->
-	<div class="container relative z-10 mx-auto px-4">
-		<h1 class="mb-8 text-4xl font-bold text-black dark:text-white">Tech Thoughts and Code</h1>
-
-		<p class="mx-auto mb-8 max-w-2xl text-base text-black dark:text-white sm:text-lg">
-			A blog about software development, programming, and related topics by <a
-				href="https://posandu.com"
-				class="underline">Posandu</a
-			>.
-		</p>
-
-		<a href="#recent-posts" class="btn !bg-primary !text-white"> Read Articles </a>
-	</div>
-</div>
-
 <section class="mx-auto max-w-4xl" id="recent-posts">
-	<h2 class="mb-8 ml-4 mt-16 text-2xl font-semibold">Recent Posts</h2>
+	<h2 class="mb-8 ml-4 mt-16 text-2xl font-semibold">Latest Posts</h2>
 
 	{#each posts as { date, title, excerpt, slug, img }}
 		<ArticleView {date} {title} {excerpt} {slug} {img} />

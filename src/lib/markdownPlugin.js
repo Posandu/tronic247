@@ -186,7 +186,6 @@ function markdown() {
 								<script>
 									${imports
 										.filter((i) => typeof i !== 'undefined')
-										// @ts-expect-error already checked
 										.map(({ name, path }) =>
 											`
 											

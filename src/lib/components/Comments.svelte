@@ -23,4 +23,4 @@
 
 <h2>Comments</h2>
 
-<section id="utterances-comments" bind:this={commentDiv}></section>
+<section id="utterances-comments" class="bg-neutral-100 rounded-xl px-4" bind:this={commentDiv}></section>

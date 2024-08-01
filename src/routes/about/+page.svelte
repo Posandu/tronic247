@@ -5,28 +5,17 @@
 
 <SvelteSeo title={formattedTitle('About')} />
 
-<div class="max-w-4xl px-4 prose prose-sm mx-auto mt-4 w-full dark:prose-invert">
+<div class="prose mx-auto mt-4 w-full max-w-4xl px-4">
 	<h1>About Tronic247</h1>
 
 	<p>
-		Welcome to Tronic247, a blog that began its journey in 2020 by <a href="https://posandu.com"
-			>Posandu Mapa</a
-		>
+		Tronic247 was started in 2020 by <a href="https://posandu.com">Posandu Mapa</a> (me lol)
 	</p>
 
 	<p>
-		On this blog, you'll discover a diverse range of content, including detailed projects and
-		step-by-step tutorials. Whether you're a seasoned programmer or a beginner, I hope that the
-		resources available here will be valuable and help you on your own tech journey! 😄
+		Initially, it was just a blog where I shared my journey into web development. However, as I grew
+		in my skills and knowledge, I realized that I could use my platform to help others who were just
+		starting out. I began writing tutorials and guides on various topics, from basic HTML and CSS to
+		more advanced topics like JavaScript and React. So yeah, that's how Tronic247 was born.
 	</p>
-
-	<p>
-		In an effort to expand our reach, Tronic247 also launched a YouTube channel. Although it didn't
-		gain the traction we had initially hoped for, it was a valuable learning experience and
-		reinforced our commitment to providing quality content through our blog. Today, Tronic247 has
-		grown steadily and now attracts multiple viewers every day, each finding something unique and
-		useful.
-	</p>
-
-	<p>As we continue to evolve and grow, we're excited to see where this journey takes us.</p>
 </div>

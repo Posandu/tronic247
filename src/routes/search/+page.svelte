@@ -32,7 +32,7 @@
 			name="search"
 			bind:value={query}
 			placeholder="Search..."
-			class="w-full rounded-full border border-gray-300 px-4 py-2 dark:border-muted-dark/20 dark:bg-muted-dark/20 dark:text-white dark:placeholder:text-white"
+			class="w-full rounded-full border border-neutral-300 px-4 py-2"
 		/>
 	</form>
 
@@ -40,7 +40,7 @@
 		{#each results as post}
 			<a
 				href="/{post.slug}"
-				class="mt-4 block rounded-lg border border-gray-300 p-4 hover:bg-gray-100 dark:border-muted-dark/20 dark:bg-muted-dark/20"
+				class="mt-4 block rounded-lg border border-neutral-300 p-4 hover:bg-neutral-100"
 			>
 				<h2>
 					{post.title}

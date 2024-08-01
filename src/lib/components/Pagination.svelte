@@ -13,17 +13,11 @@
 				href={urlFn(page)}
 				class="
 				
-				size-2 text-sm inline-flex items-center justify-center p-3 rounded-full
-
-				text-gray-800 hover:bg-gray-100
-
-                dark:text-muted-dark
-
-                dark:hover:bg-muted-dark/10
+				inline-flex size-2 items-center justify-center rounded-full p-3 text-sm
 
 				{currentPage === page
-					? 'bg-primary text-white hover:bg-primary-dark dark:text-white dark:hover:bg-primary-dark'
-					: ''}
+					? 'bg-primary !text-white hover:bg-primary-dark'
+					: 'text-neutral-800 hover:bg-neutral-200'}
 				"
 			>
 				{page}

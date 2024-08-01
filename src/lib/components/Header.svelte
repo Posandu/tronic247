@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { navigating, page } from '$app/stores';
-	import { fly } from 'svelte/transition';
-	import { toggleMode } from 'mode-watcher';
+	import { fly, scale } from 'svelte/transition';
+	import { bounceIn, bounceInOut, elasticIn, quadIn } from 'svelte/easing';
 
 	const menuItems = [
 		['Home', '/'],
@@ -24,68 +24,54 @@
 <header
 	class="
 	fixed
-	left-0
-	top-0
+	inset-x-0
 	z-50
-	mb-4
 	w-full
 	select-none
 	justify-between
 	rounded-b-none
-	border-b
-	bg-white
-	text-black
-	dark:bg-black/20
-	dark:text-white
-	dark:backdrop-blur-md
-	dark:border-b-black/20
-
-	{$page.route.id === '/' ? 'no-effect dark:!bg-black/40' : ''}
+	bg-neutral-800
+	text-neutral-100
+	shadow
 	"
 >
-	<div class="max-w-4xl px-4 mx-auto flex w-full align-middle justify-center">
+	<div class="mx-auto flex w-full max-w-4xl justify-center px-4 align-middle">
 		<div class="flex min-h-16 flex-1 items-center justify-start">
 			<a href="/">
-				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 dark:invert" />
+				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 invert" />
 			</a>
 		</div>
 
-		<nav class="hidden items-center lg:flex">
-			<ul class="flex items-center space-x-6 xl:space-x-8">
-				{#each menuItems as [label, link]}
-					<li class="relative">
-						<a
-							href={link}
-							class="
-								text-sm font-semibold
-								{$page.url.pathname === link ? 'text-primary' : 'text-gray-500 hover:text-gray-600 dark:text-gray-200 dark:font-normal'}
-						">{label}</a
-						>
-					</li>
-				{/each}
-			</ul>
+		<nav class="hidden items-center space-x-4 lg:flex">
+			{#each menuItems as [label, link]}
+				<a
+					href={link}
+					class="
+						inline-block text-sm font-semibold
+								{$page.url.pathname === link ? 'text-primary-light hover:text-primary-hover' : ''}
+						"
+				>
+					{label}
+				</a>
+			{/each}
 
-			<a class="ml-8" href="/search">
-				<Icon icon="material-symbols:search" class="size-4 text-black dark:text-white" />
+			<a href="/search">
+				<Icon icon="material-symbols:search" class="size-4" />
 			</a>
-
-			<button class="ml-2 transition-all active:rotate-180" on:click={toggleMode}>
-				<Icon icon="lets-icons:color-mode" class="size-4 text-black dark:text-white" />
-			</button>
 		</nav>
 
-		<div class="flex items-center lg:hidden">
-			<a class="mr-4" href="/search">
-				<Icon icon="material-symbols:search" class="size-4 text-black dark:text-white" />
+		<div class="flex items-center justify-end lg:hidden">
+			<button
+				on:click={() => {
+					mobileMenuOpen = !mobileMenuOpen;
+				}}
+			>
+				<Icon icon="bx:bx-menu" class="size-4" />
+			</button>
+
+			<a class="ml-4" href="/search">
+				<Icon icon="material-symbols:search" class="size-4" />
 			</a>
-
-			<button class="mr-4 transition-all active:rotate-180" on:click={toggleMode}>
-				<Icon icon="lets-icons:color-mode" class="size-4 text-black dark:text-white" />
-			</button>
-
-			<button class="menu-btn" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
-				<Icon icon="bx:bx-menu" class="size-4 text-black dark:text-white" />
-			</button>
 		</div>
 	</div>
 </header>
@@ -96,44 +82,34 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="fixed inset-0 z-50 flex h-full w-full items-center justify-start bg-black/60 backdrop-blur-lg"
-		transition:fly={{ duration: 200, x: -10 }}
+		class="fixed rounded-xl px-4 right-[70px] top-[60px] z-50 origin-top-right items-center justify-start bg-neutral-100 shadow-lg py-2 min-w-60 shadow-neutral-900/50 backdrop-blur-lg"
+		in:scale={{
+			duration: 200,
+			opacity: 0,
+			start: 0.5
+		}}
+		out:scale={{
+			duration: 200,
+			opacity: 0,
+			start: 0.5
+		}}
 		on:click={(e) => {
 			if (e.target === e.currentTarget) mobileMenuOpen = false;
 		}}
 	>
-		<div
-			class="relative h-full max-h-svh w-full max-w-xl overflow-auto bg-white p-8 shadow-2xl dark:bg-black/20"
+		<button
+			class="absolute right-2 top-2 z-50 flex size-8 items-center justify-center rounded-full bg-neutral-200"
+			on:click={() => (mobileMenuOpen = false)}
 		>
-			<button
-				class="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full hover:bg-black/10"
-				on:click={() => (mobileMenuOpen = false)}
-			>
-				<Icon icon="bx:bx-x" class="size-6" />
-			</button>
+			<Icon icon="bx:bx-x" class="size-6" />
+		</button>
 
-			<h2 class="mb-4 text-2xl font-bold">Menu</h2>
-
-			<ul class="space-y-4">
-				{#each menuItems as [label, link]}
-					<li>
-						<a href={link} class="link-menu">{label}</a>
-					</li>
-				{/each}
-			</ul>
-		</div>
+		<ul class="space-y-4">
+			{#each menuItems as [label, link]}
+				<li>
+					<a href={link} class="link-menu">{label}</a>
+				</li>
+			{/each}
+		</ul>
 	</div>
 {/if}
-
-<style>
-	:global(.dark header:not(.no-effect)) {
-		mask-image: linear-gradient(
-			0deg,
-			rgba(0, 0, 0, 0),
-			rgba(0, 0, 0, 0.5) 10%,
-			rgba(0, 0, 0, 0.8) 20%,
-			rgba(0, 0, 0, 1) 30%,
-			rgb(0, 0, 0)
-		);
-	}
-</style>

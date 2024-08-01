@@ -14,42 +14,27 @@
 </script>
 
 <article
-	class="{classes} rounded-lg article-box group py-4 px-4 flex overflow-hidden hover:bg-gray-100 dark:hover:bg-black/20"
+	class="
+	{classes} 
+	
+	article-box rounded-xl group
+	"
 >
-	<div class="w-[110px] max-w-[110px] items-start pt-1 hidden md:flex">
-		<p class="inline min-w-max flex-1 text-xs font-semibold uppercase text-gray-500">
+	<a href="/{slug}" class="flex flex-col">
+		<p class="mb-2 block min-w-max flex-1 text-xs font-semibold uppercase text-neutral-500">
 			{formatDate(date)}
 		</p>
-	</div>
 
-	<a href="/{slug}" class="flex-1">
-		<p class="md:hidden block min-w-max mb-2 flex-1 text-xs font-semibold uppercase text-gray-500">
-			{formatDate(date)}
-		</p>
+		{#if img}
+			<Img src={img} loading="lazy" class="mb-4 w-full group-hover:opacity-80 transition-all rounded-lg" />
+		{/if}
 
 		<h2 class="text-xl font-semibold">
 			{title}
 		</h2>
 
-		<p
-			class="mt-2 overflow-hidden text-wrap break-words text-sm text-black/60 dark:text-muted-dark"
-		>
+		<p class="mt-2 overflow-hidden text-wrap break-words text-sm text-neutral-500">
 			{excerpt}
 		</p>
-
-		<p class="mt-4 text-sm font-semibold text-primary">
-			Read more
-		</p>
 	</a>
-
-
-	{#if img}
-		<div class="flex-shrink-0 w-[110px] h-[110px] ml-4">
-			<Img
-				src={img}
-				loading="lazy"
-				class="rounded-lg"
-			/>
-		</div>
-	{/if}
 </article>

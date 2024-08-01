@@ -73,7 +73,7 @@
 
 <div class="mx-auto mt-8 max-w-3xl px-4">
 	<p
-		class="mb-2 text-xs font-semibold uppercase text-black/60 dark:text-muted-dark"
+		class="mb-2 text-xs font-semibold uppercase text-black/60"
 		aria-label="Published on"
 	>
 		Published on {new Date(date).toLocaleDateString('en-US', {
@@ -95,11 +95,11 @@
 
 	<h1 class="mb-4 text-4xl font-black">{title}</h1>
 
-	<main class="prose dark:prose-invert">
+	<main class="prose prose-neutral">
 		<svelte:component this={data.content} />
 	</main>
 
-	<div class="my-4 text-sm font-semibold uppercase text-black/60 dark:text-muted-dark">
+	<div class="my-4 text-sm font-semibold uppercase text-black/60">
 		{#if categories && categories?.length > 0}
 			<div class="flex items-center justify-start gap-1">
 				<Icon icon="mdi:category" />
@@ -133,8 +133,8 @@
 		{/if}
 	</div>
 
-	<main class="prose dark:prose-invert">
-		<p class="my-4 text-gray-500">
+	<main class="prose">
+		<p class="my-4 text-neutral-800">
 			Something wrong or just found a typo? <a
 				href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
 				class="underline"

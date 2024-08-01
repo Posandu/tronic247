@@ -1,13 +1,10 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import NProgress from 'nprogress';
 	import SvelteSeo from 'svelte-seo';
 
-	import { navigating, page } from '$app/stores';
+	import { page } from '$app/stores';
 	import { ModeWatcher } from 'mode-watcher';
-	import { fade } from 'svelte/transition';
-	import { quadInOut } from 'svelte/easing';
 	import { SITE_URL } from '$lib';
 
 	import '@fontsource-variable/inter';
@@ -22,14 +19,6 @@
 			//@ts-ignore
 			sa_pageview($page.url.pathname);
 		}
-	}
-
-	NProgress.configure({});
-
-	$: {
-		if ($navigating) {
-			NProgress.start();
-		} else NProgress.done();
 	}
 
 	const BLEED = ['/', '/sponsor', '/about', '/trycode'];
@@ -71,14 +60,10 @@
 
 {#if !isBlank($page.route?.id?.toString() || '')}
 	<Header />
-
-	<div class="blob hidden dark:block"></div>
 {/if}
 
 {#key data.url}
 	<div
-		in:fade={{ duration: 100, delay: 100, easing: quadInOut }}
-		out:fade={{ duration: 100, easing: quadInOut }}
 		class="mx-auto grow transform-gpu {isInside($page.route?.id?.toString() || '')
 			? ''
 			: 'container'} w-full"

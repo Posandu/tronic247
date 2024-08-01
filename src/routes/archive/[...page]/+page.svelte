@@ -74,6 +74,6 @@
 	<p class="mb-8 mt-4">A chronological list of all posts on Tronic247.</p>
 </div>
 
-<div class="mx-auto max-w-4xl">
+<div class="mx-auto max-w-4xl px-4">
 	<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/archive/page/${page}`} />
 </div>

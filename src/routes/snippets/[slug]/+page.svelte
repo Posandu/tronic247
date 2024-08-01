@@ -7,7 +7,7 @@
 
 <SvelteSeo title={formattedTitle(data.item.title)} />
 
-<div class="prose mx-auto max-w-3xl px-4 mt-8 dark:prose-invert">
+<div class="prose mx-auto max-w-3xl px-4 mt-8">
 	<h1>
 		{data.item.title}
 	</h1>

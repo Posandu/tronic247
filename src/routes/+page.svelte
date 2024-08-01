@@ -34,12 +34,14 @@
 	}}
 />
 
-<section class="mx-auto max-w-4xl" id="recent-posts">
-	<h2 class="mb-8 ml-4 mt-16 text-2xl font-semibold">Latest Posts</h2>
+<section class="mx-auto max-w-4xl px-4" id="recent-posts">
+	<h2 class="mb-8 mt-8 text-2xl font-semibold">Latest Posts</h2>
 
-	{#each posts as { date, title, excerpt, slug, img }}
-		<ArticleView {date} {title} {excerpt} {slug} {img} />
-	{/each}
+	<div class="articles">
+		{#each posts as { date, title, excerpt, slug, img }}
+			<ArticleView {date} {title} {excerpt} {slug} {img} />
+		{/each}
+	</div>
 
 	<div class="text-center">
 		<a href="/archive/page/2" class="btn inverted mx-auto mt-8"> Check Out More </a>

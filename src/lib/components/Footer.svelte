@@ -6,7 +6,7 @@
 	/* eslint-disable svelte/no-at-html-tags */
 </script>
 
-<footer class="mt-10 w-full bg-gray-950 py-2 text-white">
+<footer class="mt-10 w-full bg-neutral-900 py-2 text-white">
 	<div class="mx-auto mt-10 max-w-4xl px-4">
 		<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
 			<div class="col-span-1">

@@ -77,7 +77,7 @@
 	</p>
 </div>
 
-<div class="mx-auto max-w-4xl">
+<div class="mx-auto max-w-4xl px-4">
 	<QueryPage
 		{currentPage}
 		{posts}

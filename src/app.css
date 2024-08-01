@@ -10,6 +10,15 @@ body {
 	font-optical-sizing: auto;
 }
 
+body,
+html {
+	@apply bg-neutral-50 text-neutral-900;
+}
+
+.articles {
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
 pre,
 code,
 textarea,
@@ -41,11 +50,7 @@ scroll margin
 	Buttons
 */
 .btn {
-	@apply inline-block rounded-full bg-white px-5 py-2 text-sm text-black transition-colors hover:bg-gray-200 sm:text-base;
-}
-
-html:not(.dark) .btn.inverted {
-	@apply bg-black text-white hover:brightness-100;
+	@apply inline-block rounded-full bg-neutral-800 font-semibold px-5 py-2 text-sm text-neutral-100 transition-colors hover:bg-gray-700 sm:text-base;
 }
 
 #nprogress .bar {

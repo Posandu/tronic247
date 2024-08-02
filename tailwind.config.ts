@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from 'tailwindcss';
 
-const MAIN_FONT =
-	'-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+const MAIN_FONT = "'Inter Variable', sans-serif;";
 const MONO_FONT = '"Roboto Mono", monospace';
 
 export default {
@@ -16,33 +15,40 @@ export default {
 			},
 			colors: {
 				primary: {
-					DEFAULT: '#e51b23',
-					light: '#f04c52',
-					dark: '#b81419',
-					hover: '#f26065',
-					active: '#a11216'
+					DEFAULT: '#FF6B6B',
+					light: '#FF9B9B',
+					dark: '#FF3B3B',
+					hover: '#FF8080',
+					active: '#FF2525'
 				},
 				secondary: {
-					DEFAULT: '#2c3e50',
-					light: '#3c5269',
-					dark: '#1c2a37',
-					hover: '#4c6885',
-					active: '#0c1821'
+					DEFAULT: '#4ECDC4',
+					light: '#7EDBD4',
+					dark: '#2EBD94',
+					hover: '#66D9D0',
+					active: '#22ABA2'
+				},
+				accent: {
+					DEFAULT: '#FFD93D',
+					light: '#FFE574',
+					dark: '#FFCD00',
+					hover: '#FFDF66',
+					active: '#FFC700'
 				},
 				neutral: {
-					DEFAULT: '#1f2937',
-					100: '#f3f4f6',
-					200: '#e5e7eb',
-					300: '#d1d5db',
-					400: '#9ca3af',
-					500: '#6b7280',
-					600: '#4b5563',
-					700: '#374151',
-					800: '#1f2937',
-					900: '#0D1018'
+					DEFAULT: '#F0F4F8',
+					50: '#FFFFFF',
+					100: '#F0F4F8',
+					200: '#D9E2EC',
+					300: '#BCCCDC',
+					400: '#9FB3C8',
+					500: '#829AB1',
+					600: '#627D98',
+					700: '#486581',
+					800: '#334E68',
+					900: '#243B53'
 				}
-			}
-,			
+			},
 			spacing: {
 				'1': '8px',
 				'2': '12px',

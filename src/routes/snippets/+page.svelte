@@ -45,7 +45,7 @@
 	}}
 />
 
-<div class="prose mx-auto max-w-4xl px-4">
+<div class="mx-auto max-w-4xl px-4">
 	<h1 class="mt-4 text-2xl font-semibold">Snippets</h1>
 	<p class="mb-10 mt-4">
 		Bite sized information, tips and tricks to help you build faster and better.

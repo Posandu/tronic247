@@ -8,13 +8,13 @@ import remarkSmartypants from 'remark-smartypants';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeShiki from '@shikijs/rehype';
 import theme from './theme.js';
 import chalk from 'chalk';
 import fs from 'fs';
 import highwayhash from 'highwayhash';
 import lazyLoadPlugin from 'rehype-plugin-image-native-lazy-loading';
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypePrettyCode from 'rehype-pretty-code';
 import {
 	transformerNotationDiff,
 	transformerNotationHighlight,
@@ -38,7 +38,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const VERSION = 'v4';
+const VERSION = '__.svelte';
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
@@ -121,7 +121,7 @@ function markdown() {
 					})
 					.replace(youtube, (_, id, title) => {
 						return `
-								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube><noscript><p>Videos are disabled. <a href="https://www.youtube.com/watch?v=${id}">Click here to watch</a></p></noscript>
+								<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube><noscript>Videos are disabled. <a href="https://www.youtube.com/watch?v=${id}">Click here to watch</a></noscript>
 						`.trim();
 					})
 					.replace(stackBlitz, (_, id, open) => {
@@ -155,8 +155,8 @@ function markdown() {
 					//@ts-expect-error some weird error, but it works
 					.use(lazyLoadPlugin)
 					.use(rehypeCodeTitles)
-					.use(rehypeShiki, {
-						theme: theme,
+					.use(rehypePrettyCode, {
+						theme,
 						transformers: [
 							transformerNotationDiff(),
 							transformerNotationHighlight(),
@@ -199,7 +199,9 @@ function markdown() {
 									IS_DEV && !(imports.length > 0)
 										? `
 
-										{@html \` ${escapeHtml(html).replaceAll('`', '\\`')}  \`}
+										{@html \` ${escapeHtml(html)
+											.replaceAll('`', '\\`')
+											.replace(/<style>:root[^<]*<\/style>/g, '')}  \`}
 
 									`.trim()
 										: escapeHtml(html)

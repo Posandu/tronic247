@@ -40,7 +40,7 @@
 		{#each results as post}
 			<a
 				href="/{post.slug}"
-				class="mt-4 block rounded-lg border border-neutral-300 p-4 hover:bg-neutral-100"
+				class="mt-4 block bg-white rounded-lg border border-neutral-200 p-4 hover:bg-neutral-100"
 			>
 				<h2>
 					{post.title}

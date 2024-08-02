@@ -5,7 +5,7 @@ categories: ['css', 'html-tutorials']
 tags: ['css', 'login-forms']
 img: /wp-content/uploads/2021/08/loginfrm.png
 updated: '2024-06-13'
-excerpt: A simple login form created with pure CSS. No JavaScript is used in this example.
+excerpt: Creating a simple login form using CSS.
 ---
 
 In this tutorial, I'll show you how to create a login form with pure CSS. First, look the video above to see how I make the login form. Then after the video, there's a preview and the code of the result.

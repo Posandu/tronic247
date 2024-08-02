@@ -5,6 +5,7 @@ categories: ['mysql', 'javascript']
 tags: ['database', 'mysql', 'prisma', 'nextjs']
 img: /wp-content/uploads/2022/12/Adding-Prisma-to-a-Next.js-project.png
 updated: '2024-06-13'
+excerpt: Learn how to add Prisma to a Next.js project and connect it to a MySQL database.
 ---
 
 In this article, you will learn how to add Prisma to a Next.js project. You will learn how to set up Prisma and connect it to a MySQL database. Let's get started!

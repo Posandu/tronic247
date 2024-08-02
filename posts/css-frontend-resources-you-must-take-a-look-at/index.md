@@ -5,7 +5,7 @@ categories: ['css', 'tricks-and-tips']
 tags: ['css', 'frontend']
 img: /wp-content/uploads/2021/10/CSS-frontend-Resources-you-must-take-a-look-at.png
 updated: '2024-06-13'
-excerpt: 'My favourite CSS and Frontend resources that you should bookmark. These resources will help you to make your website more beautiful and attractive.'
+excerpt: A list of resources that might be useful for CSS or Frontend developers.
 ---
 
 In this article, I will tell you some resources you should bookmark as a CSS or Frontend developer. So, let's start!

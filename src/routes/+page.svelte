@@ -35,7 +35,7 @@
 />
 
 <section class="mx-auto max-w-4xl px-4" id="recent-posts">
-	<h2 class="mb-8 mt-8 text-2xl font-semibold">Latest Posts</h2>
+	<h2 class="mb-8 mt-4 text-2xl font-semibold">Recent</h2>
 
 	<div class="articles">
 		{#each posts as { date, title, excerpt, slug, img }}

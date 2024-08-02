@@ -11,3 +11,5 @@ export const formatDate = (date: Date) =>
 		month: 'short',
 		day: 'numeric'
 	});
+
+export const makeID = (str: string) => '_' + str.replace(/\s/g, '_').toLowerCase();

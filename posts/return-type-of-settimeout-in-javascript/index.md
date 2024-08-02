@@ -4,7 +4,7 @@ date: '2024-06-22'
 categories: ['javascript']
 tags: ['javascript', 'typescript']
 img: /thumbnails/return-type-of-timeout-fns.png
-excerpt: The `setTimeout` and `setInterval` functions in JavaScript return values that can be used to clear the timers. Here's how you can get the return type of these functions in TypeScript.
+excerpt: Fixing TypeScript errors by getting the return type of the timeout functions.
 ---
 
 While working on a TypeScript project, I had to save a reference to the `setTimeout` function. That's when I needed to know the return type of the `setTimeout` function in JavaScript. There are three different ways to get the return type of the `setTimeout` and `setInterval` functions in JavaScript.

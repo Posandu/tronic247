@@ -8,15 +8,18 @@ body {
 	flex-direction: column;
 	overflow-x: hidden;
 	font-optical-sizing: auto;
+	background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
+		linear-gradient(to bottom, #80808012 1px, transparent 1px);
+	background-size: 24px 24px;
 }
 
 body,
 html {
-	@apply bg-neutral-50 text-neutral-900;
+	@apply bg-neutral-50 text-neutral-950;
 }
 
 .articles {
-	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+	@apply grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3;
 }
 
 pre,
@@ -50,7 +53,7 @@ scroll margin
 	Buttons
 */
 .btn {
-	@apply inline-block rounded-full bg-neutral-800 font-semibold px-5 py-2 text-sm text-neutral-100 transition-colors hover:bg-gray-700 sm:text-base;
+	@apply inline-block rounded-full bg-primary-active px-5 py-2 text-sm font-semibold text-neutral-100 transition-colors hover:bg-primary-dark sm:text-base;
 }
 
 #nprogress .bar {
@@ -82,6 +85,7 @@ pre {
 	overflow: auto;
 	position: relative;
 }
+
 pre.shiki {
 	overflow-x: auto;
 }

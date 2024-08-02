@@ -7,12 +7,14 @@
 
 <SvelteSeo title={formattedTitle('Sponsor')} description={'Support the development of Tronic247'} />
 
-<div class="relative -mt-5 w-full overflow-hidden bg-pink-600 py-20">
-	<h1 class="text-center text-4xl font-black text-white">Sponsor</h1>
-	<p class="mt-4 text-center text-2xl text-white">Support the development of Tronic247</p>
+<div class="p-4 rounded-xl overflow-hidden mx-auto max-w-5xl">
+	<div class="relative w-full rounded-xl overflow-hidden bg-pink-600 py-20">
+		<h1 class="text-center text-4xl font-black text-white">Sponsor</h1>
+		<p class="mt-4 text-center text-2xl text-white">Support the development of Tronic247</p>
+	</div>
 </div>
 
-<div class="max-w-4xl px-4 mx-auto my-8 grid gap-8 lg:grid-cols-2">
+<div class="mx-auto my-8 grid max-w-4xl gap-8 px-4 lg:grid-cols-2">
 	<div class="col-span-1">
 		<h1 class="mb-4 text-lg font-semibold">Why Sponsor?</h1>
 
@@ -27,9 +29,15 @@
 			By sponsoring, you will get a chance to advertise your product or service on Tronic247 and its
 			other products, have a special article about your product or service, and more benefits.
 		</p>
+
+		<h1 class="mb-4 mt-8 text-lg font-semibold">Thank you!</h1>
+
+		<p class="text-lg">
+			Finally, thank you for considering to sponsor Tronic247. Your support will help to keep the site up and motivate me to write more articles!
+		</p>
 	</div>
 
-	<div class="col-span-1 flex flex-col gap-10 rounded-lg bg-pink-100 p-8">
+	<div class="col-span-1 flex flex-col gap-10 rounded-lg">
 		<div>
 			<h1 class="mb-4 text-lg font-semibold text-pink-600">Via Crypto</h1>
 

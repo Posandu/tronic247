@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SITE_URL, formattedTitle } from '$lib';
+	import { SITE_URL, formattedTitle, makeID } from '$lib';
 	import SvelteSeo from 'svelte-seo';
 	import { mode } from 'mode-watcher';
 	import Comments from '$lib/components/Comments.svelte';
@@ -72,8 +72,16 @@
 />
 
 <div class="mx-auto mt-8 max-w-3xl px-4">
+	<div class="relative w-full max-w-full overflow-hidden rounded-xl" id={makeID(slug)}>
+		{#if img}
+			<Img src={data.postImg} class="w-full" />
+		{/if}
+	</div>
+
+	<h1 class="my-4 text-center text-4xl font-black" id={makeID(slug + 'title')}>{title}</h1>
+
 	<p
-		class="mb-2 text-xs font-semibold uppercase text-black/60"
+		class="my-4 text-center text-xs font-semibold uppercase text-neutral-700"
 		aria-label="Published on"
 	>
 		Published on {new Date(date).toLocaleDateString('en-US', {
@@ -93,13 +101,11 @@
 		{/if}
 	</p>
 
-	<h1 class="mb-4 text-4xl font-black">{title}</h1>
-
-	<main class="prose prose-neutral">
+	<main class="prose bg-white/40">
 		<svelte:component this={data.content} />
 	</main>
 
-	<div class="my-4 text-sm font-semibold uppercase text-black/60">
+	<div class="my-8 text-sm font-semibold uppercase text-neutral-700">
 		{#if categories && categories?.length > 0}
 			<div class="flex items-center justify-start gap-1">
 				<Icon icon="mdi:category" />
@@ -147,3 +153,5 @@
 		{/key}
 	</main>
 </div>
+
+{@html `${'<'}style>#${makeID(slug)}{view-transition-name:${makeID(slug)};}#${makeID(slug + 'title')}{view-transition-name:${makeID(slug + 'title')};}${'</'}style>`}

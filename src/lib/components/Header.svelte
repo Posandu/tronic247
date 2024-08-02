@@ -6,7 +6,6 @@
 
 	const menuItems = [
 		['Home', '/'],
-		['Archive', '/archive'],
 		['Snippets', '/snippets'],
 		['About', '/about'],
 		['Sponsor', '/sponsor']
@@ -19,26 +18,28 @@
 			mobileMenuOpen = false;
 		}
 	}
+
+	$: isActive = menuItems.some(([, link]) => $page.url.pathname === link);
 </script>
 
 <header
 	class="
-	fixed
+	header
 	inset-x-0
 	z-50
 	w-full
 	select-none
 	justify-between
 	rounded-b-none
-	bg-neutral-800
-	text-neutral-100
-	shadow
+	border-b
+	border-b-neutral-100
+	bg-neutral-50
 	"
 >
 	<div class="mx-auto flex w-full max-w-4xl justify-center px-4 align-middle">
 		<div class="flex min-h-16 flex-1 items-center justify-start">
 			<a href="/">
-				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44 invert" />
+				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44" />
 			</a>
 		</div>
 
@@ -47,8 +48,10 @@
 				<a
 					href={link}
 					class="
-						inline-block text-sm font-semibold
-								{$page.url.pathname === link ? 'text-primary-light hover:text-primary-hover' : ''}
+						inline-block text-sm transition-all
+								
+						{$page.url.pathname === link ? 'text-neutral-950' : isActive ? 'text-neutral-400 hover:text-neutral-950' : 'text-neutral-700 hover:text-neutral-950'}
+
 						"
 				>
 					{label}
@@ -76,13 +79,11 @@
 	</div>
 </header>
 
-<div class="h-[96px]"></div>
-
 {#if mobileMenuOpen}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="fixed rounded-xl px-4 right-[70px] top-[60px] z-50 origin-top-right items-center justify-start bg-neutral-100 shadow-lg py-2 min-w-60 shadow-neutral-900/50 backdrop-blur-lg"
+		class="fixed right-[70px] top-[60px] z-50 min-w-60 origin-top-right items-center justify-start rounded-xl border border-neutral-300 bg-neutral-50 px-4 py-2 shadow-lg shadow-neutral-300/30 backdrop-blur-lg"
 		in:scale={{
 			duration: 200,
 			opacity: 0,

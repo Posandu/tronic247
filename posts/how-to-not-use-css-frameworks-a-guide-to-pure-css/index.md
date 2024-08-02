@@ -5,7 +5,7 @@ categories: ['css', 'html-tutorials', 'tricks-and-tips']
 tags: ['css', 'design', 'frameworks', 'perfomance']
 img: /wp-content/uploads/2022/02/How-to-not-use-CSS-frameworks_.png
 updated: '2024-06-13'
-excerpt: A guideon writing your own CSS instead of relying on CSS frameworks which can slow down your website.
+excerpt: A guide on writing your own CSS instead of relying on CSS frameworks
 ---
 
 :::warn{title="Outdated information"}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formatDate } from '$lib';
+	import { formatDate, makeID } from '$lib';
 	import Img from '@zerodevx/svelte-img';
 
 	export let slug: string;
@@ -17,24 +17,31 @@
 	class="
 	{classes} 
 	
-	article-box rounded-xl group
+	article-box relative -mx-4 bg-white/40 px-4 transition-all
 	"
 >
 	<a href="/{slug}" class="flex flex-col">
-		<p class="mb-2 block min-w-max flex-1 text-xs font-semibold uppercase text-neutral-500">
+		{#if img}
+			<Img
+				src={img}
+				loading="lazy"
+				class="w-full rounded-xl shadow transition-all"
+				id={makeID(slug)}
+			/>
+		{/if}
+
+		<p class="mb-2 mt-4 block min-w-max flex-1 text-xs font-medium uppercase text-neutral-700">
 			{formatDate(date)}
 		</p>
 
-		{#if img}
-			<Img src={img} loading="lazy" class="mb-4 w-full group-hover:opacity-80 transition-all rounded-lg" />
-		{/if}
-
-		<h2 class="text-xl font-semibold">
+		<h2 class="text-lg font-semibold" id={makeID(slug + 'title')}>
 			{title}
 		</h2>
 
-		<p class="mt-2 overflow-hidden text-wrap break-words text-sm text-neutral-500">
+		<p class="mt-2 overflow-hidden text-wrap break-words text-sm text-neutral-700">
 			{excerpt}
 		</p>
 	</a>
 </article>
+
+{@html `${'<'}style>#${makeID(slug)}{view-transition-name:${makeID(slug)};}#${makeID(slug + 'title')}{view-transition-name:${makeID(slug + 'title')};}${'</'}style>`}

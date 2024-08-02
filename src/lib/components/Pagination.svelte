@@ -16,7 +16,7 @@
 				inline-flex size-2 items-center justify-center rounded-full p-3 text-sm
 
 				{currentPage === page
-					? 'bg-primary !text-white hover:bg-primary-dark'
+					? 'bg-primary-active !text-white hover:bg-primary-dark'
 					: 'text-neutral-800 hover:bg-neutral-200'}
 				"
 			>

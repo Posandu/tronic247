@@ -5,6 +5,7 @@ categories: ['html-tutorials', 'javascript', 'svelte', 'tricks-and-tips', 'css']
 tags: ['nprogress', 'sveltekit', 'svelte', 'css']
 img: /wp-content/uploads/2023/03/Nprogress-.png
 updated: '2024-06-13'
+excerpt: A simple guide to add Nprogress to SvelteKit to show a progress bar when navigating between pages.
 ---
 
 You may be wondering how to add Nprogress to SvelteKit. This is a simple guide to help you get started.

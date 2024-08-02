@@ -3,6 +3,6 @@
 	export let id = title.toLowerCase().replace(/\s/g, '-');
 </script>
 
-<a href="/snippets/{id}" class="mb-4 block hover:underline">
+<a href="/snippets/{id}" class="mb-2 block hover:underline">
 	{title}
 </a>

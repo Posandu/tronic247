@@ -8,7 +8,11 @@ const CATEGORY_NAMES: Record<string, string> = {
 	svelte: 'Svelte',
 	rust: 'Rust',
 	'web-dev': 'Web Development',
-	php: 'PHP'
+	php: 'PHP',
+	mysql: 'MySQL',
+	tools: 'Tools',
+	wordpress: 'WordPress',
+	elementor: 'Elementor'
 };
 
 export { CATEGORY_NAMES };

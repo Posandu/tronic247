@@ -9,7 +9,8 @@
 
 	import '@fontsource-variable/inter';
 	import '../app.css';
-	import 'nprogress/nprogress.css';
+	import '@fontsource-variable/inter';
+	import { onNavigate } from '$app/navigation';
 
 	$: {
 		//@ts-ignore
@@ -28,6 +29,19 @@
 	const isBlank = (path: string) => BLANK.some((blank) => path === blank);
 
 	export let data;
+
+	onNavigate((navigation) => {
+		//@ts-expect-error
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			//@ts-expect-error
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 
 	const SEO = {
 		title: 'Tronic247 - For Seekers of Innovation',
@@ -75,3 +89,33 @@
 {#if !isBlank($page.route?.id?.toString() || '')}
 	<Footer categories={data.stats.categories} />
 {/if}
+
+<style>
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+
+	@keyframes fade-out {
+		to {
+			opacity: 0;
+		}
+	}
+
+	:root::view-transition-old(root) {
+		animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
+	}
+
+	:root::view-transition-new(root) {
+		animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in;
+	}
+
+	:global(.header) {
+		view-transition-name: header;
+	}
+
+	:global(.footer) {
+		view-transition-name: footer;
+	}
+</style>

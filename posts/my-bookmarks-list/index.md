@@ -95,6 +95,11 @@ This is a collection of minimal icons.
 [https://webcode.tools/](https://webcode.tools/)  
 Some awesome tools to save your time.
 
+## ExtendsClass
+
+[https://extendsclass.com/](https://extendsclass.com/)  
+Some developer tools like converters, playgrounds, generators, and more...
+
 ## Render
 
 [https://render.com/](https://render.com/)  

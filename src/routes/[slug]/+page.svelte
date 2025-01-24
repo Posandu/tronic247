@@ -7,7 +7,11 @@
 	import Img from '@zerodevx/svelte-img';
 	import Icon from '@iconify/svelte';
 
-	export let data;
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 
 	let categories = data.meta.categories;
 	let tags = data.meta.tags;
@@ -102,7 +106,7 @@
 	</p>
 
 	<main class="prose bg-white/40">
-		<svelte:component this={data.content} />
+		<data.content />
 	</main>
 
 	<div class="my-8 text-sm font-semibold uppercase text-neutral-700">

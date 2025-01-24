@@ -2,15 +2,26 @@
 	import { formatDate, makeID } from '$lib';
 	import Img from '@zerodevx/svelte-img';
 
-	export let slug: string;
-	export let title: string;
-	export let excerpt: string;
-	export let date: Date;
-	export let img: any = undefined;
 
-	let classes = '';
+	interface Props {
+		slug: string;
+		title: string;
+		excerpt: string;
+		date: Date;
+		img?: any;
+		class?: string;
+	}
 
-	export { classes as class };
+	let {
+		slug,
+		title,
+		excerpt,
+		date,
+		img = undefined,
+		class: classes = ''
+	}: Props = $props();
+
+	
 </script>
 
 <article

@@ -3,7 +3,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import SvelteSeo from 'svelte-seo';
 
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { ModeWatcher } from 'mode-watcher';
 	import { SITE_URL } from '$lib';
 
@@ -12,15 +12,15 @@
 	import '@fontsource-variable/inter';
 	import { onNavigate } from '$app/navigation';
 
-	$: {
+	$effect(() => {
 		//@ts-ignore
 		if (typeof sa_pageview !== 'undefined') {
 			console.log('tracked pageview');
 
 			//@ts-ignore
-			sa_pageview($page.url.pathname);
+			sa_pageview(page.url.pathname);
 		}
-	}
+	});
 
 	const BLEED = ['/', '/sponsor', '/about', '/trycode'];
 	const BLANK = ['/trycode'];
@@ -28,14 +28,17 @@
 	const isInside = (path: string) => BLEED.some((bleed) => path === bleed);
 	const isBlank = (path: string) => BLANK.some((blank) => path === blank);
 
-	export let data;
+	interface Props {
+		data: any;
+		children?: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
 
 	onNavigate((navigation) => {
-		//@ts-expect-error
 		if (!document.startViewTransition) return;
 
 		return new Promise((resolve) => {
-			//@ts-expect-error
 			document.startViewTransition(async () => {
 				resolve();
 				await navigation.complete;
@@ -72,21 +75,21 @@
 
 <ModeWatcher />
 
-{#if !isBlank($page.route?.id?.toString() || '')}
+{#if !isBlank(page.route?.id?.toString() || '')}
 	<Header />
 {/if}
 
 {#key data.url}
 	<div
-		class="mx-auto grow transform-gpu {isInside($page.route?.id?.toString() || '')
+		class="mx-auto grow transform-gpu {isInside(page.route?.id?.toString() || '')
 			? ''
 			: 'container'} w-full"
 	>
-		<slot></slot>
+		{@render children?.()}
 	</div>
 {/key}
 
-{#if !isBlank($page.route?.id?.toString() || '')}
+{#if !isBlank(page.route?.id?.toString() || '')}
 	<Footer categories={data.stats.categories} />
 {/if}
 

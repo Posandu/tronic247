@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let commentDiv: HTMLElement;
+	let commentDiv: HTMLElement | undefined = $state();
 
 	const updateUtterances = () => {
 		const script = document.createElement('script');
@@ -12,7 +12,7 @@
 		script.setAttribute('theme', 'github-light');
 		script.setAttribute('crossorigin', 'anonymous');
 		script.setAttribute('label', 'comment');
-		commentDiv.appendChild(script);
+		commentDiv!.appendChild(script);
 	};
 
 	onMount(() => {

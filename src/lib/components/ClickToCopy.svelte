@@ -1,10 +1,10 @@
 <script>
-	export let val = '';
-	let classN = '';
+	/** @type {{val?: string, class?: string}} */
+	let { val = '', class: classN = '' } = $props();
 
-	export { classN as class };
+	
 
-	let msg = 'Click to copy';
+	let msg = $state('Click to copy');
 
 	const copy = () => {
 		if (navigator.clipboard) {
@@ -26,4 +26,4 @@
 	};
 </script>
 
-<button class="btn text-xs {classN}" on:click={copy}>{msg}</button>
+<button class="btn text-xs {classN}" onclick={copy}>{msg}</button>

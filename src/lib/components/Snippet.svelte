@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let title: string;
-	export let id = title.toLowerCase().replace(/\s/g, '-');
+	interface Props {
+		title: string;
+		id?: any;
+	}
+
+	let { title, id = title.toLowerCase().replace(/\s/g, '-') }: Props = $props();
 </script>
 
 <a href="/snippets/{id}" class="mb-2 block hover:underline">

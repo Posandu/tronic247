@@ -2,12 +2,18 @@
 	import sdk from '@stackblitz/sdk';
 	import { onMount } from 'svelte';
 
-	let render: HTMLElement;
+	let render: HTMLElement | undefined = $state();
 
-	export let id: string;
-	export let openFile: string = '';
+	interface Props {
+		id: string;
+		openFile?: string;
+	}
+
+	let { id, openFile = '' }: Props = $props();
 
 	onMount(() => {
+		if (!render) return console.error('No render element found');
+
 		sdk.embedProjectId(render, id, {
 			forceEmbedLayout: true,
 			theme: 'dark',

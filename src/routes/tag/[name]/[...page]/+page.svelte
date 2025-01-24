@@ -5,17 +5,14 @@
 	import type { BlogPosting } from 'schema-dts';
 	import type { ItemList } from 'schema-dts';
 
-	export let data;
+	let { data } = $props();
 
-	let { posts, totalPages, page: currentPage, tagName } = data;
+	let posts = $derived(data.posts);
+	let totalPages = $derived(data.totalPages);
+	let currentPage = $derived(data.page);
+	let tagName = $derived(data.tagName);
 
-	$: {
-		posts = data.posts;
-		totalPages = data.totalPages;
-		currentPage = data.page;
-	}
-
-	$: SEO = {
+	let SEO = $derived({
 		title: formattedTitle('#' + tagName),
 		description: `A list of all posts tagged with ${tagName}. ${currentPage > 1 ? `Page ${currentPage}` : ''}`,
 		canonical: `${SITE_URL}tag/${tagName}/${currentPage > 1 ? `/page/${currentPage}` : ''}`,
@@ -31,7 +28,7 @@
 			} satisfies BlogPosting
 		})) satisfies ItemList['itemListElement'],
 		image: `${SITE_URL}og-image.png`
-	};
+	});
 </script>
 
 <SvelteSeo

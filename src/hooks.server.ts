@@ -1,5 +1,5 @@
 import { formaRawPostModule, getImportedPosts } from '$lib/posts';
-import type { Post } from '$lib/query';
+import type { PostWithoutContent } from '$lib/query';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -23,7 +23,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		formaRawPostModule(post, path)
 	);
 
-	const getImgObjects = (posts: Post[]) => {
+	const getImgObjects = (posts: PostWithoutContent[]) => {
 		const imgObjects: any = {};
 
 		for (const post of posts) {

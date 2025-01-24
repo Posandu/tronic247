@@ -3,12 +3,16 @@
 	import ArticleView from './ArticleView.svelte';
 	import Pagination from './Pagination.svelte';
 
-	export let totalPages: number;
-	export let currentPage: number;
+	type PostWithoutContent = Omit<Post, 'content'>;
 
-	export let urlFn: (page: number) => string;
+	interface Props {
+		totalPages: number;
+		currentPage: number;
+		urlFn: (page: number) => string;
+		posts: PostWithoutContent[];
+	}
 
-	export let posts: Post[];
+	let { totalPages, currentPage, urlFn, posts }: Props = $props();
 </script>
 
 <div class="articles">

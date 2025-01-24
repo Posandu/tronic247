@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Fuse from 'fuse.js';
 
-	export let data;
+	let { data } = $props();
 
 	let posts = data.posts;
-	let query = '';
-	let results: (typeof posts)[0][] = [];
+	let query = $state('');
+	let results: (typeof posts)[0][] = $state([]);
 
 	const search = () => {
 		const fuse = new Fuse(posts, {
@@ -16,7 +16,9 @@
 		results = fuse.search(query).map((i) => i.item);
 	};
 
-	$: if (query) search();
+	$effect(() => {
+		if (query) search();
+	});
 </script>
 
 <div class="mx-auto max-w-prose">
@@ -40,7 +42,7 @@
 		{#each results as post}
 			<a
 				href="/{post.slug}"
-				class="mt-4 block bg-white rounded-lg border border-neutral-200 p-4 hover:bg-neutral-100"
+				class="mt-4 block rounded-lg border border-neutral-200 bg-white p-4 hover:bg-neutral-100"
 			>
 				<h2>
 					{post.title}

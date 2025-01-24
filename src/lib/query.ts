@@ -1,6 +1,8 @@
+import type { Snippet } from 'svelte';
+
 export type Post = {
 	title: string;
-	content: unknown;
+	content: Snippet;
 	slug: string;
 	date: Date;
 	tags?: string[];
@@ -10,6 +12,8 @@ export type Post = {
 	length?: number;
 	lastModified?: string;
 };
+
+export type PostWithoutContent = Omit<Post, 'content'>;
 
 type QueryFn = (post: Post) => boolean;
 

@@ -5,17 +5,14 @@
 	import { CATEGORY_NAMES } from '$lib/sorting';
 	import type { BlogPosting, ItemList } from 'schema-dts';
 
-	export let data;
+	let { data } = $props();
 
-	let { posts, totalPages, page: currentPage, category } = data;
+	let posts = $derived(data.posts);
+	let totalPages = $derived(data.totalPages);
+	let currentPage = $derived(data.page);
+	let category = $derived(data.category);
 
-	$: {
-		posts = data.posts;
-		totalPages = data.totalPages;
-		currentPage = data.page;
-	}
-
-	$: SEO = {
+	let SEO = $derived({
 		title: formattedTitle(CATEGORY_NAMES[category] || category),
 		description: `A list of all posts in the category ${category}. ${currentPage > 1 ? `Page ${currentPage}` : ''}`,
 		canonical: `${SITE_URL}category/${category}/${currentPage > 1 ? `/page/${currentPage}` : ''}`,
@@ -31,7 +28,7 @@
 			} satisfies BlogPosting
 		})) satisfies ItemList['itemListElement'],
 		image: `${SITE_URL}og-image.png`
-	};
+	});
 </script>
 
 <SvelteSeo

@@ -3,9 +3,9 @@
 	import ArticleView from '$lib/components/ArticleView.svelte';
 	import SvelteSeo from 'svelte-seo';
 
-	export let data;
+	let { data } = $props();
 
-	let posts = data.posts;
+	let posts = $derived(data.posts);
 
 	const SEO = {
 		title: 'Tronic247 - For Seekers of Innovation',

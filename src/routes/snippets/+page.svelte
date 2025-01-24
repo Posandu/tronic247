@@ -3,7 +3,7 @@
 	import Snippet from '$lib/components/Snippet.svelte';
 	import SvelteSeo from 'svelte-seo';
 
-	export let data;
+	let { data } = $props();
 
 	let snippets = data.snippets;
 </script>

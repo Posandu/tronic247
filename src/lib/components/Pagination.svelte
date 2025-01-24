@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let totalPages: number;
-	export let currentPage: number;
-	export let urlFn: (page: number) => string;
+	interface Props {
+		totalPages: number;
+		currentPage: number;
+		urlFn: (page: number) => string;
+	}
+
+	let { totalPages, currentPage, urlFn }: Props = $props();
 </script>
 
 {#if totalPages > 1}

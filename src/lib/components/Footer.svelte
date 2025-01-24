@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { CATEGORY_NAMES } from '$lib/sorting';
 
-	export let categories: Set<string>;
+	interface Props {
+		categories: Set<string>;
+	}
+
+	let { categories }: Props = $props();
 
 	/* eslint-disable svelte/no-at-html-tags */
 </script>

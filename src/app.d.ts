@@ -7,7 +7,7 @@ declare global {
 			imgData: any;
 			posts: {
 				title: string;
-				content: unknown;
+				content: import('svelte').Snippet;
 				slug: string;
 				date: Date;
 				tags?: string[];
@@ -17,7 +17,7 @@ declare global {
 				length?: number;
 				lastModified?: string;
 			}[];
-			getImgObjects: (posts: App.Locals['posts']) => any;
+			getImgObjects: (posts: Omit<App.Locals['posts'][0], 'content'>[]) => any;
 		}
 		// interface PageData {}
 		// interface PageState {}

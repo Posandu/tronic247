@@ -4,17 +4,13 @@
 	import QueryPage from '$lib/components/QueryPage.svelte';
 	import type { BlogPosting, ItemList } from 'schema-dts';
 
-	export let data;
+	let { data } = $props();
 
-	let { posts, totalPages, page: currentPage } = data;
+	let posts = $derived(data.posts);
+	let totalPages = $derived(data.totalPages);
+	let currentPage = $derived(data.page);
 
-	$: {
-		posts = data.posts;
-		totalPages = data.totalPages;
-		currentPage = data.page;
-	}
-
-	$: SEO = {
+	let SEO = $derived({
 		title: formattedTitle(currentPage > 1 ? `Archive - Page ${currentPage}` : 'Archive'),
 		description: 'A chronological list of all posts on Tronic247.',
 		canonical: `${SITE_URL}archive${currentPage > 1 ? `/page/${currentPage}` : ''}`,
@@ -30,7 +26,7 @@
 			} satisfies BlogPosting
 		})) satisfies ItemList['itemListElement'],
 		image: `${SITE_URL}og-image.png`
-	};
+	});
 </script>
 
 <SvelteSeo

@@ -6,7 +6,7 @@
 	import { page } from '$app/state';
 	import { SITE_URL } from '$lib';
 
-	import '@fontsource-variable/inter';
+	import '@fontsource-variable/inter'; 
 	import '../app.css';
 
 	import 'nprogress/nprogress.css';

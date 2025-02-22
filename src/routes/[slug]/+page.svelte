@@ -1,17 +1,12 @@
 <script lang="ts">
 	import { SITE_URL, formattedTitle, makeID } from '$lib';
 	import SvelteSeo from 'svelte-seo';
-	import { mode } from 'mode-watcher';
 	import Comments from '$lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
 	import Img from '@zerodevx/svelte-img';
 	import Icon from '@iconify/svelte';
 
-	interface Props {
-		data: any;
-	}
-
-	let { data }: Props = $props();
+	let { data } = $props();
 
 	let categories = data.meta.categories;
 	let tags = data.meta.tags;
@@ -21,8 +16,6 @@
 	let excerpt = data.meta.excerpt.trim() || title;
 	let slug = data.meta.slug;
 	let lastUpdated = data.meta.lastModified;
-
-	let randPosts = data.randPosts;
 
 	onMount(() => {
 		import('@justinribeiro/lite-youtube');
@@ -152,10 +145,6 @@
 			> and make a PR!
 		</p>
 
-		{#key $mode}
-			<Comments />
-		{/key}
+		<Comments />
 	</main>
 </div>
-
-{@html `${'<'}style>#${makeID(slug)}{view-transition-name:${makeID(slug)};}#${makeID(slug + 'title')}{view-transition-name:${makeID(slug + 'title')};}${'</'}style>`}

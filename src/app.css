@@ -2,26 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	overflow-x: hidden;
-	font-optical-sizing: auto;
-	background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
-		linear-gradient(to bottom, #80808012 1px, transparent 1px);
-	background-size: 24px 24px;
-}
-
-body,
-html {
-	@apply bg-neutral-50 text-neutral-950;
-}
-
-.articles {
-	@apply grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3;
-}
-
 pre,
 code,
 textarea,
@@ -49,39 +29,11 @@ scroll margin
 	scroll-margin-top: 120px;
 }
 
-/*
-	Buttons
-*/
-.btn {
-	@apply inline-block rounded-full bg-primary-active px-5 py-2 text-sm font-semibold text-neutral-100 transition-colors hover:bg-primary-dark sm:text-base;
-}
-
-#nprogress .bar {
-	--tw-bg-opacity: 1;
-	background-color: rgb(229 27 35 / var(--tw-bg-opacity)) !important;
-}
-#nprogress .peg {
-	--tw-bg-opacity: 1;
-	box-shadow:
-		0 0 10px rgb(229 27 35 / var(--tw-bg-opacity)),
-		0 0 5px rgb(229 27 35 / var(--tw-bg-opacity)) !important;
-}
-#nprogress .spinner-icon {
-	border-top-color: #e51b23 !important;
-	border-left-color: #e51b23 !important;
-}
-
 pre {
-	/* In theory shiki will overwrite these, but this is to make sure there are defaults regardless */
 	background-color: white;
 	color: black;
-
-	/* Give it some space to breathe */
 	padding: 12px;
-
 	margin-bottom: 3rem;
-
-	/* Important to allow the code to move horizontally; */
 	overflow: auto;
 	position: relative;
 }
@@ -352,5 +304,5 @@ h6 {
 	filter: blur(0) !important;
 }
 .callout-hint {
-    margin-right: 6px;
+	margin-right: 6px;
 }

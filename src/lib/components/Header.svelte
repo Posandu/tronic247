@@ -1,14 +1,12 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { navigating, page } from '$app/state';
-	import { fly, scale } from 'svelte/transition';
-	import { bounceIn, bounceInOut, elasticIn, quadIn } from 'svelte/easing';
+	import { scale } from 'svelte/transition';
 
 	const menuItems = [
 		['Home', '/'],
 		['Snippets', '/snippets'],
-		['About', '/about'],
-		['Sponsor', '/sponsor']
+		['About', '/about']
 	];
 
 	let mobileMenuOpen = $state(false);
@@ -24,61 +22,106 @@
 
 <header
 	class="
-	header
-	inset-x-0
-	z-50
-	w-full
-	select-none
-	justify-between
-	rounded-b-none
-	border-b
-	border-b-neutral-100
-	bg-neutral-50
-	"
+    sticky top-0
+    z-50
+    w-full
+    select-none
+    border-b
+    border-b-base-darkest
+    bg-base-darkest/95
+    backdrop-blur-sm
+    transition-all
+	duration-200
+  "
 >
-	<div class="mx-auto flex w-full max-w-4xl justify-center px-4 align-middle">
-		<div class="flex min-h-16 flex-1 items-center justify-start">
-			<a href="/">
-				<img src="/logo.svg" alt="Tronic247 Logo" class="w-44" />
+	<div class="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-4">
+		<div class="flex items-center">
+			<a href="/" aria-label="Home">
+				<img
+					src="/logo.svg"
+					alt="Tronic247 Logo"
+					class="w-36 invert transition-opacity hover:opacity-80 lg:w-44"
+				/>
 			</a>
 		</div>
 
-		<nav class="hidden items-center space-x-4 lg:flex">
+		<nav class="hidden items-center space-x-6 lg:flex" aria-label="Main navigation">
 			{#each menuItems as [label, link]}
 				<a
 					href={link}
 					class="
-						inline-block text-sm transition-all
-								
-						{page.url.pathname === link
-						? 'text-neutral-950'
-						: isActive
-							? 'text-neutral-400 hover:text-neutral-950'
-							: 'text-neutral-700 hover:text-neutral-950'}
+            
+            relative
+            text-sm
+            font-medium
+            transition-colors
+			hover:text-neutral-100
 
-						"
+			hover:before:!w-full
+			hover:before:!bg-white
+            {page.url.pathname === link
+						? 'text-white before:!w-full before:!bg-white'
+						: 'text-base-light'}
+
+			link
+          "
 				>
 					{label}
 				</a>
 			{/each}
 
-			<a href="/search">
-				<Icon icon="material-symbols:search" class="size-4" />
+			<a
+				href="/search"
+				aria-label="Search"
+				class="
+          rounded-full
+          p-2
+		  text-white
+		  transition-colors
+          hover:bg-white
+          hover:text-base-darkest
+        "
+			>
+				<Icon icon="material-symbols:search" class="size-5" />
 			</a>
 		</nav>
 
-		<div class="flex items-center justify-end lg:hidden">
+		<div class="flex items-center space-x-2 lg:hidden">
+			<a
+				href="/search"
+				aria-label="Search"
+				class="
+          rounded-full
+          p-2
+          text-neutral-400
+          transition-colors
+          hover:bg-neutral-800
+          hover:text-neutral-100
+        "
+			>
+				<Icon icon="material-symbols:search" class="size-5" />
+			</a>
+
 			<button
+				aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+				aria-expanded={mobileMenuOpen}
+				class="
+          rounded-full
+          p-2
+          text-neutral-400
+          transition-colors
+          hover:bg-neutral-800
+          hover:text-neutral-100
+        "
 				onclick={() => {
 					mobileMenuOpen = !mobileMenuOpen;
 				}}
 			>
-				<Icon icon="bx:bx-menu" class="size-4" />
+				<Icon
+					icon={mobileMenuOpen ? 'material-symbols:close' : 'material-symbols:menu'}
+					class="size-5"
+				/>
 			</button>
-
-			<a class="ml-4" href="/search">
-				<Icon icon="material-symbols:search" class="size-4" />
-			</a>
 		</div>
 	</div>
 </header>
@@ -118,3 +161,17 @@
 		</ul>
 	</div>
 {/if}
+
+<style>
+	.link {
+		@apply relative before:absolute
+            before:-bottom-1
+            before:left-0
+            before:h-0.5
+            before:w-0
+            before:rounded-full
+            before:bg-current
+            before:transition-all
+			before:duration-200;
+	}
+</style>

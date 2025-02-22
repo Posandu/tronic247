@@ -8,7 +8,7 @@ import remarkSmartypants from 'remark-smartypants';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import theme from './theme.js';
+import { theme } from './theme.js';
 import chalk from 'chalk';
 import fs from 'fs';
 import highwayhash from 'highwayhash';
@@ -26,7 +26,7 @@ import remarkDirective from 'remark-directive';
 //@ts-expect-error no types
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
 
-const VERBOSE = true;
+const VERBOSE = !true;
 
 /**
  * @param {string} content
@@ -38,7 +38,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const VERSION = '__.svelte';
+const VERSION = '1.svelte';
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {

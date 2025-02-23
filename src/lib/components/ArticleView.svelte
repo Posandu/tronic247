@@ -19,7 +19,10 @@
 	{classes} relative col-span-1 transition-all
 	"
 >
-	<a href="/{slug}" class="hover:shadow-xl transition-all relative flex w-full flex-col overflow-hidden rounded-xl">
+	<a
+		href="/{slug}"
+		class="relative flex min-h-48 w-full flex-col overflow-hidden rounded-xl bg-base-dark transition-all hover:shadow-xl"
+	>
 		{#if img}
 			<Img src={img} loading="lazy" class="h-full w-full object-cover" />
 		{/if}

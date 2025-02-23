@@ -64,16 +64,10 @@
 	}}
 />
 
-<div class="mx-auto max-w-4xl px-4">
-	<h1 class="mt-8 text-2xl font-semibold">
-		<span class="text-primary">#{tagName}</span>
-	</h1>
+<h1 class="title max-w-5xl px-4 mt-16 mx-auto text-4xl font-bold">
+	#{tagName}
+</h1>
 
-	<p class="mb-8 mt-4">
-		All posts tagged with <span class="text-primary">#{tagName}</span>.
-	</p>
-</div>
-
-<div class="mx-auto max-w-4xl px-4">
+<div class="mx-auto max-w-5xl px-4">
 	<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/tag/${tagName}/page/${page}`} />
 </div>

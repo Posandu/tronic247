@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.title {
+	line-height: 1.2;
+	letter-spacing: -1.5px;
+}
+
 pre,
 code,
 textarea,

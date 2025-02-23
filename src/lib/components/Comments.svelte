@@ -24,6 +24,5 @@
 
 <section
 	id="utterances-comments"
-	class="rounded-xl border border-neutral-100 bg-white px-4"
 	bind:this={commentDiv}
 ></section>

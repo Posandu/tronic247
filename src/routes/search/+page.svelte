@@ -21,20 +21,16 @@
 	});
 </script>
 
-<div class="mx-auto max-w-prose">
-	<section class="text-center">
-		<h1 class="mt-8 text-2xl font-semibold">Search</h1>
+<h1 class="title mx-auto mt-16 max-w-5xl px-4 text-4xl font-bold">Search</h1>
 
-		<p class="mb-4 mt-4">Search the articles</p>
-	</section>
-
+<div class="mx-auto mt-8 max-w-5xl px-4">
 	<form method="post">
 		<input
 			type="text"
 			name="search"
 			bind:value={query}
 			placeholder="Search..."
-			class="w-full rounded-full border border-neutral-300 px-4 py-2"
+			class="mb-8 w-full rounded-xl border border-neutral-300 px-4 py-2"
 		/>
 	</form>
 
@@ -50,6 +46,6 @@
 			</a>
 		{/each}
 	{:else}
-		<p class="mt-4">No results found</p>
+		<p class="mt-4 text-base-light">{query ? 'No results found' : 'Please type something :)'}</p>
 	{/if}
 </div>

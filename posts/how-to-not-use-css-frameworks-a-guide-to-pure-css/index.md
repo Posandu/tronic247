@@ -9,7 +9,7 @@ excerpt: A guide on writing your own CSS instead of relying on CSS frameworks
 ---
 
 :::warn{title="Outdated information"}
-This post was written a long time ago and may contain outdated information. Use it at your own risk.
+This post was written a while ago and may contain outdated information.
 :::
 
 Hey! So you came here to see another CSS framework? right? So time to worry, I am telling you how to create your CSS framework instead of using one. So let's begin!

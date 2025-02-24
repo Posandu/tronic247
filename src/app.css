@@ -7,6 +7,31 @@
 	letter-spacing: -1.5px;
 }
 
+.btn {
+	@apply inline-block rounded-full bg-base-darkest px-4 py-2 text-sm text-white hover:bg-base-dark;
+}
+
+body {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}
+
+body::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+	background-size: 16px 16px;
+	mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
+	pointer-events: none; /* Ensures the pseudo-element doesn't interfere with clicks */
+	z-index: -1; /* Places the pattern behind the content */
+}
+
 pre,
 code,
 textarea,

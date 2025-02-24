@@ -11,13 +11,24 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: MAIN_FONT,
-				mono: MONO_FONT
+				mono: MONO_FONT,
+				'--tw-prose-pre-bg': 'red'
 			},
 			colors: {
 				base: {
 					darkest: '#0f0e0e',
 					dark: '#2c2626',
 					light: '#999999',
+					content: '#f7f7f6'
+				}
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						'--tw-prose-pre-bg': '#e6e7ed',
+						'--tw-prose-code': '#292929',
+						'--tw-prose-pre': '#292929',
+					}
 				}
 			}
 		}

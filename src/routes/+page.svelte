@@ -42,6 +42,6 @@
 	</div>
 
 	<div class="text-center">
-		<a href="/archive/page/2" class="btn inverted mx-auto mt-8"> Check Out More </a>
+		<a href="/archive/page/2" class="btn mx-auto mt-16"> Check Out More </a>
 	</div>
 </section>

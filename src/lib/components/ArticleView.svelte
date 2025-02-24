@@ -21,25 +21,24 @@
 >
 	<a
 		href="/{slug}"
-		class="relative flex min-h-48 w-full flex-col overflow-hidden rounded-xl bg-base-dark transition-all hover:shadow-xl"
+		class="relative shadow flex min-h-48 w-full flex-col overflow-hidden rounded-xl bg-base-content transition-all hover:shadow-lg"
 	>
 		{#if img}
 			<Img src={img} loading="lazy" class="h-full w-full object-cover" />
 		{/if}
 
-		<div class="bg pointer-events-none absolute inset-0 mix-blend-luminosity transition-all"></div>
 
-		<div class="absolute z-10 flex h-full flex-col p-8">
-			<p class="flex-1 text-sm uppercase text-white/50">
+		<div class="z-10 flex h-full flex-col p-8">
+			<p class="flex-1 text-sm mb-2 uppercase text-base-light">
 				{formatDate(date)}
 			</p>
 
-			<h2 class="title max-w-xs text-xl font-semibold text-white transition-all">
+			<h2 class="title max-w-xs text-xl font-semibold text-base-darkest transition-all">
 				{title}
 			</h2>
 
 			<p
-				class="mt-2 max-w-xs overflow-hidden text-wrap break-words text-sm text-white/75 transition-all"
+				class="mt-2 max-w-xs overflow-hidden text-wrap break-words text-sm text-base-light transition-all"
 			>
 				{excerpt}
 			</p>

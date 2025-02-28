@@ -4,13 +4,14 @@
 	import SvelteSeo from 'svelte-seo';
 
 	import { page } from '$app/state';
-	import { ModeWatcher } from 'mode-watcher';
 	import { SITE_URL } from '$lib';
 
-	import '@fontsource-variable/inter';
+	import '@fontsource-variable/inter'; 
 	import '../app.css';
-	import '@fontsource-variable/inter';
-	import { onNavigate } from '$app/navigation';
+
+	import 'nprogress/nprogress.css';
+	import NProgress from 'nprogress';
+	import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation';
 
 	$effect(() => {
 		//@ts-ignore
@@ -28,22 +29,16 @@
 	const isInside = (path: string) => BLEED.some((bleed) => path === bleed);
 	const isBlank = (path: string) => BLANK.some((blank) => path === blank);
 
-	interface Props {
-		data: any;
-		children?: import('svelte').Snippet;
-	}
+	let { data, children } = $props();
 
-	let { data, children }: Props = $props();
+	NProgress.configure({ showSpinner: false });
 
-	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
+	beforeNavigate(async () => {
+		NProgress.start();
+	});
 
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
-			});
-		});
+	afterNavigate(async () => {
+		NProgress.done();
 	});
 
 	const SEO = {
@@ -63,6 +58,7 @@
 </svelte:head>
 
 <SvelteSeo themeColor="#e51b23" applicationName="Tronic247" />
+
 <SvelteSeo
 	jsonLd={{
 		'@context': 'https://schema.org',
@@ -72,8 +68,6 @@
 		description: SEO.description
 	}}
 />
-
-<ModeWatcher />
 
 {#if !isBlank(page.route?.id?.toString() || '')}
 	<Header />
@@ -94,31 +88,5 @@
 {/if}
 
 <style>
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-	}
-
-	@keyframes fade-out {
-		to {
-			opacity: 0;
-		}
-	}
-
-	:root::view-transition-old(root) {
-		animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
-	}
-
-	:root::view-transition-new(root) {
-		animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in;
-	}
-
-	:global(.header) {
-		view-transition-name: header;
-	}
-
-	:global(.footer) {
-		view-transition-name: footer;
-	}
+	/* compiler breaks if there's no style tag hmm */
 </style>

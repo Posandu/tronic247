@@ -16,7 +16,7 @@
 			<div class="col-span-1">
 				<h3 class="mb-4 text-2xl font-semibold">Links</h3>
 
-				<ul class="space-y-2 font-light text-neutral-400">
+				<ul class="space-y-2 text-neutral-400">
 					<li>
 						<a href="https://twitter.com/posandu" class="mr-2 inline hover:text-white">
 							Follow on X (Twitter)
@@ -53,13 +53,13 @@
 					<span>
 						<a
 							href={`/category/${category}`}
-							class="mr-1 inline font-light text-neutral-400 hover:text-white"
+							class="mr-1 inline text-neutral-400 hover:text-white"
 						>
 							{CATEGORY_NAMES[category] || category}
 						</a>
 
 						{#if i !== categories.size - 1}
-							<span class="mr-1 inline text-neutral-800">•</span>
+							<span class="mr-1 inline text-neutral-800">,</span>
 						{/if}
 					</span>
 				{/each}

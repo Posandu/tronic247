@@ -1,17 +1,13 @@
 <script lang="ts">
 	import { SITE_URL, formattedTitle, makeID } from '$lib';
 	import SvelteSeo from 'svelte-seo';
-	import { mode } from 'mode-watcher';
 	import Comments from '$lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
 	import Img from '@zerodevx/svelte-img';
 	import Icon from '@iconify/svelte';
+	import { CATEGORY_NAMES } from '$lib/sorting.js';
 
-	interface Props {
-		data: any;
-	}
-
-	let { data }: Props = $props();
+	let { data } = $props();
 
 	let categories = data.meta.categories;
 	let tags = data.meta.tags;
@@ -21,8 +17,6 @@
 	let excerpt = data.meta.excerpt.trim() || title;
 	let slug = data.meta.slug;
 	let lastUpdated = data.meta.lastModified;
-
-	let randPosts = data.randPosts;
 
 	onMount(() => {
 		import('@justinribeiro/lite-youtube');
@@ -75,87 +69,82 @@
 	}}
 />
 
-<div class="mx-auto mt-8 max-w-3xl px-4">
-	<div class="relative w-full max-w-full overflow-hidden rounded-xl" id={makeID(slug)}>
-		{#if img}
-			<Img src={data.postImg} class="w-full" />
-		{/if}
+<div class="mx-auto mt-16 flex max-w-5xl flex-col gap-8 px-4 md:flex-row md:gap-0">
+	<div class="flex-1">
+		<p class="mb-4">
+			{#if categories && categories?.length > 0}
+				{#each categories as category, i}
+					<a
+						href="/category/{category.toLowerCase()}"
+						class="text-lg text-base-light"
+						aria-label="{category} category"
+					>
+						{CATEGORY_NAMES[category]}
+					</a>
+
+					<span class="opacity-20">{i < categories.length - 1 ? ', ' : ''}</span>
+				{/each}
+			{/if}
+		</p>
+
+		<h1 class="title max-w-xl text-4xl font-bold">
+			{title}
+		</h1>
 	</div>
 
-	<h1 class="my-4 text-center text-4xl font-black" id={makeID(slug + 'title')}>{title}</h1>
-
-	<p
-		class="my-4 text-center text-xs font-semibold uppercase text-neutral-700"
-		aria-label="Published on"
-	>
-		Published on {new Date(date).toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		})}
-
-		{#if lastUpdated}
-			<span class="mx-1">•</span>
-
-			Updated on {new Date(lastUpdated).toLocaleDateString('en-US', {
+	<div class="flex items-start justify-start md:flex-1 md:items-end md:justify-end">
+		<p class="text-left text-base-light md:text-right">
+			{new Date(date).toLocaleDateString('en-US', {
 				year: 'numeric',
 				month: 'long',
 				day: 'numeric'
 			})}
-		{/if}
-	</p>
 
-	<main class="prose bg-white/40">
-		<data.content />
-	</main>
+			{#if lastUpdated}
+				<br />
 
-	<div class="my-8 text-sm font-semibold uppercase text-neutral-700">
-		{#if categories && categories?.length > 0}
-			<div class="flex items-center justify-start gap-1">
-				<Icon icon="mdi:category" />
+				Updated on {new Date(lastUpdated).toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric'
+				})}
+			{/if}
+		</p>
+	</div>
+</div>
 
-				<p class="inline" aria-label="Categories">
-					{#each categories as category, i}
-						<a
-							class="text-xs hover:underline"
-							href="/category/{category.toLowerCase()}"
-							aria-label="{category} category">{category}</a
-						>{i < categories.length - 1 ? ', ' : ''}
-					{/each}
-				</p>
-			</div>
-		{/if}
+<div class="mx-auto mb-32 mt-16 h-[0.5px] w-full max-w-5xl bg-base-light/20"></div>
 
+<main class="prose mx-auto px-4">
+	<data.content />
+
+	<div class="mt-8">
 		{#if tags && tags?.length > 0}
-			<div class="flex items-center justify-start gap-1">
-				<Icon icon="mdi:tag" />
+			{#each tags as tag, i}
+				<a href="/tag/{tag.toLowerCase()}" class="text-lg text-base-light" aria-label="{tag} tag">
+					#{tag}
+				</a>
 
-				<p class="inline" aria-label="Tags">
-					{#each tags as tag, i}
-						<a
-							class="text-xs hover:underline"
-							href="/tag/{tag.toLowerCase()}"
-							aria-label="{tag} tag">{tag}</a
-						>{i < tags.length - 1 ? ', ' : ''}
-					{/each}
-				</p>
-			</div>
+				<span class="opacity-20">{i < tags.length - 1 ? ', ' : ''}</span>
+			{/each}
 		{/if}
 	</div>
+</main>
 
-	<main class="prose">
-		<p class="my-4 text-neutral-800">
+<div class="mx-auto mt-16 h-[0.5px] w-full max-w-5xl bg-base-light/20"></div>
+
+<div class="mx-auto mt-16 max-w-5xl px-4">
+	<main class="prose mx-auto">
+		<p class="mt-8 text-neutral-800">
 			Something wrong or just found a typo? <a
 				href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
 				class="underline"
 				target="_blank">Edit this page on GitHub</a
-			> and make a PR!
+			> and make a PR! Thank you!
 		</p>
-
-		{#key $mode}
-			<Comments />
-		{/key}
 	</main>
 </div>
 
-{@html `${'<'}style>#${makeID(slug)}{view-transition-name:${makeID(slug)};}#${makeID(slug + 'title')}{view-transition-name:${makeID(slug + 'title')};}${'</'}style>`}
+<main class="prose mx-auto mt-8 px-4">
+	<Comments />
+</main>

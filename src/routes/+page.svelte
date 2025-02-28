@@ -34,16 +34,14 @@
 	}}
 />
 
-<section class="mx-auto max-w-4xl px-4" id="recent-posts">
-	<h2 class="mb-8 mt-4 text-2xl font-semibold">Recent</h2>
-
-	<div class="articles">
+<section class="mx-auto max-w-5xl px-4" id="recent-posts">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-16">
 		{#each posts as { date, title, excerpt, slug, img }}
 			<ArticleView {date} {title} {excerpt} {slug} {img} />
 		{/each}
 	</div>
 
 	<div class="text-center">
-		<a href="/archive/page/2" class="btn inverted mx-auto mt-8"> Check Out More </a>
+		<a href="/archive/page/2" class="btn mx-auto mt-16"> Check Out More </a>
 	</div>
 </section>

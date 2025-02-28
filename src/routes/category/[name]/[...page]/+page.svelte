@@ -64,17 +64,11 @@
 	}}
 />
 
-<div class="mx-auto max-w-4xl px-4">
-	<h1 class="mt-8 text-2xl font-semibold">
-		{CATEGORY_NAMES[category] || category}
-	</h1>
+<h1 class="title max-w-5xl px-4 mt-16 mx-auto text-4xl font-bold">
+	{CATEGORY_NAMES[category] || category}
+</h1>
 
-	<p class="mb-8 mt-4">
-		All posts in the category <span class="text-primary">{category}</span>.
-	</p>
-</div>
-
-<div class="mx-auto max-w-4xl px-4">
+<div class="mx-auto max-w-5xl px-4">
 	<QueryPage
 		{currentPage}
 		{posts}

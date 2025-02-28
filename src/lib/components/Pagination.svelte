@@ -9,7 +9,7 @@
 </script>
 
 {#if totalPages > 1}
-	<nav class="mb-8 mt-4 flex flex-wrap gap-4">
+	<nav class="mb-8 mt-16 flex flex-wrap gap-4">
 		{#each Array.from({ length: totalPages || 0 }) as _, i}
 			{@const page = i + 1}
 
@@ -17,10 +17,10 @@
 				href={urlFn(page)}
 				class="
 				
-				inline-flex size-2 items-center justify-center rounded-full p-3 text-sm
+				inline-flex size-4 items-center justify-center rounded-full p-4 text-sm
 
 				{currentPage === page
-					? 'bg-primary-active !text-white hover:bg-primary-dark'
+					? 'bg-base-darkest !text-white hover:bg-primary-dark'
 					: 'text-neutral-800 hover:bg-neutral-200'}
 				"
 			>

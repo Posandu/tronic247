@@ -6,7 +6,7 @@ updated: '2024-06-13'
 ---
 
 :::warn{title="Outdated information"}
-This post was written a long time ago and may contain outdated information. Use it at your own risk.
+This post was written a while ago and may contain outdated information.
 :::
 
 Do you need to edit code online here is the solution.

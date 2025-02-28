@@ -69,7 +69,7 @@
 	}}
 />
 
-<div class="mx-auto mt-16 flex max-w-5xl px-4">
+<div class="mx-auto mt-16 flex max-w-5xl flex-col gap-8 px-4 md:flex-row md:gap-0">
 	<div class="flex-1">
 		<p class="mb-4">
 			{#if categories && categories?.length > 0}
@@ -92,8 +92,8 @@
 		</h1>
 	</div>
 
-	<div class="flex flex-1 items-end justify-end">
-		<p class="text-right text-base-light">
+	<div class="flex items-start justify-start md:flex-1 md:items-end md:justify-end">
+		<p class="text-left text-base-light md:text-right">
 			{new Date(date).toLocaleDateString('en-US', {
 				year: 'numeric',
 				month: 'long',
@@ -115,7 +115,7 @@
 
 <div class="mx-auto mb-32 mt-16 h-[0.5px] w-full max-w-5xl bg-base-light/20"></div>
 
-<main class="prose mx-auto">
+<main class="prose mx-auto px-4">
 	<data.content />
 
 	<div class="mt-8">
@@ -145,6 +145,6 @@
 	</main>
 </div>
 
-<main class="prose mx-auto mt-8">
+<main class="prose mx-auto mt-8 px-4">
 	<Comments />
 </main>

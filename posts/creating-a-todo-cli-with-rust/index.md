@@ -12,7 +12,7 @@ In this article, we'll build a to-do CLI application with Rust. Local JSON files
 
 ![todo app preview](https://raw.githubusercontent.com/Posandu/todo-app-rust/main/demo.gif)
 
-## Contents
+
 
 Let's get started!
 

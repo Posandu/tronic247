@@ -10,8 +10,6 @@ excerpt: A tutorial on how to add Firebase authentication to a Next.js app.
 
 In this tutorial, we'll learn how to add Firebase authentication to a Next.js app. We'll use Firebase's authentication service to create a login page with Google authentication.
 
-## Contents
-
 ## Prerequisites
 
 - `pnpm` installed globally - _you still can use npm or yarn but make sure to replace `pnpm` with `npm` or `yarn` accordingly_

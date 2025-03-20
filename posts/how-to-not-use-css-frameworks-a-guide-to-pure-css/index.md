@@ -14,7 +14,7 @@ This post was written a while ago and may contain outdated information.
 
 Hey! So you came here to see another CSS framework? right? So time to worry, I am telling you how to create your CSS framework instead of using one. So let's begin!
 
-## Contents
+
 
 ## But why?
 

@@ -10,7 +10,7 @@ excerpt: Methods to make your website faster and improve the user experience usi
 
 Hello, fellow devs! In this article, I will tell some awesome tips to make your website faster. So, before we start, let's brainstorm why the speed of the website is important.
 
-## Contents
+
 
 ## So, Why the speed is important?
 

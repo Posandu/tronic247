@@ -10,7 +10,7 @@ excerpt: A list of my favorite bookmarks that I use to save time and make my lif
 
 I have a lot of bookmarks. They save my time. Now I will post them so you can read them and save your time too!
 
-## Contents
+
 
 ## Undraw
 

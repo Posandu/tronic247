@@ -170,7 +170,6 @@ function markdown() {
 					})
 					.use(toHtmlString, { allowDangerousHtml: true })
 					.process(markdownParsed);
-
 				let html = processor.toString();
 
 				const excerpt = meta?.excerpt?.trim() || '';

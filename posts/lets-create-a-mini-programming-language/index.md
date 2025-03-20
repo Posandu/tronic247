@@ -37,7 +37,7 @@ which we will use to draw interesting stuff on the HTML `<canvas>`.
 
 ![Diagram](https://user-images.githubusercontent.com/76736580/176864599-f0a714c6-3c34-438a-9981-3546d251199e.png)
 
-## Contents
+
 
 So let's start!
 

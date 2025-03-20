@@ -12,7 +12,7 @@ Today, we will be making this drawing app with React.
 
 ![](https://i.imgur.com/CVNybzr.gif)
 
-## Contents
+
 
 So let's get started!
 

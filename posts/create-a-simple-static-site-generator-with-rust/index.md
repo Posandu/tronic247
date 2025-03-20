@@ -10,8 +10,6 @@ excerpt: A simple static site generator written in Rust.
 
 This is a simple static site generator written in Rust. It is a simple example of how to use Rust programming to create fast and efficient static site generators. PS: I made this for fun and learning purposes, so don't expect it to be perfect.
 
-## Contents
-
 ## Getting started
 
 First, I'll create a new project with Cargo:

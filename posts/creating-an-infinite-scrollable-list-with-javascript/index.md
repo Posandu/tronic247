@@ -17,7 +17,7 @@ You can see the GIF below.
 
 ![20220822_165420](https://user-images.githubusercontent.com/76736580/185910340-06feb2b7-acf4-4a0d-927f-14b70f098457.gif)
 
-## Contents
+
 
 ## Setup
 

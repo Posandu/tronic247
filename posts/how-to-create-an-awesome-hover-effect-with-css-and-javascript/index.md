@@ -14,7 +14,7 @@ Here's what we'll do:
 
 ![Our Result](https://www.tronic247.com/wp-content/uploads/2021/12/ezgif-2-5a4aedd131e0.gif)
 
-## Contents
+
 
 Nice isn't it? So let's get started!
 

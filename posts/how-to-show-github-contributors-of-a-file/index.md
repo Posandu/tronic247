@@ -12,7 +12,7 @@ While browsing the Ant Design documentation, I noticed that they show the GitHub
 
 ![](https://user-images.githubusercontent.com/76736580/215069794-05144e8e-03d9-4c72-aa07-595e1ce8446c.png)
 
-## Contents
+
 
 ## The GitHub API
 

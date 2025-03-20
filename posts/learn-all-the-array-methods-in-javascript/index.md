@@ -10,7 +10,7 @@ excerpt: All the array methods in JavaScript with examples, so you can learn the
 
 In this article, we'll learn about the array methods in JavaScript with some examples. Before we start, let's look at some methods of the `Array` class.
 
-## Contents
+
 
 ## Array()
 

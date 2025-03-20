@@ -10,7 +10,7 @@ excerpt: A collection of JavaScript snippets to save you some time.
 
 I made some [JavaScript](/tag/javascript/) snippets to save you some time. See them below and let me know your thoughts!
 
-## Contents
+
 
 ## Detect if dark mode
 

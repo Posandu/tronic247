@@ -6,6 +6,7 @@
 	import Img from '@zerodevx/svelte-img';
 	import Icon from '@iconify/svelte';
 	import { CATEGORY_NAMES } from '$lib/sorting.js';
+	import Toc from '$lib/components/TOC.svelte';
 
 	let { data } = $props();
 
@@ -18,10 +19,20 @@
 	let slug = data.meta.slug;
 	let lastUpdated = data.meta.lastModified;
 
+	let contentEl: HTMLElement | undefined = $state();
+	let headings: HTMLHeadingElement[] = $state([]);
+
 	onMount(() => {
 		import('@justinribeiro/lite-youtube');
 	});
 
+	$effect(() => {
+		if (contentEl) {
+			const h2s = contentEl.querySelectorAll('h2');
+
+			headings = [...h2s];
+		}
+	});
 	const SEO = {
 		title: formattedTitle(title),
 		description: excerpt.length > 0 ? excerpt : 'No description provided',
@@ -68,6 +79,10 @@
 		dateModified: SEO.dateModified
 	}}
 />
+
+{#if headings.length > 0 && contentEl}
+	<Toc {headings} />
+{/if}
 
 <div class="mx-auto mt-16 flex max-w-5xl flex-col gap-8 px-4 md:flex-row md:gap-0">
 	<div class="flex-1">
@@ -116,7 +131,9 @@
 <div class="mx-auto mb-32 mt-16 h-[0.5px] w-full max-w-5xl bg-base-light/20"></div>
 
 <main class="prose mx-auto px-4">
-	<data.content />
+	<div bind:this={contentEl}>
+		<data.content />
+	</div>
 
 	<div class="mt-8">
 		{#if tags && tags?.length > 0}

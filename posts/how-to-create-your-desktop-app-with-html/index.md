@@ -10,7 +10,7 @@ excerpt: Create your own desktop app with HTML, CSS, and JavaScript using the El
 
 In this post, I will show you how to create a desktop app with HTML, CSS, and JavaScript. We will use the [`electron`](https://electronjs.org/) framework to create the app. Our app will be a simple calculator. It will have a text field where you can enter the numbers, and a button to perform operations.
 
-## Contents
+
 
 ## What is Electron?
 

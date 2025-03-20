@@ -10,7 +10,7 @@ excerpt: Making the shortest possible code using JavaScript.
 
 In this article, we'll golf some JavaScript code. But first, we'll need to know what the heck is code-golf?
 
-## Contents
+
 
 ## What is code-golf?
 

@@ -10,7 +10,7 @@ excerpt: Basically, a cheat sheet for learning React quickly.
 
 React is a JavaScript library for building interactive user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. So, in this article, you can find a React cheat sheet that will help you to learn React quickly.
 
-## Contents
+
 
 ## Prerequisites
 

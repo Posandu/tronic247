@@ -10,7 +10,7 @@ excerpt: 'Discover some cool features of Svelte, and learn how to use them to bu
 
 So, I've been playing around with Svelte, this unique JavaScript compiler, for a while now, and let me tell you, it's awesome! As someone who's experienced with React, using Svelte feels like a refreshing change of pace. I'm not here to pit React against Svelte - plenty of articles already do that. Instead, I want to share some cool stuff I've learned while using Svelte.
 
-## Contents
+
 
 ## Svelte Spring
 

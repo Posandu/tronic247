@@ -11,7 +11,7 @@ excerpt: How to create a single-page application with PHP and Instantclick.js.
 Today, we will create an SPA with PHP. Our output will look like this. (Ignore the speed of the GIF, compressing it made it look slower than it is somehow)
 ![](https://user-images.githubusercontent.com/76736580/165043071-fb26a311-1828-4464-8200-b3d7edd5bc49.gif)
 
-## Contents
+
 
 ## Getting started
 

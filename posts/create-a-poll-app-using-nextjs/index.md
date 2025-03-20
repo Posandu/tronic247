@@ -12,7 +12,7 @@ excerpt: In this tutorial, we will create a poll app using Next.js, Prisma, and 
 
 In this tutorial, we'll make a poll app using NextJS, Prisma and MySQL. You can find the final code in the end of this article.
 
-## Contents
+
 
 ## Prerequisites
 

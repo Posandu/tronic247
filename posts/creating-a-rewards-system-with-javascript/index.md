@@ -16,7 +16,7 @@ This is a great way to keep users engaged and coming back to your app every day.
 
 ![](https://user-images.githubusercontent.com/76736580/212539513-3b61fb84-598d-4431-8156-b609ac6bf7e4.png)
 
-## Contents
+
 
 ## Prerequisites
 

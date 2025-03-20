@@ -10,7 +10,7 @@ excerpt: A simple guide to add Nprogress to SvelteKit to show a progress bar whe
 
 You may be wondering how to add Nprogress to SvelteKit. This is a simple guide to help you get started.
 
-## Contents
+
 
 ## What is Nprogress?
 

@@ -11,7 +11,7 @@ In this post, We'll create a site like [Github Gist](https://gist.github.com) us
 
 ![A preview of what we're creating](https://user-images.githubusercontent.com/76736580/139574909-3f9d95dc-1934-4a8a-a0a3-29e216650763.gif)
 
-## Contents
+
 
 ## Collecting the stuff we need
 

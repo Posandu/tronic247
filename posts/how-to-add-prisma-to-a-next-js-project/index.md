@@ -10,7 +10,7 @@ excerpt: Learn how to add Prisma to a Next.js project and connect it to a MySQL 
 
 In this article, you will learn how to add Prisma to a Next.js project. You will learn how to set up Prisma and connect it to a MySQL database. Let's get started!
 
-## Contents
+
 
 ## What is Prisma?
 

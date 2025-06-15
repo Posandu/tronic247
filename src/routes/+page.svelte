@@ -36,8 +36,8 @@
 
 <section class="mx-auto max-w-5xl px-4" id="recent-posts">
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-16">
-		{#each posts as { date, title, excerpt, slug, img }}
-			<ArticleView {date} {title} {excerpt} {slug} {img} />
+		{#each posts as { date, title, excerpt, slug, img, color }}
+			<ArticleView {date} {title} {excerpt} {slug} {img} {color} />
 		{/each}
 	</div>
 

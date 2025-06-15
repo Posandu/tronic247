@@ -112,7 +112,7 @@
 	<div
 		class="absolute left-1/2 w-[380px] -translate-x-1/2 transform-gpu select-none transition-all {isBottomOpen
 			? 'translate-y-4 scale-110 rounded-[50px] shadow-2xl'
-			: 'scale-100 rounded-[100px] shadow'} bg-base-darkest text-white"
+			: 'scale-100 rounded-[100px] shadow'} menua text-white"
 		style="
     transition-duration: 0.35s;
     animation-timing-function: cubic-bezier(.47,1.64,.41,.8);"
@@ -134,10 +134,6 @@
 						{headings[nextVal]?.textContent}
 					</span>
 				</div>
-
-				<div
-					class="absolute right-0 top-0 z-10 h-8 w-16 bg-gradient-to-r from-transparent to-base-darkest"
-				></div>
 			</div>
 
 			<div
@@ -156,6 +152,7 @@
 					<a
 						href={`#${heading.id}`}
 						class:text-white={active === index}
+						class:opacity-50={active !== index}
 						onclick={() => (isBottomOpen = false)}>{heading.textContent}</a
 					>
 				{/each}
@@ -174,5 +171,10 @@
 		overflow: hidden;
 		text-overflow: clip;
 		text-align: left;
+	}
+
+	.menua {
+		background-color: rgba(6 7 11 / 0.8);
+		backdrop-filter: blur(4px);
 	}
 </style>

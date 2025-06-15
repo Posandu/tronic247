@@ -12,7 +12,10 @@ const CATEGORY_NAMES: Record<string, string> = {
 	mysql: 'MySQL',
 	tools: 'Tools',
 	wordpress: 'WordPress',
-	elementor: 'Elementor'
+	elementor: 'Elementor',
+	ai: 'AI',
+	github: 'GitHub',
+	nodejs: 'Node.js'
 };
 
 export { CATEGORY_NAMES };

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { formatDate, makeID } from '$lib';
 	import Img from '@zerodevx/svelte-img';
+	import { ripple } from 'svelte-ripple-action';
 
 	interface Props {
 		slug: string;
@@ -9,49 +10,50 @@
 		date: Date;
 		img?: any;
 		class?: string;
+		color?: [number, number, number];
 	}
 
-	let { slug, title, excerpt, date, img = undefined, class: classes = '' }: Props = $props();
+	let { slug, title, excerpt, date, img = undefined, class: classes = '', color }: Props = $props();
 </script>
 
 <article
 	class="
-	{classes} relative col-span-1 transition-all
+	{classes} col-span-1
 	"
 >
 	<a
 		href="/{slug}"
-		class="relative shadow flex min-h-48 w-full flex-col overflow-hidden rounded-xl bg-base-content transition-all hover:shadow-lg"
+		use:ripple={{
+			color: color ? `rgba(${color?.join(',')}, 0.4)` : undefined
+		}}
+		class="h-full block shadow bg min-h-48 w-full p-8 overflow-hidden rounded-3xl transition-all hover:scale-[1.02]"
+		style={`background-color: rgba(${color?.join(',')}, 0.3)`}
 	>
 		{#if img}
-			<Img src={img} loading="lazy" class="h-full w-full object-cover" />
+			<Img src={img} loading="lazy" class="object-cover rounded-xl w-full mb-8" />
 		{/if}
 
+		<p class="mb-4 uppercase text-white opacity-80">
+			{formatDate(date)}
+		</p>
 
-		<div class="z-10 flex h-full flex-col p-8">
-			<p class="flex-1 text-sm mb-2 uppercase text-base-light">
-				{formatDate(date)}
-			</p>
+		<h2 class="title text-3xl font-semibold text-white">
+			{title}
+		</h2>
 
-			<h2 class="title max-w-xs text-xl font-semibold text-base-darkest transition-all">
-				{title}
-			</h2>
-
-			<p
-				class="mt-2 max-w-xs overflow-hidden text-wrap break-words text-sm text-base-light transition-all"
-			>
-				{excerpt}
-			</p>
-		</div>
+		<p class="mt-4 max-w-xs overflow-hidden text-wrap break-words text-white opacity-60">
+			{excerpt}
+		</p>
 	</a>
 </article>
 
 <style>
 	.bg {
-		background: rgb(12 9 23 / 84%);
+		background: var(--md-sys-color-surface-container);
 	}
 
 	.title {
-		letter-spacing: -0.86px;
+		color: var(--md-sys-color-on-surface);
+		line-height: 40px;
 	}
 </style>

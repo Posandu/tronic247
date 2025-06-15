@@ -25,8 +25,121 @@ import rehypeCodeTitles from 'rehype-code-titles';
 import remarkDirective from 'remark-directive';
 //@ts-expect-error no types
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
+import sharp from 'sharp';
 
-const VERBOSE = !true;
+const VERBOSE = 0;
+
+/**
+ * @param {string} imagePath
+ * @returns {Promise<[number, number, number]|undefined>}
+ */
+async function getColorFromURL(imagePath) {
+	try {
+		const { data, info } = await sharp(imagePath)
+			.resize(1, 1)
+			.raw()
+			.toBuffer({ resolveWithObject: true });
+
+		const [r, g, b] = data;
+		return [r, g, b];
+	} catch (error) {
+		console.error('Error getting color from image:', error);
+		return undefined;
+	}
+}
+
+/**
+ * @param {number} r
+ * @param {number} g
+ * @param {number} b
+ * @returns {[number, number, number]}
+ */
+function rgbToHsl(r, g, b) {
+	r /= 255;
+	g /= 255;
+	b /= 255;
+	const max = Math.max(r, g, b);
+	const min = Math.min(r, g, b);
+	let h = 0;
+	let s = 0;
+	let l = (max + min) / 2;
+
+	if (max === min) {
+		h = s = 0;
+	} else {
+		const d = max - min;
+		s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+		switch (max) {
+			case r:
+				h = (g - b) / d + (g < b ? 6 : 0);
+				break;
+			case g:
+				h = (b - r) / d + 2;
+				break;
+			case b:
+				h = (r - g) / d + 4;
+				break;
+		}
+		h /= 6;
+	}
+	return [h, s, l];
+}
+
+/**
+ * @param {number} h
+ * @param {number} s
+ * @param {number} l
+ * @returns {[number, number, number]}
+ */
+function hslToRgb(h, s, l) {
+	/**
+	 * @param {number} p
+	 * @param {number} q
+	 * @param {number} t
+	 * @returns {number}
+	 */
+	function hue2rgb(p, q, t) {
+		if (t < 0) t += 1;
+		if (t > 1) t -= 1;
+		if (t < 1 / 6) return p + (q - p) * 6 * t;
+		if (t < 1 / 2) return q;
+		if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+		return p;
+	}
+
+	let r, g, b;
+	if (s === 0) {
+		r = g = b = l;
+	} else {
+		const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+		const p = 2 * l - q;
+		r = hue2rgb(p, q, h + 1 / 3);
+		g = hue2rgb(p, q, h);
+		b = hue2rgb(p, q, h - 1 / 3);
+	}
+	return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+
+/**
+ * @param {number} r
+ * @param {number} g
+ * @param {number} b
+ * @param {number} minLightness
+ * @param {number} maxLightness
+ * @returns {[number, number, number]}
+ */
+function adjustBrightnessHSL(r, g, b, minLightness = 0.3, maxLightness = 0.7) {
+	const [h, s, l] = rgbToHsl(r, g, b);
+
+	let newL = l;
+	if (l > maxLightness) {
+		newL = maxLightness;
+	} else if (l < minLightness) {
+		newL = minLightness;
+	}
+
+	return hslToRgb(h, s, newL);
+}
 
 /**
  * @param {string} content
@@ -38,7 +151,7 @@ function escapeHtml(content) {
 }
 
 let folderExists = false;
-const VERSION = '1.svelte';
+const VERSION = '1.38.svelte';
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
@@ -50,6 +163,15 @@ const checkFolder = () => {
 		folderExists = true;
 	}
 };
+
+/**
+ *
+ * @param {String} content
+ * @returns
+ */
+function fastPathHash(content) {
+	return 'Img' + highwayhash.asString(Buffer.from('_'.repeat(32)), Buffer.from(content));
+}
 
 function markdown() {
 	const IS_DEV = process.env.NODE_ENV === 'development';
@@ -98,12 +220,18 @@ function markdown() {
 				const youtube = /{% youtube id="(.*?)" title="(.*?)" %}/g;
 				const stackBlitz = /{% stackblitz id="(.*?)" open="(.*?)" %}/g;
 				const component = /{% component (.*)\/(.*) %}/g;
+				const image = /{% img (.*) %}/g;
 				const componentName = /<?([a-zA-Z]+)/g;
 
 				/**
 				 * @type {({name:string,path:string}|undefined)[]}
 				 */
-				let imports = [];
+				let componentImports = [];
+
+				/**
+				 * @type {({name:string,path:string}|undefined)[]}
+				 */
+				let imageImports = [];
 
 				/**
 				 * Replace regexes
@@ -125,7 +253,7 @@ function markdown() {
 						`.trim();
 					})
 					.replace(stackBlitz, (_, id, open) => {
-						imports.push(undefined);
+						componentImports.push(undefined);
 
 						return `
 								<StackBlitz id="${id}" openFile="${open}"></StackBlitz>
@@ -134,10 +262,19 @@ function markdown() {
 					.replace(component, (_, _name, path) => {
 						const name = _name.match(componentName)[0];
 
-						imports.push({ name, path });
+						componentImports.push({ name, path });
 
 						return `
 								${_name.startsWith('<') ? `${name}` : `<${name} />`}
+						`.trim();
+					})
+					.replace(image, (_, src) => {
+						const hash = fastPathHash(src);
+
+						imageImports.push({ name: hash, path: src });
+
+						return `
+								<img src=___startC${hash}___endC alt="${src}" />
 						`.trim();
 					});
 
@@ -174,6 +311,18 @@ function markdown() {
 				let html = processor.toString();
 
 				const excerpt = meta?.excerpt?.trim() || '';
+				const img = meta?.img?.trim();
+
+				if (img && typeof img === 'string' && img !== 'undefined') {
+					const color = await getColorFromURL(process.cwd() + '/static/' + img);
+
+					if (!color) return;
+
+					const brightnessAdjusted = adjustBrightnessHSL(color[0], color[1], color[2]);
+					meta.color = brightnessAdjusted;
+
+					if (VERBOSE) console.log(chalk.green(`Successfully got color from image - ${color}`));
+				}
 
 				const code = `<script context="module">
 									import StackBlitz from '$lib/components/StackBlitz.svelte';
@@ -181,30 +330,42 @@ function markdown() {
 									export const meta = ${JSON.stringify(meta)};
 									export const excerpt = ${JSON.stringify(excerpt)};
 									export const length = ${html.length};
-								</script>
 
-								<script>
-									${imports
+									${componentImports
 										.filter((i) => typeof i !== 'undefined')
 										.map(({ name, path }) =>
 											`
-											
-												import ${name} from '$lib/components/md/${path}';
-												
+
+												import ${name} from '$lib/components/md/${path}/${name}.svelte';
+
 											`.trim()
-										)}
+										)
+										.join('\n')}
+
+									${imageImports
+										.filter((i) => typeof i !== 'undefined')
+										.map(({ name, path }) =>
+											`
+
+												import ${name} from '$lib/images/${path}';
+
+											`.trim()
+										)
+										.join('\n')}
 								</script>
-	
+
 								${
-									IS_DEV && !(imports.length > 0)
+									IS_DEV && !(componentImports.length > 0 || imageImports.length > 0)
 										? `
 
 										{@html \` ${escapeHtml(html)
 											.replaceAll('`', '\\`')
-											.replace(/<style>:root[^<]*<\/style>/g, '')}  \`}
+											.replace(/<style>:root[^<]*<\/style>/g, '')
+											.replaceAll(/___startC/g, '{')
+											.replaceAll(/___endC/g, '}')}  \`}
 
 									`.trim()
-										: escapeHtml(html)
+										: escapeHtml(html).replaceAll('___startC', '{').replaceAll('___endC', '}')
 								}
 						`;
 

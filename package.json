@@ -64,7 +64,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource-variable/ibm-plex-sans": "^5.2.6",
 		"@fontsource-variable/inter": "^5.0.20",
+		"@fontsource-variable/jetbrains-mono": "^5.2.6",
 		"@fontsource/geist-sans": "^5.0.3",
 		"@iconify/svelte": "^4.0.2",
 		"@justinribeiro/lite-youtube": "^1.5.0",
@@ -72,8 +74,8 @@
 		"@rehype-pretty/transformers": "^0.13.2",
 		"@sveltejs/enhanced-img": "^0.3.9",
 		"@tailwindcss/forms": "^0.5.7",
+		"@types/color-thief-node": "^1.0.4",
 		"@webcontainer/api": "^1.2.0",
-		"fast-average-color-node": "^3.1.0",
 		"fuse.js": "^7.0.0",
 		"nprogress": "^0.2.0",
 		"rehype-clipboard-prep-code": "^1.0.1",
@@ -82,6 +84,7 @@
 		"remark-directive": "^3.0.0",
 		"schema-dts": "^1.1.2",
 		"svelte-portal": "^2.2.1",
+		"svelte-ripple-action": "^2.0.0",
 		"svelte-seo": "^1.6.1"
 	}
 }

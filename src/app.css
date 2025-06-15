@@ -2,34 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'OpenRunde';
+	src:
+		url('/fonts/OpenRunde-Regular.woff2') format('woff2'),
+		url('/fonts/OpenRunde-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'OpenRunde';
+	src:
+		url('/fonts/OpenRunde-Medium.woff2') format('woff2'),
+		url('/fonts/OpenRunde-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'OpenRunde';
+	src:
+		url('/fonts/OpenRunde-Semibold.woff2') format('woff2'),
+		url('/fonts/OpenRunde-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'OpenRunde';
+	src:
+		url('/fonts/OpenRunde-Bold.woff2') format('woff2'),
+		url('/fonts/OpenRunde-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--md-sys-color-primary: rgb(205 221 255);
+	--md-sys-color-surface-tint: rgb(170 199 255);
+	--md-sys-color-on-primary: rgb(0 37 81);
+	--md-sys-color-primary-container: rgb(118 156 223);
+	--md-sys-color-on-primary-container: rgb(0 12 34);
+	--md-sys-color-secondary: rgb(207 221 252);
+	--md-sys-color-on-secondary: rgb(24 38 61);
+	--md-sys-color-secondary-container: rgb(131 145 173);
+	--md-sys-color-on-secondary-container: rgb(0 0 0);
+	--md-sys-color-tertiary: rgb(255 204 255);
+	--md-sys-color-on-tertiary: rgb(65 13 73);
+	--md-sys-color-tertiary-container: rgb(196 134 200);
+	--md-sys-color-on-tertiary-container: rgb(29 0 35);
+	--md-sys-color-error: rgb(255 210 204);
+	--md-sys-color-on-error: rgb(84 0 3);
+	--md-sys-color-error-container: rgb(255 84 73);
+	--md-sys-color-on-error-container: rgb(0 0 0);
+	--md-sys-color-background: rgb(18 19 23);
+	--md-sys-color-on-background: rgb(226 226 232);
+	--md-sys-color-surface: rgb(18 19 23);
+	--md-sys-color-on-surface: rgb(255 255 255);
+	--md-sys-color-surface-variant: rgb(67 71 80);
+	--md-sys-color-on-surface-variant: rgb(217 220 232);
+	--md-sys-color-outline: rgb(174 178 189);
+	--md-sys-color-outline-variant: rgb(141 144 155);
+	--md-sys-color-shadow: rgb(0 0 0);
+	--md-sys-color-scrim: rgb(0 0 0);
+	--md-sys-color-inverse-surface: rgb(226 226 232);
+	--md-sys-color-inverse-on-surface: rgb(40 42 46);
+	--md-sys-color-inverse-primary: rgb(26 71 133);
+	--md-sys-color-primary-fixed: rgb(214 227 255);
+	--md-sys-color-on-primary-fixed: rgb(0 17 43);
+	--md-sys-color-primary-fixed-dim: rgb(170 199 255);
+	--md-sys-color-on-primary-fixed-variant: rgb(0 53 111);
+	--md-sys-color-secondary-fixed: rgb(214 227 255);
+	--md-sys-color-on-secondary-fixed: rgb(3 17 39);
+	--md-sys-color-secondary-fixed-dim: rgb(185 199 229);
+	--md-sys-color-on-secondary-fixed-variant: rgb(41 54 79);
+	--md-sys-color-tertiary-fixed: rgb(255 214 254);
+	--md-sys-color-on-tertiary-fixed: rgb(37 0 44);
+	--md-sys-color-tertiary-fixed-dim: rgb(242 176 245);
+	--md-sys-color-on-tertiary-fixed-variant: rgb(84 32 91);
+	--md-sys-color-surface-dim: rgb(18 19 23);
+	--md-sys-color-surface-bright: rgb(67 68 73);
+	--md-sys-color-surface-container-lowest: rgb(6 7 11);
+	--md-sys-color-surface-container-low: rgb(28 30 34);
+	--md-sys-color-surface-container: rgb(38 40 44);
+	--md-sys-color-surface-container-high: rgb(49 50 55);
+	--md-sys-color-surface-container-highest: rgb(60 61 66);
+}
+
 .title {
 	line-height: 1.2;
-	letter-spacing: -1.5px;
+	font-family: 'OpenRunde', sans-serif;
 }
 
 .btn {
-	@apply inline-block rounded-full bg-base-darkest px-4 py-2 text-sm text-white hover:bg-base-dark;
+	@apply inline-block select-none rounded-full bg-base-darkest px-4 py-2 text-sm text-white hover:bg-base-dark;
 }
 
 body {
 	position: relative;
 	height: 100%;
 	width: 100%;
-	background-color: white;
+	background-color: var(--md-sys-color-background);
+	color-scheme: dark;
+	color: var(--md-sys-color-on-background);
 }
 
-body::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-	background-size: 16px 16px;
-	mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
-	pointer-events: none; /* Ensures the pseudo-element doesn't interfere with clicks */
-	z-index: -1; /* Places the pattern behind the content */
+.prose {
+	max-width: 65ch;
+	margin-inline: auto;
+	padding: 0;
+}
+
+.prose p {
+	line-height: 32.2px;
 }
 
 pre,
@@ -82,7 +172,7 @@ pre.shiki div.highlight {
 	margin: 0;
 	padding: 0;
 }
-pre.shiki .line.highlighted {
+pre.shiki .highlighted {
 	background-color: #f1f8ff0f;
 	margin: 0 -24px;
 	padding: 0 24px;
@@ -335,4 +425,8 @@ h6 {
 }
 .callout-hint {
 	margin-right: 6px;
+}
+
+pre .highlighted {
+	background-color: rgba(255, 255, 255, 0.053);
 }

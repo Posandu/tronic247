@@ -94,7 +94,7 @@
 						class="text-lg text-base-light"
 						aria-label="{category} category"
 					>
-						{CATEGORY_NAMES[category]}
+						{CATEGORY_NAMES[category] || category}
 					</a>
 
 					<span class="opacity-20">{i < categories.length - 1 ? ', ' : ''}</span>
@@ -128,9 +128,9 @@
 	</div>
 </div>
 
-<div class="mx-auto mb-32 mt-16 h-[0.5px] w-full max-w-5xl bg-base-light/20"></div>
+<div class="mx-auto mb-32 mt-16 h-[0.5px] w-full max-w-5xl bg-white/20"></div>
 
-<main class="prose mx-auto px-4">
+<main class="prose prose-invert text-[#e1e3ee] mx-auto px-4">
 	<div bind:this={contentEl}>
 		<data.content />
 	</div>
@@ -151,8 +151,8 @@
 <div class="mx-auto mt-16 h-[0.5px] w-full max-w-5xl bg-base-light/20"></div>
 
 <div class="mx-auto mt-16 max-w-5xl px-4">
-	<main class="prose mx-auto">
-		<p class="mt-8 text-neutral-800">
+	<main class="prose prose-invert mx-auto">
+		<p class="mt-8 text-white">
 			Something wrong or just found a typo? <a
 				href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
 				class="underline"
@@ -162,6 +162,12 @@
 	</main>
 </div>
 
-<main class="prose mx-auto mt-8 px-4">
+<main class="prose prose-invert mx-auto mt-8 px-4">
 	<Comments />
 </main>
+
+<style>
+	.title {
+		color: var(--md-sys-color-on-surface);
+	}
+</style>

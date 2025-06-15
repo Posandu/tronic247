@@ -6,8 +6,10 @@
 	import { page } from '$app/state';
 	import { SITE_URL } from '$lib';
 
-	import '@fontsource-variable/inter'; 
+	import '@fontsource-variable/ibm-plex-sans';
+	import '@fontsource-variable/jetbrains-mono';
 	import '../app.css';
+	import 'svelte-ripple-action/ripple.css';
 
 	import 'nprogress/nprogress.css';
 	import NProgress from 'nprogress';
@@ -19,7 +21,7 @@
 			console.log('tracked pageview');
 
 			//@ts-ignore
-			sa_pageview(page.url.pathname);
+			if (import.meta.env.PROD) sa_pageview(page.url.pathname);
 		}
 	});
 

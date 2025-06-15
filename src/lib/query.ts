@@ -11,13 +11,14 @@ export type Post = {
 	excerpt: string;
 	length?: number;
 	lastModified?: string;
+	color?: [number, number, number];
 };
 
 export type PostWithoutContent = Omit<Post, 'content'>;
 
 type QueryFn = (post: Post) => boolean;
 
-const PER_PAGE = 9;
+const PER_PAGE = 10;
 
 class queryManager {
 	query: QueryFn;

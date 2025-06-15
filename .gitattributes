@@ -1,1 +1,6 @@
 static/* filter=lfs diff=lfs merge=lfs -text
+src/lib/**/*.png filter=lfs diff=lfs merge=lfs -text
+src/lib/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+src/lib/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+src/lib/**/*.gif filter=lfs diff=lfs merge=lfs -text
+src/lib/**/*.svg filter=lfs diff=lfs merge=lfs -text

@@ -9,7 +9,7 @@
 		script.async = true;
 		script.setAttribute('repo', 'tronic247/comments');
 		script.setAttribute('issue-term', 'title');
-		script.setAttribute('theme', 'github-light');
+		script.setAttribute('theme', 'github-dark');
 		script.setAttribute('crossorigin', 'anonymous');
 		script.setAttribute('label', 'comment');
 		commentDiv!.appendChild(script);

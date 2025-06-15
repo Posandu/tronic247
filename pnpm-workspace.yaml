@@ -1,0 +1,6 @@
+onlyBuiltDependencies:
+  - canvas
+  - esbuild
+  - highwayhash
+  - rehype-code-titles
+  - sharp

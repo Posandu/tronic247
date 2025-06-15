@@ -5,7 +5,6 @@
 
 	const menuItems = [
 		['Home', '/'],
-		['Snippets', '/snippets'],
 		['About', '/about']
 	];
 
@@ -16,23 +15,18 @@
 			mobileMenuOpen = false;
 		}
 	});
-
-	let isActive = $derived(menuItems.some(([, link]) => page.url.pathname === link));
 </script>
 
 <header
 	class="
+	header
     w-full
     select-none
-    border-b
-    border-b-base-darkest
-    bg-base-darkest/95
-    backdrop-blur-sm
     transition-all
 	duration-200
   "
 >
-	<div class="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-4">
+	<div class="mx-auto flex h-20 w-full max-w-5xl items-center justify-between px-4">
 		<div class="flex items-center">
 			<a href="/" aria-label="Home">
 				<img
@@ -171,5 +165,9 @@
             before:bg-current
             before:transition-all
 			before:duration-200;
+	}
+
+	.header {
+		background-color: var(--md-sys-color-surface-container-low);
 	}
 </style>

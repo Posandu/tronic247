@@ -16,8 +16,8 @@
 </script>
 
 <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
-	{#each posts as { date, title, excerpt, slug, img }}
-		<ArticleView {date} {title} {excerpt} {slug} {img} class="col-span-1" />
+	{#each posts as { date, title, excerpt, slug, img, color }}
+		<ArticleView {date} {title} {excerpt} {slug} {img} {color} class="col-span-1" />
 	{/each}
 </div>
 

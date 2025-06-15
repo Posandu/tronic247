@@ -21,7 +21,7 @@
 
 				{currentPage === page
 					? 'bg-base-darkest !text-white hover:bg-primary-dark'
-					: 'text-neutral-800 hover:bg-neutral-200'}
+					: 'text-neutral-100 hover:bg-neutral-600'}
 				"
 			>
 				{page}

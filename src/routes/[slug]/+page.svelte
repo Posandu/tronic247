@@ -130,8 +130,8 @@
 
 <div class="mx-auto mb-32 mt-16 h-[0.5px] w-full max-w-5xl bg-white/20"></div>
 
-<main class="prose prose-invert text-[#e1e3ee] mx-auto px-4">
-	<div bind:this={contentEl}>
+<main class="prose prose-invert text-[#e1e3ee] mx-auto">
+	<div bind:this={contentEl} class="px-4">
 		<data.content />
 	</div>
 

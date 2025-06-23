@@ -30,11 +30,11 @@ The script is called every morning via a Github Actions cron job. Then, it publi
 
 ## Parsing the Excel file
 
-This is the most challenging and time-consuming part I had to deal with. As I mentioned in the begining, the Excel file was hosted on Sharepoint - which is a part of Microsoft 365. Here's how it looks after visiting the link on a browser.
+This is the most challenging and time-consuming part I had to deal with. As I mentioned in the beginning, the Excel file was hosted on Sharepoint - which is a part of Microsoft 365. Here's how it looks after visiting the link on a browser.
 
 {% img timetable/excelformat.png %}
 
-I first needed a way to download the excel file locally. After a few minutes of Googling and help from friends, I found this this StackOverflow answer [https://stackoverflow.com/a/60992340](https://stackoverflow.com/a/60992340). It was exactly what I needed. I used ChatGPT to help create a simple shell script to download the Excel file with wget and save it.
+I first needed a way to download the excel file locally. After a few minutes of Googling and help from friends, I found this StackOverflow answer [https://stackoverflow.com/a/60992340](https://stackoverflow.com/a/60992340). It was exactly what I needed. I used ChatGPT to help create a simple shell script to download the Excel file with wget and save it.
 
 ```sh
 if [ -z "$CAL_LINK_24_3_FDN" ]; then
@@ -437,7 +437,7 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  update_calanders:
+  update_calenders:
     environment: main
     runs-on: ubuntu-latest
     permissions:
@@ -451,7 +451,7 @@ jobs:
 
       - run: bun install
 
-      - name: Update Calanders
+      - name: Update Calendars
         env:
           CAL_LINK_24_3_FDN: ${{ secrets.CAL_LINK_24_3_FDN }}
         run: bash ./scripts/download.sh

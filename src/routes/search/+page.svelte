@@ -30,7 +30,7 @@
 			name="search"
 			bind:value={query}
 			placeholder="Search..."
-			class="mb-8 w-full rounded-xl border border-neutral-300 px-4 py-2"
+			class="mb-8 w-full rounded-medium px-4 py-3 text-base bg-[var(--md-sys-color-surface-container)] border border-[var(--md-sys-color-outline)] text-[var(--md-sys-color-on-surface)] placeholder:text-[var(--md-sys-color-on-surface-variant)] focus:outline-none focus:ring-2 focus:ring-[var(--md-sys-color-primary)] focus:border-transparent transition-all"
 		/>
 	</form>
 
@@ -38,7 +38,7 @@
 		{#each results as post}
 			<a
 				href="/{post.slug}"
-				class="mt-4 block rounded-lg border border-neutral-200 bg-white p-4 hover:bg-neutral-100"
+				class="mt-4 block rounded-medium p-4 bg-[var(--md-sys-color-surface-container-low)] border border-[var(--md-sys-color-outline-variant)] hover:bg-[var(--md-sys-color-surface-container)] transition-all state-layer state-layer-surface text-[var(--md-sys-color-on-surface)]"
 			>
 				<h2>
 					{post.title}

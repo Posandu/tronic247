@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { ripple } from 'svelte-ripple-action';
+
 	interface Props {
 		totalPages: number;
 		currentPage: number;
@@ -15,14 +17,11 @@
 
 			<a
 				href={urlFn(page)}
-				class="
-				
-				inline-flex size-4 items-center justify-center rounded-full p-4 text-sm
-
-				{currentPage === page
-					? 'bg-base-darkest !text-white hover:bg-primary-dark'
-					: 'text-neutral-100 hover:bg-neutral-600'}
-				"
+				class="inline-flex size-10 items-center justify-center rounded-full state-layer text-sm font-medium transition-all {currentPage ===
+				page
+					? 'bg-[var(--md-sys-color-primary-container)] text-[var(--md-sys-color-on-primary-container)] shadow-elevation-1 state-layer-primary'
+					: 'text-[var(--md-sys-color-on-surface-variant)] state-layer-surface hover:bg-[var(--md-sys-color-surface-container-highest)]'}"
+				use:ripple
 			>
 				{page}
 			</a>

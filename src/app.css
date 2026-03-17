@@ -99,8 +99,65 @@
 	font-family: 'OpenRunde', sans-serif;
 }
 
+/* Legacy button class - kept for backward compatibility */
 .btn {
 	@apply inline-block select-none rounded-full bg-base-darkest px-4 py-2 text-sm text-white hover:bg-base-dark;
+}
+
+/* Material 3 Button System */
+.btn-base {
+	@apply inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 state-layer min-h-[40px] select-none;
+}
+
+.btn-filled {
+	@apply btn-base state-layer-primary bg-[var(--md-sys-color-primary)] text-[var(--md-sys-color-on-primary)] shadow-elevation-1 hover:shadow-elevation-2;
+}
+
+.btn-outlined {
+	@apply btn-base state-layer-surface border border-[var(--md-sys-color-outline)] text-[var(--md-sys-color-primary)] hover:bg-[var(--md-sys-color-surface-container-highest)];
+}
+
+.btn-text {
+	@apply btn-base state-layer-surface text-[var(--md-sys-color-primary)] px-3;
+}
+
+.btn-tonal {
+	@apply btn-base state-layer-surface bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)] hover:shadow-elevation-1;
+}
+
+.btn-icon {
+	@apply p-2 rounded-full state-layer state-layer-surface transition-colors duration-200 hover:bg-[var(--md-sys-color-surface-container-highest)] inline-flex items-center justify-center;
+}
+
+/* Material 3 State Layers */
+.state-layer {
+	@apply relative overflow-hidden;
+}
+
+.state-layer::before {
+	@apply absolute inset-0 opacity-0 transition-opacity duration-200 pointer-events-none;
+	content: '';
+	z-index: 0;
+}
+
+.state-layer-surface::before {
+	background-color: var(--md-sys-color-on-surface);
+}
+
+.state-layer-primary::before {
+	background-color: var(--md-sys-color-on-primary);
+}
+
+.state-layer:hover::before {
+	opacity: 0.08;
+}
+
+.state-layer:focus-visible::before {
+	opacity: 0.12;
+}
+
+.state-layer:active::before {
+	opacity: 0.12;
 }
 
 body {

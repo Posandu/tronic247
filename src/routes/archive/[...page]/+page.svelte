@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SvelteSeo from 'svelte-seo';
-	import { formattedTitle, SITE_URL } from '$lib';
-	import QueryPage from '$lib/components/QueryPage.svelte';
+	import { formattedTitle, SITE_URL } from '#lib';
+	import QueryPage from '#lib/components/QueryPage.svelte';
 	import type { BlogPosting, ItemList } from 'schema-dts';
 
 	let { data } = $props();

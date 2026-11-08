@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { SITE_URL, formattedTitle } from '$lib';
-	import Snippet from '$lib/components/Snippet.svelte';
+	import { SITE_URL, formattedTitle } from '#lib';
+	import Snippet from '#lib/components/Snippet.svelte';
 	import SvelteSeo from 'svelte-seo';
 
 	let { data } = $props();

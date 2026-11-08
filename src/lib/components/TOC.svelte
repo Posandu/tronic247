@@ -112,7 +112,7 @@
 	<div
 		class="absolute left-1/2 w-[380px] -translate-x-1/2 transform-gpu select-none transition-all {isBottomOpen
 			? 'translate-y-4 scale-110 rounded-[50px] shadow-2xl'
-			: 'scale-100 rounded-[100px] shadow'} menua text-white"
+			: 'scale-100 rounded-[100px] shadow-sm'} menua text-white"
 		style="
     transition-duration: 0.35s;
     animation-timing-function: cubic-bezier(.47,1.64,.41,.8);"

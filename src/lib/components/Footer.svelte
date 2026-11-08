@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CATEGORY_NAMES } from '$lib/sorting';
+	import { CATEGORY_NAMES } from '#lib/sorting.ts';
 
 	interface Props {
 		categories: Set<string>;

@@ -21,9 +21,9 @@
 	class="
 	header
     w-full
-    select-none
     transition-all
-	duration-200
+    duration-200
+	select-none
   "
 >
 	<div class="mx-auto flex h-20 w-full max-w-5xl items-center justify-between px-4">
@@ -49,10 +49,10 @@
             transition-colors
 			hover:text-neutral-100
 
-			hover:before:!w-full
-			hover:before:!bg-white
+			hover:before:w-full!
+			hover:before:bg-white!
             {page.url.pathname === link
-						? 'text-white before:!w-full before:!bg-white'
+						? 'text-white before:w-full! before:bg-white!'
 						: 'text-base-light'}
 
 			link
@@ -122,7 +122,7 @@
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
-		class="fixed right-[70px] top-[60px] z-50 min-w-60 origin-top-right items-center justify-start rounded-xl border border-neutral-300 bg-neutral-50 px-4 py-2 shadow-lg shadow-neutral-300/30 backdrop-blur-lg"
+		class="fixed top-[60px] right-[70px] z-50 min-w-60 origin-top-right items-center justify-start rounded-xl border border-neutral-300 bg-neutral-50 px-4 py-2 shadow-lg shadow-neutral-300/30 backdrop-blur-lg"
 		in:scale={{
 			duration: 200,
 			opacity: 0,
@@ -138,7 +138,7 @@
 		}}
 	>
 		<button
-			class="absolute right-2 top-2 z-50 flex size-8 items-center justify-center rounded-full bg-neutral-200"
+			class="absolute top-2 right-2 z-50 flex size-8 items-center justify-center rounded-full bg-neutral-200"
 			onclick={() => (mobileMenuOpen = false)}
 		>
 			<Icon icon="bx:bx-x" class="size-6" />
@@ -155,16 +155,10 @@
 {/if}
 
 <style>
+	@reference "../../app.css";
+
 	.link {
-		@apply relative before:absolute
-            before:-bottom-1
-            before:left-0
-            before:h-0.5
-            before:w-0
-            before:rounded-full
-            before:bg-current
-            before:transition-all
-			before:duration-200;
+		@apply relative before:absolute before:-bottom-1 before:left-0 before:h-0.5 before:w-0 before:rounded-full before:bg-current before:transition-all before:duration-200;
 	}
 
 	.header {

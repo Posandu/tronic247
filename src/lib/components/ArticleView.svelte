@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formatDate, makeID } from '$lib';
+	import { formatDate, makeID } from '#lib';
 	import Img from '@zerodevx/svelte-img';
 	import { ripple } from 'svelte-ripple-action';
 
@@ -26,7 +26,7 @@
 		use:ripple={{
 			color: color ? `rgba(${color?.join(',')}, 0.4)` : undefined
 		}}
-		class="h-full block shadow bg min-h-48 w-full p-8 overflow-hidden rounded-3xl transition-all hover:scale-[1.02]"
+		class="h-full block shadow-sm bg min-h-48 w-full p-8 overflow-hidden rounded-3xl transition-all hover:scale-[1.02]"
 		style={`background-color: rgba(${color?.join(',')}, 0.3)`}
 	>
 		{#if img}
@@ -41,7 +41,7 @@
 			{title}
 		</h2>
 
-		<p class="mt-4 max-w-xs overflow-hidden text-wrap break-words text-white opacity-60">
+		<p class="mt-4 max-w-xs overflow-hidden text-wrap wrap-break-word text-white opacity-60">
 			{excerpt}
 		</p>
 	</a>

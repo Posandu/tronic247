@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Before from '$lib/images/timetable/before.png';
-	import After from '$lib/images/timetable/after.png';
+	import Before from '#lib/images/timetable/before.png';
+	import After from '#lib/images/timetable/after.png';
 	import { fade } from 'svelte/transition';
 	import { ripple } from 'svelte-ripple-action';
 

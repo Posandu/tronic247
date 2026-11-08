@@ -1,4 +1,4 @@
-import { sitemap } from '$lib/sitemapGen';
+import { sitemap } from '#lib/sitemapGen.ts';
 
 export const prerender = true;
 

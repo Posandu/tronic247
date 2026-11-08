@@ -20,7 +20,7 @@
 				inline-flex size-4 items-center justify-center rounded-full p-4 text-sm
 
 				{currentPage === page
-					? 'bg-base-darkest !text-white hover:bg-primary-dark'
+					? 'bg-base-darkest text-white! hover:bg-primary-dark'
 					: 'text-neutral-100 hover:bg-neutral-600'}
 				"
 			>

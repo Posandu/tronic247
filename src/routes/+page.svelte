@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { SITE_URL } from '$lib';
-	import ArticleView from '$lib/components/ArticleView.svelte';
+	import { SITE_URL } from '#lib';
+	import ArticleView from '#lib/components/ArticleView.svelte';
 	import SvelteSeo from 'svelte-seo';
 
 	let { data } = $props();

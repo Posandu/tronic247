@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import ClickToCopy from '$lib/components/ClickToCopy.svelte';
-	import { formattedTitle } from '$lib';
+	import ClickToCopy from '#lib/components/ClickToCopy.svelte';
+	import { formattedTitle } from '#lib';
 	import SvelteSeo from 'svelte-seo';
 </script>
 

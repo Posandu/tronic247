@@ -1,4 +1,4 @@
-import { formaRawPostModule, getImportedPosts } from '$lib/posts';
+import { formaRawPostModule, getImportedPosts } from '#lib/posts.ts';
 
 export const prerender = true;
 

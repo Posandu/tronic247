@@ -150,8 +150,33 @@ function escapeHtml(content) {
 	return content;
 }
 
+/**
+ * remark-directive v4 accepts directive names starting with a digit, so text like
+ * `localhost:3000` or `12:00` gets parsed as a text directive. We only use container
+ * directives (callouts), so turn any text directives back into plain text.
+ * @param {any} node
+ */
+function restoreTextDirectives(node) {
+	if (!node.children) return;
+
+	node.children = node.children.flatMap((/** @type {any} */ child) => {
+		if (child.type !== 'textDirective') {
+			restoreTextDirectives(child);
+			return [child];
+		}
+
+		restoreTextDirectives(child);
+		const label = child.children?.length
+			? [{ type: 'text', value: '[' }, ...child.children, { type: 'text', value: ']' }]
+			: [];
+		return [{ type: 'text', value: ':' + child.name }, ...label];
+	});
+}
+
+const remarkRestoreTextDirectives = () => restoreTextDirectives;
+
 let folderExists = false;
-const VERSION = '1.38.svelte';
+const VERSION = '1.39.svelte';
 const pathForCache = process.cwd() + '/node_modules/.cache/md/';
 
 const checkFolder = () => {
@@ -181,10 +206,10 @@ function markdown() {
 		/**
 		 * @param {Object} params
 		 * @param {string} params.content
-		 * @param {string} params.filename
+		 * @param {string} [params.filename]
 		 */
 		async markup({ content: fileContent, filename: pathname }) {
-			if (pathname.endsWith('.md')) {
+			if (pathname?.endsWith('.md')) {
 				checkFolder();
 
 				if (VERBOSE) console.log(chalk.gray(`Compiling ${pathname}`));
@@ -282,6 +307,7 @@ function markdown() {
 					.use(toMarkdownAST)
 					.use([
 						remarkDirective,
+						remarkRestoreTextDirectives,
 						remarkCalloutDirectives,
 						remarkGfm,
 						remarkSmartypants,
@@ -325,7 +351,7 @@ function markdown() {
 				}
 
 				const code = `<script context="module">
-									import StackBlitz from '$lib/components/StackBlitz.svelte';
+									import StackBlitz from '#lib/components/StackBlitz.svelte';
 
 									export const meta = ${JSON.stringify(meta)};
 									export const excerpt = ${JSON.stringify(excerpt)};
@@ -336,7 +362,7 @@ function markdown() {
 										.map(({ name, path }) =>
 											`
 
-												import ${name} from '$lib/components/md/${path}/${name}.svelte';
+												import ${name} from '#lib/components/md/${path}/${name}.svelte';
 
 											`.trim()
 										)
@@ -347,7 +373,7 @@ function markdown() {
 										.map(({ name, path }) =>
 											`
 
-												import ${name} from '$lib/images/${path}';
+												import ${name} from '#lib/images/${path}';
 
 											`.trim()
 										)

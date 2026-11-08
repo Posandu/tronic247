@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Post } from '$lib/query';
+	import type { Post } from '#lib/query.ts';
 	import ArticleView from './ArticleView.svelte';
 	import Pagination from './Pagination.svelte';
 

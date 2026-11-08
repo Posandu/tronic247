@@ -1,6 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+
+@theme {
+	--font-sans: 'IBM Plex Sans Variable', sans-serif;
+	--font-mono: 'JetBrains Mono Variable', monospace;
+}
+
+@theme inline {
+	--color-base-darkest: var(--md-sys-color-surface-container-lowest);
+	--color-base-dark: var(--md-sys-color-surface-container-low);
+	--color-base-light: var(--md-sys-color-on-surface-variant);
+	--color-base-content: var(--md-sys-color-on-surface);
+}
+
+@utility prose {
+	--tw-prose-pre-bg: var(--md-sys-color-surface-container);
+	--tw-prose-code: var(--md-sys-color-on-surface);
+	--tw-prose-pre: var(--md-sys-color-on-surface);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+}
 
 @font-face {
 	font-family: 'OpenRunde';
@@ -100,7 +137,7 @@
 }
 
 .btn {
-	@apply inline-block select-none rounded-full bg-base-darkest px-4 py-2 text-sm text-white hover:bg-base-dark;
+	@apply inline-block rounded-full bg-base-darkest px-4 py-2 text-sm text-white select-none hover:bg-base-dark;
 }
 
 body {

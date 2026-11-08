@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { SITE_URL, formattedTitle, makeID } from '$lib';
+	import { SITE_URL, formattedTitle, makeID } from '#lib';
 	import SvelteSeo from 'svelte-seo';
-	import Comments from '$lib/components/Comments.svelte';
+	import Comments from '#lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
 	import Img from '@zerodevx/svelte-img';
 	import Icon from '@iconify/svelte';
-	import { CATEGORY_NAMES } from '$lib/sorting.js';
-	import Toc from '$lib/components/TOC.svelte';
+	import { CATEGORY_NAMES } from '#lib/sorting.ts';
+	import Toc from '#lib/components/TOC.svelte';
 
 	let { data } = $props();
 

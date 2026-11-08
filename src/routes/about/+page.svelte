@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formattedTitle } from '$lib';
+	import { formattedTitle } from '#lib';
 	import SvelteSeo from 'svelte-seo';
 </script>
 

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Footer from '$lib/components/Footer.svelte';
-	import Header from '$lib/components/Header.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import Header from '#lib/components/Header.svelte';
 	import SvelteSeo from 'svelte-seo';
 
 	import { page } from '$app/state';
-	import { SITE_URL } from '$lib';
+	import { SITE_URL } from '#lib';
 
 	import '@fontsource-variable/ibm-plex-sans';
 	import '@fontsource-variable/jetbrains-mono';

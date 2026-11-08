@@ -1,4 +1,4 @@
-import { queryManager } from '$lib/query';
+import { queryManager } from '#lib/query.ts';
 
 export async function load({ locals }) {
 	const frontPage = new queryManager(locals.posts, () => true);

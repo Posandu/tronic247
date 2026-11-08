@@ -1,4 +1,4 @@
-import { formaRawPostModule } from '$lib/posts';
+import { formaRawPostModule } from '#lib/posts.ts';
 
 export const load = async () => {
 	const snippets = import.meta.glob('../../../snippets/*.md', { eager: true });

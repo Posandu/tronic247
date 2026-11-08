@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Footer from '$lib/components/Footer.svelte';
-	import Header from '$lib/components/Header.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import Header from '#lib/components/Header.svelte';
 	import SvelteSeo from 'svelte-seo';
 
 	import { page } from '$app/state';
-	import { SITE_URL } from '$lib';
+	import { SITE_URL } from '#lib';
 
 	import '@fontsource-variable/ibm-plex-sans';
 	import '@fontsource-variable/jetbrains-mono';
@@ -13,15 +13,13 @@
 
 	import 'nprogress/nprogress.css';
 	import NProgress from 'nprogress';
-	import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
 
 	$effect(() => {
-		//@ts-ignore
-		if (typeof sa_pageview !== 'undefined') {
+		if (window.sa_pageview) {
 			console.log('tracked pageview');
 
-			//@ts-ignore
-			if (import.meta.env.PROD) sa_pageview(page.url.pathname);
+			if (import.meta.env.PROD) window.sa_pageview(page.url.pathname);
 		}
 	});
 

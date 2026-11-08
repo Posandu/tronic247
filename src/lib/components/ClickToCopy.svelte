@@ -2,8 +2,6 @@
 	/** @type {{val?: string, class?: string}} */
 	let { val = '', class: classN = '' } = $props();
 
-	
-
 	let msg = $state('Click to copy');
 
 	const copy = () => {

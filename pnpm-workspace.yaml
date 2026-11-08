@@ -1,0 +1,5 @@
+allowBuilds:
+  esbuild: true
+  highwayhash: true
+  rehype-code-titles: true
+  sharp: true

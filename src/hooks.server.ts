@@ -1,6 +1,6 @@
-import { formaRawPostModule, getImportedPosts } from '$lib/posts';
-import type { PostWithoutContent } from '$lib/query';
-import type { Handle } from '@sveltejs/kit';
+import { formaRawPostModule, getImportedPosts } from '#lib/posts.ts';
+import type { PostWithoutContent } from '#lib/query.ts';
+import type { Handle } from '@sveltejs/kit/hooks';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	const allImgs = import.meta.glob('../static/**/*.png', {

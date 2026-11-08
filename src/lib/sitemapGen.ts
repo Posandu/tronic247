@@ -1,4 +1,4 @@
-import { SITE_URL } from '$lib';
+import { SITE_URL } from '#lib';
 import { formaRawPostModule, getImportedPosts } from './posts';
 import { queryManager } from './query';
 import { SiteMap } from './sitemap';

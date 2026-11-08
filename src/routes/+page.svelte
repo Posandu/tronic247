@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { SITE_URL } from '$lib';
-	import ArticleView from '$lib/components/ArticleView.svelte';
+	import { resolve } from '$app/paths';
+	import { SITE_URL } from '#lib';
+	import ArticleView from '#lib/components/ArticleView.svelte';
 	import SvelteSeo from 'svelte-seo';
 
 	let { data } = $props();
@@ -35,13 +36,15 @@
 />
 
 <section class="mx-auto max-w-5xl px-4" id="recent-posts">
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-16">
-		{#each posts as { date, title, excerpt, slug, img, color }}
+	<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
+		{#each posts as { date, title, excerpt, slug, img, color } (slug)}
 			<ArticleView {date} {title} {excerpt} {slug} {img} {color} />
 		{/each}
 	</div>
 
 	<div class="text-center">
-		<a href="/archive/page/2" class="btn mx-auto mt-16"> Check Out More </a>
+		<a href={resolve('/archive/[...page]', { page: 'page/2' })} class="btn mx-auto mt-16">
+			Check Out More
+		</a>
 	</div>
 </section>

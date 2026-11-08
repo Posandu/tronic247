@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import ClickToCopy from '$lib/components/ClickToCopy.svelte';
-	import { formattedTitle } from '$lib';
+	import ClickToCopy from '#lib/components/ClickToCopy.svelte';
+	import { formattedTitle } from '#lib';
 	import SvelteSeo from 'svelte-seo';
 </script>
 
-<SvelteSeo title={formattedTitle('Sponsor')} description={'Support the development of Tronic247'} />
+<SvelteSeo title={formattedTitle('Sponsor')} description="Support the development of Tronic247" />
 
-<div class="p-4 rounded-xl overflow-hidden mx-auto max-w-5xl">
-	<div class="relative w-full rounded-xl overflow-hidden bg-pink-600 py-20">
+<div class="mx-auto max-w-5xl overflow-hidden rounded-xl p-4">
+	<div class="relative w-full overflow-hidden rounded-xl bg-pink-600 py-20">
 		<h1 class="text-center text-4xl font-black text-white">Sponsor</h1>
 		<p class="mt-4 text-center text-2xl text-white">Support the development of Tronic247</p>
 	</div>
@@ -23,17 +23,18 @@
 			hard to maintain the server and domain costs.
 		</p>
 
-		<h1 class="mb-4 mt-8 text-lg font-semibold">What to expect?</h1>
+		<h1 class="mt-8 mb-4 text-lg font-semibold">What to expect?</h1>
 
 		<p class="text-lg">
 			By sponsoring, you will get a chance to advertise your product or service on Tronic247 and its
 			other products, have a special article about your product or service, and more benefits.
 		</p>
 
-		<h1 class="mb-4 mt-8 text-lg font-semibold">Thank you!</h1>
+		<h1 class="mt-8 mb-4 text-lg font-semibold">Thank you!</h1>
 
 		<p class="text-lg">
-			Finally, thank you for considering to sponsor Tronic247. Your support will help to keep the site up and motivate me to write more articles!
+			Finally, thank you for considering to sponsor Tronic247. Your support will help to keep the
+			site up and motivate me to write more articles!
 		</p>
 	</div>
 

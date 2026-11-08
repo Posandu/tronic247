@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import Fuse from 'fuse.js';
 
 	let { data } = $props();
@@ -35,9 +36,9 @@
 	</form>
 
 	{#if results.length > 0}
-		{#each results as post}
+		{#each results as post (post.slug)}
 			<a
-				href="/{post.slug}"
+				href={resolve('/[slug]', { slug: post.slug })}
 				class="mt-4 block rounded-lg border border-neutral-200 bg-white p-4 hover:bg-neutral-100"
 			>
 				<h2>

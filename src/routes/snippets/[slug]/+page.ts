@@ -1,4 +1,4 @@
-import { formaRawPostModule } from '$lib/posts';
+import { formaRawPostModule } from '#lib/posts.ts';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ params: { slug } }) => {

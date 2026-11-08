@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { SITE_URL, formattedTitle } from '$lib';
-	import Snippet from '$lib/components/Snippet.svelte';
+	import { SITE_URL, formattedTitle } from '#lib';
+	import Snippet from '#lib/components/Snippet.svelte';
 	import SvelteSeo from 'svelte-seo';
 
 	let { data } = $props();
@@ -10,7 +10,7 @@
 
 <SvelteSeo
 	title={formattedTitle('Snippets')}
-	description={'Short and sweet tips and tricks to help you build faster and better.'}
+	description="Short and sweet tips and tricks to help you build faster and better."
 	canonical={SITE_URL + '/snippets'}
 	openGraph={{
 		title: formattedTitle('Snippets'),
@@ -47,11 +47,11 @@
 
 <div class="mx-auto max-w-5xl px-4">
 	<h1 class="title mx-auto mt-16 max-w-5xl text-4xl font-bold">Snippets</h1>
-	<p class="mb-10 mt-4 text-base-light">
+	<p class="mt-4 mb-10 text-base-light">
 		Bite sized information, tips and tricks to help you build faster and better.
 	</p>
 
-	{#each snippets as snippet}
+	{#each snippets as snippet (snippet.title)}
 		<Snippet title={snippet.title} />
 	{/each}
 </div>

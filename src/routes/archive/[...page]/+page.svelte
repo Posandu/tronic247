@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import SvelteSeo from 'svelte-seo';
 	import { formattedTitle, SITE_URL } from '#lib';
 	import QueryPage from '#lib/components/QueryPage.svelte';
@@ -67,5 +68,10 @@
 <h1 class="title mx-auto mt-16 max-w-5xl px-4 text-4xl font-bold">Archive</h1>
 
 <div class="mx-auto max-w-5xl px-4">
-	<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/archive/page/${page}`} />
+	<QueryPage
+		{currentPage}
+		{posts}
+		{totalPages}
+		urlFn={(page) => resolve('/archive/[...page]', { page: `page/${page}` })}
+	/>
 </div>

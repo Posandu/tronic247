@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import SvelteSeo from 'svelte-seo';
 	import { SITE_URL, formattedTitle } from '#lib';
 	import QueryPage from '#lib/components/QueryPage.svelte';
@@ -64,7 +65,7 @@
 	}}
 />
 
-<h1 class="title max-w-5xl px-4 mt-16 mx-auto text-4xl font-bold">
+<h1 class="title mx-auto mt-16 max-w-5xl px-4 text-4xl font-bold">
 	{CATEGORY_NAMES[category] || category}
 </h1>
 
@@ -73,6 +74,7 @@
 		{currentPage}
 		{posts}
 		{totalPages}
-		urlFn={(page) => `/category/${category}/page/${page}`}
+		urlFn={(page) =>
+			resolve('/category/[name]/[...page]', { name: category, page: `page/${page}` })}
 	/>
 </div>

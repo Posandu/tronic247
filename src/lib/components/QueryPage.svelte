@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ResolvedPathname } from '$app/types';
 	import type { Post } from '#lib/query.ts';
 	import ArticleView from './ArticleView.svelte';
 	import Pagination from './Pagination.svelte';
@@ -8,7 +9,7 @@
 	interface Props {
 		totalPages: number;
 		currentPage: number;
-		urlFn: (page: number) => string;
+		urlFn: (page: number) => ResolvedPathname;
 		posts: PostWithoutContent[];
 	}
 
@@ -16,7 +17,7 @@
 </script>
 
 <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
-	{#each posts as { date, title, excerpt, slug, img, color }}
+	{#each posts as { date, title, excerpt, slug, img, color } (slug)}
 		<ArticleView {date} {title} {excerpt} {slug} {img} {color} class="col-span-1" />
 	{/each}
 </div>

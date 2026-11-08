@@ -4,3 +4,7 @@ package-lock.json
 yarn.lock
 .postcache/
 static/
+
+# Article content; formatting would rewrite code samples
+posts/
+snippets/

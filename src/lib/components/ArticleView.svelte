@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { formatDate, makeID } from '#lib';
+	import { resolve } from '$app/paths';
+	import { formatDate } from '#lib';
 	import Img from '@zerodevx/svelte-img';
 	import { ripple } from 'svelte-ripple-action';
 
@@ -22,18 +23,18 @@
 	"
 >
 	<a
-		href="/{slug}"
+		href={resolve('/[slug]', { slug })}
 		use:ripple={{
 			color: color ? `rgba(${color?.join(',')}, 0.4)` : undefined
 		}}
-		class="h-full block shadow-sm bg min-h-48 w-full p-8 overflow-hidden rounded-3xl transition-all hover:scale-[1.02]"
+		class="bg block h-full min-h-48 w-full overflow-hidden rounded-3xl p-8 shadow-sm transition-all hover:scale-[1.02]"
 		style={`background-color: rgba(${color?.join(',')}, 0.3)`}
 	>
 		{#if img}
-			<Img src={img} loading="lazy" class="object-cover rounded-xl w-full mb-8" />
+			<Img src={img} loading="lazy" class="mb-8 w-full rounded-xl object-cover" />
 		{/if}
 
-		<p class="mb-4 uppercase text-white opacity-80">
+		<p class="mb-4 text-white uppercase opacity-80">
 			{formatDate(date)}
 		</p>
 

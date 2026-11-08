@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { SITE_URL, formattedTitle, makeID } from '#lib';
+	import { resolve } from '$app/paths';
+	import { SITE_URL, formattedTitle } from '#lib';
 	import SvelteSeo from 'svelte-seo';
 	import Comments from '#lib/components/Comments.svelte';
 	import { onMount } from 'svelte';
-	import Img from '@zerodevx/svelte-img';
-	import Icon from '@iconify/svelte';
 	import { CATEGORY_NAMES } from '#lib/sorting.ts';
 	import Toc from '#lib/components/TOC.svelte';
 
@@ -88,9 +87,9 @@
 	<div class="flex-1">
 		<p class="mb-4">
 			{#if categories && categories?.length > 0}
-				{#each categories as category, i}
+				{#each categories as category, i (i)}
 					<a
-						href="/category/{category.toLowerCase()}"
+						href={resolve('/category/[name]/[...page]', { name: category.toLowerCase(), page: '' })}
 						class="text-lg text-base-light"
 						aria-label="{category} category"
 					>
@@ -128,17 +127,21 @@
 	</div>
 </div>
 
-<div class="mx-auto mb-32 mt-16 h-[0.5px] w-full max-w-5xl bg-white/20"></div>
+<div class="mx-auto mt-16 mb-32 h-[0.5px] w-full max-w-5xl bg-white/20"></div>
 
-<main class="prose prose-invert text-[#e1e3ee] mx-auto">
+<main class="mx-auto prose text-[#e1e3ee] prose-invert">
 	<div bind:this={contentEl} class="px-4">
 		<data.content />
 	</div>
 
 	<div class="mt-8">
 		{#if tags && tags?.length > 0}
-			{#each tags as tag, i}
-				<a href="/tag/{tag.toLowerCase()}" class="text-lg text-base-light" aria-label="{tag} tag">
+			{#each tags as tag, i (i)}
+				<a
+					href={resolve('/tag/[name]/[...page]', { name: tag.toLowerCase(), page: '' })}
+					class="text-lg text-base-light"
+					aria-label="{tag} tag"
+				>
 					#{tag}
 				</a>
 
@@ -151,7 +154,7 @@
 <div class="mx-auto mt-16 h-[0.5px] w-full max-w-5xl bg-base-light/20"></div>
 
 <div class="mx-auto mt-16 max-w-5xl px-4">
-	<main class="prose prose-invert mx-auto">
+	<main class="mx-auto prose prose-invert">
 		<p class="mt-8 text-white">
 			Something wrong or just found a typo? <a
 				href="https://github.com/Posandu/tronic247/tree/main/posts/{slug}/index.md"
@@ -162,7 +165,7 @@
 	</main>
 </div>
 
-<main class="prose prose-invert mx-auto mt-8 px-4">
+<main class="mx-auto prose mt-8 px-4 prose-invert">
 	<Comments />
 </main>
 

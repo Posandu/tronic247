@@ -22,7 +22,4 @@
 
 <h2>Comments</h2>
 
-<section
-	id="utterances-comments"
-	bind:this={commentDiv}
-></section>
+<section id="utterances-comments" bind:this={commentDiv}></section>

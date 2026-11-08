@@ -3,13 +3,9 @@
 	import { slide } from 'svelte/transition';
 
 	let { headings }: { headings: HTMLHeadingElement[] } = $props();
-	let headingMap = $derived.by(() => {
-		const map = new Map<string, number>();
-		headings.forEach((heading, index) => {
-			map.set(heading.id, index);
-		});
-		return map;
-	});
+	let headingMap: Record<string, number> = $derived(
+		Object.fromEntries(headings.map((heading, index) => [heading.id, index]))
+	);
 
 	let active = $state(0);
 	let next = new Spring(0, {
@@ -55,7 +51,7 @@
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						active = headingMap.get(entry.target.id) ?? 0;
+						active = headingMap[entry.target.id] ?? 0;
 
 						if (active === prevVal) return;
 
@@ -110,7 +106,7 @@
 		: 'scale-95 opacity-0 '}"
 >
 	<div
-		class="absolute left-1/2 w-[380px] -translate-x-1/2 transform-gpu select-none transition-all {isBottomOpen
+		class="absolute left-1/2 w-[380px] -translate-x-1/2 transform-gpu transition-all select-none {isBottomOpen
 			? 'translate-y-4 scale-110 rounded-[50px] shadow-2xl'
 			: 'scale-100 rounded-[100px] shadow-sm'} menua text-white"
 		style="
@@ -137,7 +133,7 @@
 			</div>
 
 			<div
-				class="ml-auto flex w-max items-center justify-center opacity-60 transition-all hover:opacity-100 group-hover:opacity-100"
+				class="ml-auto flex w-max items-center justify-center opacity-60 transition-all group-hover:opacity-100 hover:opacity-100"
 			>
 				{@render arrow()}
 			</div>
@@ -148,7 +144,7 @@
 				class="mb-6 flex max-h-[calc(100vh-110px)] flex-col gap-2 overflow-y-auto px-8 text-sm text-base-light"
 				transition:slide={{ easing: pathInterpolator, duration: 250 }}
 			>
-				{#each headings as heading, index}
+				{#each headings as heading, index (heading.id)}
 					<a
 						href={`#${heading.id}`}
 						class:text-white={active === index}

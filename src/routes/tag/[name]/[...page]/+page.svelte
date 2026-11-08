@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import SvelteSeo from 'svelte-seo';
 	import { SITE_URL, formattedTitle } from '#lib';
 	import QueryPage from '#lib/components/QueryPage.svelte';
@@ -64,10 +65,15 @@
 	}}
 />
 
-<h1 class="title max-w-5xl px-4 mt-16 mx-auto text-4xl font-bold">
+<h1 class="title mx-auto mt-16 max-w-5xl px-4 text-4xl font-bold">
 	#{tagName}
 </h1>
 
 <div class="mx-auto max-w-5xl px-4">
-	<QueryPage {currentPage} {posts} {totalPages} urlFn={(page) => `/tag/${tagName}/page/${page}`} />
+	<QueryPage
+		{currentPage}
+		{posts}
+		{totalPages}
+		urlFn={(page) => resolve('/tag/[name]/[...page]', { name: tagName, page: `page/${page}` })}
+	/>
 </div>

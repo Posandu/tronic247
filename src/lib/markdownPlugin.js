@@ -35,7 +35,7 @@ const VERBOSE = 0;
  */
 async function getColorFromURL(imagePath) {
 	try {
-		const { data, info } = await sharp(imagePath)
+		const { data } = await sharp(imagePath)
 			.resize(1, 1)
 			.raw()
 			.toBuffer({ resolveWithObject: true });
@@ -61,7 +61,7 @@ function rgbToHsl(r, g, b) {
 	const max = Math.max(r, g, b);
 	const min = Math.min(r, g, b);
 	let h = 0;
-	let s = 0;
+	let s;
 	let l = (max + min) / 2;
 
 	if (max === min) {

@@ -1,12 +1,13 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { navigating, page } from '$app/state';
+	import { resolve } from '$app/paths';
 	import { scale } from 'svelte/transition';
 
 	const menuItems = [
 		['Home', '/'],
 		['About', '/about']
-	];
+	] as const;
 
 	let mobileMenuOpen = $state(false);
 
@@ -28,7 +29,7 @@
 >
 	<div class="mx-auto flex h-20 w-full max-w-5xl items-center justify-between px-4">
 		<div class="flex items-center">
-			<a href="/" aria-label="Home">
+			<a href={resolve('/')} aria-label="Home">
 				<img
 					src="/logo.svg"
 					alt="Tronic247 Logo"
@@ -38,9 +39,9 @@
 		</div>
 
 		<nav class="hidden items-center space-x-6 lg:flex" aria-label="Main navigation">
-			{#each menuItems as [label, link]}
+			{#each menuItems as [label, link] (link)}
 				<a
-					href={link}
+					href={resolve(link)}
 					class="
             
             relative
@@ -63,7 +64,7 @@
 			{/each}
 
 			<a
-				href="/search"
+				href={resolve('/search')}
 				aria-label="Search"
 				class="
           rounded-full
@@ -80,7 +81,7 @@
 
 		<div class="flex items-center space-x-2 lg:hidden">
 			<a
-				href="/search"
+				href={resolve('/search')}
 				aria-label="Search"
 				class="
           rounded-full
@@ -145,9 +146,9 @@
 		</button>
 
 		<ul class="space-y-4">
-			{#each menuItems as [label, link]}
+			{#each menuItems as [label, link] (link)}
 				<li>
-					<a href={link} class="link-menu">{label}</a>
+					<a href={resolve(link)} class="link-menu">{label}</a>
 				</li>
 			{/each}
 		</ul>

@@ -10,8 +10,8 @@
 		<h1>About Tronic247</h1>
 
 		<p>
-			Hi, I'm Posandu, a {new Date().getFullYear() - 2008} year old dev from Sri Lanka. Tronic247 is
-			my blog where I share things I learn and things I build.
+			Hi, I'm Posandu, a {new Date().getFullYear() - 2008} year old dev from Sri Lanka. Tronic247 is my
+			blog where I share things I learn and things I build.
 		</p>
 
 		<p>

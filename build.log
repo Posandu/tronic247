@@ -1,0 +1,1403 @@
+$ vite build
+vite v8.3.6 building ssr environment for production...
+transforming...
+9:15:22 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:12:18 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+10:   let { data } = $props();
+11: 
+12:   let categories = data.meta.categories;
+                           ^
+13:   let tags = data.meta.tags;
+14:   let date = data.meta.date;
+9:15:22 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:13:12 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+11: 
+12:   let categories = data.meta.categories;
+13:   let tags = data.meta.tags;
+                     ^
+14:   let date = data.meta.date;
+15:   let title = data.meta.title;
+9:15:22 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:14:12 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+12:   let categories = data.meta.categories;
+13:   let tags = data.meta.tags;
+14:   let date = data.meta.date;
+                     ^
+15:   let title = data.meta.title;
+16:   let img = data.meta.img;
+9:15:22 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:15:13 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+13:   let tags = data.meta.tags;
+14:   let date = data.meta.date;
+15:   let title = data.meta.title;
+                      ^
+16:   let img = data.meta.img;
+17:   let excerpt = data.meta.excerpt.trim() || title;
+9:15:22 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:16:11 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+14:   let date = data.meta.date;
+15:   let title = data.meta.title;
+16:   let img = data.meta.img;
+                    ^
+17:   let excerpt = data.meta.excerpt.trim() || title;
+18:   let slug = data.meta.slug;
+9:15:22 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:17:15 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+15:   let title = data.meta.title;
+16:   let img = data.meta.img;
+17:   let excerpt = data.meta.excerpt.trim() || title;
+                        ^
+18:   let slug = data.meta.slug;
+19:   let lastUpdated = data.meta.lastModified;
+9:15:22 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:18:12 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+16:   let img = data.meta.img;
+17:   let excerpt = data.meta.excerpt.trim() || title;
+18:   let slug = data.meta.slug;
+                     ^
+19:   let lastUpdated = data.meta.lastModified;
+20: 
+9:15:22 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:19:19 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+17:   let excerpt = data.meta.excerpt.trim() || title;
+18:   let slug = data.meta.slug;
+19:   let lastUpdated = data.meta.lastModified;
+                            ^
+20: 
+21:   let contentEl: HTMLElement | undefined = $state();
+9:15:22 PM [vite-plugin-svelte] src/routes/snippets/+page.svelte:8:16 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+ 6:   let { data } = $props();
+ 7: 
+ 8:   let snippets = data.snippets;
+                         ^
+ 9: </script>
+10: 
+9:15:22 PM [vite-plugin-svelte] src/routes/search/+page.svelte:7:13 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+ 5:   let { data } = $props();
+ 6: 
+ 7:   let posts = data.posts;
+                      ^
+ 8:   let query = $state('');
+ 9:   let results: (typeof posts)[0][] = $state([]);
+9:15:22 PM [vite-plugin-svelte] posts/creating-the-smallest-possible-router/index.md:51:3 Screenreaders already announce `<img>` elements as an image
+https://svelte.dev/e/a11y_img_redundant_alt
+49: <h2 id="how-does-a-router-work"><a aria-hidden="true" tabindex="-1" href="#how-does-a-router-work"><span class="icon icon-link"></span></a>How does a router work?</h2>
+50: <p>Routers are used everywhere in the web. In fact, the page you are reading right now is served by a router. When you visit a URL, the router determines which page to show based on the URL. In this case, you are in the <code>creating-the-smallest-possible-router</code> route.</p>
+51: <p><img src="https://github.com/user-attachments/assets/c4671201-53c9-4f35-9735-5123a402c8db" alt="image" loading="lazy"></p>
+                                                                                                                             ^
+52: <p>In the simplest form, a router is a mapping between a URL and a function. When the URL matches a route, the corresponding function is executed.</p>
+53: <h2 id="creating-the-ungolfed-version"><a aria-hidden="true" tabindex="-1" href="#creating-the-ungolfed-version"><span class="icon icon-link"></span></a>Creating the ungolfed version</h2>
+✓ 420 modules transformed.
+rendering chunks...
+computing gzip size...
+.svelte-kit/output/server/_app/immutable/assets/pure_css_mat_loader.D4Xhsin4.avif                                          0.82 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1-150x150.DWd1_7qi.webp                                              0.98 kB
+.svelte-kit/output/server/_app/immutable/assets/pure_css_mat_loader.DOxBMlCy.webp                                          1.04 kB
+.svelte-kit/output/server/_app/immutable/assets/3d_btn.sYFIAWcH.avif                                                       1.07 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1-150x150.BQZIyHTz.avif                                              1.08 kB
+.svelte-kit/output/server/_app/immutable/assets/animating.BftbYEb3.avif                                                    1.10 kB
+.svelte-kit/output/server/_app/immutable/assets/3d_btn.DP8nrJmo.webp                                                       1.16 kB
+.svelte-kit/output/server/_app/immutable/assets/animating.C69zDk-Z.webp                                                    1.23 kB
+.svelte-kit/output/server/_app/immutable/assets/animating.CgLaYdNs.avif                                                    1.37 kB
+.svelte-kit/output/server/_app/immutable/assets/3d_btn.B5fnQwIB.avif                                                       1.39 kB
+.svelte-kit/output/server/_app/immutable/assets/main.K_kU3paT.avif                                                         1.41 kB
+.svelte-kit/output/server/_app/immutable/assets/pure_css_checkbox.EwbhdVL8.avif                                            1.50 kB
+.svelte-kit/output/server/_app/immutable/assets/howtodrop.CpIS2S7E.avif                                                    1.51 kB
+.svelte-kit/output/server/_app/immutable/assets/image-150x150.YqnU_Yxz.avif                                                1.59 kB
+.svelte-kit/output/server/_app/immutable/assets/main.Boodx309.webp                                                         1.65 kB
+.svelte-kit/output/server/_app/immutable/assets/pure_css_checkbox.LBTAqsvF.webp                                            1.68 kB
+.svelte-kit/output/server/_app/immutable/assets/image-150x150.D8S9qBkJ.webp                                                1.71 kB
+.svelte-kit/output/server/_app/immutable/assets/image-300x61.XHsF4tLq.avif                                                 1.83 kB
+.svelte-kit/output/server/_app/immutable/assets/main.CnN5iKZ3.avif                                                         1.85 kB
+.svelte-kit/output/server/_app/immutable/assets/3d_btn.DAn5hp0L.webp                                                       1.89 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1-150x150.DZ7w0P3I.jpg                                               1.97 kB
+.svelte-kit/output/server/_app/immutable/assets/animating.BNgQL5ER.webp                                                    2.13 kB
+.svelte-kit/output/server/_app/immutable/assets/pure_css_mat_loader.Ev3jsyWn.jpg                                           2.14 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1-300x258.CLl8SQzQ.avif                                              2.20 kB
+.svelte-kit/output/server/_app/immutable/assets/image.CN8XLOQx.avif                                                        2.21 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.CY-uBXxx.avif                                  2.24 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1-300x258.R4pT5yn4.webp                                              2.46 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.VO3zGf9f.avif                                                 2.52 kB
+.svelte-kit/output/server/_app/immutable/assets/loginfrm.jiDylbil.avif                                                     2.62 kB
+.svelte-kit/output/server/_app/immutable/assets/howtodrop.DIZ-lJyA.webp                                                    2.77 kB
+.svelte-kit/output/server/_app/immutable/assets/image-150x150.BjfI7Slj.jpg                                                 2.84 kB
+.svelte-kit/output/server/_app/immutable/assets/loginfrm.BcsRDjzk.webp                                                     2.89 kB
+.svelte-kit/output/server/_app/immutable/assets/pure_css_checkbox.DmkQJv_E.avif                                            2.92 kB
+.svelte-kit/output/server/_app/immutable/assets/image.DTzWwe_I.webp                                                        2.94 kB
+.svelte-kit/output/server/_app/immutable/assets/main.B848gB-j.avif                                                         2.96 kB
+.svelte-kit/output/server/_app/immutable/assets/image-300x61.BZsnwWTE.webp                                                 2.99 kB
+.svelte-kit/output/server/_app/immutable/assets/3d_btn.DyxOEJiR.jpg                                                        3.05 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.Cs9Cddby.avif                                                      3.09 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.D8eXGyUS.avif                                         3.20 kB
+.svelte-kit/output/server/_app/immutable/assets/main.C7Fovukz.jpg                                                          3.38 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.BFaJtk-Y.avif                                                     3.41 kB
+.svelte-kit/output/server/_app/immutable/assets/image-300x241.Cko7jT-B.avif                                                3.42 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.Dmib9Mr8.webp                                  3.47 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.D1p1R_pr.avif                      3.48 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.BHhYSDA-.avif                                                   3.49 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.D5yCm82s.avif                                  3.52 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1.BWSHbbdc.avif                                                      3.54 kB
+.svelte-kit/output/server/_app/immutable/assets/main.DgX6N5CD.webp                                                         3.57 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.C91TdMBC.avif                               3.64 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.CoJCnJQY.avif                                              3.67 kB
+.svelte-kit/output/server/_app/immutable/assets/image.CAqg61hM.avif                                                        3.69 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.claqhUPp.avif                                                     3.70 kB
+.svelte-kit/output/server/_app/immutable/assets/3-javascriptvoid-alternatives.VKk2ijlW.avif                                3.75 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.Cjv2BdaA.avif                                           3.81 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.yAcmsTPu.webp                                                      3.85 kB
+.svelte-kit/output/server/_app/immutable/assets/animating.DpGkLb86.jpg                                                     3.85 kB
+.svelte-kit/output/server/_app/immutable/assets/pure_css_checkbox.B9fdyade.webp                                            3.98 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.CP_Y3PHy.avif       3.98 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.D52Os3xE.avif                                                        4.16 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.UTKyZlqW.avif                                                 4.20 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.DEH6socJ.avif                               4.25 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.BAgD0za_.avif                            4.32 kB
+.svelte-kit/output/server/_app/immutable/assets/image-300x241.CxpeuptW.webp                                                4.34 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.B9DBzxv3.avif                              4.34 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.dF6G0VLB.avif                           4.36 kB
+.svelte-kit/output/server/_app/immutable/assets/pure_css_checkbox.C60KacUO.jpg                                             4.37 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.DAlQ6f6Y.webp                                                 4.48 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.DQMFz46r.avif                           4.50 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1.DWboZ3so.webp                                                      4.62 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.CHV_0fEk.avif                    4.65 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.DqrdQKko.avif                                  4.69 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.BYDceGsu.avif                                 4.74 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.BTAPxNIA.avif                                                4.89 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.n72zxAHB.avif                                   4.90 kB
+.svelte-kit/output/server/_app/immutable/assets/image-300x61.CHGNfiIf.jpg                                                  4.92 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.BVV9eFKJ.webp                                         4.92 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.D0GHJ1CG.webp                                                     5.07 kB
+.svelte-kit/output/server/_app/immutable/assets/howtodrop.CatOnFBk.jpg                                                     5.07 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-increase-your-websites-speed.BqUX0dsp.avif                          5.09 kB
+.svelte-kit/output/server/_app/immutable/assets/loginfrm.CyUGQwSo.avif                                                     5.11 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1-300x258.Cs8Hynw9.jpg                                               5.15 kB
+.svelte-kit/output/server/_app/immutable/assets/image.Dacxnj6V.jpg                                                         5.16 kB
+.svelte-kit/output/server/_app/immutable/assets/3d_btn.R2MrafAD.jpg                                                        5.21 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.C4z_a0yN.avif                             5.37 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.Be-BnUci.avif                                5.42 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.BLoESdee.avif                                               5.45 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.Cy6lCL4K.avif                                                 5.50 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.DW_3Tlh3.webp                                                     5.52 kB
+.svelte-kit/output/server/_app/immutable/assets/image.B3Vd4_Ro.avif                                                        5.56 kB
+.svelte-kit/output/server/_app/immutable/assets/image.BLPDdo9n.webp                                                        5.57 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.CAgU54Re.webp                                              5.59 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.DYf-EcQr.webp                                                   5.71 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.CXBqSAqM.avif                                  5.72 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.BZAY9wYF.webp                                                5.76 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.TLc4wsYy.avif                  5.85 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.CwJOJIGU.avif                                                      6.00 kB
+.svelte-kit/output/server/_app/immutable/assets/3-javascriptvoid-alternatives.DGVR5w4V.webp                                6.03 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.CypZfXiJ.avif                                                     6.03 kB
+.svelte-kit/output/server/_app/immutable/assets/loginfrm.Cjkj0__z.jpg                                                      6.14 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.B8CS_sWX.avif                     6.15 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.B9T8QPf9.webp                      6.17 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.DKryszeU.avif           6.21 kB
+.svelte-kit/output/server/_app/immutable/assets/loginfrm.DQWyTYzU.webp                                                     6.29 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router.cPOPdQRl.avif                                              6.29 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.fteC-TBd.webp                              6.42 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.CGKnbbiZ.avif                                                     6.46 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.CQ3KUA-6.webp                               6.61 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.CFTdcU4b.avif                       6.63 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.QrrGAzJy.webp                           6.64 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.CktAxHS9.jpg                                   6.66 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.DzPj-cld.webp                           6.67 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.D0FZB6gW.avif                                            6.73 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.DbdowNvj.avif                                   6.74 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.ydrwBQkQ.avif                                  6.77 kB
+.svelte-kit/output/server/_app/immutable/assets/image.CIkAZ3dK.avif                                                        6.86 kB
+.svelte-kit/output/server/_app/immutable/assets/create-your-own-app-with-html.DX37uwm0.avif                                6.93 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.C23VaxTb.webp                                                        6.97 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.BDUu5DnO.avif                                         7.08 kB
+.svelte-kit/output/server/_app/immutable/assets/animating.BbmGS6cY.jpg                                                     7.12 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.CRez0p1c.webp                               7.15 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.CkP-s9Z0.webp                                  7.15 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.DMjmKOnp.jpg                                                       7.19 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.D8e4XifB.avif                                              7.22 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.CrFKoz6p.avif                                        7.33 kB
+.svelte-kit/output/server/_app/immutable/assets/image-300x241.BTIqIYNc.jpg                                                 7.38 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.Db3TEvdx.webp                                           7.38 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.VgpRbOSP.avif                                  7.39 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.B0jsnEqo.avif                  7.40 kB
+.svelte-kit/output/server/_app/immutable/assets/3-javascriptvoid-alternatives.BdHud66L.avif                                7.43 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.DQqd1GB4.webp                                7.47 kB
+.svelte-kit/output/server/_app/immutable/assets/jetbrains-mono-vietnamese-wght-normal.Bt-aOZkq.woff2                       7.50 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.NjAgq--0.webp                    7.51 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.oJR1YzzS.avif                      7.53 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.CxoHh8qt.jpg                                          7.54 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.D6qPbSfy.avif                               7.60 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.BA0bPUGw.jpg                                                  7.65 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.DhJI_3qS.webp                                  7.68 kB
+.svelte-kit/output/server/_app/immutable/assets/image.C199NioB.webp                                                        7.70 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.-_80cTQE.avif                               7.71 kB
+.svelte-kit/output/server/_app/immutable/assets/main.CkPHtoNX.webp                                                         7.77 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.BIsGqQps.avif                                           7.83 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.wNXJlP67.webp       7.86 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.CUaydqPa.avif       7.87 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.I2iG4QTJ.avif                                                 7.91 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.DxcFkTKW.webp                                 7.92 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.CV1J7fCd.webp                                               7.93 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.tRW0hvKV.webp                            8.05 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.bdyDcOUA.avif                          8.12 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.y6yNbAKA.avif                                                   8.12 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.DYV6U-f2.avif                                                        8.15 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-increase-your-websites-speed.j9Up8Jkf.webp                          8.37 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.C5w4RVu4.webp                                   8.48 kB
+.svelte-kit/output/server/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.0BKS4CL1.avif               8.59 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.IqwO3GQF.avif                              8.66 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.B5wvUMJr.jpg                                                      8.70 kB
+.svelte-kit/output/server/_app/immutable/assets/Users-Visit-the-page-first-time-2-3-seconds-to-fully-load.B3bNctaJ.jpg     8.75 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.D5V1JLKs.webp                                                 8.76 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.BnljyP1Z.avif                           8.90 kB
+.svelte-kit/output/server/_app/immutable/assets/jetbrains-mono-greek-wght-normal.Bw9x6K1M.woff2                            9.00 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.DmudaOW7.avif                                   9.00 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.hBz7dzHR.avif                                                9.02 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.B-1QwBfR.avif                                  9.07 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router._ADVu173.webp                                              9.09 kB
+.svelte-kit/output/server/_app/immutable/assets/image.-f6mrMwk.avif                                                        9.12 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.lKLxl5z3.webp                                                      9.13 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.bZkpeOfb.avif                           9.20 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.DuDP36se.jpg                                               9.21 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.imYfirrX.avif                               9.21 kB
+.svelte-kit/output/server/_app/immutable/assets/image-1.gsdic6eS.jpg                                                       9.25 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.S6tPtEt3.jpg                                                      9.26 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.BgZ3FGUH.jpg                       9.29 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.tDB8ZMmv.webp                     9.48 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.BXjRLoNM.avif                    9.50 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.bs5etfW2.jpg                                                 9.59 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.DO72lXr7.webp                                                 9.59 kB
+.svelte-kit/output/server/_app/immutable/assets/main.-oDoKOuL.jpg                                                          9.66 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.QwD4JTJn.webp                                            9.72 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.BF_OJdon.avif                            9.80 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.TnngL6XV.webp                             9.83 kB
+.svelte-kit/output/server/_app/immutable/assets/Users-Visit-the-page-first-time-2-3-seconds-to-fully-load.C9jsoMfm.avif   10.03 kB
+.svelte-kit/output/server/_app/immutable/assets/3-javascriptvoid-alternatives.B8ebWfpt.jpg                                10.13 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.C1B_ws2F.avif                                                    10.17 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.qfU63a4b.avif                                               10.24 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.DHdXD9eX.jpg                                                   10.25 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.oVsc-twG.avif                    10.29 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.BbHIw_fm.jpg                           10.33 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.CTUAL5jr.avif                                                     10.35 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.UZSdbp80.avif                                10.36 kB
+.svelte-kit/output/server/_app/immutable/assets/image.CR0m80IR.jpg                                                        10.49 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.DyxORIsU.webp                                  10.53 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.Dzd6yBtQ.avif                                                       10.54 kB
+.svelte-kit/output/server/_app/immutable/assets/pure_css_checkbox.JCvK02Ug.jpg                                            10.55 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.CFoOuwT-.jpg                              10.56 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.CqagwBsO.avif                                        10.60 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.Dc5uWcPj.webp                      10.73 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.BdmqpBdz.webp                 10.85 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.CdTmp_AJ.webp                                       10.86 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.DNhudDdY.webp          10.89 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.Dcq3kxbo.webp                                 10.92 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.Csudf5DE.avif                                                    11.01 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.Cd4y_PZ5.webp                                                    11.24 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.Ldc6K8EH.jpg                               11.27 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.DVSE5oGM.jpg                                  11.27 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.BJLpB8FR.jpg                               11.32 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.3k0tBSUE.jpg       11.49 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-increase-your-websites-speed.ksDCB3tP.avif                         11.55 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.DUkIdI4Z.jpg                                11.56 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.Dv0EP4g2.webp                                        11.56 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.BMddT7mD.jpg                           11.70 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.CA00m6LK.jpg                                           11.71 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.Iv7twH8i.avif                                              11.81 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.Ts1u_sSB.avif                             11.87 kB
+.svelte-kit/output/server/_app/immutable/assets/create-your-own-app-with-html.CtwDS6ID.webp                               11.90 kB
+.svelte-kit/output/server/_app/immutable/assets/Users-Visit-the-page-first-time-2-3-seconds-to-fully-load.bifeimGc.webp   11.93 kB
+.svelte-kit/output/server/_app/immutable/assets/image.BSMCSive.webp                                                       12.01 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.a_n3P9T3.webp                                                    12.08 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.l_ZbcM5I.jpg                                               12.10 kB
+.svelte-kit/output/server/_app/immutable/assets/jetbrains-mono-cyrillic-wght-normal.D73BlboJ.woff2                        12.10 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.1R1GxWu6.avif                                          12.20 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.DDlgZt7a.avif                            12.24 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.B3-RwJWL.jpg                                                        12.39 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.kiaNgJKE.webp                 12.43 kB
+.svelte-kit/output/server/_app/immutable/assets/image.BDY2d3dM.jpg                                                        12.49 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.Rp1TCrJ-.avif          12.52 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.CSoWsoA7.avif                               12.56 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.B1_F8Mu5.avif                     12.57 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.CsJormjc.jpg                                  12.65 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router.WefRt2Ig.avif                                             12.82 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.8rcA2D-F.avif                              12.83 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.BlDd7fb3.avif                                             12.89 kB
+.svelte-kit/output/server/_app/immutable/assets/3-javascriptvoid-alternatives.B-uHNTTt.webp                               12.92 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.Dq3zJk8r.jpg                            12.96 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.B--rlnYO.avif                                 13.03 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.ucOmxQKz.avif                 13.03 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.CDROsljS.jpg                                   13.06 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.BSHz2Hgy.avif                    13.08 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.BmblUVLz.webp                                               13.09 kB
+.svelte-kit/output/server/_app/immutable/assets/ibm-plex-sans-vietnamese-wght-normal.Dg1JeJN0.woff2                       13.16 kB
+.svelte-kit/output/server/_app/immutable/assets/create-your-own-app-with-html.yC8N9CDo.avif                               13.16 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.DUz-0Du7.webp                                             13.18 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.C7UrQvhz.jpg                                 13.20 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.D3lrk2Jo.jpg                    13.21 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.CDXavXy1.webp                         13.22 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.D92BO3yE.webp                                 13.22 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.BiMkptMp.avif                                  13.33 kB
+.svelte-kit/output/server/_app/immutable/assets/image.BLL3k3mo.webp                                                       13.51 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-increase-your-websites-speed.DF2Z5zGm.jpg                          13.64 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.eb5ZOc2J.avif      13.68 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.D4BaOl9r.webp                                                  13.68 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.qN_1keUq.webp                                                       13.83 kB
+.svelte-kit/output/server/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.CG-V-giK.webp              13.97 kB
+.svelte-kit/output/server/_app/immutable/assets/loginfrm.CTKldmHy.jpg                                                     14.05 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.VtFyJvK3.webp                          14.09 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.C_bDyj64.webp                     14.26 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.C9uDUX7Z.webp                             14.27 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.CI4q5rJo.avif                      14.36 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.BRQxyvgd.avif                                       14.36 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router.tJD8VFVp.jpg                                              14.76 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.BRNY11U3.jpg                                                 14.85 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.C61lN-n4.jpg                                            14.92 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.Bb1kMMGn.webp                          14.94 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.NEEa-HCS.jpg                                        15.12 kB
+.svelte-kit/output/server/_app/immutable/assets/jetbrains-mono-latin-ext-wght-normal.DBQx-q_a.woff2                       15.19 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.DeOL_Vkz.avif                                                15.29 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.BAEsWE8Z.jpg                             15.43 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.ziqJIv48.webp                              15.63 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.C1soKCuS.webp                              15.71 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.DF7qI5fe.avif                                  15.75 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.CD3j4Ihd.avif                                           15.80 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.DwZWNSwi.avif                                  15.94 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.CJEtYqG9.jpg                     16.05 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.CXHtMa7Q.webp                                 16.16 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.Bzz5AAlF.avif                          16.20 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.B3f8nNNK.avif                          16.24 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.D_CDwUHq.webp                                          16.29 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.Dl3Ec2wl.webp                                               16.49 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.V9YEOuIX.avif                              16.50 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.CC-Uc9FQ.jpg                  16.51 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.D3mSZzOZ.webp                   17.20 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.C-6m1edd.jpg                                   17.22 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.ZV4Q3b3G.webp                              17.30 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.CQiE6Mzk.webp                                                       17.30 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.SNic0AIf.jpg           17.44 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.C7DPF4Ya.avif                 17.47 kB
+.svelte-kit/output/server/_app/immutable/assets/wholeday.sqglT59e.png                                                     17.49 kB
+.svelte-kit/output/server/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.WUAqQgHs.avif              17.55 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.BMRrvQwq.avif                                 17.82 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.DvQYt79H.webp                                                     17.86 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.BpTTk1QQ.webp                                 17.93 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.Do4n_0fN.jpg                       17.97 kB
+.svelte-kit/output/server/_app/immutable/assets/create-your-own-app-with-html.CyHgtVzR.jpg                                18.02 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.B0-4aVq4.avif                           18.05 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.D5acxt4s.webp      18.10 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-increase-your-websites-speed.BrFmNLlp.webp                         18.13 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.B61rEcne.webp                    18.67 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.D1UatwXk.webp                                  18.70 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.IcR93eam.avif                         18.73 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.bUSSj6Zo.webp                                18.73 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.DJnSaUr9.webp                           18.86 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.C0Guz7VT.webp                                                18.94 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.j5k9f9m2.jpg                  19.04 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.3fpty0J1.avif                   19.21 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.Cl0GDUkv.jpg                                                 19.27 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.GTva5WAm.webp                                              19.39 kB
+.svelte-kit/output/server/_app/immutable/assets/ibm-plex-sans-greek-wght-normal.CmyJS8uq.woff2                            19.50 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.Dx9qSyPf.webp                               19.65 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.DabylS9A.jpg                          19.79 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.CR9Z3r92.avif                                                19.94 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router.7TMHH-AP.webp                                             20.20 kB
+.svelte-kit/output/server/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.BHJg2Ur_.jpg               20.60 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.B9FajxaA.jpg                                                      20.77 kB
+.svelte-kit/output/server/_app/immutable/assets/weekdates.AWtpT-rr.png                                                    20.97 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.BCkds0xL.webp                    21.00 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.fR3yzZ7z.avif                               21.04 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.DoEzoPzp.avif                                              21.05 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.BjrVPjXA.jpg                               21.35 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.TknypC3C.jpg                                         21.53 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.CYN5iW-d.jpg                                                     21.67 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.CEy5TI1k.webp                             21.75 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.Ds-Pw2Av.webp                                                    22.17 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.DAMeTt7S.webp                                  22.20 kB
+.svelte-kit/output/server/_app/immutable/assets/image.Cp6mHLEg.jpg                                                        22.59 kB
+.svelte-kit/output/server/_app/immutable/assets/main.DWkx7RGf.jpg                                                         22.84 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.CX2P_vKu.jpg                                  23.08 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.BM5tfslx.webp          23.18 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.M9yxqlcV.webp                                        23.33 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.DLQxvYYK.webp                                                    23.54 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.5KPiXnLd.jpg                                                     23.55 kB
+.svelte-kit/output/server/_app/immutable/assets/ibm-plex-sans-cyrillic-ext-wght-normal.d45eAU9y.woff2                     23.56 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.CX4LujWk.webp                                                23.70 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.B9-HgZT0.webp                      23.71 kB
+.svelte-kit/output/server/_app/immutable/assets/create-your-own-app-with-html.Bui1WX-U.webp                               24.15 kB
+.svelte-kit/output/server/_app/immutable/assets/3-javascriptvoid-alternatives.DQkGvzh3.jpg                                24.19 kB
+.svelte-kit/output/server/_app/immutable/assets/image.DWdd49Z4.jpg                                                        24.32 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.Cui1nLfL.webp                            24.37 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.DEjl-kPc.avif                    24.37 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.B2e8gfO1.webp                 24.85 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router.DAnoO5DI.avif                                             24.91 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.jEJGLP1o.jpg                                              25.43 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.DBeoLNKU.jpg                     25.81 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.B_mTbnp1.webp                                       26.30 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.CTHyG6T-.avif                                       26.33 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.De3RH5Fp.avif                 26.41 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.CieWiaW-.jpg                                                26.61 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.Dq_OALrz.webp                                             26.68 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.DLG7PPEi.jpg                      26.87 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.C6UG5inn.avif                            26.97 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.VsoMeXmv.webp                          27.25 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.a7gUlG9Y.webp                                           27.32 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.D7OjuIuo.webp                                  27.47 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to_create_modal_css-min.DUhNuaYc.jpg                                  27.90 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.D7tvLT3n.webp                     28.64 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.DfyfzuBO.jpg                                                   28.78 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.DbI7EQ-L.webp                              28.99 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.Dnvag7Uw.jpg                           28.99 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.D-n6zWzC.avif                    29.37 kB
+.svelte-kit/output/server/_app/immutable/assets/ibm-plex-sans-cyrillic-wght-normal.BAAhND-U.woff2                         29.51 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.GnAjHlf-.jpg                                  29.54 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.BcAzMLbK.jpg                              29.72 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.DggX-okI.webp                 30.15 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.NPMWRLqt.webp                              30.17 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.CPNcp5yb.jpg                               30.36 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.ekicBy4L.webp                          30.40 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.aBKkHM5O.jpg       30.84 kB
+.svelte-kit/output/server/_app/immutable/assets/ibm-plex-sans-latin-ext-wght-normal.CIII54If.woff2                        30.96 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.C07U2KYl.webp                                 31.03 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.yzpkMTpG.webp                                          31.28 kB
+.svelte-kit/output/server/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.BYgIYpBR.webp              31.42 kB
+.svelte-kit/output/server/_app/immutable/assets/image.DkFW5CDK.avif                                                       31.46 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.CPHlgVic.avif                                           31.72 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.CTDY0rjT.jpg                                           31.88 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.l7HDvR1O.webp                         32.07 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.DJUnE4d7.webp                                                32.38 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.DJD7jIrV.jpg                                                        32.53 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.TQRlJpGn.jpg                           33.12 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.BMTYnetT.jpg                               33.65 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.DHEkBtWh.webp      33.72 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.C1vfEWVn.jpg                                               34.27 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-increase-your-websites-speed.DLUE3p2p.jpg                          34.34 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.lU4JIdNY.avif                 34.58 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.mRSk0zFC.jpg                                   34.95 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.DeMu_s3x.jpg                    34.99 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.CsJNibZu.webp                                  35.18 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.DZBU2Hdk.jpg                                  35.30 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.BvMtezgn.jpg                                35.74 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.BPtaJoNy.webp                                 36.28 kB
+.svelte-kit/output/server/_app/immutable/assets/maxresdefault.CI2Owrzt.jpg                                                36.51 kB
+.svelte-kit/output/server/_app/immutable/assets/import.Zz3GaBXo.png                                                       37.18 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.CcGlh_4B.webp                   37.27 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.BjxLChyi.webp                           37.31 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.CTcAJ5vz.jpg                            37.89 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.CjujhHlq.jpg                                 38.07 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.BQaFfIvn.webp                                              39.19 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router.quTKdOch.webp                                             39.23 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.DrHRzhJi.webp                    39.67 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router.Dl51gfF2.jpg                                              40.02 kB
+.svelte-kit/output/server/_app/immutable/assets/jetbrains-mono-latin-wght-normal.B9CIFXIH.woff2                           40.40 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.B7b7lJj5.webp                               40.58 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.CPmC8IBK.webp                                                  41.15 kB
+.svelte-kit/output/server/_app/immutable/assets/timeslots.CkkmM-hB.png                                                    41.56 kB
+.svelte-kit/output/server/_app/immutable/assets/win11.DTOrLuKv.jpg                                                        42.31 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.wIBINAlf.avif                         42.32 kB
+.svelte-kit/output/server/_app/immutable/assets/my-bookmarks.DuHnyw6B.jpg                                                 42.58 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.DP3VBpQV.jpg                     43.78 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.CwWn008p.jpg                                   44.02 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.BpMw_gTj.jpg           44.27 kB
+.svelte-kit/output/server/_app/immutable/assets/image.CEJf-iF4.webp                                                       44.68 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.BOqGuWnf.jpg                                        44.70 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.CmCnCBn6.jpg                                            44.78 kB
+.svelte-kit/output/server/_app/immutable/assets/create-your-own-app-with-html.DVni973_.jpg                                45.17 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.CHfgOjAI.jpg                             45.32 kB
+.svelte-kit/output/server/_app/immutable/assets/ibm-plex-sans-latin-wght-normal.IvpUvPa2.woff2                            45.71 kB
+.svelte-kit/output/server/_app/immutable/assets/og-image.iPI3cgxc.jpg                                                     46.63 kB
+.svelte-kit/output/server/_app/immutable/assets/image.sc00LsQX.avif                                                       46.67 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.BGm38__2.avif                                47.15 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.Bc46RL5S.jpg                  47.34 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.Dcb8IFqY.jpg                       47.72 kB
+.svelte-kit/output/server/_app/immutable/assets/create-a-discord-bot.CWWN7jvE.jpg                                         48.74 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.ZCHsKHLb.jpg                                                 48.76 kB
+.svelte-kit/output/server/_app/immutable/assets/Group-2.3ovaBl7E.jpg                                                      49.37 kB
+.svelte-kit/output/server/_app/immutable/assets/snippets.p0a0FL01.jpg                                                     49.58 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.Cng8IuD9.avif                                                  50.85 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.BDjUJ02L.avif                              51.14 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.HcLmzFWK.webp                 52.06 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-drawing-app-with-React.wiJyM7OL.jpg                              53.12 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.DRCHcBip.webp                    54.01 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.C7ZWwTY4.webp                            54.05 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.DMmQnRy9.jpg                  54.47 kB
+.svelte-kit/output/server/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.BGhSO04d.jpg               55.14 kB
+.svelte-kit/output/server/_app/immutable/assets/code-golf-in-js.B2laWs6J.jpg                                              56.99 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.DFX__V3g.webp                                           57.76 kB
+.svelte-kit/output/server/_app/immutable/assets/google_drive_sidebar_clone.DRETbmsY.jpg                                   58.02 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.Bh9w7-vu.jpg                          58.60 kB
+.svelte-kit/output/server/_app/immutable/assets/image.oNkiZXib.webp                                                       60.31 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-simple-static-site-generator-1.Dn-y0yfh.jpg                      61.14 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.B_WM9Ear.webp                                       61.98 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-not-use-CSS-frameworks_.gBqobqek.jpg                               62.96 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.pOhSahki.jpg                                  64.35 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.BLELh_5J.webp                 64.91 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-mini-programming-language.3UU0ANhT.jpg                           65.01 kB
+.svelte-kit/output/server/_app/immutable/assets/rows.BmfN5Tmh.png                                                         65.17 kB
+.svelte-kit/output/server/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.DkjKrA_8.jpg       67.99 kB
+.svelte-kit/output/server/_app/immutable/assets/all-js-arr-methods.CT5UuBFy.jpg                                           68.47 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.WTHUdZLu.webp                         69.85 kB
+.svelte-kit/output/server/_app/immutable/assets/gls_loginfrm.BI_gNER6.jpg                                                 70.41 kB
+.svelte-kit/output/server/_app/immutable/assets/Nprogress-.CytvSLcL.jpg                                                   71.32 kB
+.svelte-kit/output/server/_app/immutable/assets/image.D6wuxSZV.jpg                                                        72.83 kB
+.svelte-kit/output/server/_app/immutable/assets/return-type-of-timeout-fns.DOqTCoja.jpg                                   73.07 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.HeffAA3i.jpg                           73.64 kB
+.svelte-kit/output/server/_app/immutable/assets/gist.x1bfq4we.png                                                         74.08 kB
+.svelte-kit/output/server/_app/immutable/assets/methods-to-load-data-in-svelte.CLiRi0RK.jpg                               74.85 kB
+.svelte-kit/output/server/_app/immutable/assets/before.BVtVj-uE.png                                                       75.42 kB
+.svelte-kit/output/server/_app/immutable/assets/discord-status.C3lGzNvn.jpg                                               78.48 kB
+.svelte-kit/output/server/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.BtRWvwrY.jpg                     81.30 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-an-infinite-scrolling-list.DTgXEZrF.jpg                            81.95 kB
+.svelte-kit/output/server/_app/immutable/assets/best-ui-libraries-for-react.D7L3AxDf.jpg                                  82.15 kB
+.svelte-kit/output/server/_app/immutable/assets/converting-from-excel-to-gcal.wA5FI4UN.jpg                                84.04 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.BlROuO5a.webp                                84.76 kB
+.svelte-kit/output/server/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.B_eymj8d.jpg                    87.62 kB
+.svelte-kit/output/server/_app/immutable/assets/smallest-router.CYfITayk.jpg                                              90.32 kB
+.svelte-kit/output/server/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.D1T3XAgd.jpg                     95.38 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-SPA-with-PHP.DW_khp-F.jpg                                        99.62 kB
+.svelte-kit/output/server/_app/immutable/assets/image.Bt8gr2zA.jpg                                                       101.49 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-poll-app.B29V-sw0.jpg                                           102.46 kB
+.svelte-kit/output/server/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.CS0GxmSw.jpg                            103.71 kB
+.svelte-kit/output/server/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.eztQ9TM_.jpg                 104.75 kB
+.svelte-kit/output/server/_app/immutable/assets/Get-Github-Commits-of-a-file.BFD7Xvxd.jpg                                114.09 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.DWbWSkDp.jpg                              118.56 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.DEFGQzjS.webp                             118.93 kB
+.svelte-kit/output/server/_app/immutable/assets/excelformat.Ba3dotC-.png                                                 130.82 kB
+.svelte-kit/output/server/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.BB4Zizrl.jpg                 131.61 kB
+.svelte-kit/output/server/_app/immutable/assets/Create-a-daily-badge-rewards-system.C-VHxs_A.jpg                         140.06 kB
+.svelte-kit/output/server/_app/immutable/assets/after.DpcyuAwT.png                                                       159.65 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.DdtdLpBB.avif                             174.56 kB
+.svelte-kit/output/server/.vite/manifest.json                                                                            179.03 kB │ gzip: 19.56 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.CyhhpNeW.webp                             390.16 kB
+.svelte-kit/output/server/_app/immutable/assets/migrating-from-wp-to-sveltekit.DoSPiH-4.jpg                              415.65 kB
+.svelte-kit/output/server/_app/immutable/assets/widgets.D0lbRzRd.png                                                     989.50 kB
+.svelte-kit/output/server/_app/immutable/assets/_page.BSnEv2Tg.css                                                         0.05 kB │ gzip:  0.07 kB
+.svelte-kit/output/server/_app/immutable/assets/_page.UlC35e38.css                                                         0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/_app/immutable/assets/ArticleView.Bg81sj1a.css                                                   0.14 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/_app/immutable/assets/_layout.D-XaePfb.css                                                      62.58 kB │ gzip: 14.26 kB
+.svelte-kit/output/server/chunks/paths.js                                                                                  0.03 kB │ gzip:  0.05 kB
+.svelte-kit/output/server/chunks/dist.js                                                                                   0.03 kB │ gzip:  0.05 kB
+.svelte-kit/output/server/chunks/my-bookmarks-list.js                                                                      0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-add-a-table.js                                                                     0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-add-a-video.js                                                                     0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-add-buttons.js                                                                     0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/login-form-with-css.js                                                                    0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/color-changing-images.js                                                                  0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/create-a-spa-with-php.js                                                                  0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/simple-windows-tricks.js                                                                  0.09 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/css-button-design-ideas.js                                                                0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-create-css-cards.js                                                                0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-edit-code-online.js                                                                0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-add-a-link-in-html.js                                                              0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/best-ui-libraries-for-react.js                                                            0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-change-styles-in-text.js                                                           0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-create-a-css-dropdown.js                                                           0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/3-javascriptvoid-alternatives.js                                                          0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/creating-a-todo-cli-with-rust.js                                                          0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/how-to-add-special-characters.js                                                          0.10 kB │ gzip:  0.10 kB
+.svelte-kit/output/server/chunks/create-a-poll-app-using-nextjs.js                                                         0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-create-a-modal-with-css.js                                                         0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/landing-page-for-elementor-pro.js                                                         0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/lets-code-golf-with-javascript.js                                                         0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/methods-to-load-data-in-svelte.js                                                         0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-make-your-website-faster.js                                                        0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/landing-page-for-elementor-free.js                                                        0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/pure-css-material-design-loader.js                                                        0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-create-a-php-login-system.js                                                       0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/using-drizzle-orm-with-sveltekit.js                                                       0.10 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/entries/pages/about/_page.ts.js                                                                  0.11 kB │ gzip:  0.11 kB │ map:   0.18 kB
+.svelte-kit/output/server/chunks/glassmorphism-login-form-with-css.js                                                      0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-add-nprogress-to-sveltekit.js                                                      0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-create-a-3d-button-with-css.js                                                     0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/entries/pages/sponsor/_page.ts.js                                                                0.11 kB │ gzip:  0.11 kB │ map:   0.18 kB
+.svelte-kit/output/server/chunks/beautiful-particles-with-javascript.js                                                    0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-add-a-fixed-background-image.js                                                    0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/create-your-own-github-gist-with-php.js                                                   0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/pure-css-checkboxes-with-one-element.js                                                   0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/simple-material-design-css-animation.js                                                   0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/creating-the-smallest-possible-router.js                                                  0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-add-prisma-to-a-next-js-project.js                                                 0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-create-a-drawing-app-with-react.js                                                 0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/lets-create-a-mini-programming-language.js                                                0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/return-type-of-settimeout-in-javascript.js                                                0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/16-javascript-snippets-to-save-your-time.js                                               0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-create-a-snowfall-with-javascript.js                                               0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-create-your-desktop-app-with-html.js                                               0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/creating-a-rewards-system-with-javascript.js                                              0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-show-github-contributors-of-a-file.js                                              0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/learn-all-the-array-methods-in-javascript.js                                              0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/adding-your-discord-status-to-your-website.js                                             0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/react-cheat-sheet-learn-the-basics-of-react.js                                            0.12 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/css-frontend-resources-you-must-take-a-look-at.js                                         0.12 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-create-a-expanding-search-form-with-css.js                                         0.12 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/how-to-install-windows-11-on-an-unsupported-pc.js                                         0.12 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/adding-firebase-authentication-to-a-next-js-app.js                                        0.12 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/create-a-simple-static-site-generator-with-rust.js                                        0.12 kB │ gzip:  0.11 kB
+.svelte-kit/output/server/chunks/migrating-tronic247-from-wordpress-to-sveltekit.js                                        0.12 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/how-to-not-use-css-frameworks-a-guide-to-pure-css.js                                      0.12 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/create-the-sidebar-in-google-drive-with-css-and-html.js                                   0.12 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/creating-an-infinite-scrollable-list-with-javascript.js                                   0.12 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/creating-a-discord-bot-with-javascript-and-hosting-it.js                                  0.13 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/converting-my-boring-excel-timetable-to-google-calendar2.js                               0.13 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/discovering-svelte-things-i-learned-while-using-svelte.js                                 0.13 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/env.js                                                                                           0.13 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/how-to-create-an-awesome-hover-effect-with-css-and-javascript.js                          0.13 kB │ gzip:  0.12 kB
+.svelte-kit/output/server/chunks/server.js                                                                                 0.21 kB │ gzip:  0.14 kB │ map:   0.70 kB
+.svelte-kit/output/server/entries/pages/_layout.server.ts.js                                                               0.26 kB │ gzip:  0.20 kB │ map:   0.44 kB
+.svelte-kit/output/server/entries/endpoints/sitemap.xml/_server.ts.js                                                      0.30 kB │ gzip:  0.23 kB │ map:   0.50 kB
+.svelte-kit/output/server/entries/endpoints/rss.xml/_server.ts.js                                                          0.31 kB │ gzip:  0.24 kB │ map:   0.50 kB
+.svelte-kit/output/server/chunks/config.js                                                                                 0.32 kB │ gzip:  0.20 kB │ map:   0.58 kB
+.svelte-kit/output/server/chunks/rolldown-runtime.js                                                                       0.34 kB │ gzip:  0.24 kB
+.svelte-kit/output/server/chunks/StackBlitz.js                                                                             0.34 kB │ gzip:  0.23 kB │ map:   0.79 kB
+.svelte-kit/output/server/chunks/lib.js                                                                                    0.41 kB │ gzip:  0.30 kB │ map:   0.77 kB
+.svelte-kit/output/server/chunks/index-server.js                                                                           0.44 kB │ gzip:  0.28 kB │ map:   1.68 kB
+.svelte-kit/output/server/entries/pages/search/_page.server.ts.js                                                          0.45 kB │ gzip:  0.29 kB │ map:   0.81 kB
+.svelte-kit/output/server/chunks/sorting.js                                                                                0.46 kB │ gzip:  0.32 kB │ map:   0.79 kB
+.svelte-kit/output/server/entries/pages/_page.server.ts.js                                                                 0.50 kB │ gzip:  0.31 kB │ map:   0.96 kB
+.svelte-kit/output/server/entries/pages/_error.svelte.js                                                                   0.68 kB │ gzip:  0.41 kB │ map:   0.66 kB
+.svelte-kit/output/server/entries/pages/snippets/_slug_/_page.svelte.js                                                    0.72 kB │ gzip:  0.39 kB │ map:   0.73 kB
+.svelte-kit/output/server/chunks/navigation.js                                                                             0.75 kB │ gzip:  0.36 kB │ map:   1.34 kB
+.svelte-kit/output/server/chunks/simple-windows-tricks2.js                                                                 0.84 kB │ gzip:  0.50 kB │ map:   0.39 kB
+.svelte-kit/output/server/chunks/color-changing-images2.js                                                                 0.87 kB │ gzip:  0.52 kB │ map:   0.44 kB
+.svelte-kit/output/server/chunks/how-to-add-a-table2.js                                                                    0.88 kB │ gzip:  0.54 kB │ map:   0.45 kB
+.svelte-kit/output/server/chunks/how-to-add-a-video2.js                                                                    0.88 kB │ gzip:  0.53 kB │ map:   0.45 kB
+.svelte-kit/output/server/chunks/how-to-add-buttons2.js                                                                    0.88 kB │ gzip:  0.54 kB │ map:   0.45 kB
+.svelte-kit/output/server/chunks/query.js                                                                                  0.88 kB │ gzip:  0.44 kB │ map:   2.23 kB
+.svelte-kit/output/server/chunks/how-to-add-a-link-in-html2.js                                                             0.90 kB │ gzip:  0.55 kB │ map:   0.46 kB
+.svelte-kit/output/server/chunks/how-to-change-styles-in-text2.js                                                          0.94 kB │ gzip:  0.55 kB │ map:   0.49 kB
+.svelte-kit/output/server/chunks/how-to-add-special-characters2.js                                                         0.94 kB │ gzip:  0.55 kB │ map:   0.49 kB
+.svelte-kit/output/server/chunks/landing-page-for-elementor-pro2.js                                                        0.95 kB │ gzip:  0.55 kB │ map:   0.50 kB
+.svelte-kit/output/server/chunks/landing-page-for-elementor-free2.js                                                       0.95 kB │ gzip:  0.55 kB │ map:   0.50 kB
+.svelte-kit/output/server/chunks/how-to-add-a-fixed-background-image2.js                                                   0.96 kB │ gzip:  0.54 kB │ map:   0.50 kB
+.svelte-kit/output/server/entries/pages/snippets/_page.ts.js                                                               1.05 kB │ gzip:  0.48 kB │ map:   0.79 kB
+.svelte-kit/output/server/entries/pages/archive/_...page_/_page.server.ts.js                                               1.24 kB │ gzip:  0.61 kB │ map:   2.47 kB
+.svelte-kit/output/server/entries/pages/snippets/_slug_/_page.ts.js                                                        1.27 kB │ gzip:  0.59 kB │ map:   1.17 kB
+.svelte-kit/output/server/entries/pages/search/_page.svelte.js                                                             1.42 kB │ gzip:  0.73 kB │ map:   1.88 kB
+.svelte-kit/output/server/entries/pages/category/_name_/_...page_/_page.server.ts.js                                       1.47 kB │ gzip:  0.72 kB │ map:   2.77 kB
+.svelte-kit/output/server/entries/pages/tag/_name_/_...page_/_page.server.ts.js                                            1.48 kB │ gzip:  0.74 kB │ map:   2.80 kB
+.svelte-kit/output/server/entries/pages/about/_page.svelte.js                                                              1.49 kB │ gzip:  0.80 kB │ map:   1.66 kB
+.svelte-kit/output/server/chunks/how-to-create-a-expanding-search-form-with-css2.js                                        1.50 kB │ gzip:  0.77 kB │ map:   0.97 kB
+.svelte-kit/output/server/chunks/beautiful-particles-with-javascript2.js                                                   1.52 kB │ gzip:  0.83 kB │ map:   0.59 kB
+.svelte-kit/output/server/chunks/how-to-edit-code-online2.js                                                               1.63 kB │ gzip:  0.88 kB │ map:   0.69 kB
+.svelte-kit/output/server/chunks/QueryPage.js                                                                              1.83 kB │ gzip:  0.79 kB │ map:   2.70 kB
+.svelte-kit/output/server/entries/pages/_page.svelte.js                                                                    1.89 kB │ gzip:  0.87 kB │ map:   2.18 kB
+.svelte-kit/output/server/index.js                                                                                         2.42 kB │ gzip:  0.99 kB │ map:   3.46 kB
+.svelte-kit/output/server/entries/pages/archive/_...page_/_page.svelte.js                                                  2.44 kB │ gzip:  1.02 kB │ map:   3.45 kB
+.svelte-kit/output/server/entries/pages/snippets/_page.svelte.js                                                           2.53 kB │ gzip:  0.98 kB │ map:   3.02 kB
+.svelte-kit/output/server/entries/pages/tag/_name_/_...page_/_page.svelte.js                                               2.55 kB │ gzip:  1.04 kB │ map:   3.66 kB
+.svelte-kit/output/server/entries/pages/category/_name_/_...page_/_page.svelte.js                                          2.70 kB │ gzip:  1.07 kB │ map:   3.78 kB
+.svelte-kit/output/server/entries/pages/sponsor/_page.svelte.js                                                            3.17 kB │ gzip:  1.32 kB │ map:   4.19 kB
+.svelte-kit/output/server/chunks/how-to-create-a-php-login-system2.js                                                      4.82 kB │ gzip:  1.69 kB │ map:   1.37 kB
+.svelte-kit/output/server/chunks/3-javascriptvoid-alternatives2.js                                                         5.22 kB │ gzip:  1.62 kB │ map:   2.05 kB
+.svelte-kit/output/server/chunks/sitemapGen.js                                                                             5.37 kB │ gzip:  1.65 kB │ map:   8.60 kB
+.svelte-kit/output/server/chunks/ArticleView.js                                                                            5.39 kB │ gzip:  1.88 kB │ map:   7.26 kB
+.svelte-kit/output/server/entries/pages/_slug_/_page.svelte.js                                                             5.85 kB │ gzip:  2.03 kB │ map:  95.03 kB
+.svelte-kit/output/server/chunks/css-frontend-resources-you-must-take-a-look-at2.js                                        6.18 kB │ gzip:  1.99 kB │ map:   3.69 kB
+.svelte-kit/output/server/chunks/how-to-create-a-3d-button-with-css2.js                                                    7.18 kB │ gzip:  1.19 kB │ map:   1.24 kB
+.svelte-kit/output/server/chunks/how-to-install-windows-11-on-an-unsupported-pc2.js                                        7.22 kB │ gzip:  2.69 kB │ map:   5.17 kB
+.svelte-kit/output/server/chunks/return-type-of-settimeout-in-javascript2.js                                               7.72 kB │ gzip:  1.67 kB │ map:   2.66 kB
+.svelte-kit/output/server/entries/pages/_layout.svelte.js                                                                  8.85 kB │ gzip:  2.97 kB │ map:  15.13 kB
+.svelte-kit/output/server/entries/hooks.server.js                                                                          9.54 kB │ gzip:  2.55 kB │ map:   3.98 kB
+.svelte-kit/output/server/chunks/dist2.js                                                                                  9.59 kB │ gzip:  1.95 kB │ map:   9.39 kB
+.svelte-kit/output/server/chunks/how-to-make-your-website-faster2.js                                                       9.70 kB │ gzip:  2.85 kB │ map:   4.37 kB
+.svelte-kit/output/server/chunks/how-to-create-a-css-dropdown2.js                                                          9.74 kB │ gzip:  1.29 kB │ map:   1.36 kB
+.svelte-kit/output/server/chunks/migrating-tronic247-from-wordpress-to-sveltekit2.js                                      10.05 kB │ gzip:  3.62 kB │ map:   6.74 kB
+.svelte-kit/output/server/chunks/node-js-copy-to-clipboard.js                                                             10.50 kB │ gzip:  1.92 kB │ map:   2.64 kB
+.svelte-kit/output/server/chunks/how-to-add-nprogress-to-sveltekit2.js                                                    10.77 kB │ gzip:  2.25 kB │ map:   3.52 kB
+.svelte-kit/output/server/chunks/how-to-create-css-cards2.js                                                              11.76 kB │ gzip:  1.45 kB │ map:   1.67 kB
+.svelte-kit/output/server/chunks/css-button-design-ideas2.js                                                              14.26 kB │ gzip:  1.45 kB │ map:   1.79 kB
+.svelte-kit/output/server/chunks/my-bookmarks-list2.js                                                                    14.78 kB │ gzip:  3.48 kB │ map:   7.36 kB
+.svelte-kit/output/server/chunks/posts.js                                                                                 14.79 kB │ gzip:  2.91 kB │ map:   4.77 kB
+.svelte-kit/output/server/chunks/best-ui-libraries-for-react2.js                                                          15.52 kB │ gzip:  2.73 kB │ map:   4.71 kB
+.svelte-kit/output/server/chunks/pure-css-checkboxes-with-one-element2.js                                                 16.22 kB │ gzip:  2.12 kB │ map:   2.84 kB
+.svelte-kit/output/server/chunks/pure-css-material-design-loader2.js                                                      17.40 kB │ gzip:  1.97 kB │ map:   3.24 kB
+.svelte-kit/output/server/chunks/uneval.js                                                                                19.35 kB │ gzip:  5.35 kB │ map:  40.86 kB
+.svelte-kit/output/server/entries/pages/_slug_/_page.ts.js                                                                19.46 kB │ gzip:  4.15 kB │ map:   5.56 kB
+.svelte-kit/output/server/chunks/how-to-create-a-modal-with-css2.js                                                       20.13 kB │ gzip:  2.26 kB │ map:   3.39 kB
+.svelte-kit/output/server/chunks/login-form-with-css2.js                                                                  20.73 kB │ gzip:  2.20 kB │ map:   2.90 kB
+.svelte-kit/output/server/chunks/lets-code-golf-with-javascript2.js                                                       22.55 kB │ gzip:  2.91 kB │ map:   4.53 kB
+.svelte-kit/output/server/chunks/creating-a-discord-bot-with-javascript-and-hosting-it2.js                                23.40 kB │ gzip:  4.23 kB │ map:   7.93 kB
+.svelte-kit/output/server/chunks/adding-firebase-authentication-to-a-next-js-app2.js                                      23.67 kB │ gzip:  3.32 kB │ map:   6.19 kB
+.svelte-kit/output/server/chunks/simple-material-design-css-animation2.js                                                 31.03 kB │ gzip:  2.50 kB │ map:   4.19 kB
+.svelte-kit/output/server/chunks/how-to-create-your-desktop-app-with-html2.js                                             31.30 kB │ gzip:  4.11 kB │ map:   6.95 kB
+.svelte-kit/output/server/chunks/how-to-create-an-awesome-hover-effect-with-css-and-javascript2.js                        33.66 kB │ gzip:  3.41 kB │ map:   5.69 kB
+.svelte-kit/output/server/chunks/how-to-create-a-snowfall-with-javascript2.js                                             33.73 kB │ gzip:  2.97 kB │ map:   4.64 kB
+.svelte-kit/output/server/chunks/create-a-spa-with-php2.js                                                                34.03 kB │ gzip:  3.68 kB │ map:   5.70 kB
+.svelte-kit/output/server/chunks/creating-an-infinite-scrollable-list-with-javascript2.js                                 34.43 kB │ gzip:  3.99 kB │ map:   6.25 kB
+.svelte-kit/output/server/chunks/how-to-not-use-css-frameworks-a-guide-to-pure-css2.js                                    36.56 kB │ gzip:  4.25 kB │ map:   7.32 kB
+.svelte-kit/output/server/chunks/how-to-show-github-contributors-of-a-file2.js                                            39.31 kB │ gzip:  4.50 kB │ map:   8.20 kB
+.svelte-kit/output/server/chunks/methods-to-load-data-in-svelte2.js                                                       39.99 kB │ gzip:  3.81 kB │ map:   7.20 kB
+.svelte-kit/output/server/chunks/adding-your-discord-status-to-your-website2.js                                           40.13 kB │ gzip:  5.26 kB │ map:   9.63 kB
+.svelte-kit/output/server/chunks/Icon.js                                                                                  42.83 kB │ gzip: 12.15 kB │ map:  81.45 kB
+.svelte-kit/output/server/chunks/react-cheat-sheet-learn-the-basics-of-react2.js                                          43.57 kB │ gzip:  5.07 kB │ map:   9.49 kB
+.svelte-kit/output/server/chunks/create-a-simple-static-site-generator-with-rust2.js                                      44.70 kB │ gzip:  3.71 kB │ map:   7.37 kB
+.svelte-kit/output/server/chunks/how-to-create-a-drawing-app-with-react2.js                                               48.78 kB │ gzip:  4.09 kB │ map:   7.79 kB
+.svelte-kit/output/server/chunks/discovering-svelte-things-i-learned-while-using-svelte2.js                               50.93 kB │ gzip:  6.04 kB │ map:  10.14 kB
+.svelte-kit/output/server/chunks/creating-the-smallest-possible-router2.js                                                51.45 kB │ gzip:  5.08 kB │ map:  10.42 kB
+.svelte-kit/output/server/remote-entry.js                                                                                 55.22 kB │ gzip: 11.92 kB │ map:  90.74 kB
+.svelte-kit/output/server/chunks/lets-create-a-mini-programming-language2.js                                              56.39 kB │ gzip:  5.08 kB │ map:   8.98 kB
+.svelte-kit/output/server/chunks/16-javascript-snippets-to-save-your-time2.js                                             58.49 kB │ gzip:  4.84 kB │ map:   7.60 kB
+.svelte-kit/output/server/chunks/create-your-own-github-gist-with-php2.js                                                 60.28 kB │ gzip:  5.72 kB │ map:   9.86 kB
+.svelte-kit/output/server/chunks/how-to-add-prisma-to-a-next-js-project2.js                                               65.63 kB │ gzip:  6.72 kB │ map:  12.62 kB
+.svelte-kit/output/server/chunks/Using-Drizzle-ORM-with-SvelteKit3.js                                                     68.87 kB │ gzip: 13.58 kB │ map:  54.04 kB
+.svelte-kit/output/server/chunks/creating-a-todo-cli-with-rust2.js                                                        69.00 kB │ gzip:  5.52 kB │ map:  10.34 kB
+.svelte-kit/output/server/chunks/creating-a-rewards-system-with-javascript2.js                                            69.76 kB │ gzip:  7.44 kB │ map:  14.74 kB
+.svelte-kit/output/server/chunks/using-drizzle-orm-with-sveltekit2.js                                                     72.44 kB │ gzip:  7.22 kB │ map:  14.48 kB
+.svelte-kit/output/server/chunks/learn-all-the-array-methods-in-javascript2.js                                            72.88 kB │ gzip:  5.58 kB │ map:  11.40 kB
+.svelte-kit/output/server/chunks/converting-my-boring-excel-timetable-to-google-calendar.js                               75.79 kB │ gzip:  9.81 kB │ map:  21.27 kB
+.svelte-kit/output/server/chunks/create-the-sidebar-in-google-drive-with-css-and-html2.js                                 97.69 kB │ gzip:  6.32 kB │ map:  17.37 kB
+.svelte-kit/output/server/chunks/glassmorphism-login-form-with-css2.js                                                   110.44 kB │ gzip:  8.16 kB │ map:  20.80 kB
+.svelte-kit/output/server/chunks/server2.js                                                                              119.32 kB │ gzip: 31.29 kB │ map: 362.64 kB
+.svelte-kit/output/server/chunks/instance.js                                                                             127.72 kB │ gzip: 33.72 kB │ map: 256.19 kB
+.svelte-kit/output/server/chunks/create-a-poll-app-using-nextjs2.js                                                      138.53 kB │ gzip: 10.20 kB │ map:  21.88 kB
+.svelte-kit/output/server/chunks/internal.js                                                                             141.24 kB │ gzip: 35.66 kB │ map: 283.65 kB
+
+✓ built in 53.15s
+[33m[PLUGIN_TIMINGS] [0mJavaScript callbacks ran for 53.0s of this 53.1s build (100%).
+The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - plugin vite-plugin-svelte:compile transform (2%, 1.1s, 97 calls)
+Additional callback time came from the callbacks below and from callbacks under 1s.
+4 callbacks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:
+  - plugin imagetools load (419 calls)
+  - plugin vite:asset load (10 calls)
+  - plugin @tailwindcss/vite:generate:build transform (13 calls)
+  … and 1 more
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+
+Analysing routes
+Building app
+vite v8.3.6 building client environment for production...
+transforming...
+9:16:15 PM [vite-plugin-svelte] src/routes/search/+page.svelte:7:13 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+ 5:   let { data } = $props();
+ 6: 
+ 7:   let posts = data.posts;
+                      ^
+ 8:   let query = $state('');
+ 9:   let results: (typeof posts)[0][] = $state([]);
+9:16:15 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:12:18 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+10:   let { data } = $props();
+11: 
+12:   let categories = data.meta.categories;
+                           ^
+13:   let tags = data.meta.tags;
+14:   let date = data.meta.date;
+9:16:15 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:13:12 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+11: 
+12:   let categories = data.meta.categories;
+13:   let tags = data.meta.tags;
+                     ^
+14:   let date = data.meta.date;
+15:   let title = data.meta.title;
+9:16:15 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:14:12 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+12:   let categories = data.meta.categories;
+13:   let tags = data.meta.tags;
+14:   let date = data.meta.date;
+                     ^
+15:   let title = data.meta.title;
+16:   let img = data.meta.img;
+9:16:15 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:15:13 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+13:   let tags = data.meta.tags;
+14:   let date = data.meta.date;
+15:   let title = data.meta.title;
+                      ^
+16:   let img = data.meta.img;
+17:   let excerpt = data.meta.excerpt.trim() || title;
+9:16:15 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:16:11 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+14:   let date = data.meta.date;
+15:   let title = data.meta.title;
+16:   let img = data.meta.img;
+                    ^
+17:   let excerpt = data.meta.excerpt.trim() || title;
+18:   let slug = data.meta.slug;
+9:16:15 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:17:15 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+15:   let title = data.meta.title;
+16:   let img = data.meta.img;
+17:   let excerpt = data.meta.excerpt.trim() || title;
+                        ^
+18:   let slug = data.meta.slug;
+19:   let lastUpdated = data.meta.lastModified;
+9:16:15 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:18:12 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+16:   let img = data.meta.img;
+17:   let excerpt = data.meta.excerpt.trim() || title;
+18:   let slug = data.meta.slug;
+                     ^
+19:   let lastUpdated = data.meta.lastModified;
+20: 
+9:16:15 PM [vite-plugin-svelte] src/routes/[slug]/+page.svelte:19:19 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+17:   let excerpt = data.meta.excerpt.trim() || title;
+18:   let slug = data.meta.slug;
+19:   let lastUpdated = data.meta.lastModified;
+                            ^
+20: 
+21:   let contentEl: HTMLElement | undefined = $state();
+9:16:15 PM [vite-plugin-svelte] src/routes/snippets/+page.svelte:8:16 This reference only captures the initial value of `data`. Did you mean to reference it inside a closure instead?
+https://svelte.dev/e/state_referenced_locally
+ 6:   let { data } = $props();
+ 7: 
+ 8:   let snippets = data.snippets;
+                         ^
+ 9: </script>
+10: 
+9:16:16 PM [vite-plugin-svelte] posts/creating-the-smallest-possible-router/index.md:51:3 Screenreaders already announce `<img>` elements as an image
+https://svelte.dev/e/a11y_img_redundant_alt
+49: <h2 id="how-does-a-router-work"><a aria-hidden="true" tabindex="-1" href="#how-does-a-router-work"><span class="icon icon-link"></span></a>How does a router work?</h2>
+50: <p>Routers are used everywhere in the web. In fact, the page you are reading right now is served by a router. When you visit a URL, the router determines which page to show based on the URL. In this case, you are in the <code>creating-the-smallest-possible-router</code> route.</p>
+51: <p><img src="https://github.com/user-attachments/assets/c4671201-53c9-4f35-9735-5123a402c8db" alt="image" loading="lazy"></p>
+                                                                                                                             ^
+52: <p>In the simplest form, a router is a mapping between a URL and a function. When the URL matches a route, the corresponding function is executed.</p>
+53: <h2 id="creating-the-ungolfed-version"><a aria-hidden="true" tabindex="-1" href="#creating-the-ungolfed-version"><span class="icon icon-link"></span></a>Creating the ungolfed version</h2>
+✓ 399 modules transformed.
+rendering chunks...
+computing gzip size...
+.svelte-kit/output/client/_app/version.json                                                                                  0.02 kB │ gzip:   0.04 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_mat_loader.D4Xhsin4.avif                                            0.82 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1-150x150.DWd1_7qi.webp                                                0.98 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_mat_loader.DOxBMlCy.webp                                            1.04 kB
+.svelte-kit/output/client/_app/immutable/assets/3d_btn.sYFIAWcH.avif                                                         1.07 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1-150x150.BQZIyHTz.avif                                                1.08 kB
+.svelte-kit/output/client/_app/immutable/assets/animating.BftbYEb3.avif                                                      1.10 kB
+.svelte-kit/output/client/_app/immutable/assets/3d_btn.DP8nrJmo.webp                                                         1.16 kB
+.svelte-kit/output/client/_app/immutable/assets/animating.C69zDk-Z.webp                                                      1.23 kB
+.svelte-kit/output/client/_app/immutable/assets/animating.CgLaYdNs.avif                                                      1.37 kB
+.svelte-kit/output/client/_app/immutable/assets/3d_btn.B5fnQwIB.avif                                                         1.39 kB
+.svelte-kit/output/client/_app/immutable/assets/main.K_kU3paT.avif                                                           1.41 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_checkbox.EwbhdVL8.avif                                              1.50 kB
+.svelte-kit/output/client/_app/immutable/assets/howtodrop.CpIS2S7E.avif                                                      1.51 kB
+.svelte-kit/output/client/_app/immutable/assets/image-150x150.YqnU_Yxz.avif                                                  1.59 kB
+.svelte-kit/output/client/_app/immutable/assets/main.Boodx309.webp                                                           1.65 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_checkbox.LBTAqsvF.webp                                              1.68 kB
+.svelte-kit/output/client/_app/immutable/assets/image-150x150.D8S9qBkJ.webp                                                  1.71 kB
+.svelte-kit/output/client/_app/immutable/assets/image-300x61.XHsF4tLq.avif                                                   1.83 kB
+.svelte-kit/output/client/_app/immutable/assets/main.CnN5iKZ3.avif                                                           1.85 kB
+.svelte-kit/output/client/_app/immutable/assets/3d_btn.DAn5hp0L.webp                                                         1.89 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1-150x150.DZ7w0P3I.jpg                                                 1.97 kB
+.svelte-kit/output/client/_app/immutable/assets/animating.BNgQL5ER.webp                                                      2.13 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_mat_loader.Ev3jsyWn.jpg                                             2.14 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1-300x258.CLl8SQzQ.avif                                                2.20 kB
+.svelte-kit/output/client/_app/immutable/assets/image.CN8XLOQx.avif                                                          2.21 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.CY-uBXxx.avif                                    2.24 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1-300x258.R4pT5yn4.webp                                                2.46 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.VO3zGf9f.avif                                                   2.52 kB
+.svelte-kit/output/client/_app/immutable/assets/loginfrm.jiDylbil.avif                                                       2.62 kB
+.svelte-kit/output/client/_app/immutable/assets/howtodrop.DIZ-lJyA.webp                                                      2.77 kB
+.svelte-kit/output/client/_app/immutable/assets/image-150x150.BjfI7Slj.jpg                                                   2.84 kB
+.svelte-kit/output/client/_app/immutable/assets/loginfrm.BcsRDjzk.webp                                                       2.89 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_checkbox.DmkQJv_E.avif                                              2.92 kB
+.svelte-kit/output/client/_app/immutable/assets/image.DTzWwe_I.webp                                                          2.94 kB
+.svelte-kit/output/client/_app/immutable/assets/main.B848gB-j.avif                                                           2.96 kB
+.svelte-kit/output/client/_app/immutable/assets/image-300x61.BZsnwWTE.webp                                                   2.99 kB
+.svelte-kit/output/client/_app/immutable/assets/3d_btn.DyxOEJiR.jpg                                                          3.05 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.Cs9Cddby.avif                                                        3.09 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.D8eXGyUS.avif                                           3.20 kB
+.svelte-kit/output/client/_app/immutable/assets/main.C7Fovukz.jpg                                                            3.38 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.BFaJtk-Y.avif                                                       3.41 kB
+.svelte-kit/output/client/_app/immutable/assets/image-300x241.Cko7jT-B.avif                                                  3.42 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.Dmib9Mr8.webp                                    3.47 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.D1p1R_pr.avif                        3.48 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.BHhYSDA-.avif                                                     3.49 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.D5yCm82s.avif                                    3.52 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1.BWSHbbdc.avif                                                        3.54 kB
+.svelte-kit/output/client/_app/immutable/assets/main.DgX6N5CD.webp                                                           3.57 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.C91TdMBC.avif                                 3.64 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.CoJCnJQY.avif                                                3.67 kB
+.svelte-kit/output/client/_app/immutable/assets/image.CAqg61hM.avif                                                          3.69 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.claqhUPp.avif                                                       3.70 kB
+.svelte-kit/output/client/_app/immutable/assets/3-javascriptvoid-alternatives.VKk2ijlW.avif                                  3.75 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.Cjv2BdaA.avif                                             3.81 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.yAcmsTPu.webp                                                        3.85 kB
+.svelte-kit/output/client/_app/immutable/assets/animating.DpGkLb86.jpg                                                       3.85 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_checkbox.B9fdyade.webp                                              3.98 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.CP_Y3PHy.avif         3.98 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.D52Os3xE.avif                                                          4.16 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.UTKyZlqW.avif                                                   4.20 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.DEH6socJ.avif                                 4.25 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.BAgD0za_.avif                              4.32 kB
+.svelte-kit/output/client/_app/immutable/assets/image-300x241.CxpeuptW.webp                                                  4.34 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.B9DBzxv3.avif                                4.34 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.dF6G0VLB.avif                             4.36 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_checkbox.C60KacUO.jpg                                               4.37 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.DAlQ6f6Y.webp                                                   4.48 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.DQMFz46r.avif                             4.50 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1.DWboZ3so.webp                                                        4.62 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.CHV_0fEk.avif                      4.65 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.DqrdQKko.avif                                    4.69 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.BYDceGsu.avif                                   4.74 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.BTAPxNIA.avif                                                  4.89 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.n72zxAHB.avif                                     4.90 kB
+.svelte-kit/output/client/_app/immutable/assets/image-300x61.CHGNfiIf.jpg                                                    4.92 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.BVV9eFKJ.webp                                           4.92 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.D0GHJ1CG.webp                                                       5.07 kB
+.svelte-kit/output/client/_app/immutable/assets/howtodrop.CatOnFBk.jpg                                                       5.07 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-increase-your-websites-speed.BqUX0dsp.avif                            5.09 kB
+.svelte-kit/output/client/_app/immutable/assets/loginfrm.CyUGQwSo.avif                                                       5.11 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1-300x258.Cs8Hynw9.jpg                                                 5.15 kB
+.svelte-kit/output/client/_app/immutable/assets/image.Dacxnj6V.jpg                                                           5.16 kB
+.svelte-kit/output/client/_app/immutable/assets/3d_btn.R2MrafAD.jpg                                                          5.21 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.C4z_a0yN.avif                               5.37 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.Be-BnUci.avif                                  5.42 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.BLoESdee.avif                                                 5.45 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.Cy6lCL4K.avif                                                   5.50 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.DW_3Tlh3.webp                                                       5.52 kB
+.svelte-kit/output/client/_app/immutable/assets/image.B3Vd4_Ro.avif                                                          5.56 kB
+.svelte-kit/output/client/_app/immutable/assets/image.BLPDdo9n.webp                                                          5.57 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.CAgU54Re.webp                                                5.59 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.DYf-EcQr.webp                                                     5.71 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.CXBqSAqM.avif                                    5.72 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.BZAY9wYF.webp                                                  5.76 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.TLc4wsYy.avif                    5.85 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.CwJOJIGU.avif                                                        6.00 kB
+.svelte-kit/output/client/_app/immutable/assets/3-javascriptvoid-alternatives.DGVR5w4V.webp                                  6.03 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.CypZfXiJ.avif                                                       6.03 kB
+.svelte-kit/output/client/_app/immutable/assets/loginfrm.Cjkj0__z.jpg                                                        6.14 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.B8CS_sWX.avif                       6.15 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.B9T8QPf9.webp                        6.17 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.DKryszeU.avif             6.21 kB
+.svelte-kit/output/client/_app/immutable/assets/loginfrm.DQWyTYzU.webp                                                       6.29 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router.cPOPdQRl.avif                                                6.29 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.fteC-TBd.webp                                6.42 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.CGKnbbiZ.avif                                                       6.46 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.CQ3KUA-6.webp                                 6.61 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.CFTdcU4b.avif                         6.63 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.QrrGAzJy.webp                             6.64 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.CktAxHS9.jpg                                     6.66 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.DzPj-cld.webp                             6.67 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.D0FZB6gW.avif                                              6.73 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.DbdowNvj.avif                                     6.74 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.ydrwBQkQ.avif                                    6.77 kB
+.svelte-kit/output/client/_app/immutable/assets/image.CIkAZ3dK.avif                                                          6.86 kB
+.svelte-kit/output/client/_app/immutable/assets/create-your-own-app-with-html.DX37uwm0.avif                                  6.93 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.C23VaxTb.webp                                                          6.97 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.BDUu5DnO.avif                                           7.08 kB
+.svelte-kit/output/client/_app/immutable/assets/animating.BbmGS6cY.jpg                                                       7.12 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.CRez0p1c.webp                                 7.15 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.CkP-s9Z0.webp                                    7.15 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.DMjmKOnp.jpg                                                         7.19 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.D8e4XifB.avif                                                7.22 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.CrFKoz6p.avif                                          7.33 kB
+.svelte-kit/output/client/_app/immutable/assets/image-300x241.BTIqIYNc.jpg                                                   7.38 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.Db3TEvdx.webp                                             7.38 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.VgpRbOSP.avif                                    7.39 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.B0jsnEqo.avif                    7.40 kB
+.svelte-kit/output/client/_app/immutable/assets/3-javascriptvoid-alternatives.BdHud66L.avif                                  7.43 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.DQqd1GB4.webp                                  7.47 kB
+.svelte-kit/output/client/_app/immutable/assets/jetbrains-mono-vietnamese-wght-normal.Bt-aOZkq.woff2                         7.50 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.NjAgq--0.webp                      7.51 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.oJR1YzzS.avif                        7.53 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.CxoHh8qt.jpg                                            7.54 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.D6qPbSfy.avif                                 7.60 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.BA0bPUGw.jpg                                                    7.65 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.DhJI_3qS.webp                                    7.68 kB
+.svelte-kit/output/client/_app/immutable/assets/image.C199NioB.webp                                                          7.70 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.-_80cTQE.avif                                 7.71 kB
+.svelte-kit/output/client/_app/immutable/assets/main.CkPHtoNX.webp                                                           7.77 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.BIsGqQps.avif                                             7.83 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.wNXJlP67.webp         7.86 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.CUaydqPa.avif         7.87 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.I2iG4QTJ.avif                                                   7.91 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.DxcFkTKW.webp                                   7.92 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.CV1J7fCd.webp                                                 7.93 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.tRW0hvKV.webp                              8.05 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.bdyDcOUA.avif                            8.12 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.y6yNbAKA.avif                                                     8.12 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.DYV6U-f2.avif                                                          8.15 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-increase-your-websites-speed.j9Up8Jkf.webp                            8.37 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.C5w4RVu4.webp                                     8.48 kB
+.svelte-kit/output/client/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.0BKS4CL1.avif                 8.59 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.IqwO3GQF.avif                                8.66 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.B5wvUMJr.jpg                                                        8.70 kB
+.svelte-kit/output/client/_app/immutable/assets/Users-Visit-the-page-first-time-2-3-seconds-to-fully-load.B3bNctaJ.jpg       8.75 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.D5V1JLKs.webp                                                   8.76 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.BnljyP1Z.avif                             8.90 kB
+.svelte-kit/output/client/_app/immutable/assets/jetbrains-mono-greek-wght-normal.Bw9x6K1M.woff2                              9.00 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.DmudaOW7.avif                                     9.00 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.hBz7dzHR.avif                                                  9.02 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.B-1QwBfR.avif                                    9.07 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router._ADVu173.webp                                                9.09 kB
+.svelte-kit/output/client/_app/immutable/assets/image.-f6mrMwk.avif                                                          9.12 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.lKLxl5z3.webp                                                        9.13 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.bZkpeOfb.avif                             9.20 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.DuDP36se.jpg                                                 9.21 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.imYfirrX.avif                                 9.21 kB
+.svelte-kit/output/client/_app/immutable/assets/image-1.gsdic6eS.jpg                                                         9.25 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.S6tPtEt3.jpg                                                        9.26 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.BgZ3FGUH.jpg                         9.29 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.tDB8ZMmv.webp                       9.48 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.BXjRLoNM.avif                      9.50 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.bs5etfW2.jpg                                                   9.59 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.DO72lXr7.webp                                                   9.59 kB
+.svelte-kit/output/client/_app/immutable/assets/main.-oDoKOuL.jpg                                                            9.66 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.QwD4JTJn.webp                                              9.72 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.BF_OJdon.avif                              9.80 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.TnngL6XV.webp                               9.83 kB
+.svelte-kit/output/client/_app/immutable/assets/Users-Visit-the-page-first-time-2-3-seconds-to-fully-load.C9jsoMfm.avif     10.03 kB
+.svelte-kit/output/client/_app/immutable/assets/3-javascriptvoid-alternatives.B8ebWfpt.jpg                                  10.13 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.C1B_ws2F.avif                                                      10.17 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.qfU63a4b.avif                                                 10.24 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.DHdXD9eX.jpg                                                     10.25 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.oVsc-twG.avif                      10.29 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.BbHIw_fm.jpg                             10.33 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.CTUAL5jr.avif                                                       10.35 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.UZSdbp80.avif                                  10.36 kB
+.svelte-kit/output/client/_app/immutable/assets/image.CR0m80IR.jpg                                                          10.49 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.DyxORIsU.webp                                    10.53 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.Dzd6yBtQ.avif                                                         10.54 kB
+.svelte-kit/output/client/_app/immutable/assets/pure_css_checkbox.JCvK02Ug.jpg                                              10.55 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.CFoOuwT-.jpg                                10.56 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.CqagwBsO.avif                                          10.60 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.Dc5uWcPj.webp                        10.73 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.BdmqpBdz.webp                   10.85 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.CdTmp_AJ.webp                                         10.86 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.DNhudDdY.webp            10.89 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.Dcq3kxbo.webp                                   10.92 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.Csudf5DE.avif                                                      11.01 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.Cd4y_PZ5.webp                                                      11.24 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.Ldc6K8EH.jpg                                 11.27 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.DVSE5oGM.jpg                                    11.27 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.BJLpB8FR.jpg                                 11.32 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.3k0tBSUE.jpg         11.49 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-increase-your-websites-speed.ksDCB3tP.avif                           11.55 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.DUkIdI4Z.jpg                                  11.56 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.Dv0EP4g2.webp                                          11.56 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.BMddT7mD.jpg                             11.70 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.CA00m6LK.jpg                                             11.71 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.Iv7twH8i.avif                                                11.81 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.Ts1u_sSB.avif                               11.87 kB
+.svelte-kit/output/client/_app/immutable/assets/create-your-own-app-with-html.CtwDS6ID.webp                                 11.90 kB
+.svelte-kit/output/client/_app/immutable/assets/Users-Visit-the-page-first-time-2-3-seconds-to-fully-load.bifeimGc.webp     11.93 kB
+.svelte-kit/output/client/_app/immutable/assets/image.BSMCSive.webp                                                         12.01 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.a_n3P9T3.webp                                                      12.08 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.l_ZbcM5I.jpg                                                 12.10 kB
+.svelte-kit/output/client/_app/immutable/assets/jetbrains-mono-cyrillic-wght-normal.D73BlboJ.woff2                          12.10 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.1R1GxWu6.avif                                            12.20 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.DDlgZt7a.avif                              12.24 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.B3-RwJWL.jpg                                                          12.39 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.kiaNgJKE.webp                   12.43 kB
+.svelte-kit/output/client/_app/immutable/assets/image.BDY2d3dM.jpg                                                          12.49 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.Rp1TCrJ-.avif            12.52 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.CSoWsoA7.avif                                 12.56 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.B1_F8Mu5.avif                       12.57 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.CsJormjc.jpg                                    12.65 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router.WefRt2Ig.avif                                               12.82 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.8rcA2D-F.avif                                12.83 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.BlDd7fb3.avif                                               12.89 kB
+.svelte-kit/output/client/_app/immutable/assets/3-javascriptvoid-alternatives.B-uHNTTt.webp                                 12.92 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.Dq3zJk8r.jpg                              12.96 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.B--rlnYO.avif                                   13.03 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.ucOmxQKz.avif                   13.03 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.CDROsljS.jpg                                     13.06 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.BSHz2Hgy.avif                      13.08 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.BmblUVLz.webp                                                 13.09 kB
+.svelte-kit/output/client/_app/immutable/assets/ibm-plex-sans-vietnamese-wght-normal.Dg1JeJN0.woff2                         13.16 kB
+.svelte-kit/output/client/_app/immutable/assets/create-your-own-app-with-html.yC8N9CDo.avif                                 13.16 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.DUz-0Du7.webp                                               13.18 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.C7UrQvhz.jpg                                   13.20 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.D3lrk2Jo.jpg                      13.21 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.CDXavXy1.webp                           13.22 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.D92BO3yE.webp                                   13.22 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.BiMkptMp.avif                                    13.33 kB
+.svelte-kit/output/client/_app/immutable/assets/image.BLL3k3mo.webp                                                         13.51 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-increase-your-websites-speed.DF2Z5zGm.jpg                            13.64 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.eb5ZOc2J.avif        13.68 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.D4BaOl9r.webp                                                    13.68 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.qN_1keUq.webp                                                         13.83 kB
+.svelte-kit/output/client/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.CG-V-giK.webp                13.97 kB
+.svelte-kit/output/client/_app/immutable/assets/loginfrm.CTKldmHy.jpg                                                       14.05 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.VtFyJvK3.webp                            14.09 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.C_bDyj64.webp                       14.26 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.C9uDUX7Z.webp                               14.27 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.CI4q5rJo.avif                        14.36 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.BRQxyvgd.avif                                         14.36 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router.tJD8VFVp.jpg                                                14.76 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.BRNY11U3.jpg                                                   14.85 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.C61lN-n4.jpg                                              14.92 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.Bb1kMMGn.webp                            14.94 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.NEEa-HCS.jpg                                          15.12 kB
+.svelte-kit/output/client/_app/immutable/assets/jetbrains-mono-latin-ext-wght-normal.DBQx-q_a.woff2                         15.19 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.DeOL_Vkz.avif                                                  15.29 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.BAEsWE8Z.jpg                               15.43 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.ziqJIv48.webp                                15.63 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.C1soKCuS.webp                                15.71 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.DF7qI5fe.avif                                    15.75 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.CD3j4Ihd.avif                                             15.80 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.DwZWNSwi.avif                                    15.94 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.CJEtYqG9.jpg                       16.05 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.CXHtMa7Q.webp                                   16.16 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.Bzz5AAlF.avif                            16.20 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.B3f8nNNK.avif                            16.24 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.D_CDwUHq.webp                                            16.29 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.Dl3Ec2wl.webp                                                 16.49 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.V9YEOuIX.avif                                16.50 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.CC-Uc9FQ.jpg                    16.51 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.D3mSZzOZ.webp                     17.20 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.C-6m1edd.jpg                                     17.22 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.ZV4Q3b3G.webp                                17.30 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.CQiE6Mzk.webp                                                         17.30 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.SNic0AIf.jpg             17.44 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.C7DPF4Ya.avif                   17.47 kB
+.svelte-kit/output/client/_app/immutable/assets/wholeday.sqglT59e.png                                                       17.49 kB
+.svelte-kit/output/client/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.WUAqQgHs.avif                17.55 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.BMRrvQwq.avif                                   17.82 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.DvQYt79H.webp                                                       17.86 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.BpTTk1QQ.webp                                   17.93 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.Do4n_0fN.jpg                         17.97 kB
+.svelte-kit/output/client/_app/immutable/assets/create-your-own-app-with-html.CyHgtVzR.jpg                                  18.02 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.B0-4aVq4.avif                             18.05 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.D5acxt4s.webp        18.10 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-increase-your-websites-speed.BrFmNLlp.webp                           18.13 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.B61rEcne.webp                      18.67 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.D1UatwXk.webp                                    18.70 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.IcR93eam.avif                           18.73 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.bUSSj6Zo.webp                                  18.73 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.DJnSaUr9.webp                             18.86 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.C0Guz7VT.webp                                                  18.94 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.j5k9f9m2.jpg                    19.04 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.3fpty0J1.avif                     19.21 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.Cl0GDUkv.jpg                                                   19.27 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.GTva5WAm.webp                                                19.39 kB
+.svelte-kit/output/client/_app/immutable/assets/ibm-plex-sans-greek-wght-normal.CmyJS8uq.woff2                              19.50 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.Dx9qSyPf.webp                                 19.65 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.DabylS9A.jpg                            19.79 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.CR9Z3r92.avif                                                  19.94 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router.7TMHH-AP.webp                                               20.20 kB
+.svelte-kit/output/client/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.BHJg2Ur_.jpg                 20.60 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.B9FajxaA.jpg                                                        20.77 kB
+.svelte-kit/output/client/_app/immutable/assets/weekdates.AWtpT-rr.png                                                      20.97 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.BCkds0xL.webp                      21.00 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.fR3yzZ7z.avif                                 21.04 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.DoEzoPzp.avif                                                21.05 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.BjrVPjXA.jpg                                 21.35 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.TknypC3C.jpg                                           21.53 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.CYN5iW-d.jpg                                                       21.67 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.CEy5TI1k.webp                               21.75 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.Ds-Pw2Av.webp                                                      22.17 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.DAMeTt7S.webp                                    22.20 kB
+.svelte-kit/output/client/_app/immutable/assets/image.Cp6mHLEg.jpg                                                          22.59 kB
+.svelte-kit/output/client/_app/immutable/assets/main.DWkx7RGf.jpg                                                           22.84 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.CX2P_vKu.jpg                                    23.08 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.BM5tfslx.webp            23.18 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.M9yxqlcV.webp                                          23.33 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.DLQxvYYK.webp                                                      23.54 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.5KPiXnLd.jpg                                                       23.55 kB
+.svelte-kit/output/client/_app/immutable/assets/ibm-plex-sans-cyrillic-ext-wght-normal.d45eAU9y.woff2                       23.56 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.CX4LujWk.webp                                                  23.70 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.B9-HgZT0.webp                        23.71 kB
+.svelte-kit/output/client/_app/immutable/assets/create-your-own-app-with-html.Bui1WX-U.webp                                 24.15 kB
+.svelte-kit/output/client/_app/immutable/assets/3-javascriptvoid-alternatives.DQkGvzh3.jpg                                  24.19 kB
+.svelte-kit/output/client/_app/immutable/assets/image.DWdd49Z4.jpg                                                          24.32 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.Cui1nLfL.webp                              24.37 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.DEjl-kPc.avif                      24.37 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.B2e8gfO1.webp                   24.85 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router.DAnoO5DI.avif                                               24.91 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.jEJGLP1o.jpg                                                25.43 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.DBeoLNKU.jpg                       25.81 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.B_mTbnp1.webp                                         26.30 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.CTHyG6T-.avif                                         26.33 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.De3RH5Fp.avif                   26.41 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.CieWiaW-.jpg                                                  26.61 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.Dq_OALrz.webp                                               26.68 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.DLG7PPEi.jpg                        26.87 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.C6UG5inn.avif                              26.97 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.VsoMeXmv.webp                            27.25 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.a7gUlG9Y.webp                                             27.32 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.D7OjuIuo.webp                                    27.47 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to_create_modal_css-min.DUhNuaYc.jpg                                    27.90 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.D7tvLT3n.webp                       28.64 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.DfyfzuBO.jpg                                                     28.78 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.DbI7EQ-L.webp                                28.99 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.Dnvag7Uw.jpg                             28.99 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.D-n6zWzC.avif                      29.37 kB
+.svelte-kit/output/client/_app/immutable/assets/ibm-plex-sans-cyrillic-wght-normal.BAAhND-U.woff2                           29.51 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.GnAjHlf-.jpg                                    29.54 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.BcAzMLbK.jpg                                29.72 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.DggX-okI.webp                   30.15 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.NPMWRLqt.webp                                30.17 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.CPNcp5yb.jpg                                 30.36 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.ekicBy4L.webp                            30.40 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.aBKkHM5O.jpg         30.84 kB
+.svelte-kit/output/client/_app/immutable/assets/ibm-plex-sans-latin-ext-wght-normal.CIII54If.woff2                          30.96 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.C07U2KYl.webp                                   31.03 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.yzpkMTpG.webp                                            31.28 kB
+.svelte-kit/output/client/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.BYgIYpBR.webp                31.42 kB
+.svelte-kit/output/client/_app/immutable/assets/image.DkFW5CDK.avif                                                         31.46 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.CPHlgVic.avif                                             31.72 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.CTDY0rjT.jpg                                             31.88 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.l7HDvR1O.webp                           32.07 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.DJUnE4d7.webp                                                  32.38 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.DJD7jIrV.jpg                                                          32.53 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.TQRlJpGn.jpg                             33.12 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.BMTYnetT.jpg                                 33.65 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.DHEkBtWh.webp        33.72 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.C1vfEWVn.jpg                                                 34.27 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-increase-your-websites-speed.DLUE3p2p.jpg                            34.34 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.lU4JIdNY.avif                   34.58 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.mRSk0zFC.jpg                                     34.95 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.DeMu_s3x.jpg                      34.99 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.CsJNibZu.webp                                    35.18 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.DZBU2Hdk.jpg                                    35.30 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.BvMtezgn.jpg                                  35.74 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.BPtaJoNy.webp                                   36.28 kB
+.svelte-kit/output/client/_app/immutable/assets/maxresdefault.CI2Owrzt.jpg                                                  36.51 kB
+.svelte-kit/output/client/_app/immutable/assets/import.Zz3GaBXo.png                                                         37.18 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.CcGlh_4B.webp                     37.27 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.BjxLChyi.webp                             37.31 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.CTcAJ5vz.jpg                              37.89 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.CjujhHlq.jpg                                   38.07 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.BQaFfIvn.webp                                                39.19 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router.quTKdOch.webp                                               39.23 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.DrHRzhJi.webp                      39.67 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router.Dl51gfF2.jpg                                                40.02 kB
+.svelte-kit/output/client/_app/immutable/assets/jetbrains-mono-latin-wght-normal.B9CIFXIH.woff2                             40.40 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.B7b7lJj5.webp                                 40.58 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.CPmC8IBK.webp                                                    41.15 kB
+.svelte-kit/output/client/_app/immutable/assets/timeslots.CkkmM-hB.png                                                      41.56 kB
+.svelte-kit/output/client/_app/immutable/assets/win11.DTOrLuKv.jpg                                                          42.31 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.wIBINAlf.avif                           42.32 kB
+.svelte-kit/output/client/_app/immutable/assets/my-bookmarks.DuHnyw6B.jpg                                                   42.58 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.DP3VBpQV.jpg                       43.78 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.CwWn008p.jpg                                     44.02 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-awesome-hover-effect-With-JavaScript-CSS.BpMw_gTj.jpg             44.27 kB
+.svelte-kit/output/client/_app/immutable/assets/image.CEJf-iF4.webp                                                         44.68 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.BOqGuWnf.jpg                                          44.70 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.CmCnCBn6.jpg                                              44.78 kB
+.svelte-kit/output/client/_app/immutable/assets/create-your-own-app-with-html.DVni973_.jpg                                  45.17 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.CHfgOjAI.jpg                               45.32 kB
+.svelte-kit/output/client/_app/immutable/assets/ibm-plex-sans-latin-wght-normal.IvpUvPa2.woff2                              45.71 kB
+.svelte-kit/output/client/_app/immutable/assets/og-image.iPI3cgxc.jpg                                                       46.63 kB
+.svelte-kit/output/client/_app/immutable/assets/image.sc00LsQX.avif                                                         46.67 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.BGm38__2.avif                                  47.15 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.Bc46RL5S.jpg                    47.34 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Captcha-Solver-using-2captcha.Dcb8IFqY.jpg                         47.72 kB
+.svelte-kit/output/client/_app/immutable/assets/create-a-discord-bot.CWWN7jvE.jpg                                           48.74 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.ZCHsKHLb.jpg                                                   48.76 kB
+.svelte-kit/output/client/_app/immutable/assets/Group-2.3ovaBl7E.jpg                                                        49.37 kB
+.svelte-kit/output/client/_app/immutable/assets/snippets.p0a0FL01.jpg                                                       49.58 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.Cng8IuD9.avif                                                    50.85 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.BDjUJ02L.avif                                51.14 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.HcLmzFWK.webp                   52.06 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-drawing-app-with-React.wiJyM7OL.jpg                                53.12 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.DRCHcBip.webp                      54.01 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.C7ZWwTY4.webp                              54.05 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.DMmQnRy9.jpg                    54.47 kB
+.svelte-kit/output/client/_app/immutable/assets/CSS-frontend-Resources-you-must-take-a-look-at.BGhSO04d.jpg                 55.14 kB
+.svelte-kit/output/client/_app/immutable/assets/code-golf-in-js.B2laWs6J.jpg                                                56.99 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.DFX__V3g.webp                                             57.76 kB
+.svelte-kit/output/client/_app/immutable/assets/google_drive_sidebar_clone.DRETbmsY.jpg                                     58.02 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.Bh9w7-vu.jpg                            58.60 kB
+.svelte-kit/output/client/_app/immutable/assets/image.oNkiZXib.webp                                                         60.31 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-simple-static-site-generator-1.Dn-y0yfh.jpg                        61.14 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.B_WM9Ear.webp                                         61.98 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-not-use-CSS-frameworks_.gBqobqek.jpg                                 62.96 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-Todo-CLI-with-Rust.pOhSahki.jpg                                    64.35 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.BLELh_5J.webp                   64.91 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-mini-programming-language.3UU0ANhT.jpg                             65.01 kB
+.svelte-kit/output/client/_app/immutable/assets/rows.BmfN5Tmh.png                                                           65.17 kB
+.svelte-kit/output/client/_app/immutable/assets/Discovering-Svelte-Things-I-Learned-While-Using-Svelte.DkjKrA_8.jpg         67.99 kB
+.svelte-kit/output/client/_app/immutable/assets/all-js-arr-methods.CT5UuBFy.jpg                                             68.47 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.WTHUdZLu.webp                           69.85 kB
+.svelte-kit/output/client/_app/immutable/assets/gls_loginfrm.BI_gNER6.jpg                                                   70.41 kB
+.svelte-kit/output/client/_app/immutable/assets/Nprogress-.CytvSLcL.jpg                                                     71.32 kB
+.svelte-kit/output/client/_app/immutable/assets/image.D6wuxSZV.jpg                                                          72.83 kB
+.svelte-kit/output/client/_app/immutable/assets/return-type-of-timeout-fns.DOqTCoja.jpg                                     73.07 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Prisma-to-a-Next.js-project.HeffAA3i.jpg                             73.64 kB
+.svelte-kit/output/client/_app/immutable/assets/gist.x1bfq4we.png                                                           74.08 kB
+.svelte-kit/output/client/_app/immutable/assets/methods-to-load-data-in-svelte.CLiRi0RK.jpg                                 74.85 kB
+.svelte-kit/output/client/_app/immutable/assets/before.BVtVj-uE.png                                                         75.42 kB
+.svelte-kit/output/client/_app/immutable/assets/discord-status.C3lGzNvn.jpg                                                 78.48 kB
+.svelte-kit/output/client/_app/immutable/assets/How-to-create-a-snowfall-with-Javascript.BtRWvwrY.jpg                       81.30 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-an-infinite-scrolling-list.DTgXEZrF.jpg                              81.95 kB
+.svelte-kit/output/client/_app/immutable/assets/best-ui-libraries-for-react.D7L3AxDf.jpg                                    82.15 kB
+.svelte-kit/output/client/_app/immutable/assets/converting-from-excel-to-gcal.wA5FI4UN.jpg                                  84.04 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.BlROuO5a.webp                                  84.76 kB
+.svelte-kit/output/client/_app/immutable/assets/Adding-Firebase-auth-to-a-Next.js-project.B_eymj8d.jpg                      87.62 kB
+.svelte-kit/output/client/_app/immutable/assets/smallest-router.CYfITayk.jpg                                                90.32 kB
+.svelte-kit/output/client/_app/immutable/assets/16-JavaScript-snippets-to-save-your-time.D1T3XAgd.jpg                       95.38 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-SPA-with-PHP.DW_khp-F.jpg                                          99.62 kB
+.svelte-kit/output/client/_app/immutable/assets/image.Bt8gr2zA.jpg                                                         101.49 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-poll-app.B29V-sw0.jpg                                             102.46 kB
+.svelte-kit/output/client/_app/immutable/assets/Using-Drizzle-ORM-with-SvelteKit.CS0GxmSw.jpg                              103.71 kB
+.svelte-kit/output/client/_app/immutable/assets/React-Cheat-Sheet-Learn-the-basics-of-React.eztQ9TM_.jpg                   104.75 kB
+.svelte-kit/output/client/_app/immutable/assets/Get-Github-Commits-of-a-file.BFD7Xvxd.jpg                                  114.09 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.DWbWSkDp.jpg                                118.56 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.DEFGQzjS.webp                               118.93 kB
+.svelte-kit/output/client/_app/immutable/assets/excelformat.Ba3dotC-.png                                                   130.82 kB
+.svelte-kit/output/client/_app/immutable/assets/8-Tools-Every-Web-Developer-Team-Should-Use.BB4Zizrl.jpg                   131.61 kB
+.svelte-kit/output/client/.vite/manifest.json                                                                              133.70 kB │ gzip:  16.23 kB
+.svelte-kit/output/client/_app/immutable/assets/Create-a-daily-badge-rewards-system.C-VHxs_A.jpg                           140.06 kB
+.svelte-kit/output/client/_app/immutable/assets/after.DpcyuAwT.png                                                         159.65 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.DdtdLpBB.avif                               174.56 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.CyhhpNeW.webp                               390.16 kB
+.svelte-kit/output/client/_app/immutable/assets/migrating-from-wp-to-sveltekit.DoSPiH-4.jpg                                415.65 kB
+.svelte-kit/output/client/_app/immutable/assets/widgets.D0lbRzRd.png                                                       989.50 kB
+.svelte-kit/output/client/_app/immutable/assets/10.UlC35e38.css                                                              0.09 kB │ gzip:   0.10 kB
+.svelte-kit/output/client/_app/immutable/assets/ArticleView.Bg81sj1a.css                                                     0.14 kB │ gzip:   0.12 kB
+.svelte-kit/output/client/_app/immutable/assets/3.HbUhzXpo.css                                                               0.29 kB │ gzip:   0.21 kB
+.svelte-kit/output/client/_app/immutable/assets/0.D-XaePfb.css                                                              62.58 kB │ gzip:  14.26 kB
+.svelte-kit/output/client/_app/immutable/chunks/BL7jkEz7.js                                                                  0.02 kB │ gzip:   0.04 kB
+.svelte-kit/output/client/_app/immutable/chunks/Ctxt63hR.js                                                                  0.03 kB │ gzip:   0.05 kB
+.svelte-kit/output/client/_app/immutable/chunks/CbA7XqQ5.js                                                                  0.05 kB │ gzip:   0.06 kB
+.svelte-kit/output/client/_app/immutable/entry/payload.DSmR2FwN.js                                                           0.06 kB │ gzip:   0.07 kB
+.svelte-kit/output/client/_app/immutable/chunks/BGsX_Pjp.js                                                                  0.20 kB │ gzip:   0.19 kB
+.svelte-kit/output/client/_app/immutable/chunks/C2QMTvK2.js                                                                  0.32 kB │ gzip:   0.25 kB
+.svelte-kit/output/client/_app/immutable/entry/start.CyXjwHtf.js                                                             0.60 kB │ gzip:   0.34 kB
+.svelte-kit/output/client/_app/immutable/nodes/1.B_9NT-lN.js                                                                 0.67 kB │ gzip:   0.43 kB
+.svelte-kit/output/client/_app/immutable/chunks/XKyaHtl9.js                                                                  0.72 kB │ gzip:   0.42 kB
+.svelte-kit/output/client/_app/immutable/nodes/9.DQd7ZdhL.js                                                                 1.24 kB │ gzip:   0.72 kB
+.svelte-kit/output/client/_app/immutable/chunks/BjwCPRn_.js                                                                  1.32 kB │ gzip:   0.62 kB
+.svelte-kit/output/client/_app/immutable/chunks/1EbpFYzI.js                                                                  1.34 kB │ gzip:   0.42 kB
+.svelte-kit/output/client/_app/immutable/chunks/Cz_xFonm.js                                                                  1.35 kB │ gzip:   0.74 kB
+.svelte-kit/output/client/_app/immutable/chunks/Bjy-W4x2.js                                                                  1.36 kB │ gzip:   0.65 kB
+.svelte-kit/output/client/_app/immutable/chunks/AQs5uZ9o.js                                                                  1.37 kB │ gzip:   0.72 kB
+.svelte-kit/output/client/_app/immutable/nodes/4.JXJEflf5.js                                                                 1.53 kB │ gzip:   0.87 kB
+.svelte-kit/output/client/_app/immutable/chunks/BQ3PNLKn.js                                                                  1.59 kB │ gzip:   0.78 kB
+.svelte-kit/output/client/_app/immutable/nodes/2.D3hcfHzu.js                                                                 1.62 kB │ gzip:   0.84 kB
+.svelte-kit/output/client/_app/immutable/chunks/DclECHGd.js                                                                  1.63 kB │ gzip:   0.83 kB
+.svelte-kit/output/client/_app/immutable/nodes/5.BTrQ7Sn7.js                                                                 1.77 kB │ gzip:   0.92 kB
+.svelte-kit/output/client/_app/immutable/nodes/11.DirDpXTy.js                                                                1.84 kB │ gzip:   0.95 kB
+.svelte-kit/output/client/_app/immutable/nodes/6.BOb2SGRp.js                                                                 1.91 kB │ gzip:   0.97 kB
+.svelte-kit/output/client/_app/immutable/nodes/8.BItskYcr.js                                                                 2.42 kB │ gzip:   1.14 kB
+.svelte-kit/output/client/_app/immutable/chunks/ChOEsHso.js                                                                  2.90 kB │ gzip:   1.45 kB
+.svelte-kit/output/client/_app/immutable/entry/app.LvGE-n3k.js                                                               3.06 kB │ gzip:   1.10 kB
+.svelte-kit/output/client/_app/immutable/chunks/tOlFx-3u.js                                                                  3.20 kB │ gzip:   1.67 kB
+.svelte-kit/output/client/_app/immutable/nodes/10.CjTVksp5.js                                                                3.23 kB │ gzip:   1.57 kB
+.svelte-kit/output/client/_app/immutable/chunks/BYpJCsxF.js                                                                  5.48 kB │ gzip:   2.00 kB
+.svelte-kit/output/client/_app/immutable/chunks/CPsorC9m.js                                                                  8.57 kB │ gzip:   3.68 kB
+.svelte-kit/output/client/_app/immutable/chunks/CkN9y15w.js                                                                  9.34 kB │ gzip:   1.72 kB
+.svelte-kit/output/client/_app/immutable/chunks/CtoEJUUl.js                                                                  9.69 kB │ gzip:   3.33 kB
+.svelte-kit/output/client/_app/immutable/nodes/0.D4fyoWMv.js                                                                12.44 kB │ gzip:   5.03 kB
+.svelte-kit/output/client/_app/immutable/chunks/7h1D1Ztd.js                                                                 17.96 kB │ gzip:   7.01 kB
+.svelte-kit/output/client/_app/immutable/nodes/7.D16rTlTv.js                                                                27.67 kB │ gzip:  10.25 kB
+.svelte-kit/output/client/_app/immutable/chunks/Bvu9ZI9h.js                                                                 44.77 kB │ gzip:  16.47 kB
+.svelte-kit/output/client/_app/immutable/chunks/DNj7LLkL.js                                                                 55.41 kB │ gzip:  21.36 kB
+.svelte-kit/output/client/_app/immutable/nodes/3.DFM5xvra.js                                                                86.44 kB │ gzip:  19.51 kB
+.svelte-kit/output/client/_app/immutable/chunks/kwAm-qzM.js                                                              1,820.69 kB │ gzip: 163.86 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 52.01s
+[33m[PLUGIN_TIMINGS] [0mJavaScript callbacks ran for 51.9s of this 52.0s build (100%).
+5 callbacks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:
+  - plugin vite-plugin-sveltekit-guard resolveId (1457 calls)
+  - plugin imagetools load (398 calls)
+  - plugin vite:asset load (10 calls)
+  … and 2 more
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+
+Prerendering
+
+Run npm run preview to preview your production build locally.
+
+> Using @sveltejs/adapter-auto
+Could not detect a supported production environment. See https://svelte.dev/docs/kit/adapters to learn how to configure your app to run on the platform of your choosing
+✔ done

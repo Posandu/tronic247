@@ -15,14 +15,6 @@
 	import NProgress from 'nprogress';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 
-	$effect(() => {
-		if (window.sa_pageview) {
-			console.log('tracked pageview');
-
-			if (import.meta.env.PROD) window.sa_pageview(page.url.pathname);
-		}
-	});
-
 	const BLEED = ['/', '/sponsor', '/about', '/trycode'];
 	const BLANK = ['/trycode'];
 

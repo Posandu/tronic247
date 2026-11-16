@@ -12,4 +12,3 @@ vite.config.ts.timestamp-*
 .vercel
 */__draft__*
 .obsidian
-.pnpm-workspace.yaml

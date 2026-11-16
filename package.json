@@ -2,7 +2,6 @@
 	"name": "tronic247-web",
 	"version": "0.0.1",
 	"private": true,
-	"packageManager": "pnpm@11.24.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -21,9 +20,9 @@
 		"@shikijs/rehype": "^4.6.0",
 		"@shikijs/transformers": "^4.6.0",
 		"@stackblitz/sdk": "^1.11.1",
-		"@sveltejs/adapter-auto": "^8.0.0",
-		"@sveltejs/adapter-vercel": "^7.0.2",
-		"@sveltejs/kit": "^3.1.1",
+		"@sveltejs/adapter-auto": "^8.0.1",
+		"@sveltejs/adapter-vercel": "^7.0.3",
+		"@sveltejs/kit": "^3.2.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@tailwindcss/typography": "^0.5.20",
 		"@tailwindcss/vite": "^4.3.5",
@@ -31,14 +30,14 @@
 		"@types/nprogress": "^0.2.3",
 		"@zerodevx/svelte-img": "^2.1.2",
 		"chalk": "^6.0.1",
-		"eslint": "^10.14.0",
+		"eslint": "^10.15.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.24.1",
 		"globals": "^17.14.0",
 		"gray-matter": "^4.0.3",
 		"highwayhash": "^3.1.1",
 		"mode-watcher": "^1.1.0",
-		"prettier": "^3.9.10",
+		"prettier": "^3.10.1",
 		"prettier-plugin-svelte": "^4.1.1",
 		"prettier-plugin-tailwindcss": "^0.8.1",
 		"rehype-autolink-headings": "^7.1.0",
@@ -58,9 +57,9 @@
 		"tailwindcss": "^4.3.5",
 		"tslib": "^2.9.1",
 		"typescript": "^6.0.3",
-		"typescript-eslint": "^8.72.1",
+		"typescript-eslint": "^8.72.2",
 		"unified": "^11.0.5",
-		"vite": "^8.3.6"
+		"vite": "^8.3.8"
 	},
 	"type": "module",
 	"imports": {
@@ -76,7 +75,7 @@
 		"@justinribeiro/lite-youtube": "^1.9.0",
 		"@microflash/remark-callout-directives": "^5.0.1",
 		"@rehype-pretty/transformers": "^0.13.2",
-		"@sveltejs/enhanced-img": "^1.0.0",
+		"@sveltejs/enhanced-img": "^1.0.1",
 		"@tailwindcss/forms": "^0.5.11",
 		"@types/color-thief-node": "^1.0.4",
 		"@webcontainer/api": "^1.6.4",
@@ -90,5 +89,11 @@
 		"svelte-portal": "^2.2.1",
 		"svelte-ripple-action": "^2.0.0",
 		"svelte-seo": "^2.0.0"
-	}
+	},
+	"trustedDependencies": [
+		"esbuild",
+		"highwayhash",
+		"rehype-code-titles",
+		"sharp"
+	]
 }

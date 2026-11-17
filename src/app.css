@@ -4,7 +4,7 @@
 @plugin '@tailwindcss/forms';
 
 @theme {
-	--font-sans: 'IBM Plex Sans Variable', sans-serif;
+	--font-sans: 'OpenRunde', ui-sans-serif, system-ui, sans-serif;
 	--font-mono: 'JetBrains Mono Variable', monospace;
 }
 
@@ -19,6 +19,7 @@
 	--tw-prose-pre-bg: var(--md-sys-color-surface-container);
 	--tw-prose-code: var(--md-sys-color-on-surface);
 	--tw-prose-pre: var(--md-sys-color-on-surface);
+	--tw-prose-invert-body: rgb(222 225 236);
 }
 
 /*
@@ -45,6 +46,22 @@
 	[role='button']:not(:disabled) {
 		cursor: pointer;
 	}
+}
+
+@font-face {
+	font-family: 'OpenRunde';
+	src: url('/fonts/OpenRunde-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'OpenRunde';
+	src: url('/fonts/OpenRunde-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -138,10 +155,6 @@ body {
 	margin-inline: auto;
 }
 
-.prose p {
-	line-height: 32.2px;
-}
-
 pre,
 code,
 textarea,
@@ -170,8 +183,8 @@ scroll margin
 }
 
 pre {
-	background-color: white;
-	color: black;
+	background-color: var(--md-sys-color-surface-container);
+	color: var(--md-sys-color-on-surface);
 	padding: 12px;
 	margin-bottom: 3rem;
 	overflow: auto;
@@ -449,4 +462,24 @@ h6 {
 
 pre .highlighted {
 	background-color: rgba(255, 255, 255, 0.053);
+}
+
+/* Code blocks: lift them off the page instead of the theme's near-black navy */
+.prose pre {
+	background-color: var(--md-sys-color-surface-container) !important;
+	border: 1px solid rgb(255 255 255 / 0.06);
+	border-radius: 0.75rem;
+}
+
+/* Inline code as small pills, without Typography's literal backticks */
+.prose :where(code):not(:where(pre *)) {
+	padding: 0.15em 0.4em;
+	border-radius: 0.375rem;
+	background-color: var(--md-sys-color-surface-container-high);
+	font-weight: 500;
+	font-size: 0.85em;
+}
+.prose :where(code):not(:where(pre *))::before,
+.prose :where(code):not(:where(pre *))::after {
+	content: none;
 }

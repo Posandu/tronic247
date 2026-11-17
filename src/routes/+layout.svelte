@@ -6,7 +6,6 @@
 	import { page } from '$app/state';
 	import { SITE_URL } from '#lib';
 
-	import '@fontsource-variable/ibm-plex-sans';
 	import '@fontsource-variable/jetbrains-mono';
 	import '../app.css';
 	import 'svelte-ripple-action/ripple.css';
@@ -15,7 +14,7 @@
 	import NProgress from 'nprogress';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 
-	const BLEED = ['/', '/sponsor', '/about', '/trycode'];
+	const BLEED = ['/', '/sponsor', '/about', '/trycode', '/[slug]'];
 	const BLANK = ['/trycode'];
 
 	const isInside = (path: string) => BLEED.some((bleed) => path === bleed);
@@ -39,6 +38,16 @@
 		canonical: SITE_URL
 	};
 </script>
+
+<svelte:head>
+	<link
+		rel="preload"
+		href="/fonts/OpenRunde-Regular.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
+</svelte:head>
 
 <SvelteSeo themeColor="#e51b23" applicationName="Tronic247" />
 

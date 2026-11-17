@@ -1,5 +1,6 @@
 import { SITE_URL } from '#lib';
-import { formaRawPostModule, getImportedPosts } from './posts';
+import { formaRawPostModule } from './posts';
+import { getImportedPosts } from './server/allPosts';
 import { queryManager } from './query';
 import { SiteMap } from './sitemap';
 

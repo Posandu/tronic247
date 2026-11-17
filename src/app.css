@@ -49,29 +49,7 @@
 
 @font-face {
 	font-family: 'OpenRunde';
-	src:
-		url('/fonts/OpenRunde-Regular.woff2') format('woff2'),
-		url('/fonts/OpenRunde-Regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'OpenRunde';
-	src:
-		url('/fonts/OpenRunde-Medium.woff2') format('woff2'),
-		url('/fonts/OpenRunde-Medium.woff') format('woff');
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'OpenRunde';
-	src:
-		url('/fonts/OpenRunde-Semibold.woff2') format('woff2'),
-		url('/fonts/OpenRunde-Semibold.woff') format('woff');
+	src: url('/fonts/OpenRunde-Semibold.woff2') format('woff2');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -79,9 +57,7 @@
 
 @font-face {
 	font-family: 'OpenRunde';
-	src:
-		url('/fonts/OpenRunde-Bold.woff2') format('woff2'),
-		url('/fonts/OpenRunde-Bold.woff') format('woff');
+	src: url('/fonts/OpenRunde-Bold.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -266,7 +242,7 @@ pre .code-container:hover a {
 pre code {
 	font-size: 15px;
 	font-family:
-		'JetBrains Mono',
+		'JetBrains Mono Variable',
 		Menlo,
 		Monaco,
 		Consolas,
@@ -353,7 +329,7 @@ h6 {
 .rehype-code-title {
 	margin-bottom: -36px;
 	padding: 10px 22px;
-	font-family: 'Roboto Mono', monospace;
+	font-family: var(--font-mono);
 	background-color: #1e1f2d;
 	color: #fdfdfd;
 	z-index: 0;

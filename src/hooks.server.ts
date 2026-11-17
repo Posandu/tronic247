@@ -1,4 +1,5 @@
-import { formaRawPostModule, getImportedPosts } from '#lib/posts.ts';
+import { formaRawPostModule } from '#lib/posts.ts';
+import { getImportedPosts } from '#lib/server/allPosts.ts';
 import type { PostWithoutContent } from '#lib/query.ts';
 import type { Handle } from '@sveltejs/kit/hooks';
 

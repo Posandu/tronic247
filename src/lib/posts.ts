@@ -1,11 +1,5 @@
 import type { Post } from './query';
 
-const getImportedPosts = async () => {
-	const posts = import.meta.glob('../../posts/*/index.md', { eager: true });
-
-	return posts as Record<string, any>;
-};
-
 const formaRawPostModule = (post: any, path: string): Post => {
 	const { meta, length } = post;
 
@@ -50,4 +44,4 @@ const getStats = (posts: Post[]) => {
 	return { categories, postCount, tags };
 };
 
-export { getImportedPosts, formaRawPostModule, getStats };
+export { formaRawPostModule, getStats };

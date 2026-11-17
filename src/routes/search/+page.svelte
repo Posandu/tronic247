@@ -25,27 +25,30 @@
 <h1 class="title mx-auto mt-16 max-w-5xl px-4 text-4xl font-bold">Search</h1>
 
 <div class="mx-auto mt-8 max-w-5xl px-4">
-	<form method="post">
+	<form onsubmit={(e) => e.preventDefault()} role="search">
 		<input
-			type="text"
+			type="search"
 			name="search"
 			bind:value={query}
-			placeholder="Search..."
-			class="mb-8 w-full rounded-xl border border-neutral-300 px-4 py-2"
+			placeholder="Search posts..."
+			aria-label="Search posts"
+			class="mb-8 w-full rounded-full border-transparent bg-(--md-sys-color-surface-container) px-6 py-3 text-base-content placeholder:text-base-light/60 focus:border-transparent focus:ring-2 focus:ring-white/20"
 		/>
 	</form>
 
 	{#if results.length > 0}
-		{#each results as post (post.slug)}
-			<a
-				href={resolve('/[slug]', { slug: post.slug })}
-				class="mt-4 block rounded-lg border border-neutral-200 bg-white p-4 hover:bg-neutral-100"
-			>
-				<h2>
-					{post.title}
-				</h2>
-			</a>
-		{/each}
+		<div class="flex flex-col gap-3">
+			{#each results as post (post.slug)}
+				<a
+					href={resolve('/[slug]', { slug: post.slug })}
+					class="block rounded-2xl bg-(--md-sys-color-surface-container-low) px-6 py-5 transition-colors hover:bg-(--md-sys-color-surface-container-high)"
+				>
+					<h2 class="title text-xl font-semibold text-base-content">
+						{post.title}
+					</h2>
+				</a>
+			{/each}
+		</div>
 	{:else}
 		<p class="mt-4 text-base-light">{query ? 'No results found' : 'Please type something :)'}</p>
 	{/if}
